@@ -5,8 +5,7 @@ import re
 with open("raw_wikivoyage.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 
-
-# Function to recursively remove formatting and process both {{}} and [[]] blocks
+# Function to recursively remove formatting, process both {{}} and [[]] blocks, and remove specified keys
 def remove_formatting(content):
     if isinstance(content, str):
         # Replace all instances of &quot; with "
@@ -31,15 +30,19 @@ def remove_formatting(content):
         return content
 
     elif isinstance(content, dict):
-        # Recursively apply to dictionary values
-        return {key: remove_formatting(value) for key, value in content.items()}
+        # Remove specified keys if present, otherwise recursively apply to dictionary values
+        keys_to_remove = {"contributor", "sha1", "model", "format"}
+        return {
+            key: remove_formatting(value)
+            for key, value in content.items()
+            if key not in keys_to_remove
+        }
 
     elif isinstance(content, list):
         # Recursively apply to each item in the list
         return [remove_formatting(item) for item in content]
 
     return content
-
 
 # Clean the JSON data
 cleaned_data = remove_formatting(data)
@@ -49,5 +52,5 @@ with open("./cleaned_wikivoyage.json", "w", encoding="utf-8") as file:
     json.dump(cleaned_data, file, ensure_ascii=False, indent=4)
 
 print(
-    "Text within double braces {{}} and links in [[]] have been processed, &quot; replaced, and cleaned JSON saved to 'cleaned_wikivoyage.json'."
+    "Text within double braces {{}} and links in [[]] have been processed, &quot; replaced, 'contributor', 'sha1', 'model', and 'format' sections removed, and cleaned JSON saved to 'cleaned_wikivoyage.json'."
 )

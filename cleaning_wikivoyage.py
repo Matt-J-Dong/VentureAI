@@ -31,7 +31,22 @@ def remove_formatting(content):
 
     elif isinstance(content, dict):
         # Remove specified keys if present, otherwise recursively apply to dictionary values
-        keys_to_remove = {"contributor", "sha1", "model", "format"}
+        keys_to_remove = {
+            "contributor",
+            "sha1",
+            "model",
+            "format",
+            "@bytes",
+            "@sha1",
+            "@xml:space",
+            "timestamp",
+            "comment",
+            "minor",
+            "id",  # This may potentially be useful
+            "origin",  # duplicate of id?
+            "ns",  # No idea what this is
+            "parentid",  # Redirects to this maybe?
+        }
         return {
             key: remove_formatting(value)
             for key, value in content.items()
@@ -52,5 +67,5 @@ with open("./cleaned_wikivoyage.json", "w", encoding="utf-8") as file:
     json.dump(cleaned_data, file, ensure_ascii=False, indent=4)
 
 print(
-    "Text within double braces {{}} and links in [[]] have been processed, &quot; replaced, 'contributor', 'sha1', 'model', and 'format' sections removed, and cleaned JSON saved to 'cleaned_wikivoyage.json'."
+    "Text within double braces {{}} and links in [[]] have been processed, &quot; replaced, unncessary keys have been removed, and cleaned JSON saved to 'cleaned_wikivoyage.json'."
 )

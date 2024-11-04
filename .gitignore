@@ -1,6 +1,8 @@
 #Large data
 wikivoyage.xml
 wikivoyage.json
+raw_wikivoyage.json
+cleaned_wikivoyage.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

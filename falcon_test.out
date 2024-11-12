@@ -1,0 +1,54 @@
+/scratch/mjd9571/VentureAI
+# conda environments: # base /ext3/miniconda3 cambrian /scratch/mjd9571/conda/envs_dirs/cambrian juypter README.md Untitled.ipynb VentureAI.png big_llama_test.sbatch bloom_model.py bloom_test.sbatch cleaned_wikivoyage.json cleaning_wikivoyage.py deprecated falcon_test-error.txt falcon_test.out falcon_test.sbatch flan_model.py flan_test-error.txt flan_test.out flan_test.sbatch llama_model.py llama_test-error.txt llama_test.out llama_test.sbatch mistral_model.py mistral_test-error.txt mistral_test.out mistral_test.sbatch model.py myenv read_wikivoyage.py test_new_model.py travelplanner.py xml_to_json.py /scratch/mjd9571/conda/envs_dirs/juypter multimodal_env /scratch/mjd9571/conda/envs_dirs/multimodal_env test /scratch/mjd9571/conda/envs_dirs/test
+Mon Nov 11 23:17:13 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Quadro RTX 8000                On  | 00000000:06:00.0 Off |                    0 |
+| N/A   27C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  Quadro RTX 8000                On  | 00000000:2F:00.0 Off |                    0 |
+| N/A   26C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   2  Quadro RTX 8000                On  | 00000000:86:00.0 Off |                    0 |
+| N/A   36C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   3  Quadro RTX 8000                On  | 00000000:D8:00.0 Off |                    0 |
+| N/A   27C    P8              12W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Using device: cuda
+Result 1: I would like to travel from New York City to 's-Hertogenbosch for 7 days. Give me a trip plan that focuses on museums.
+Answer:
+Day 1: New York City to Amsterdam and from Amsterdam to's-Hertogenbosch
+Day 2:'s-Hertogenbosch
+Day 3:'s-Hertogenbosch
+Day 4:'s-Hertogenbosch
+Day 5:'s-Hertogenbosch
+Day 6:'s-Hertogenbosch
+Day 7:'s-Hertogenbosch to Amsterdam, Amsterdam to New York City
+Day 1: New York City to Amsterdam and from Amsterdam to's-Hertogenbosch
+Take an early morning flight from New York City (JFK) to Amsterdam (AMS).
+Upon landing at Amsterdam airport (AMS) at approximately 10.05 a.m., go to Schiphol Airport (AMS)'s central railway station and catch the next Intercity train from Amsterdam Central Station (AMS) to Den Bosch. You will be at's-Hertogenbosch (s-Hertogenbosch) at around noon.
+Check into your hotel and spend the rest of the day exploring the town.
+Day 2: '
+
+Result 2: I would like to travel from New York City to 's-Hertogenbosch for 7 days. Give me a trip plan that focuses on museums. I love visiting art museums.
+Asked by: John
+The Netherlands is a small country with many art museums, but if I were to pick only one city in the Netherlands for a trip focused entirely on museums, I think I would choose The Hague. It is home to some major Dutch museums, like Gemeentemuseum and Mauritshuis. But it's also close by to Scheveningen beach and the beautiful seaside city of Noordwijk.
+

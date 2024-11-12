@@ -1,0 +1,47 @@
+/scratch/mjd9571/VentureAI
+# conda environments: # base /ext3/miniconda3 cambrian /scratch/mjd9571/conda/envs_dirs/cambrian juypter README.md Untitled.ipynb VentureAI.png big_llama_test.sbatch bloom_model.py bloom_test-error.txt bloom_test.out bloom_test.sbatch cleaned_wikivoyage.json cleaning_wikivoyage.py deprecated falcon_test-error.txt falcon_test.out falcon_test.sbatch flan_model.py flan_test-error.txt flan_test.out flan_test.sbatch llama_model.py llama_test-error.txt llama_test.out llama_test.sbatch mistral_model.py mistral_test-error.txt mistral_test.out mistral_test.sbatch model.py myenv read_wikivoyage.py test_new_model.py travelplanner.py xml_to_json.py /scratch/mjd9571/conda/envs_dirs/juypter multimodal_env /scratch/mjd9571/conda/envs_dirs/multimodal_env test /scratch/mjd9571/conda/envs_dirs/test
+Mon Nov 11 23:39:13 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Quadro RTX 8000                On  | 00000000:06:00.0 Off |                    0 |
+| N/A   27C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  Quadro RTX 8000                On  | 00000000:2F:00.0 Off |                    0 |
+| N/A   37C    P8              14W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   2  Quadro RTX 8000                On  | 00000000:86:00.0 Off |                    0 |
+| N/A   27C    P8              12W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   3  Quadro RTX 8000                On  | 00000000:D8:00.0 Off |                    0 |
+| N/A   26C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Using device: cuda
+Result 1: I would like to travel from New York City to 's-Hertogenbosch for 7 days. Give me a trip plan that focuses on museums. What are the top 5 sights to see and the best things to do? How do I get to's-Hertogenbosch? Which airline is the best to fly? Which hotel in's-Hertogenbosch do you recommend? How much is this trip going to cost?
+
+5 replies
+
+Result 2: I would like to travel from New York City to 's-Hertogenbosch for 7 days. Give me a trip plan that focuses on museums. And I want to do this as cheaply as possible. How do I do this?
+
+The first thing we'll need to do is figure out what the cheapest way to get from New York to's-Hertogenbosch will be. We have already done this in an earlier example. So we'll skip this part, and start at the point where we know that the cheapest way to get there is via London.
+
+We'll then look through all the museums of's-Hertogenbosch and London that have been added to our database. The easiest way to do that is to look at the list of Dutch museums and the list of London museums. But it's much more convenient to just use our search feature. It will let us search for museums in multiple cities at once, and it will show us which days of the week they're open. We'll search for museums in's-Hertogenbosch and London that are open at least 8 hours on Saturday and Sunday.
+
+We'll also use our search feature to see what's available to see in New York City. This will also give us an indication what the best days to leave are. We'll search for museums in New York City that are open at least 8 hours on Tuesday to Friday, since we want to travel on the weekend
+

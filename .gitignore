@@ -1,3 +1,6 @@
+#Personal myenv that isn't even in use:
+myenv/
+
 #Large data
 wikivoyage.xml
 wikivoyage.json

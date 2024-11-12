@@ -1,0 +1,39 @@
+/scratch/mjd9571/VentureAI
+# conda environments: # base /ext3/miniconda3 cambrian /scratch/mjd9571/conda/envs_dirs/cambrian juypter README.md Untitled.ipynb VentureAI.png big_llama_test.sbatch bloom_model.py bloom_test.sbatch cleaned_wikivoyage.json cleaning_wikivoyage.py deprecated falcon_test-error.txt falcon_test.out falcon_test.sbatch flan_model.py flan_test-error.txt flan_test.out flan_test.sbatch llama_model.py llama_test-error.txt llama_test.out llama_test.sbatch mistral_model.py mistral_test-error.txt mistral_test.out mistral_test.sbatch model.py myenv read_wikivoyage.py test_new_model.py travelplanner.py xml_to_json.py /scratch/mjd9571/conda/envs_dirs/juypter multimodal_env /scratch/mjd9571/conda/envs_dirs/multimodal_env test /scratch/mjd9571/conda/envs_dirs/test
+Mon Nov 11 23:17:03 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Quadro RTX 8000                On  | 00000000:06:00.0 Off |                    0 |
+| N/A   33C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  Quadro RTX 8000                On  | 00000000:2F:00.0 Off |                    0 |
+| N/A   28C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   2  Quadro RTX 8000                On  | 00000000:86:00.0 Off |                    0 |
+| N/A   26C    P8              12W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   3  Quadro RTX 8000                On  | 00000000:D8:00.0 Off |                    0 |
+| N/A   25C    P8              14W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Using device: cuda
+Result 1: I would like to travel from New York City to 's-Hertogenbosch for 7 days. Give me a trip plan that focuses on museums.r a museum, you are in for a treat. Most museums in the Netherlands are small to medium sized and are free. The best museum in's-Hertogenbosch is the Hertogenbosch Museum, which is located on the grounds of the Royal Palace. The next day, visit the Museum of Ethnology which focuses primarily on a collection of the artifacts from the area of's Hertogenbosch, which was established in 1628. If time allows, go on a hike at the Vondelpark. You will get the most out of your time in the Netherlnd by visiting the most famous sites in the area. The first is the Anne Frank House, which was the home to the famous girl who went missing during the Holocaust when the Nazis came into power in 1944. The second is the World War II memorial which is located on the banks of the Maas River near the center of's-Hertogenbosch. The third is the Beurs van Berlage which is the town hall.
+
+Result 2: I would like to travel from New York City to 's-Hertogenbosch for 7 days. Give me a trip plan that focuses on museums.ogh Museum and the Rijksmuseum. Next, you will take a train from Amsterdam to the city of's-Hertogenbosch. On day two, you will have your first museum visit with the Gemeentemuseum. Then on day three, you will visit the Museum Het Domein. On your fourth day you will visit the Hermitage and the Rietveld Museum. On day five you will travel to the beautiful town of's-Hertogenbosch, where you will stay for seven nights.
+

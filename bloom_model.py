@@ -6,9 +6,11 @@ import transformers
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import accelerate
 import os
+from dotenv import load_dotenv
 
 # Set the environment variable for the Hugging Face token
-os.environ["HUGGING_FACE_HUB_TOKEN"] = "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"
+load_dotenv()
+os.environ["HUGGING_FACE_HUB_TOKEN"] = os.getenv("HUGGINGFACE_API_TOKEN")
 
 # Check device availability
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

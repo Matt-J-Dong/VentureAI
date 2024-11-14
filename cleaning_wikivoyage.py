@@ -2,7 +2,7 @@ import json
 import re
 
 # Load the JSON data from the file with UTF-8 encoding
-with open("raw_wikivoyage.json", "r", encoding="utf-8") as file:
+with open("./deprecated/smol_raw_wikivoyage.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 
 # Function to recursively remove formatting, process both {{}} and [[]] blocks, and remove specified keys
@@ -67,7 +67,7 @@ def remove_formatting(content):
 cleaned_data = remove_formatting(data)
 
 # Optionally, save cleaned data back to a new file
-with open("./cleaned_wikivoyage.json", "w", encoding="utf-8") as file:
+with open("./deprecated/smol_cleaned_wikivoyage.json", "w", encoding="utf-8") as file:
     json.dump(cleaned_data, file, ensure_ascii=False, indent=4)
 
 print(

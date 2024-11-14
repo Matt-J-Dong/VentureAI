@@ -1,0 +1,2272 @@
+{
+    "Paris": {
+        "restaurants": {
+            "Bustronome Paris": {
+                "address": "2 Avenue Kleber, 75016 Paris France",
+                "location_id": "7621672",
+                "description": "Aboard a double-decker bus converted into a restaurant, guests will enjoy a friendly welcome and a wide variety of dishes in a fashionable setting. The BUSTRONOME : a Parisian invitation to rediscover some of the City of Light's most beautiful locations while enjoying fine French cuisine. This singular journey combines a visual experience with a treat for the taste buds; Paris residents and tourists alike can indulge their love of culture while savouring good food.",
+                "latitude": "48.87277",
+                "longitude": "2.293885",
+                "phone": "+33 9 54 44 45 55",
+                "rating": "5.0",
+                "hours": [
+                    "Monday: 12:15 - 13:45,  19:45 - 22:45",
+                    "Tuesday: 12:15 - 13:45,  19:45 - 22:45",
+                    "Wednesday: 12:15 - 13:45,  19:45 - 22:45",
+                    "Thursday: 12:15 - 13:45,  19:45 - 22:45",
+                    "Friday: 12:15 - 13:45,  19:45 - 22:45",
+                    "Saturday: 12:15 - 13:45,  19:45 - 22:45",
+                    "Sunday: 12:15 - 13:45,  19:45 - 22:45"
+                ],
+                "cuisine": [
+                    "french",
+                    "international",
+                    "european",
+                    "contemporary",
+                    "healthy"
+                ],
+                "pice_level": "$$$$",
+                "reviews": []
+            },
+            "Ciel de Paris": {
+                "address": "33 Avenue Du Maine 56th Floor, Montparnasse Tower, 75015 Paris France",
+                "location_id": "796575",
+                "description": "Le Ciel de Paris bénéficie d’un panorama exceptionnel sur la ville, avec des vues uniques, changeantes selon l’heure, la lumière et les données climatiques. Un déjeuner ou un dîner au Ciel de Paris, quelles qu’en soient les circonstances, est une expérience singulière dont le souvenir, pour longtemps, s’inscrira dans la mémoire de chacun. Du haut de ses 210 mètres, la vue sur Paris et au-delà - jusqu’à 40 kilomètres par temps clair - y est exceptionnelle.",
+                "latitude": "48.84221",
+                "longitude": "2.32182",
+                "phone": "+33 1 40 64 77 64",
+                "rating": "4.0",
+                "hours": [
+                    "Monday: 08:30 - 00:30",
+                    "Tuesday: 08:30 - 00:30",
+                    "Wednesday: 08:30 - 00:30",
+                    "Thursday: 08:30 - 00:30",
+                    "Friday: 08:30 - 00:30",
+                    "Saturday: 08:30 - 00:30",
+                    "Sunday: 08:30 - 00:30"
+                ],
+                "cuisine": [
+                    "french",
+                    "european"
+                ],
+                "pice_level": "$$$$",
+                "reviews": []
+            },
+            "L' Entrecote de Paris": {
+                "address": "29 Rue de Marignan, 75008 Paris France",
+                "location_id": "783458",
+                "description": null,
+                "latitude": "48.86961",
+                "longitude": "2.30648",
+                "phone": "+33 1 42 25 28 60",
+                "rating": "3.5",
+                "hours": [
+                    "Monday: 11:30 - 23:30",
+                    "Tuesday: 11:30 - 23:30",
+                    "Wednesday: 11:30 - 23:30",
+                    "Thursday: 11:30 - 23:30",
+                    "Friday: 11:30 - 23:30",
+                    "Saturday: 11:30 - 23:30",
+                    "Sunday: 11:30 - 23:30"
+                ],
+                "cuisine": [
+                    "french",
+                    "steakhouse",
+                    "european"
+                ],
+                "pice_level": "$$ - $$$",
+                "reviews": []
+            },
+            "Gigi Paris": {
+                "address": "15 Avenue Montaigne, 75008 Paris France",
+                "location_id": "23801439",
+                "description": null,
+                "latitude": "48.865707",
+                "longitude": "2.30314",
+                "phone": "+33 1 47 23 55 99",
+                "rating": "3.0",
+                "hours": [
+                    "Monday: 12:00 - 15:00,  18:00 - 02:00",
+                    "Tuesday: 12:00 - 15:00,  18:00 - 02:00",
+                    "Wednesday: 12:00 - 15:00,  18:00 - 02:00",
+                    "Thursday: 12:00 - 15:00,  18:00 - 02:00",
+                    "Friday: 12:00 - 15:00,  18:00 - 02:00",
+                    "Saturday: 12:00 - 15:00,  18:00 - 02:00",
+                    "Sunday: 12:00 - 15:00,  18:00 - 02:00"
+                ],
+                "cuisine": [
+                    "italian",
+                    "french"
+                ],
+                "pice_level": "$$ - $$$",
+                "reviews": []
+            },
+            "Angelina": {
+                "address": "226 Rue de Rivoli, 75001 Paris France",
+                "location_id": "695078",
+                "description": "The Rue de Rivoli tea room is available by phone every day from 9am to 5pm.",
+                "latitude": "48.865074",
+                "longitude": "2.328488",
+                "phone": "+33 1 42 60 82 00",
+                "rating": "4.0",
+                "hours": [
+                    "Monday: 08:00 - 19:00",
+                    "Tuesday: 08:00 - 19:00",
+                    "Wednesday: 08:00 - 19:00",
+                    "Thursday: 08:00 - 19:00",
+                    "Friday: 08:00 - 19:30",
+                    "Saturday: 08:30 - 19:30",
+                    "Sunday: 08:30 - 19:30"
+                ],
+                "cuisine": [
+                    "french"
+                ],
+                "pice_level": "$$ - $$$",
+                "reviews": []
+            },
+            "Pizzamore Paris": {
+                "address": "121 Avenue Du Maine, 75014 Paris France",
+                "location_id": "21389323",
+                "description": "Pizzamore est un restaurant,pizzeria italien situé idéalement dans le quartier de Montparnasse dans le 14eme arrondissement de Paris. Cette pizzeria originale et conviviale offre une expérience gustative 100% italienne : antipasti, pâtes fraîches, pizzas gourmets, et desserts italiens. A deux pas des métros Convention et Montparnasse, nos services en salle, en livraison et à emporter, vous permettront de faire voyager vos papilles tout en restant à Paris.",
+                "latitude": "48.835537",
+                "longitude": "2.324001",
+                "phone": "+33 1 71 24 63 99",
+                "rating": "5.0",
+                "hours": [
+                    "Monday: 12:00 - 14:30,  19:00 - 23:00",
+                    "Tuesday: 12:00 - 14:30,  19:00 - 23:00",
+                    "Wednesday: 12:00 - 14:30,  19:00 - 23:00",
+                    "Thursday: 12:00 - 14:30,  19:00 - 23:00",
+                    "Friday: 12:00 - 14:30,  19:00 - 23:00",
+                    "Saturday: 12:00 - 14:30,  19:00 - 23:00",
+                    "Sunday: 12:00 - 14:30,  19:00 - 23:00"
+                ],
+                "cuisine": [
+                    "italian",
+                    "pizza",
+                    "healthy",
+                    "mediterranean"
+                ],
+                "pice_level": "$$ - $$$",
+                "reviews": []
+            },
+            "Loulou Restaurant Paris": {
+                "address": "107 Rue de Rivoli, 75001 Paris France",
+                "location_id": "10377077",
+                "description": "LOULOU a été pensé comme la demeure d’un esthète, la salle à manger d’un collectionneur qui aurait été décorée au fil du temps et au gré de nombreux voyages … Sensible à l’art de vivre et au savoir-vivre, LOULOU reçoit ses amis avec élégance, gaieté et légèreté. Ensemble, ils aiment organiser des déjeuners d’affaires et des dîners extraordinaires. Table à la fois délicate et frivole, on y partage le bon et le beau, de jour comme de nuit, avec sensualité et grâce infinie. Aux beaux jours, on profite de sa terrasse et la fête se poursuit tard dans la nuit.",
+                "latitude": "48.863064",
+                "longitude": "2.333343",
+                "phone": "+33 1 42 60 41 96",
+                "rating": "4.0",
+                "hours": [
+                    "Monday: 12:00 - 14:30,  19:00 - 23:00",
+                    "Tuesday: 12:00 - 14:30,  19:00 - 23:00",
+                    "Wednesday: 12:00 - 14:30,  19:00 - 23:00",
+                    "Thursday: 12:00 - 14:30,  19:00 - 23:30",
+                    "Friday: 12:00 - 14:30,  19:00 - 23:30",
+                    "Saturday: 12:00 - 14:30,  19:00 - 23:30",
+                    "Sunday: 12:00 - 14:30,  19:00 - 23:00"
+                ],
+                "cuisine": [
+                    "italian"
+                ],
+                "pice_level": "$$$$",
+                "reviews": []
+            },
+            "Alleno Paris": {
+                "address": "8 avenue Dutuit Pavillon Ledoyen, 75008 Paris France",
+                "location_id": "7205470",
+                "description": "On the first floor of the superb néo-classical mansion with many bay windows, Yannick Alléno has established his 3 MICHELIN star restaurant (2021 Michelin Guide), also ranked at The Worlds's 50 Best restaurants. In the both grandiose and intimate room, in which the original frescos have been enrolled at Historical Monuments, each detail has been thoughtfully arranged to ensure an exceptional gastronomic moment. Yannick Alléno proves that he learned close to the best chefs and shows that he has an avant-gardist vision. Extractions® bring sauces up to date, while fermentations invoke products’ specific terroirs, and each course delicately unfolds. Every dish is structured, well-presented and skilfully researched. The whole meal is a remarkable demonstration of Yannick Alléno’s uniquely creative and uncompromising approach.",
+                "latitude": "48.866096",
+                "longitude": "2.316145",
+                "phone": "+33 1 53 05 10 00",
+                "rating": "4.5",
+                "hours": [
+                    "Monday: 19:00 - 00:00",
+                    "Tuesday: 19:00 - 00:00",
+                    "Wednesday: 19:00 - 00:00",
+                    "Thursday: 19:00 - 00:00",
+                    "Friday: 19:00 - 00:00",
+                    "Saturday: Closed",
+                    "Sunday: Closed"
+                ],
+                "cuisine": [
+                    "french",
+                    "european"
+                ],
+                "pice_level": "$$$$",
+                "reviews": []
+            },
+            "Au Vieux Paris": {
+                "address": "24 Rue Chanoinesse, 75004 Paris France",
+                "location_id": "1390891",
+                "description": "Au Vieux Paris restaurant in the very heart of Paris, on the Ile de la Cite not two steps from Notre Dame, has history and gastronomy in its favour. Patrons Odette and Georges bring their seasonal ingredients each week from the finest organic farms in the Aveyron in southern France to create dishes like warm foie gras, duck breast a l���orange, and other classics. The restaurant is sited in an Canon���s residence constructed in 1512 and the d��cor ��� brilliantly over the top ��� reflects history in every detail, the heavily figured scarlet wallpaper and tented ceilings, the antique prints, the exposed stonework and rich draperies. Au Vieux Paris is terribly romantic - you���ll even have to stroll by the Seine to get home.",
+                "latitude": "48.854256",
+                "longitude": "2.350285",
+                "phone": "+33 1 40 51 78 52",
+                "rating": "4.0",
+                "hours": [
+                    "Monday: 12:00 - 13:45,  18:00 - 21:45",
+                    "Tuesday: 12:00 - 13:45,  18:00 - 21:45",
+                    "Wednesday: 12:00 - 13:45,  18:00 - 21:45",
+                    "Thursday: 12:00 - 13:45,  18:00 - 21:45",
+                    "Friday: 12:00 - 13:45,  18:00 - 21:45",
+                    "Saturday: 12:00 - 14:00,  18:00 - 21:30",
+                    "Sunday: 12:00 - 14:00,  18:00 - 21:30"
+                ],
+                "cuisine": [
+                    "french",
+                    "european"
+                ],
+                "pice_level": "$$ - $$$",
+                "reviews": []
+            },
+            "Cesar Paris": {
+                "address": "12 Avenue de Wagram, 75008 Paris France",
+                "location_id": "2000672",
+                "description": null,
+                "latitude": "48.875835",
+                "longitude": "2.296827",
+                "phone": "+33 1 42 27 69 82",
+                "rating": "3.5",
+                "hours": [
+                    "Monday: 11:30 - 00:00",
+                    "Tuesday: 11:30 - 00:00",
+                    "Wednesday: 11:30 - 00:00",
+                    "Thursday: 11:30 - 00:00",
+                    "Friday: 11:30 - 00:00",
+                    "Saturday: 11:30 - 00:00",
+                    "Sunday: 11:30 - 00:00"
+                ],
+                "cuisine": [
+                    "italian",
+                    "european"
+                ],
+                "pice_level": "$$ - $$$",
+                "reviews": [
+                    {
+                        "title": "César is a vibe",
+                        "review_text": "Great service, flavorful food and a beautiful ambience. The playlist was a whole vibe as well - very diverse and upbeat. I got the king crab and hubby got the black ravioli pasta - a first for him and for a picky eater he was impressed.\nSo I did well as we continue his birthday celebration."
+                    },
+                    {
+                        "title": "Amazing!!",
+                        "review_text": "This restaurant was great! Our food was amazing I had the truffle ravioli! The service was great, the waiters were really friendly! The atmosphere was great too they had a DJ in the back. We loved the look of the place too."
+                    },
+                    {
+                        "title": "I recommended this restaurant",
+                        "review_text": "Fresh food and friendly and beautiful staffs and also delicious pizza and amazing  pasta and clean restaurant and nice view"
+                    },
+                    {
+                        "title": "Awful",
+                        "review_text": "We saw this restaurant over social media due to their visits by celebrities. When people say, don’t trust celebrities reviews, this is one of those situations.\n\nThe restaurant itself is quite nice and has a good vibe however the food was terrible. I got the cheese wheel pasta, it is simply plain pasta with melted cheese on. My friend had the bolognese which was just standard bolognese. \n\nIf you’re British, I’ve genuinely had better food at a hungry horse. Honestly, save your money and go to McDonald’s because it’s a lot better. \n\nThis would be fine, if the bill didn’t come to €103 for two pasta dishes and two drinks 😟\n\nThe customer service wasn’t anything out of the ordinary, wasn’t good, wasn’t bad either. \n\nAlso, I suppose it doesn’t have anything to do with the restaurant itself, but a man attempted to mug me right outside of the restaurant and then walked into the restaurant to be served."
+                    },
+                    {
+                        "title": "Delicious food",
+                        "review_text": "Love this place, a must go when in Paris. I’ve tried the shrimp tempura and they were very good. Also had the king crab pasta and spicy rigatoni. Love eating here and would recommend making a reservation."
+                    }
+                ]
+            }
+        },
+        "hotels": {
+            "Paris Las Vegas": {
+                "address": "3655 S Las Vegas Blvd, Las Vegas, NV 89109",
+                "location_id": "143336",
+                "description": "Experience everything you love about Paris, in the heart of the Las Vegas Strip. The city of lights shine on the strip. One night with us is all it takes to realize everything's sexier in Paris. Give in to your every desire at Paris Las Vegas Hotel and Casino, whether you crave decadent dining, world-class entertainment or thrilling nightlife. Guest rooms at Paris Las Vegas Hotel & Casino have a distinctly chic European look, with Versailles-style fixtures and luxury romantic décor. Red Rooms are sophisticated and modern while the splurge-worthy Louis XV Suite features chandeliers and oversized bathtubs.",
+                "address_string": "3655 S Las Vegas Blvd, Las Vegas, NV 89109",
+                "latitude": "36.11246",
+                "longitude": "-115.17071",
+                "rating": "4.0",
+                "price_level": "$$$",
+                "hours": [
+                    "Monday: 00:00 - 00:00",
+                    "Tuesday: 00:00 - 00:00",
+                    "Wednesday: 00:00 - 00:00",
+                    "Thursday: 00:00 - 00:00",
+                    "Friday: 00:00 - 00:00",
+                    "Saturday: 00:00 - 00:00",
+                    "Sunday: 00:00 - 00:00"
+                ],
+                "amenities": [
+                    "Pool",
+                    "Internet",
+                    "Kids Activities",
+                    "Shuttle Bus Service",
+                    "Suites",
+                    "Room service",
+                    "Wheelchair access",
+                    "Restaurant",
+                    "Bar/Lounge",
+                    "Pets Allowed",
+                    "Spa",
+                    "Airport transportation",
+                    "Casino",
+                    "Wifi",
+                    "Public Wifi",
+                    "Free Wifi",
+                    "Paid Internet",
+                    "Dry Cleaning",
+                    "Meeting rooms",
+                    "Hot Tub",
+                    "Non-smoking rooms",
+                    "Business center",
+                    "Fitness center",
+                    "Laundry Service",
+                    "Concierge",
+                    "Banquet Room",
+                    "Air conditioning",
+                    "Family Rooms",
+                    "Multilingual Staff",
+                    "Smoking rooms available",
+                    "Accessible rooms",
+                    "Refrigerator in room",
+                    "Conference Facilities",
+                    "Safe",
+                    "Flatscreen TV",
+                    "Breakfast Buffet",
+                    "Poolside Bar",
+                    "Adult pool",
+                    "Outdoor pool",
+                    "Breakfast Available",
+                    "Parking",
+                    "Facilities for Disabled Guests",
+                    "Housekeeping",
+                    "Sauna",
+                    "ATM On Site",
+                    "Baggage Storage",
+                    "Blackout Curtains",
+                    "Car Hire",
+                    "24-Hour Check-in",
+                    "Express Check-in / Check-out",
+                    "Convenience Store",
+                    "Couples Massage",
+                    "Currency Exchange",
+                    "English",
+                    "Fitness / Spa Locker Rooms",
+                    "24-Hour Front Desk",
+                    "Gift Shop",
+                    "Iron",
+                    "Massage",
+                    "Nightclub / DJ",
+                    "On-Demand Movies",
+                    "Parking Garage",
+                    "Pool / Beach Towels",
+                    "Pool with View",
+                    "Paid Private Parking On-site",
+                    "Paid Public Parking On-site",
+                    "Salon",
+                    "24-Hour Security",
+                    "Shops",
+                    "Spanish",
+                    "Sun Loungers / Beach Chairs",
+                    "Taxi Service",
+                    "Valet Parking",
+                    "Vending Machine",
+                    "VIP Room Facilities",
+                    "Wake Up Service / Alarm Clock"
+                ],
+                "reviews": [
+                    {
+                        "title": "3 day stay!",
+                        "review_text": "We stayed 3 nights at Paris.  The casino was great and the restaurants were as well.  But the rooms have not been taken care of at all.  Probably will not stay again unless the rooms have been updated.  Very sad, this used to be the place to stay but not anymore."
+                    },
+                    {
+                        "title": "Better than these reviews say",
+                        "review_text": "We enjoyed our stay at Paris last weekend. Yes the line to check in was very long, however there are multiple electronic stations where you can check in yourself and that line was short, so we checked in within a few minutes, even adding late checkin for ourselves with no issue. The beds were comfortable, the room was very clean, and the shower was probably the largest hotel shower I've ever seen. We had the prefix brunch at the Eiffel Tower restaurant; I highly recommend the creme brulee french toast, it was incredible. I would definitely stay at Paris again."
+                    },
+                    {
+                        "title": "Worn down somewhat",
+                        "review_text": "I was there 2 or 3 years ago and was impressed....but, that was then...my latest trip was not as impressive. Hotel rooms have worn down somewhat. Peeling wallpaper, thread bare carpet patches, awful dingy hard towels an dirty bed linens. It could have been worse, my travel companions room had dirty underwear,  filthy tubs and pills on the floor, they changed rooms and it was just as dirty with difficulties getting housekeeping services. Expected better for the price..."
+                    },
+                    {
+                        "title": "Hotel was nice, but beds were so uncomfortable",
+                        "review_text": "The hotel was nice overall. The bathroom was clean with the exception of an old bar of soap with hair on it. The beds though were so uncomfortable. The sheets were also very rough and made our skin red. Overall I’d say 3/5 stars. Mostly because we didn’t get much sleep due to the bed situation"
+                    },
+                    {
+                        "title": "Cold Water Conference",
+                        "review_text": "Stayed with Paris Hotel numerous times for the annual SEMA show.  Usually with a Nice experience.  This visit however was 1st met with a Room and a Safe that would Not function.  Calling down to the main office, we than had a person visit and confirm, the Safe Inoperable.  Paris moved us to another room on the same floor and we settled in.  Only to realize the sink would not provide Warm to Hot water until it was running for 10-15 minutes straight.   This is huge with more than one person in the room, and a complete waste of water.   Oddly enough, the shower would warm up in a normal manner.  Secondly, the TV would lose internet connectivity so often that we would give up on watching TV in the early morning or evening."
+                    }
+                ]
+            },
+            "Ritz Paris": {
+                "address": "15, Place Vendome, 75001 Paris France",
+                "location_id": "188728",
+                "description": "Located on the iconic Place Vendôme, the Ritz Paris is one of the most legendary hotels in the City of Lights. Refinement of French art de vivre meets elegance of Belle Époque décor. Exquisitely appointed 71 rooms and 71 suites bear the name of F. Scott Fitzgerald or Marcel Proust. Ritz Paris is a place where dreams come to life. The famous Bar Vendôme welcomes guests to savor dishes at any hour of the day while the Ritz Bar is the perfect place to enjoy zodiac-themed cocktails. Ritz Paris Le Comptoir celebrates modern conviviality and French gourmandise, with exceptional pastries by Chef François Perret. At the École Ritz Escoffier, enthusiasts, from novice to professional, can perfect their approach to French cuisine and pastry-making. The Ritz Club & Spa and its sumptuous pool elevates well-being to an art form. Last but not least, Salon Proust is the place to enjoy a delightful teatime à la française and no visit to the Ritz Paris would be complete without stopping by the iconic Bar Hemingway.",
+                "address_string": "15, Place Vendome, 75001 Paris France",
+                "latitude": "48.868008",
+                "longitude": "2.328764",
+                "rating": "4.5",
+                "price_level": "$$$$",
+                "hours": [],
+                "amenities": [
+                    "Pool",
+                    "Restaurant",
+                    "Business center",
+                    "Fitness center",
+                    "Suites",
+                    "Room service",
+                    "Pets Allowed",
+                    "Dry Cleaning",
+                    "Meeting rooms",
+                    "Hot Tub",
+                    "Non-smoking rooms",
+                    "Family Rooms",
+                    "Internet",
+                    "Free Internet",
+                    "Wheelchair access",
+                    "Bar/Lounge",
+                    "Spa",
+                    "Airport transportation",
+                    "Wifi",
+                    "Free Wifi",
+                    "Laundry Service",
+                    "Concierge",
+                    "Banquet Room",
+                    "Air conditioning",
+                    "Multilingual Staff",
+                    "Accessible rooms",
+                    "Minibar",
+                    "Conference Facilities",
+                    "Babysitting",
+                    "Safe",
+                    "Heated pool",
+                    "Flatscreen TV",
+                    "Private Balcony",
+                    "Indoor pool",
+                    "Butler Service",
+                    "Breakfast Available",
+                    "Parking",
+                    "Facilities for Disabled Guests",
+                    "Housekeeping",
+                    "Sauna",
+                    "Additional Bathroom",
+                    "Arabic",
+                    "Baggage Storage",
+                    "Bathrobes",
+                    "Breakfast in the Room",
+                    "Bridal Suite",
+                    "Car Hire",
+                    "Chinese",
+                    "Currency Exchange",
+                    "Doorperson",
+                    "English",
+                    "Facial Treatments",
+                    "Fitness Classes",
+                    "Fitness / Spa Locker Rooms",
+                    "French",
+                    "24-Hour Front Desk",
+                    "German",
+                    "Hair Dryer",
+                    "Hammam",
+                    "Ironing Service",
+                    "Italian",
+                    "Japanese",
+                    "Massage",
+                    "Newspaper",
+                    "Portuguese",
+                    "Paid Private Parking On-site",
+                    "Russian",
+                    "Salon",
+                    "24-Hour Security",
+                    "Shoeshine",
+                    "Shops",
+                    "Soundproof Rooms",
+                    "Spanish",
+                    "Steam Room",
+                    "Valet Parking",
+                    "VIP Room Facilities",
+                    "Wine / Champagne",
+                    "Personal Trainer",
+                    "Yoga Classes",
+                    "Yoga Room"
+                ],
+                "reviews": [
+                    {
+                        "title": "If a mistake is made, quick reparations are done.",
+                        "review_text": "I attended the Escoffier class in the morning and was escorted to the room personally, a lovely touch. However, another woman's purse and luggage was located within. \n\nPrompt apologies were communicated and my luggage was delivered within 15 minutes or so. My fatigue was overwhelming so I declined the offer to unpack. \n\nLater, I looked in the Hemingway bar which intimate but doesn't open up for conversation with its limited seats at the bar. You need to bring your friends with you.\n\nI moved to the Vendome bar with lovely piano tunes and had a lively conversation with an attorney from Finland and later, a couple from Australia. Ambiance and environment were super.\n\n"
+                    },
+                    {
+                        "title": "Perfect in every way!",
+                        "review_text": "This was my first stay at the Ritz, but it won’t be my last. Every staff member that I encountered was professional but friendly and made me feel quite welcomed. \n\nOne of the great perks of a stay at the Ritz is that your room is ready when you arrive, regardless of the time (as long as you let them know your arrival time in advance).  Many flights from the US arrive quite early in the morning, so this was a huge plus for me. It is also possible to delay check out until 3 pm on your day of departure. \n\nI have already booked a second stay for January 2025"
+                    },
+                    {
+                        "title": "Beautiful place but food only average",
+                        "review_text": "Had lunch in the Ritz on Monday after Arc weekend.. Nice table in garden room.. very good Regnard wine.. we ordered 2 Croque Monsieur and  a chicken Caesar Salad.. the service was very good.. polite, friendly and professional... the food was a let down, unfortunately.. it was well presented and in a timely fashion.. but the salad was lacking in taste and flavour.. the Croque was described as average by those who ate it.. cocktails after lunch were lovely... it was a pity about the food.. fabulous place though.. our wine waiter, Axel, was the epitome of French charm at it's best.."
+                    },
+                    {
+                        "title": "Chapter and Verse of Comfort",
+                        "review_text": "As a bookworm, I was in heaven. Each floor was themed after a different literary genre, with quotes adorning the walls and books available to borrow everywhere. The cozy reading nooks scattered throughout were perfect for losing oneself in a story. The staff, well-versed in literature, were always ready with a recommendation. It was a bibliophile's dream come true!"
+                    },
+                    {
+                        "title": "Epitome of parisian luxury",
+                        "review_text": "This hotel is truly in a league of its own. The concierge service deserves special mention - their knowledge and efficiency were outstanding. They anticipated our needs and made excellent recommendations that enhanced our Paris experience.\nthe attention to detail throughout the hotel is remarkable. from the exquisitely appointed rooms to the flawless service in every interaction, the ritz maintains its reputation as an icon of luxury hospitality.\nWhile the stay was short, the memories will last a lifetime. for those seeking the pinnacle of parisian luxury, the ritz paris delivers an unforgettable experience that justifies its legendary status. truly a 5-star gem in every sense."
+                    }
+                ]
+            },
+            "Le Bristol Paris": {
+                "address": "112 Rue du Faubourg Saint Honore 8th Arr., 75008 Paris France",
+                "location_id": "188729",
+                "description": "Faubourg Saint Honoré, au cœur du Paris de la mode, Le Bristol Paris écrit son histoire depuis 1925. Elle nous raconte l’élégance de son décor entièrement rénové, agrémenté de meubles XVIIIe, l’audace des soirées Bristol After Dark qui revisitent les codes des nuits parisiennes, la maitrise d’un service alliant art, chaleur et grand professionnalisme. Brasserie une étoile ou table triplement étoilée, nos Chefs subliment la gastronomie française. De l’extraordinaire piscine suspendue au-dessus des toits, aux 1200 m2 de verdure et de calme de son jardin intérieur, Le Bristol est un Palace unique où l’on se sent bien.",
+                "address_string": "112 Rue du Faubourg Saint Honore 8th Arr., 75008 Paris France",
+                "latitude": "48.871685",
+                "longitude": "2.3148",
+                "rating": "5.0",
+                "price_level": "$$$$",
+                "hours": [],
+                "amenities": [
+                    "Pool",
+                    "Room service",
+                    "Pets Allowed",
+                    "Suites",
+                    "Free Internet",
+                    "Free Wifi",
+                    "Internet",
+                    "Kids Activities",
+                    "Wheelchair access",
+                    "Restaurant",
+                    "Bar/Lounge",
+                    "Spa",
+                    "Airport transportation",
+                    "Wifi",
+                    "Dry Cleaning",
+                    "Meeting rooms",
+                    "Hot Tub",
+                    "Non-smoking rooms",
+                    "Business center",
+                    "Fitness center",
+                    "Laundry Service",
+                    "Concierge",
+                    "Banquet Room",
+                    "Air conditioning",
+                    "Family Rooms",
+                    "Multilingual Staff",
+                    "Accessible rooms",
+                    "Refrigerator in room",
+                    "Minibar",
+                    "Conference Facilities",
+                    "Babysitting",
+                    "Non-smoking hotel",
+                    "Safe",
+                    "Heated pool",
+                    "Flatscreen TV",
+                    "Private Balcony",
+                    "Indoor pool",
+                    "Butler Service",
+                    "Parking",
+                    "Facilities for Disabled Guests",
+                    "Housekeeping",
+                    "Baggage Storage",
+                    "Bath / Shower",
+                    "Blackout Curtains",
+                    "Breakfast in the Room",
+                    "Desk",
+                    "Doorperson",
+                    "English",
+                    "Complimentary Toiletries",
+                    "French",
+                    "24-Hour Front Desk",
+                    "German",
+                    "Gift Shop",
+                    "Hair Dryer",
+                    "Interconnected room(s) available",
+                    "Kids' Meals",
+                    "Outdoor Furniture",
+                    "Parking Garage",
+                    "Pool / Beach Towels",
+                    "Portuguese",
+                    "Private Check-in / Check-out",
+                    "Paid Private Parking On-site",
+                    "Russian",
+                    "Salon",
+                    "Seating Area",
+                    "24-Hour Security",
+                    "Secured Parking",
+                    "Soundproof Rooms",
+                    "Spanish",
+                    "Special Diet Menus",
+                    "Sun Umbrellas",
+                    "Taxi Service",
+                    "Breakfast Available",
+                    "Sauna",
+                    "Electric vehicle charging station",
+                    "Additional Bathroom",
+                    "Allergy-free Room",
+                    "Arabic",
+                    "Bathrobes",
+                    "Books, DVDs, Music for Children",
+                    "Bottled Water",
+                    "Cable / Satellite TV",
+                    "24-Hour Check-in",
+                    "Express Check-in / Check-out",
+                    "Children's Television Networks",
+                    "Chinese",
+                    "Clothes Rack",
+                    "Couples Massage",
+                    "Currency Exchange",
+                    "Dining Area",
+                    "Extra Long Beds",
+                    "Facial Treatments",
+                    "Fitness Classes",
+                    "Foot Bath",
+                    "Foot Massage",
+                    "Full Body Massage",
+                    "Hand Massage",
+                    "Head Massage",
+                    "Highchairs Available",
+                    "Indoor Play Area for Children",
+                    "iPod Docking Station",
+                    "Ironing Service",
+                    "Italian",
+                    "Japanese",
+                    "Landmark View",
+                    "Makeup Services",
+                    "Manicure",
+                    "Massage",
+                    "Massage Chair",
+                    "Neck Massage",
+                    "Newspaper",
+                    "On-Demand Movies",
+                    "Outdoor Dining Area",
+                    "Pedicure",
+                    "Personal Trainer",
+                    "Pool with View",
+                    "Private Bathrooms",
+                    "Radio",
+                    "Separate Dining Area",
+                    "Separate Living Room",
+                    "Shoeshine",
+                    "Shops",
+                    "Sofa",
+                    "Sofa Bed",
+                    "Steam Room",
+                    "Sun Deck",
+                    "Sun Terrace",
+                    "Telephone",
+                    "Tile / Marble Floor",
+                    "Valet Parking",
+                    "VIP Room Facilities",
+                    "Wake Up Service / Alarm Clock",
+                    "Walk-in Shower",
+                    "Wardrobe / Closet",
+                    "Waxing Services",
+                    "Wine / Champagne",
+                    "Yoga Classes"
+                ],
+                "reviews": [
+                    {
+                        "title": "Hello Paris!",
+                        "review_text": "Great location, friendly service excellent housekeeping, overall a great experience! Definitely the best hotel in town. "
+                    },
+                    {
+                        "title": "Hotel Heaven",
+                        "review_text": "Once again another fabulous stay at Le Bristol! If heaven has a hotel this would be it. Every detail in the room from the bed to the towels is perfect. The concierge team is outstanding , they took care of all of our dining and tours. The staff is so friendly and sincere can't wait to return again."
+                    },
+                    {
+                        "title": "Still the One",
+                        "review_text": "We have stayed at this luxury hotel multiple times over the years. With each returning visit, there are pleasant surprises, as the team is always exploring new ways to enhance the space, the brand and the experience. What doesn't change is the culture of top drawer hospitality and extraordinary service that is consistent in everything they do and everywhere you turn. Old school excellence, elegance and warmth at its best. We look forward to returning next year...if we can wait that long."
+                    },
+                    {
+                        "title": "Exceptional in every way!",
+                        "review_text": "Just about perfect in every way, true grande dame boutique hotel. Gorgeous on inside and outside, beautiful lobby and rooms, 3 star Michelin restaurant, phenomenal food, service and attentiveness. Pretty much our favorite hotel in the world!  Yes, it's very expensive but perfection is not cheap! "
+                    },
+                    {
+                        "title": "Delightful Discovery",
+                        "review_text": "This place is a breath of fresh air in a world of cookie-cutter experiences. The attention to detail is remarkable, from the thoughtful layout to the personalized service. Every aspect seems designed to delight and surprise. The staff's genuine enthusiasm is contagious, making e"
+                    }
+                ]
+            },
+            "Novotel Paris Les Halles": {
+                "address": "8 Place Marguerite de Navarre, 75001 Paris France",
+                "location_id": "197424",
+                "description": "Notre hôtel se rénove et évolue pour sublimer votre expérience ! Chaque changement est pensé avec soin pour vous garantir un séjour agréable, dans un cadre confortable et accueillant. Équipées d'une télévision à écran plat, d'une climatisation et d'un minibar, les chambres du Novotel Paris Les Halles offrent tout le confort dont vous avez besoin. Vous pourrez même rester connecté grâce au wi-fi gratuit. L'hôtel dispose de nombreux atouts, tels qu'un service de chambre et une conciergerie. Le centre de fitness et le petit déjeuner contribueront à rendre votre séjour encore plus spécial. Que vous soyez en voyage d'affaires, d'agrément ou les deux, le Novotel Paris Les Halles rendra votre séjour à Paris inoubliable.",
+                "address_string": "8 Place Marguerite de Navarre, 75001 Paris France",
+                "latitude": "48.861023",
+                "longitude": "2.346508",
+                "rating": "4.5",
+                "price_level": "$$$$",
+                "hours": [],
+                "amenities": [
+                    "Free Internet",
+                    "Free Wifi",
+                    "Internet",
+                    "Kids Activities",
+                    "Suites",
+                    "Room service",
+                    "Wheelchair access",
+                    "Restaurant",
+                    "Bar/Lounge",
+                    "Pets Allowed",
+                    "Wifi",
+                    "Dry Cleaning",
+                    "Meeting rooms",
+                    "Non-smoking rooms",
+                    "Business center",
+                    "Fitness center",
+                    "Laundry Service",
+                    "Concierge",
+                    "Banquet Room",
+                    "Air conditioning",
+                    "Family Rooms",
+                    "Multilingual Staff",
+                    "Accessible rooms",
+                    "Refrigerator in room",
+                    "Minibar",
+                    "Conference Facilities",
+                    "Babysitting",
+                    "Non-smoking hotel",
+                    "Safe",
+                    "Flatscreen TV",
+                    "Breakfast Buffet",
+                    "Breakfast Available",
+                    "Parking",
+                    "Facilities for Disabled Guests",
+                    "Housekeeping",
+                    "Kids Club",
+                    "Allergy-free Room",
+                    "Arabic",
+                    "Baggage Storage",
+                    "Bath / Shower",
+                    "Bathrobes",
+                    "Blackout Curtains",
+                    "Books, DVDs, Music for Children",
+                    "Breakfast in the Room",
+                    "Bridal Suite",
+                    "24-Hour Check-in",
+                    "Express Check-in / Check-out",
+                    "Children's Television Networks",
+                    "Coffee Shop",
+                    "Coffee / Tea Maker",
+                    "Complimentary Tea",
+                    "Currency Exchange",
+                    "Desk",
+                    "Doorperson",
+                    "English",
+                    "Extra Long Beds",
+                    "Fitness / Spa Locker Rooms",
+                    "Complimentary Instant Coffee",
+                    "Complimentary Toiletries",
+                    "French",
+                    "24-Hour Front Desk",
+                    "Hair Dryer",
+                    "Indoor Play Area for Children",
+                    "Interconnected room(s) available",
+                    "Iron",
+                    "Ironing Service",
+                    "Italian",
+                    "Kids' Meals",
+                    "Kid-Friendly Buffet",
+                    "Laptop Safe",
+                    "Newspaper",
+                    "Outdoor Furniture",
+                    "Portuguese",
+                    "Paid Private Parking Nearby",
+                    "Paid Public Parking Nearby",
+                    "Russian",
+                    "24-Hour Security",
+                    "Shoeshine",
+                    "Snack Bar",
+                    "Soundproof Rooms",
+                    "Spanish",
+                    "Special Diet Menus",
+                    "Taxi Service",
+                    "Telephone",
+                    "VIP Room Facilities",
+                    "Wake Up Service / Alarm Clock",
+                    "Public Wifi",
+                    "Children's Playground",
+                    "Clothes Rack",
+                    "Electric Kettle",
+                    "First Aid Kit",
+                    "Free Wifi in the Business Center",
+                    "Free Wired Internet in the Business Center",
+                    "Highchairs Available",
+                    "On-Demand Movies",
+                    "Outdoor Dining Area",
+                    "Sofa",
+                    "Sofa Bed",
+                    "Strollers",
+                    "Walk-in Shower",
+                    "Wardrobe / Closet",
+                    "Yoga Classes",
+                    "Yoga Room",
+                    "Beach Access"
+                ],
+                "reviews": [
+                    {
+                        "title": "We can’t sleep because of bad services.",
+                        "review_text": "Aircon is not working.  Telephone is not working. We spend two (2) nights without sleep because of a very hot room. We reported the issue on the receptionist twice.  They just promised to fix it never done anything. Me and my wife are very frustrated.  We don’t recommend this hotel."
+                    },
+                    {
+                        "title": "Excellent hotel, very  professional personal, very well placed, nearby everything, I’ll come back for sure!!!",
+                        "review_text": "Excellent, specially personal of the Hotel, particularly Paulo such a nice man, continuously worry about any need that we have, he helped us in many ways. Hope in my next visit all the amenities are set, like restaurant, the entrance, breakfast used to be better when I visited it in 2022, best regards to all the personal they’re the best!"
+                    },
+                    {
+                        "title": "My favorite hotel in Paris",
+                        "review_text": "My favorite hotel in the heart of my favorite district of Paris! Convenient location (close to train, shopping, restaurants) yet quiet and charming. Breakfast was lovely, well stocked in-room coffee/tea, friendly staff, very clean hotel that is well maintained (elevators fast!)"
+                    },
+                    {
+                        "title": "Great location, helpful staff but currently baorded up as being renovated.",
+                        "review_text": "Stayed here for 2 nights at the end of a month long trip. Great location and as per other reviews the staff are very friendly and helpful. However, we were unaware that the hotel is currently being renovated. The front is all boarded up and the outdoor courtyard is not available. As a result there is no natural light coming into the hotel. When we arrived security had to come out and get us as they obviously saw we could not find the entrance. We didn't enjoy our stay as it felt dark and pokey."
+                    },
+                    {
+                        "title": "Very nice experience in paris",
+                        "review_text": "Paulo one of the best employees of the Novotel hotel, very servicial and kind. He help us too much in our time in paris. He told and explain many things to do in paris and places to know, he recommend many restaurants and was very good. He help us to do our visit was very easy."
+                    }
+                ]
+            },
+            "Generator Paris": {
+                "address": "9-11 Place du Colonel Fabien, 75010 Paris France",
+                "location_id": "7392376",
+                "description": "Generator Paris is a design-led hotel, offering both private and shared accommodations, located in the lively 10th district in Paris. Free WiFi access is available and it features a stylish lounge area with a games room. You can enjoy locally inspired dishes at the on-site Café Fabien and listen to DJ music while having a drink from the basement bar. Each of the contemporary rooms here provides air conditioning, bed linen, and a private bathroom with a shower. Some private twin rooms also offer a private terrace. A continental breakfast is prepared every morning, you will also find a 24-hour front desk, a laundry room, and a rooftop terrace as well as the shared lounge area.",
+                "address_string": "9-11 Place du Colonel Fabien, 75010 Paris France",
+                "latitude": "48.878223",
+                "longitude": "2.36958",
+                "rating": "4.0",
+                "price_level": "$",
+                "hours": [],
+                "amenities": [
+                    "Internet",
+                    "Free Internet",
+                    "Wifi",
+                    "Free Wifi",
+                    "Wheelchair access",
+                    "Restaurant",
+                    "Bar/Lounge",
+                    "Public Wifi",
+                    "Non-smoking rooms",
+                    "Laundry Service",
+                    "Air conditioning",
+                    "Family Rooms",
+                    "Multilingual Staff",
+                    "Self-Serve Laundry",
+                    "Accessible rooms",
+                    "Non-smoking hotel",
+                    "Rooftop Bar",
+                    "Rooftop Terrace",
+                    "Breakfast Buffet",
+                    "Facilities for Disabled Guests",
+                    "Housekeeping",
+                    "Baggage Storage",
+                    "Bath / Shower",
+                    "24-Hour Check-in",
+                    "Coffee Shop",
+                    "English",
+                    "Evening Entertainment",
+                    "French",
+                    "24-Hour Front Desk",
+                    "Game Room",
+                    "German",
+                    "Italian",
+                    "Nightclub / DJ",
+                    "Portuguese",
+                    "24-Hour Security",
+                    "Shared Lounge / TV Area",
+                    "Shared Bathroom",
+                    "Snack Bar",
+                    "Spanish",
+                    "Sun Terrace",
+                    "Vending Machine"
+                ],
+                "reviews": [
+                    {
+                        "title": "AVOID AVOID AVOID",
+                        "review_text": "SO many things wrong with this hostel. First, the staff were all so unfriendly, condescending, aggressive and SO rude. Secondly, the rooms were MANKY. There were stains ALL OVER our sheets, gum on the bed frames, nails on the floor and hair all under the pillows. The bathrooms were full of mold and again hair. The rooms were SO hot and humid ALL THE TIME and the AC wouldn’t work and the windows won’t open fully. \nThirdly, the beds were incredibly uncomfortable and the pillows didn’t support our necks at all - we all woke up with sore necks and backs the next morning with barely any sleep. \nFourthly, everything was VERY overpriced- 3€ for 500ml of water?? MAD. And 7.50€ to rent a towel?? HELLO??? \nI could name incidents that occurred when I stayed but I feel I could get into trouble if I mention them. But AVOID THIS HOSTEL AT ALL COST!!"
+                    },
+                    {
+                        "title": "Great Experience",
+                        "review_text": "We organized a quick visit to Paris with friends with children in tow. We found a structure with welcoming staff, with the reception always open and available to answer requests. The stay met expectations, the rooms are functional and clean. No annoying noises. I recommend booking at Generator Paris"
+                    },
+                    {
+                        "title": "Single Woman - One Week in Mixed Dorm (6 Bed)",
+                        "review_text": "Generally it's a fine place to stay if you need a place for a few nights - but what I didn't see in other reviews is that the bathrooms weren't terribly clean (tho the bedrooms were fine, cleanliness wise). And the price was pretty good but the location isn't so great. To be polite, it's not in a great area, so usually when I got up for the day I would immediately take the metro and head towards more central Paris to find a cafe or something. (Though the metro is extremely close so that was nice!) They do have luggage storage you can pay for, but it's easier to just keep it in your room (in my opinion). And I had 2 giant pieces of luggages which I was able to just put in the corner of the room and had no issues. (And then I put my backpack and whatnot in the storage under the bed.) \n\nThe room was clean but just seemed like it wasn't super well maintained. I only say that because it seemed the window was broken and there was a temporary sign saying not to open it. (So the room would sometimes get a little stuffy/warm since we couldn't let any fresh air in.) And the hinges on my storage container under the bed were broken. Minor things of course, but worth mentioning. \n\nI had great experiences with the people I had in my room, they were all very friendly and I even spent a couple days walking around Paris with a couple of them! No issues at all with it being a mixed dorm. (I liked to refer to them as my \"temporary friends\" bc we would chat and hang out in Paris for a few days and then one of us would check out of the hostel and have to say goodbye lol.) \n\nAnd the staff were very lovely and helpful and are happy to help in English or French.\n\nOverall I had a pleasant stay, but I just wanted to be honest about some of the negative points that I didn't see in other reviews before I booked. "
+                    },
+                    {
+                        "title": "Cost-aware Business Trip",
+                        "review_text": "Positive experience on a last-minute business trip...wish the architect and lighting designer had been less excited by the word generator and more excited about contributing to Paris."
+                    },
+                    {
+                        "title": "Top place",
+                        "review_text": "Top place to party or just to take a drink!!!🥳 The staff is very nice and international and they made lots of partys where everyone is wellcome. You can meet people from all the worls, from studens to startupers businessman or globetroters!"
+                    }
+                ]
+            },
+            "The Peninsula Paris": {
+                "address": "19 Avenue Kleber, 75116 Paris France",
+                "location_id": "6678144",
+                "description": "Exquisitely restored spaces are complemented by contemporary art installations, furnishings and technology. Dazzling rooftop spaces and private terrace gardens offer 360° views and glamorous extras that make The Peninsula Paris a decidedly 21st century palace.As with all Peninsula Hotels, location is of prime importance and Paris is no exception. Just steps away from the Arc de Triomphe and Avenue des Champs Elysées at 19 Avenue Kléber in the heart of the elegant 16th arrondissement, The Peninsula sits close to some of the world’s most famous monuments, museums and luxury shopping districts.",
+                "address_string": "19 Avenue Kleber, 75116 Paris France",
+                "latitude": "48.871025",
+                "longitude": "2.293691",
+                "rating": "4.5",
+                "price_level": "$$$$",
+                "hours": [],
+                "amenities": [
+                    "Internet",
+                    "Free Internet",
+                    "Free Wifi",
+                    "Pool",
+                    "Kids Activities",
+                    "Suites",
+                    "Room service",
+                    "Wheelchair access",
+                    "Restaurant",
+                    "Bar/Lounge",
+                    "Pets Allowed",
+                    "Spa",
+                    "Airport transportation",
+                    "Wifi",
+                    "Dry Cleaning",
+                    "Meeting rooms",
+                    "Hot Tub",
+                    "Non-smoking rooms",
+                    "Business center",
+                    "Fitness center",
+                    "Laundry Service",
+                    "Concierge",
+                    "Banquet Room",
+                    "Air conditioning",
+                    "Family Rooms",
+                    "Multilingual Staff",
+                    "Accessible rooms",
+                    "Refrigerator in room",
+                    "Minibar",
+                    "Conference Facilities",
+                    "Babysitting",
+                    "Non-smoking hotel",
+                    "Safe",
+                    "Rooftop Bar",
+                    "Heated pool",
+                    "Flatscreen TV",
+                    "Rooftop Terrace",
+                    "Breakfast Buffet",
+                    "Private Balcony",
+                    "Indoor pool",
+                    "Butler Service",
+                    "Breakfast Available",
+                    "Parking",
+                    "Facilities for Disabled Guests",
+                    "Housekeeping",
+                    "Kids Club",
+                    "Sauna",
+                    "Additional Bathroom",
+                    "Arabic",
+                    "Baggage Storage",
+                    "Bath / Shower",
+                    "Bathrobes",
+                    "Blackout Curtains",
+                    "Bottled Water",
+                    "Breakfast in the Room",
+                    "24-Hour Check-in",
+                    "Coffee / Tea Maker",
+                    "Couples Massage",
+                    "Desk",
+                    "Doorperson",
+                    "English",
+                    "Facial Treatments",
+                    "Fitness / Spa Locker Rooms",
+                    "French",
+                    "24-Hour Front Desk",
+                    "Full Body Massage",
+                    "Ironing Service",
+                    "Massage",
+                    "Steam Room",
+                    "VIP Room Facilities",
+                    "Air Purifier",
+                    "Bicycle Rental",
+                    "Books, DVDs, Music for Children",
+                    "Cable / Satellite TV",
+                    "Car Hire",
+                    "Express Check-in / Check-out",
+                    "Children's Television Networks",
+                    "Chinese",
+                    "Clothes Rack",
+                    "Currency Exchange",
+                    "Extra Long Beds",
+                    "Filipino",
+                    "First Aid Kit",
+                    "Complimentary Toiletries",
+                    "Free Wifi in the Business Center",
+                    "German",
+                    "Hair Dryer",
+                    "Hammam",
+                    "Hebrew",
+                    "Highchairs Available",
+                    "Interconnected room(s) available",
+                    "Iron",
+                    "Italian",
+                    "Landmark View",
+                    "Laptop Safe",
+                    "Light Therapy",
+                    "Manicure",
+                    "Newspaper",
+                    "Parking Garage",
+                    "Personal Trainer",
+                    "Polish",
+                    "Pool / Beach Towels",
+                    "Portuguese",
+                    "Private Check-in / Check-out",
+                    "Radio",
+                    "Romanian",
+                    "Russian",
+                    "Salon",
+                    "Seating Area",
+                    "24-Hour Security",
+                    "Secured Parking",
+                    "Separate Dining Area",
+                    "Separate Living Room",
+                    "Sofa",
+                    "Soundproof Rooms",
+                    "Spanish",
+                    "Telephone",
+                    "Tile / Marble Floor",
+                    "Turkish",
+                    "Umbrella",
+                    "Valet Parking",
+                    "Wake Up Service / Alarm Clock",
+                    "Walk-in Shower",
+                    "Wardrobe / Closet",
+                    "Wine / Champagne",
+                    "Photo Copier / Fax In Business Center"
+                ],
+                "reviews": [
+                    {
+                        "title": "A wonderful break in Paris at a perfect hotel.",
+                        "review_text": "We needed a break in Paris and chose the Peninsula with reliance on the high standards we have always had there. This trip met and exceeded the mark. The Peninsula is well stated elegance and cool and calm and serene with just enough edge of excitement.  The rooms are very nice and well supported by the technology that is part of their now standard array (we were at the new Peninsula in Istanbul in August and will provide a separate review). We were met at the door by Rana Martin form guest services and escorted to our room. The suite was nice and well appointed and very comfortable. A lovely selection of fruit and macrons awaited us and the flowers and appointments in the room were lovely and very proper and home. Rana is a gem in all respects.\n\nThe hallmark of The Peninsula has become its persons. Everyone greets you with a welcoming smile and treats you as an honored guest. The entire Concierge staff assisted with our flowers for our room and our challenging requests for restaurant reservations. This was handled by the entire team including Jeremie and Célia and Clotilde and Christophe (the entire very large and capable team is always happy and eager to be of assistance!). Pro traveler tip: get the WhatsApp contact to the Concierge Team and make your asks in real time and enjoy immediate and professional support before and during your stay. The service levels they provide are exactly why one stays at The Peninsula as they do everything with a smile and sense of pride that enhances the experience.\n\nWe caught up on much needed sleep at the hotel during our stay. It has been a long time since we traveled without our wonderful kids and the peace and quiet were spectacular. We enjoyed excellent room service breakfast daily and appreciated the highest quality linens and bedding and bath products. \n\nThank you to the entire staff from front of house to housekeeping for a wonderful stay."
+                    },
+                    {
+                        "title": "Glorious Hotel",
+                        "review_text": "Fabulous hotel that’s been updated with a modern flair while still maintaining the stunning Parisian palace that it domiciles. The rooms have been incredibly soundproofed and designed with a comfortable elegance that is perfect for relaxing after a long day of perusing the streets. Additionally, the service is kind, helpful, and a delight. \n\nThe only dings (and they’re small ones), are the firmness of the mattress, the tiny size of the gym, and, the Cantonese restaurant whose food is TERRIBLE. Also, if this is your first trip to Paris, it’s not in the most central location but the metro is so easy to navigate it shouldn’t matter."
+                    },
+                    {
+                        "title": "Unworthy of a palace, terrible experience",
+                        "review_text": "am deeply disappointed by my recent experience at the Peninsula Paris, supposedly the epitome of elegance and hospitality. I had chosen to go to the lobby while waiting for a friend, with the intention of having a drink right after. To my great surprise, I was simply “kicked out” of the lobby under the pretext that I was not drinking immediately and that I was not expecting anyone residing at the hotel.\nPeople ask me who exactly I'm waiting for, what an indiscretion!\nI have never been treated in such a humiliating manner in an establishment of this magnitude. I have gone very often to have breakfasts and even lunches in this establishment where I will never return, I will obviously tell my experience to other people around me\nA man named SAÏD (I wonder how he was able to obtain such a position in charge of security) was arrogant, indelicate and disrespectful. I was made to feel like an unwanted intruder, even though I was planning to spend money at the hotel.\nThis behavior is unbecoming of a hotel of this reputation, and I strongly advise anyone not to go there if you expect a minimum of courtesy and professionalism. There are many other establishments in Paris that know how to treat their customers with respect and consideration, which is clearly not the case here.\nAbsolutely not worthy of a palace!"
+                    },
+                    {
+                        "title": "Reputation Well Earned and Exceeded",
+                        "review_text": "It's rare to find a place that lives up to its reputation, but this one does that and more. From the moment I engaged with them, I was impressed by their efficiency and warmth. The staff's expertise was evident, but what really stood out was their genuine desire to ensure I had the best possible experience. I left feeling not just satisfied, but truly impressed."
+                    },
+                    {
+                        "title": "Isle of Serenity",
+                        "review_text": "Amazing Service. Beautiful Architecture and Exceptional Finishes. Food can be improved upon. Afternoon Tea is in a beautiful setting but sweet and savory offerings are not top quality. Great attention to detail. Had to change rooms because of some street noise on Rue des Portugais, but the hotel kindly upgraded me  to a much larger room on the court."
+                    }
+                ]
+            },
+            "Hyatt Regency Paris Etoile": {
+                "address": "3 Place du General Koenig, 75017 Paris France",
+                "location_id": "595754",
+                "description": "Standing 34 stories high, Hyatt Regency Paris Étoile offers breathtaking views of Paris and its iconic monuments. Ideally located between the business district of La Défense and the Champs-Élysées, this hotel is one of the largest in Europe, featuring 995 modern rooms and suites, all with stunning panoramic views. The hotel provides flexible event spaces, including 35 meeting rooms and one of the largest kitchens in Europe, ensuring tailored experiences for every guest. Guests have 24/7 access to a fitness center and Clés d’Or Concierges. The hotel also boasts Windo Skybar, the highest panoramic bar in the French capital, and Restaurant Mayo, which highlights local produce with a menu designed for sharing.",
+                "address_string": "3 Place du General Koenig, 75017 Paris France",
+                "latitude": "48.880524",
+                "longitude": "2.284563",
+                "rating": "4.0",
+                "price_level": "$$$$",
+                "hours": [],
+                "amenities": [
+                    "Room service",
+                    "Suites",
+                    "Internet",
+                    "Free Internet",
+                    "Wheelchair access",
+                    "Wifi",
+                    "Free Wifi",
+                    "Fitness center",
+                    "Restaurant",
+                    "Bar/Lounge",
+                    "Dry Cleaning",
+                    "Meeting rooms",
+                    "Non-smoking rooms",
+                    "Business center",
+                    "Laundry Service",
+                    "Concierge",
+                    "Banquet Room",
+                    "Air conditioning",
+                    "Family Rooms",
+                    "Multilingual Staff",
+                    "Accessible rooms",
+                    "Conference Facilities",
+                    "Non-smoking hotel",
+                    "Safe",
+                    "Rooftop Bar",
+                    "Flatscreen TV",
+                    "Breakfast Buffet",
+                    "Facilities for Disabled Guests",
+                    "Housekeeping",
+                    "Arabic",
+                    "Baggage Storage",
+                    "Breakfast in the Room",
+                    "24-Hour Check-in",
+                    "Children's Television Networks",
+                    "Coffee Shop",
+                    "English",
+                    "French",
+                    "24-Hour Front Desk",
+                    "German",
+                    "Ironing Service",
+                    "Italian",
+                    "Kids' Meals",
+                    "Portuguese",
+                    "24-Hour Security",
+                    "Soundproof Rooms",
+                    "Spanish",
+                    "Special Diet Menus",
+                    "Taxi Service",
+                    "VIP Room Facilities",
+                    "Dutch",
+                    "Japanese",
+                    "Landmark View",
+                    "Paid Public Parking Nearby",
+                    "Russian"
+                ],
+                "reviews": [
+                    {
+                        "title": "Best hotel location, amenities and views",
+                        "review_text": "We had a wonderful time in Paris. And staying at the Hyatt Étoile was fabulous. The staff was wonderful. Check in was ready they held our luggage got us while we got started on our vacation. E had a junior suite since we were traveling with our adult son. This was adjoining Ron’s which was really ideal. The regency club is well worth it. Free full delicious breakfast every Day and 6-9pm happy hour with delicious snacks. The location was also ideal since port Msillot station a short walk or shortcut through Congres mall. Also walking distance toL’ étoile and the iconic L’Arc de Triomphe.  Beautiful view of the Eiffel Tower.  This is where we will stay from now on."
+                    },
+                    {
+                        "title": "Amazing stay next to Metro",
+                        "review_text": "We had an amazing stay. The hotel is quiet, clean, and easy to find. You can walk through the mall to get into the hotel, or go through the main entrance. It’s close to the Metro, buses, and local trains. There are several restaurants nearby. We stayed on the 32nd floor and had a view of the Eiffel Tower. Our room was clean and the beds were comfortable. Toiletries were provided as well as in room coffee, tea, and water. The club lounge was a wonderful perk, with a large variety of breakfast items. Snacks throughout the day were minimal but the evening happy hour had good variety. The hotel staff were very nice and accommodating."
+                    },
+                    {
+                        "title": "Best Paris hotel!! Epic Eiffel Tower view!!",
+                        "review_text": "All fabulous.  Room ready at the expected time ie. Not early but that was fine they held our bags for us. Fabulous view of Tour d’Eiffel from our room and regency club.  Very convenient for US and poor adult son since we had adjoining rooms (junior suite).  The attached mall has a huge pharmacy and grocery store. Also direct access to Port Maillot metro from mall. Fab breakfast at regency club and evening happy hour was very nice."
+                    },
+                    {
+                        "title": "Outpriced, outdated… should be out",
+                        "review_text": "Plain awful and outdated! \nI paid almost 600€ for an average sized room worth max a third of this in this hotel that looks like an industrial tourist factory overlooking the beautiful suburban highways of Paris outskirts. Room cleanliness was so so, clock was not even indicating proper time, bathroom is microscopic, given the size of the hotel, everything takes ages, in particular the elevators that run on a clearly suboptimal IT system and they’re still distributing plastic bottled water, this hotel is a shame and a robbery to be avoided at all costs! Fortunately staff was nice and helpful."
+                    },
+                    {
+                        "title": "Great hotel in Paris",
+                        "review_text": "Very welcoming and beautiful hotel. Conveniently located steps from the metro, so easy access all around the city. Plenty of restaurants and shops walking distance from the hotel. Rooms were spacious and clean. Club lounge is a great benefit if available. Breakfast in the club lounge is the same food as the buffet offered in the lobby but was less busy and great views of the Eiffel Tower!"
+                    }
+                ]
+            },
+            "Citadines Tour Eiffel Paris": {
+                "address": "132, Boulevard de Grenelle, 75015 Paris France",
+                "location_id": "197659",
+                "description": null,
+                "address_string": "132, Boulevard de Grenelle, 75015 Paris France",
+                "latitude": "48.84879",
+                "longitude": "2.29803",
+                "rating": "4.0",
+                "price_level": "$$$",
+                "hours": [
+                    "Monday: 00:00 - 00:00",
+                    "Tuesday: 00:00 - 00:00",
+                    "Wednesday: 00:00 - 00:00",
+                    "Thursday: 00:00 - 00:00",
+                    "Friday: 00:00 - 00:00",
+                    "Saturday: 00:00 - 00:00",
+                    "Sunday: 00:00 - 00:00"
+                ],
+                "amenities": [
+                    "Internet",
+                    "Kids Activities",
+                    "Suites",
+                    "Free Internet",
+                    "Wheelchair access",
+                    "Pets Allowed",
+                    "Kitchenette",
+                    "Wifi",
+                    "Public Wifi",
+                    "Free Wifi",
+                    "Dry Cleaning",
+                    "Non-smoking rooms",
+                    "Business center",
+                    "Laundry Service",
+                    "Concierge",
+                    "Air conditioning",
+                    "Multilingual Staff",
+                    "Self-Serve Laundry",
+                    "Microwave",
+                    "Refrigerator in room",
+                    "Babysitting",
+                    "Non-smoking hotel",
+                    "Safe",
+                    "Flatscreen TV",
+                    "Breakfast Buffet",
+                    "Breakfast Available",
+                    "Parking",
+                    "Facilities for Disabled Guests",
+                    "Housekeeping",
+                    "Baggage Storage",
+                    "Bath / Shower",
+                    "Blackout Curtains",
+                    "Coffee / Tea Maker",
+                    "Dishwasher",
+                    "English",
+                    "Complimentary Toiletries",
+                    "French",
+                    "24-Hour Front Desk",
+                    "Hair Dryer",
+                    "Iron",
+                    "Italian",
+                    "Kitchenware",
+                    "Parking Garage",
+                    "Portuguese",
+                    "Private Bathrooms",
+                    "Paid Private Parking On-site",
+                    "Shared Lounge / TV Area",
+                    "Spanish",
+                    "Taxi Service",
+                    "Telephone",
+                    "Vending Machine",
+                    "Wake Up Service / Alarm Clock"
+                ],
+                "reviews": [
+                    {
+                        "title": "NOT BAD, COULD BE BETTER",
+                        "review_text": "This is my first time staying at Citadine Tour Eiffel Paris, by Ascott Group.\n\nThe location of the hotel is very convenient, MRT metro station right in front of the hotel, McDonald + supermarkets + many restaurants around the hotel. The was a Sunday Morning Market under the train railway. We were so excited as that was the best way to see the local life and experience the local delicacy. \n\nMy room was upgraded and was located at the corner, can enjoy the Eiffel Tower view at the living room. The living room is spacious. We also have a mini kitchenette too. So convenient to cook/reheat the food as there are stoves and microwave oven.\n\nI love the water and coffee/tea dispenser machines at the lobby. Unlimited coffee/tea, hot chocolate, still & sparkling water are available 24hours. \n\nThe lobby is not very big but it is cozy & modern + clean. You need to have keycard to access to the entrance from outside. Same goes to the guest floors access with keycard only for safety control.\n\nWhen the train passing by, the vibration will notify you for every trip as the train railway just next to the hotel.\n\nThe whole staying experience can be enhanced further if we could feel the warm service + more cheerful smile to make us at ease, especially when we are travelling to a foreign country that we are not familiar with the local language, culture and environment. \n\nWarm service + friendly smile can earn another 2 stars to perfection for this stay!"
+                    },
+                    {
+                        "title": "Great family room",
+                        "review_text": "Very comfy family room, for our family of 4. Kids loved the free hot chocolate ma home in the foyer. I wish we’d spent the extra $1000AU and got the Eiffel Tower view for our 3 night stay. Maybe next time! Supermarket next door and plenty of eating options all around."
+                    },
+                    {
+                        "title": "A estadia foi boa mas esperava mais de um hotel classificado como 4 estrelas",
+                        "review_text": "Excelent location, close to the metro, bakeries and good restaurants and of course the Eiffel Tower\nThe lift has the floor cracked which makes a very bad impression since I was taking my husband in a romantic getaway. My stay was from Friday to Sunday and I didn’t get the room cleaned neither the towels and bed linens changed or even the trash was took away. The complimentary coffee downstairs didn’t have sugar almost all the time. The TV doesn’t have the option to mirror my cell screen, it is an important feature nowadays."
+                    },
+                    {
+                        "title": "Wonderful Staff.  Excellent Location",
+                        "review_text": "Excellent location, within 15 minutes walking to the Eiffel Tower.   Our rooms have an excellent view of the Eiffel Tower.  It was a spectacular view at night, especially with the blinking lights of the Tower.   The bus stop and the metro line are in front of the hotel.  Tons of restaurants across the street.   The hotel staff was extremely helpful with directions and suggestions."
+                    },
+                    {
+                        "title": "Lovely Stay",
+                        "review_text": "My wife and I were very satisfied with our stay at the Citadines Tour Eiffel. The front desk attendants were always courteous, patient and helpful (yes, they all spoke English). Our room was clean and comfortable. Very spacious. We didn't chose a room with a view of the Eiffel Tower, which turned out to be a good choice for us  because once you leave the hotel, the Tower is in view from practically everywhere. A few quirks to be aware of; the key card needs to stay inserted in the room for the lights to work, and you must tap the key card to the motion sensor in the elevator or it won't go anywhere. Hopefully this tip will help others avoid our fate, which was to look like complete American idiots, pushing the button repeatedly to no avail until someone from the desk came to rescue us.  Our room was very quiet. There is an overhead train directly across the street. We could barely hear it, but we were on the other side of the building. I don't know if it is loud from the Eiffel-facing rooms. Of course, this was wonderful for getting around, as the Metro station is right across the street. There are a host of restaurants and shops in the neighborhood and the Eiffel Tower is within easy walking distance. Our only substantive criticism is that the air conditioning didn't keep the room very cool. It was in the 80's and humid during our stay, and the room was quite warm even with the air turned to the coldest setting. I imagine we'll have to get used to other countries being more energy conscious than the U.S. Overall, I would highly recommend Citadines Tour Eiffel!"
+                    }
+                ]
+            },
+            "Pullman Paris Eiffel Tower": {
+                "address": "18 Avenue de Suffren 22 Rue Jean Rey Entrée Au, 75015 Paris France",
+                "location_id": "197985",
+                "description": "Séjournez au Pullman Paris Tour Eiffel, l'hôtel préféré des voyageurs à Paris. Au pied de la Tour Eiffel, l'hôtel est le point de départ idéal pour visiter la capitale et ses principaux monuments. Offrant un grand confort et un excellent rapport qualité-prix, il propose un large éventail de services: réception ouverte 24 heures sur 24, conciergerie, room-service... Ses chambres spacieuses et lumineuses disposent d'une télévision à écran plat, d'une connexion Wifi, d'un minifrigo et d'une station d'accueil Alexa by Amazon. Certaines offrent une vue imprenable sur la Tour Eiffel. Rendez-vous au FRAME, sa brasserie française pour un brunch ou un diner et savourez les produits frais du jardin. Profitez également de la salle de fitness de l'hôtel et de ses équipements hi-tech. N'attendez plus pour réserver votre séjour au Pullman Paris Tour Eiffel et venez vivre une expérience immersive dans l'un des quartiers les plus prestigieux de Paris.",
+                "address_string": "18 Avenue de Suffren 22 Rue Jean Rey Entrée Au, 75015 Paris France",
+                "latitude": "48.855743",
+                "longitude": "2.292935",
+                "rating": "4.0",
+                "price_level": "$$$$",
+                "hours": [],
+                "amenities": [
+                    "Free Internet",
+                    "Free Wifi",
+                    "Room service",
+                    "Non-smoking rooms",
+                    "Internet",
+                    "Suites",
+                    "Wheelchair access",
+                    "Restaurant",
+                    "Bar/Lounge",
+                    "Wifi",
+                    "Public Wifi",
+                    "Dry Cleaning",
+                    "Meeting rooms",
+                    "Business center",
+                    "Fitness center",
+                    "Laundry Service",
+                    "Concierge",
+                    "Banquet Room",
+                    "Air conditioning",
+                    "Family Rooms",
+                    "Multilingual Staff",
+                    "Accessible rooms",
+                    "Refrigerator in room",
+                    "Minibar",
+                    "Conference Facilities",
+                    "Non-smoking hotel",
+                    "Safe",
+                    "Flatscreen TV",
+                    "Breakfast Buffet",
+                    "Private Balcony",
+                    "Facilities for Disabled Guests",
+                    "Housekeeping",
+                    "Arabic",
+                    "Baggage Storage",
+                    "Bathrobes",
+                    "Breakfast in the Room",
+                    "Bridal Suite",
+                    "Express Check-in / Check-out",
+                    "Chinese",
+                    "Coffee / Tea Maker",
+                    "Desk",
+                    "English",
+                    "Complimentary Instant Coffee",
+                    "Complimentary Toiletries",
+                    "French",
+                    "24-Hour Front Desk",
+                    "German",
+                    "Hair Dryer",
+                    "Iron",
+                    "Ironing Service",
+                    "Portuguese",
+                    "24-Hour Security",
+                    "Spanish",
+                    "Street Parking",
+                    "Taxi Service",
+                    "Telephone",
+                    "Wake Up Service / Alarm Clock",
+                    "Breakfast Available",
+                    "Clothes Rack",
+                    "Laptop Safe",
+                    "On-Demand Movies"
+                ],
+                "reviews": [
+                    {
+                        "title": "Excellent",
+                        "review_text": "from checkin-to checkout everything was perfect. Especially desert in our room as welcome amenity was very delcious. \nBreakfast - Amazing breakfast. Restaurant is cozy and big enough to have perfect breakfast. Various and tasty selections for breakfast. You can have perfect start to your day\nLocation - Amazing. Its a bit away (30min walk) from Elysees but the walking way is along Seine is very nice/quite and plenty of things to discover about Paris. With taxi max 10min driving. But if you are fan of Eiffel - its the best location. From hotel to trocadero 10min nice walking way with perfect view.\nStaff - Very helpfull. Especially Sarah GR manager and Stolic Tea who helped a lot. \nRoom Size - I had deluxe room with balcony. Amazing room with Eiffel view and Size is perfect. You can relax there. \nEntertainment - No need to go outside for nice PAris evening - at least 2 nights. 1 nigt you can spend at top roof restaurant and enjoy Eiffel nioght view. and 2nd night in lobby restaurant where superb DJ is playing with cozy atmoshphere. Other nights you can go out ))\nThe only improvement area - in Deluxe room its not good to have  2 twin beds combined as King Bed)). Despite it did not affect lot, King bed itself makes big difference compare dto 2 twin beds combined as KING :)\nThanks Hotel team for their help in making my 5day trip to Paris relaxing and enjoyiable. "
+                    },
+                    {
+                        "title": "Terrific Tour Eiffel experience",
+                        "review_text": "Short stay in Paris with comfortable room, good shower and efficient breakfast service.\n\nCheck in was relatively straightforward, reception area can get busy as groups meet.\n\nEasy enough to arrange taxis to meet at front of hotel.\n\nEasy access to promenade by the tower.\n\nThank you for looking after me."
+                    },
+                    {
+                        "title": "Never, ever accept a room with interconnecting doors",
+                        "review_text": "This hotel is ideally situated in a safe area with good transport links and great views. Reception and restaurant staff were great. BUT I had the worst night’s sleep in a hotel of my life. The rooms with interconnecting doors to adjacent rooms (I was in 305) have absolutely no sound insulation from the adjoining rooms. The inconsiderate guest in Room 304 on 5th November talked on a phone for many hours, eventually finishing about 0430. And that was an hour after I had asked him to be quiet: he apologised…but carried on unabated. The doors are so thin, I could hear both his voice and that of his contact even though the phone was not on speaker. Value for money? Absolutely not."
+                    },
+                    {
+                        "title": "Great location - that's it",
+                        "review_text": "Dreadful time at check in - took one hour.  TV didn't work, shower didn't drain - so we moved rooms.  The bar area outside looking up at Eiffel Tower was good - staff not really keen to serve though Dinner in the restaurant was ok, but not much choice for vegetarians.  The best thing is location."
+                    },
+                    {
+                        "title": "Inability to consolidate charges properly",
+                        "review_text": "I recently stayed at Pullman Eiffel and, while the rooms were clean and the breakfast was enjoyable, I was deeply dissatisfied with their billing process. As a business traveler, I specifically asked the hotel staff if all charges—including breakfast and room service—could be included on a single invoice for reimbursement purposes. They assured me this was possible. However, when I checked out, I discovered that these charges had already been processed separately by credit card and could not be added to the main invoice. The hotel staff claimed they didn’t have access to the restaurant charges, which was both unexpected and unacceptable. For business travelers who need comprehensive billing for expenses, this is a serious issue. While the hotel may be adequate for tourists, I would not recommend it for business stays due to their inability to consolidate charges properly. This experience was frustrating and potentially against standard hotel practices."
+                    }
+                ]
+            },
+            "Shangri-La Paris Hotel": {
+                "address": "10, Avenue d'lena, 75116 Paris France",
+                "location_id": "1959562",
+                "description": "In the former home of Prince Roland Bonaparte, overlooking the Eiffel Tower and River Seine, ultimate Parisian elegance lives on in the French capital at Shangri-La Paris. This 19th century architectural gem has been listed in the French “Monuments Historiques” registry since 2009 and officially awarded the “Palace” status in 2014. Centrally located in the 16th arrondissement, minutes from the Champs-Elysées, the hotel blends European grandeur with traditional Asian hospitality. The hotel also boasts a 1 Michelin-starred restaurant, Shang Palace, along with seasonal dining experiences at the enchanting La Bauhinia.",
+                "address_string": "10, Avenue d'lena, 75116 Paris France",
+                "latitude": "48.863926",
+                "longitude": "2.293397",
+                "rating": "4.5",
+                "price_level": "$$$$",
+                "hours": [],
+                "amenities": [
+                    "Room service",
+                    "Restaurant",
+                    "Suites",
+                    "Internet",
+                    "Free Internet",
+                    "Wheelchair access",
+                    "Spa",
+                    "Wifi",
+                    "Free Wifi",
+                    "Pool",
+                    "Bar/Lounge",
+                    "Airport transportation",
+                    "Public Wifi",
+                    "Dry Cleaning",
+                    "Meeting rooms",
+                    "Hot Tub",
+                    "Non-smoking rooms",
+                    "Business center",
+                    "Fitness center",
+                    "Laundry Service",
+                    "Concierge",
+                    "Banquet Room",
+                    "Air conditioning",
+                    "Family Rooms",
+                    "Multilingual Staff",
+                    "Accessible rooms",
+                    "Minibar",
+                    "Conference Facilities",
+                    "Babysitting",
+                    "Non-smoking hotel",
+                    "Safe",
+                    "Heated pool",
+                    "Flatscreen TV",
+                    "Rooftop Terrace",
+                    "Breakfast Buffet",
+                    "Private Balcony",
+                    "Indoor pool",
+                    "Butler Service",
+                    "Breakfast Available",
+                    "Parking",
+                    "Facilities for Disabled Guests",
+                    "Housekeeping",
+                    "Sauna",
+                    "Allergy-free Room",
+                    "Arabic",
+                    "Baggage Storage",
+                    "Bathrobes",
+                    "Blackout Curtains",
+                    "Bottled Water",
+                    "Breakfast in the Room",
+                    "Bridal Suite",
+                    "Car Hire",
+                    "Coffee / Tea Maker",
+                    "Couples Massage",
+                    "Currency Exchange",
+                    "Desk",
+                    "Doorperson",
+                    "English",
+                    "Facial Treatments",
+                    "Fitness Classes",
+                    "Fitness / Spa Locker Rooms",
+                    "Foot Massage",
+                    "Complimentary Toiletries",
+                    "French",
+                    "24-Hour Front Desk",
+                    "German",
+                    "Hair Dryer",
+                    "Head Massage",
+                    "Ironing Service",
+                    "Italian",
+                    "Laptop Safe",
+                    "Massage",
+                    "Salon",
+                    "Seating Area",
+                    "24-Hour Security",
+                    "Soundproof Rooms",
+                    "Spanish",
+                    "Taxi Service",
+                    "Telephone",
+                    "Wake Up Service / Alarm Clock",
+                    "Bidet",
+                    "Cable / Satellite TV",
+                    "Express Check-in / Check-out",
+                    "Children's Television Networks",
+                    "Chinese",
+                    "Electric Kettle",
+                    "Full Body Massage",
+                    "Hand Massage",
+                    "Interconnected room(s) available",
+                    "Iron",
+                    "Landmark View",
+                    "Neck Massage",
+                    "On-Demand Movies",
+                    "Private Bathrooms",
+                    "Radio",
+                    "Shoeshine",
+                    "Special Diet Menus",
+                    "Steam Room",
+                    "Tile / Marble Floor",
+                    "VIP Room Facilities",
+                    "Walk-in Shower",
+                    "Wardrobe / Closet",
+                    "Whirlpool Bathtub",
+                    "Wine / Champagne"
+                ],
+                "reviews": [
+                    {
+                        "title": "Cultural Charm with World-Class ServiceOFFICIAL",
+                        "review_text": "An absolute treasure! The architectural details alone are worth the stay, but it's the staff that makes this place truly special. Their genuine smiles and willingness to go the extra mile created countless memorable moments. The rooms are spacious and well-thought-out, with touches of local culture that add authentic charm."
+                    },
+                    {
+                        "title": "Thoughtful Luxury with Perfect Balance",
+                        "review_text": "This place has mastered the perfect balance between luxury and comfort. The attention to detail was evident everywhere - from the perfectly pressed linens to the curated local recommendations from staff. The public spaces were vibrant yet maintained peaceful corners for quiet moments. The breakfast spread was exceptional, and the evening turndown service added a lovely touch to ea"
+                    },
+                    {
+                        "title": "Eiffel Tour View",
+                        "review_text": "Just Perfect \nThe Eiffel Tower view was the best\nI believe it’s the best hotel in France and Paris\nWe will see you again next year the same month like this year\nAnd the breakfast was super Spesial \nFinally we were very lucky to find this hotel to booking"
+                    },
+                    {
+                        "title": "Business Traveler's Dream Come True",
+                        "review_text": "As a frequent business traveler, I've seen my fair share of hotels, but this one truly stands out. The seamless check-in process, well-appointed rooms with ergonomic workspaces, and high-speed Wi-Fi made work a breeze. The 24-hour fitness center and in-room dining options catered to my unpredictable schedule. What really set this hotel apart was the staff's professionalism an"
+                    },
+                    {
+                        "title": "Flawless Stay for Even the Pickiest Guests",
+                        "review_text": "I'm usually quite picky, but I couldn't fThe cleanliness was impeccable, the bed was incredibly comfortable, and the shower pressure was perfect (a rare find in hotels!)ind a single fault with this hotelThe staff were always available but never intrusive"
+                    }
+                ]
+            }
+        },
+        "attractions": {
+            "Disneyland Paris": {
+                "address": "Boulevard de Parc, 77700, Marne-la-Vallee France",
+                "location_id": "189258",
+                "description": "Welcome to the place where everyone can shine their brightest!\n\nSince opening in 1992, Disneyland Paris® has welcomed hundreds of millions of guests through its gates, making it Europe's number-one tourist destination\n\nWith the majestic Sleeping Beauty castle as its heart, Disneyland park is the fantastical home to five incredible lands. For 30 magical years, it's been the place where extraordinary stories come to life before your very eyes. Buckle up because you’re about to whizz around Discoveryland, Fantasyland, Frontierland, Adventureland, and Main Street U.S.A.®\n\nFeel unique magic in the air, as the 30th Anniversary festive aura transforms Disneyland park into a vibrant wonderland. With stunning surroundings, the mesmerizing Gardens of Wonder, and many eye-catching surprises, you're sure to get swept up in the celebratory spirit.\n\nAs night falls, prepare to be amazed by the award-winning Disney D-Light, where spectacular drone light choreography illuminates the sky.",
+                "address_string": "Boulevard de Parc, 77700, Marne-la-Vallee France",
+                "latitude": "48.872417",
+                "longitude": "2.776952",
+                "phone": "+33 1 60 30 60 53",
+                "rating": "4.0",
+                "hours": [
+                    "Monday: 09:30 - 23:00",
+                    "Tuesday: 09:30 - 23:00",
+                    "Wednesday: 09:30 - 23:00",
+                    "Thursday: 09:30 - 23:00",
+                    "Friday: 09:30 - 23:00",
+                    "Saturday: 09:30 - 23:00",
+                    "Sunday: 09:30 - 23:00"
+                ],
+                "groups": [
+                    {
+                        "name": "Water & Amusement Parks",
+                        "localized_name": "Water & Amusement Parks",
+                        "categories": [
+                            {
+                                "name": "Disney Parks & Activities",
+                                "localized_name": "Disney Parks & Activities"
+                            },
+                            {
+                                "name": "Theme Parks",
+                                "localized_name": "Theme Parks"
+                            }
+                        ]
+                    }
+                ],
+                "reviews": []
+            },
+            "The Paris Catacombs": {
+                "address": "1 Avenue du Colonel Henri Rol-Tanguy, 75014 Paris France",
+                "location_id": "189229",
+                "description": "A genuine labyrinth in the heart of underground Paris, this ossuary houses the remains of approximately six million Parisians. The history of the Catacombs dates back to the late 18th century when the city's cemeteries were closed due to health reasons and its contents were moved to an underground site. Today, you can walk down the spiral staircase and take a guided tour of the network of tunnels or explore it at your own pace. It's recommended to buy skip-the-line tickets online to avoid snaking lines. You can easily reach the Catacombs by hopping on the Paris Metro. – Tripadvisor",
+                "address_string": "1 Avenue du Colonel Henri Rol-Tanguy, 75014 Paris France",
+                "latitude": "48.83387",
+                "longitude": "2.332481",
+                "phone": "+33 1 43 22 47 63",
+                "rating": "4.0",
+                "hours": [
+                    "Monday: Closed",
+                    "Tuesday: 09:45 - 20:30",
+                    "Wednesday: 09:45 - 20:00",
+                    "Thursday: 10:00 - 20:30",
+                    "Friday: 09:45 - 20:30",
+                    "Saturday: Closed",
+                    "Sunday: Closed"
+                ],
+                "groups": [
+                    {
+                        "name": "Sights & Landmarks",
+                        "localized_name": "Sights & Landmarks",
+                        "categories": [
+                            {
+                                "name": "Historic Sites",
+                                "localized_name": "Historic Sites"
+                            },
+                            {
+                                "name": "Cemeteries",
+                                "localized_name": "Cemeteries"
+                            }
+                        ]
+                    }
+                ],
+                "reviews": [
+                    {
+                        "title": "Great catacombs DO NOT USE HEADOUT TOURS",
+                        "review_text": "Great experience and fascinating to understand the history behind the catacombs BUT don’t book through HEADOUT Paris is our advice. \nSee HEADOUT Paris reviews for reasons."
+                    },
+                    {
+                        "title": "Absolutely amazing",
+                        "review_text": "This is a must see. Save money and just go online and buy tickets for 29 Euros and take an Uber there-instead of over $100 on a tour formal tour. You wear an audio device that explains everything in great detail as you walk through. All the history around the catacombs."
+                    },
+                    {
+                        "title": "Surreal experience...",
+                        "review_text": "This has been on my bucket list for a few yrs now and went back to Paris just to visit these catacombs..creepy but surreal experience to say the least.I did the self guided tour which was grand you just have to hang back abit from others to give yourself some space to take it all in.In my view it's a must see and I would highly recommend it.Tickets are really only sold on the official website and are only available 7 days in advance of your visit so 100% book online,they get realised at 10am Paris time each day in blocks of 15 mins and believe me when I say they sell out fast,most days are just about sold out by lunchtime so don't dilly dally waiting for a particular time I would just book what's available and work your day around it.You can't buy tickets onsite for same day."
+                    },
+                    {
+                        "title": "Death in Paris",
+                        "review_text": "Go! This definitely was creepy. I've never been surrounded by aisles of bones and skulls before. You need to be able to walk a bit. We did not have a guide or use the self guided tour, we just walked and read what info was posted inside, which was adequate. Definitely different then any tourist experience I've ever had. It really did give me a chill. It somehow also connected me to Paris in seeing the bones of its now departed residents. I liked the gift shop at the end of the tour."
+                    },
+                    {
+                        "title": "Interesting, but wouldn't go again",
+                        "review_text": "The background story is very interesting, and the sheer number of people entombed here is impressive, but the overall experience is fairly monotonous.  \n\nFor those with limited mobility, you may want to reconsider as there are ~140 steps up and down into the catacombs and there is no elevator.  Additionally, there are damp gravel pathways and it's fairly dim down there.  My 75 y/o father did not enjoy it due to these issues.  I think they are well spelled out before you enter, but it was a lot for him.\n\nThere is also a long underground walk from the entrance building to the first sites, so again not a good idea if you have limited mobility."
+                    }
+                ]
+            },
+            "Paris Metro": {
+                "address": "Paris France",
+                "location_id": "2323543",
+                "description": null,
+                "address_string": "Paris France",
+                "latitude": "48.864166",
+                "longitude": "2.330278",
+                "phone": null,
+                "rating": "3.5",
+                "hours": [],
+                "groups": [
+                    {
+                        "name": "Transportation",
+                        "localized_name": "Transportation",
+                        "categories": [
+                            {
+                                "name": "Mass Transportation Systems",
+                                "localized_name": "Mass Transportation Systems"
+                            }
+                        ]
+                    }
+                ],
+                "reviews": [
+                    {
+                        "title": "Worst experience at Bir Hakeim Metro station",
+                        "review_text": "We had to take the metro to reach our bus station, but the staff wouldn’t accept cash. Luckily, I had a virtual card, so we managed to pay. However, the ticket they gave us wouldn’t validate. When I went back to the staff for help, they told me to join the line again, even though it was super long and we were running late.\n\nI politely asked for assistance again, but instead of helping, the staff started using foul language. I was with my sister, and we didn’t have time to argue, so I just let it go. In the end, they opened the gate for us, but it was a terrible experience.\n\nI wouldn’t recommend using the metro if you’re short on time. The staff was rude and unhelpful, and honestly, it didn’t feel safe. It’s disappointing that behavior like this goes unchecked."
+                    },
+                    {
+                        "title": "WARNING METRO STAFF SCAM AND BULLY TOURISTS",
+                        "review_text": "Awful experience on Metro - we bought tickets which but my partners didn't validate for some reason. Just after going through we were surrounded by 3 guards aggressively wanting to check tickets. When my partners was said to be 'invalid' as if it had not gone through the barrier they demanded a €60 fine - no discussion. We explained we had just bought it with help from a staff member for the final journey we needed to make back to the Eurostar and asked if we could point her out. She stormed off and refused to let us point her out. When she returned she said the ticket office staff said no one helped!! They said they would call police which would raise the fine to €200. They were bullying and aggressive and it was very clear there was a genuine mistake as they had watched us the whole time buying the ticket and go through. \nWe will never visit Paris again and if you are going avoid the Metro - there is definately scamming there with tourists from the very people who should be looking out for you. What an awful way to treat tourists. Made me appreciate the UK and Londons underground staff. We were glad to be home and will not visit France again ever."
+                    },
+                    {
+                        "title": "Fantastic System",
+                        "review_text": "Just back from a 3 night stay in Paris with 2 children aged 14 and 12. I had lived in Paris 30 years ago, but my wife and kids were new to the city.\n\nThe Paris Metro system is fantastic. If you are staying in the city you are probably less than 250m from an entrance into the Metro and your destination is equally close to a stop. If your destination is on the same line as your start location just follow the signs for that line - there will be 2 options, one for each direction, and the direction is indicated by the name of the last station in that direction. Sometimes they will also list out the stops in each direction, but not always. If its on a different line you will need to change - this involves getting off at a stop and following signs for the next line/direction you need to take. You won't have to leave the Metro system, so you don't need a second ticket. \nWe used the phone app Bonjour RATP to see the best route (including transfers). I would suggest practice using this app before you go if you are new to subway systems.\n\nWe used paper tickets as we didn't know how much we'd use the Metro, but a Navigo Easy card each preloaded with tickets would have been cheaper and simpler. There are other options such as day passes etc. The paper tickets we bought were called t+ tickets and they cover any journeys within the metro system except to Orly Airport.\n\nHang on to your ticket until you leave the Metro system! Twice we had to use the same ticket twice as there was a second set of turnstiles for some reason. Also, while we didn't see any ticket inspectors, they do check tickets and you'll be fined if you have thrown your ticket away.\n\nA few words of warning:\n\nTake precautions against pick pockets - they will target tourists and its hard to look like a local! Carriages can be crowded so valuables need to be well secured. We didn't see any pickpockets, but there were warnings everywhere. I also bought any tickets in Republique rather than the more touristy stations.\n\nWe took the Metro from Universite Saint Denis to Republic and back as we arrived on the bus from Beauvais airport. I felt it was quite challenging travelling as a family with suitcases in rush hour. We had to manoeuvre to make sure we were near the carriage doors so we could get out in time (Parisiens are impressively polite though!) If the kids were younger I would have looked into another form of transportation for this journey.\n\nThe system is old, and unlike more modern systems it doesn't seem very accessible. If you are unable to use stairs then do your research before travelling - while some stations have lifts I didn't see many.\n\nSome Metro journeys involve quite a bit of walking within the system (to/from platforms, between lines etc)\n\nSome trains are very busy - so you'll find yourself quite squashed in. The longest wait time we saw was 4 minutes though, so if you are concerned about a train being excessively full, then wait for the next one.\n\nConclusion:\nOverall we took 12 journeys on the Metro in 3.5 days, most journeys took less than 20 minutes. We stayed in Republique, which has a number of lines, so most journeys didn't need a transfer. We packed loads into our trip to Paris and there is no way we could have seen and done as much without such an efficient form of transportation, and the kids really enjoyed the novelty of it."
+                    },
+                    {
+                        "title": "Best metro !",
+                        "review_text": "Our second visit this year and it really is the easiest and best metro system have ever used. Fast efficient and fairly cheap, miles better than its London, New York or Berlin alternatives as have used them all. The navigo card is brilliant"
+                    },
+                    {
+                        "title": "About what you'd expect",
+                        "review_text": "The paper tickets are tiny and stop working after like a day, no matter if it's meant to last a few days. Something to do with the magnetic strip if it touches your phone or if it gets bent so on. plus how can you keep track of a peice of paper that small for a few days. It's about 2cm high and 5cm wide. I wasted like €20  because the ticket cost €35 to begin with, that was meant to last 72 hours stopped working in 24 hours.\n\nThe staff will refuse to speak english and make you buy a Navigo card and ignore the fact you paid for a ticket. The Navigo card is better.\n\nSubway was frequent if not crowded, easy to navigate and get around."
+                    }
+                ]
+            },
+            "Paris by Mouth": {
+                "address": "75004 Paris France",
+                "location_id": "2613395",
+                "description": "There’s a reason why our tours are top-rated food tours on TripAdvisor and have been celebrated by The New York Times (twice!) and knowledgable foodies like David Lebovitz and Ruth Reichl: we keep our group sizes tiny, we spend generously at the best shops in town, and we only work with expert guides who have devoted their lives to food & wine. Our tours are in English and last for around 3 hours. They include some walking and standing, but also feature a seated tasting with wine pairings. Our tours are designed for adults. We’re unable to host children under ten years of age. Our price of 125€ per person is a little higher than the competition because we spend more than anyone else on premium tastings and to pay the most experienced and knowledgable guides in Paris. You’re also paying for the tiny group size. You can visit our website to see our calendar of availability, and we hope to welcome you soon!",
+                "address_string": "75004 Paris France",
+                "latitude": "48.85627",
+                "longitude": "2.35661",
+                "phone": "+33 9 70 73 66 99",
+                "rating": "5.0",
+                "hours": [
+                    "Monday: Closed",
+                    "Tuesday: 09:00 - 14:00,  15:00 - 19:00",
+                    "Wednesday: 09:00 - 14:00,  15:00 - 19:00",
+                    "Thursday: 09:00 - 14:00,  15:00 - 19:00",
+                    "Friday: 09:00 - 14:00,  15:00 - 19:00",
+                    "Saturday: 09:00 - 14:00,  15:00 - 19:00",
+                    "Sunday: 09:00 - 14:00"
+                ],
+                "groups": [
+                    {
+                        "name": "Food & Drink",
+                        "localized_name": "Food & Drink",
+                        "categories": [
+                            {
+                                "name": "Wine Tours & Tastings ",
+                                "localized_name": "Wine Tours & Tastings "
+                            },
+                            {
+                                "name": "Food Tours",
+                                "localized_name": "Food Tours"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Tours",
+                        "localized_name": "Tours",
+                        "categories": [
+                            {
+                                "name": "Food Tours",
+                                "localized_name": "Food Tours"
+                            },
+                            {
+                                "name": "Walking Tours",
+                                "localized_name": "Walking Tours"
+                            },
+                            {
+                                "name": "Wine Tours & Tastings ",
+                                "localized_name": "Wine Tours & Tastings "
+                            }
+                        ]
+                    }
+                ],
+                "reviews": [
+                    {
+                        "title": "Cheese!",
+                        "review_text": "I did the French Cheese Explosion with Jennifer and it exceeded all expectations. The cheeses (and the wine pairings) were outstanding and I learned so much. Jennifer is incredibly knowledgeable and passionate about cheese. Definitely a highlight of my trip to Paris."
+                    },
+                    {
+                        "title": "Marion is the MOF of tour guides!",
+                        "review_text": "We did the left bank tour and Marion is the MOF of tour guides.  We loved our tour experience!  The tour takes you on a great walk around, and was very informative about what to look for when shopping for bread, cheese, chocolate, wine/champagne, and pastries.  Marion is so fun to spend the afternoon with and has so much knowledge about the Paris food scene.  Everything we ate was absolutely delicious.  Highly suggest doing a tour on your first day in Paris to help with jet lag and give you insights for your stay."
+                    },
+                    {
+                        "title": "Tour with Mathieu - I couldn't recommend this enough!",
+                        "review_text": "My fiance and I did North Marais food tour in November 2024 led by Mathieu. We had such an amazing time on this tour! Mathieu was a very knowledgable, engaging, and fun tour guide. We got to walk around a neighborhood of Paris we were interested in but also got to visit and enjoy the best food spots in that area. Everything we ate was delicous and we even got a little history along the way. We ate croissants, fresh baguette, chocolate/candies, cheese, wine and some traditional french food as well. Our walking tour ended at a wine store where we did the wine and cheese tasting. Our group was the perfect size (3 couples with our tour guided). I couldn't recommend this enough!"
+                    },
+                    {
+                        "title": "Wonderful food tour",
+                        "review_text": "We did the left bank tour with Marion and it was amazing. We enjoyed all the food and learned a lot about French cheese and French wine which was one thing we wanted from the tour. Marion was very knowledgeable and friendly, would highly recommend. If I could suggest any improvement it would be another wine to taste as there was a lot of cheese to get through. Also if there could be a few minutes at the different stops to shop if you wished as not everyone will have a chance to return to the shops on their trip."
+                    },
+                    {
+                        "title": "French reverence for the table",
+                        "review_text": "What a fantastic way to learn about a small corner of Paris. While the food and wine were delicious, they became touchstones for the history that our guide was sharing with us. Victorine is a genuine and passionate ambassador of French culture and Paris by Mouth is on to an exciting teaching model. If you want to begin to understand a people, understand their approach to food.\n\nBrava, Victorine, brava!"
+                    }
+                ]
+            },
+            "Galeries Lafayette Paris Haussmann": {
+                "address": "40 Boulevard Haussmann, 75009 Paris France",
+                "location_id": "189193",
+                "description": "Visitors to this massive department store can find brand-name items of nearly every variety. Shop accessible to luxury fashion & accessories for men, women and children, enjoy exclusive services such as personal shoppers, concierge and tax refunds and indulge in restaurants and a gourmet epicerie.",
+                "address_string": "40 Boulevard Haussmann, 75009 Paris France",
+                "latitude": "48.873596",
+                "longitude": "2.33215",
+                "phone": "+33 1 42 82 34 56",
+                "rating": "4.0",
+                "hours": [
+                    "Monday: 10:00 - 20:30",
+                    "Tuesday: 10:00 - 20:30",
+                    "Wednesday: 10:00 - 20:30",
+                    "Thursday: 10:00 - 20:30",
+                    "Friday: 10:00 - 20:30",
+                    "Saturday: 10:00 - 20:30",
+                    "Sunday: 11:00 - 20:00"
+                ],
+                "groups": [
+                    {
+                        "name": "Shopping",
+                        "localized_name": "Shopping",
+                        "categories": [
+                            {
+                                "name": "",
+                                "localized_name": ""
+                            },
+                            {
+                                "name": "Department Stores",
+                                "localized_name": "Department Stores"
+                            }
+                        ]
+                    }
+                ],
+                "reviews": [
+                    {
+                        "title": "Nice building",
+                        "review_text": "Nice building, beautiful decoratios, a lot of very well known shops, cold staff. From the terrace you can have a beautiful view on Paris"
+                    },
+                    {
+                        "title": "Not the average shopping mall!",
+                        "review_text": "We had a day in Paris with a group of friends including several teenagers so we wanted to visit Lafayette. We wanted to get the experience, see the dome and visit the rooftop. It is beautiful, even if you don’t like shopping it is nice to walk inside and just look up to the beautiful dome. We saw the glasswalk at the 3rd floor and went there, to find out they work with reservations with time-slots. Luckily the ladies in charge helped us to make the reservation on the spot and we could go without too much of waiting. It is very nice to walk on the glass floor and have a view from there. After that we went to the rooftop for an even better view of Paris. We wanted to visit the restaurant but with that one we had less luck as  it was full. But there were some beach chairs we could use to enjoy the view. We walked around inside as well and really enjoyed the experience."
+                    },
+                    {
+                        "title": "Fun and Different",
+                        "review_text": "This was a fun class to learn new baking techniques. Not a typical tourist attraction, would highly recommend. "
+                    },
+                    {
+                        "title": "Fun and professional",
+                        "review_text": "Very good preparation in a nice venue right in the Galeries, a small group, great communication, a sweet professional, I can highly recommend! Thank you!"
+                    },
+                    {
+                        "title": "Amazing view of Paris from the rooftop!",
+                        "review_text": "Such an unique and beautiful shopping centre, Parisian chiq, very expensive but the rooftop is free and so worth it! \nWe loved the atmosphere there, would like to come back to this mall."
+                    }
+                ]
+            },
+            "ExperienceFirst Paris": {
+                "address": "Paris France",
+                "location_id": "12103860",
+                "description": "Make the most of your visit. ExperienceFirst's award winning tours create memorable experiences and save time for our guests through optimized itinerary, skip the line tickets and great guides.",
+                "address_string": "Paris France",
+                "latitude": "48.85694",
+                "longitude": "2.292087",
+                "phone": "+1 415-727-1886",
+                "rating": "4.5",
+                "hours": [],
+                "groups": [
+                    {
+                        "name": "Tours",
+                        "localized_name": "Tours",
+                        "categories": [
+                            {
+                                "name": "Cultural Tours",
+                                "localized_name": "Cultural Tours"
+                            },
+                            {
+                                "name": "Sightseeing Tours",
+                                "localized_name": "Sightseeing Tours"
+                            },
+                            {
+                                "name": "Private Tours",
+                                "localized_name": "Private Tours"
+                            },
+                            {
+                                "name": "City Tours",
+                                "localized_name": "City Tours"
+                            },
+                            {
+                                "name": "Day Trips",
+                                "localized_name": "Day Trips"
+                            }
+                        ]
+                    }
+                ],
+                "reviews": []
+            },
+            "Cathedrale Notre-Dame de Paris": {
+                "address": "6 Parvis Notre-Dame Place Jean-Paul II, 75004 Paris France",
+                "location_id": "188679",
+                "description": "The iconic Notre Dame Cathedral Paris—meaning ‘Our Lady of Paris’—is a masterpiece of French Gothic architecture. Built back in the 12th century, the important monument has witnessed many historical events. It has also inspired Victor Hugo’s story of the Hunchback of Notre-Dame. Outside the cathedral, you can admire its grand exterior which is framed by an elegant pair of bell towers, stained glass windows and an ornately decorated facade with grand statues. You can also enter the cathedral for a small entrance fee to view Nio-Gothic artwork and furniture as well as join their weekly sessions. – Tripadvisor",
+                "address_string": "6 Parvis Notre-Dame Place Jean-Paul II, 75004 Paris France",
+                "latitude": "48.853",
+                "longitude": "2.3498",
+                "phone": "+33 1 42 34 56 10",
+                "rating": "4.5",
+                "hours": [],
+                "groups": [
+                    {
+                        "name": "Sights & Landmarks",
+                        "localized_name": "Sights & Landmarks",
+                        "categories": [
+                            {
+                                "name": "Churches & Cathedrals",
+                                "localized_name": "Churches & Cathedrals"
+                            },
+                            {
+                                "name": "Historic Sites",
+                                "localized_name": "Historic Sites"
+                            },
+                            {
+                                "name": "Architectural Buildings",
+                                "localized_name": "Architectural Buildings"
+                            }
+                        ]
+                    }
+                ],
+                "reviews": [
+                    {
+                        "title": "Resurrection",
+                        "review_text": "The corner stone of Notre-Dame de Paris was laid more than 860 years ago and, over those centuries, the cathredral has survived war and revolution—even the terrible fire of 2019. The publication of Victor Hugo’s novel “The Hunchback of Notre-Dame” in 1831 renewed interest in preserving what by then had become little more than a rundown landmark. Even the iconic wooden spire was a later addition, having been added in 1859. At the time of the fire, a five-year goal was set for the restoration of the cathredral. Given that it took almost 200 years to build, some thought that two or three times that number might be needed. But now, an opening date of December 7 has been officially announced, just a month away—although further work will continue for another year or two. These pictures, which were taken on a misty Sunday in October, show how much has been done—and still to be completed."
+                    },
+                    {
+                        "title": "Opens December 2024!",
+                        "review_text": "Opens in December of 2024, we were 3 months early but had to see.  Wish to come back, the history is haunting, and the view is magnificent."
+                    },
+                    {
+                        "title": "impressive and majestic!",
+                        "review_text": "I went to Notre Dame Cathedral in Paris. I had an excellent time, the place is really beautiful and the building is majestic. The guided tour gave us a lot of information about the history of the place, and I was able to discover some incredible anecdotes about the illustrious figures who have built the cathedral. The interior of the building is filled with paintings and stained glass windows that let in a beautiful light. \n\nNetherless,the place is packed with tourist. Try to choose less busy times to avoid the waiting queues for the audio guides !\n\nEnjoy your trip !"
+                    },
+                    {
+                        "title": "Opens in December again",
+                        "review_text": "Even though it wasn’t open, it was definitely worth walking around. You could see a lot of activity on defense. They have a lot of highlights of the inside the fire and significant of Benson people. If you’re in the area, I would definitely take the time to walk around."
+                    },
+                    {
+                        "title": "Beautiful",
+                        "review_text": "We didnt get the chance to go inside as it was under construction.The buildingis so beatiful.we just viewed it by outside."
+                    }
+                ]
+            },
+            "Big Bus Paris": {
+                "address": "11 avenue de l'Opera Stop 1, 75001 Paris France",
+                "location_id": "1008070",
+                "description": "Hop on board an open-top bus with 360-degree views and explore all that Paris has to offer ! From historic sites and iconic architecture to bustling streets and the world famous Eiffel Tower – immerse yourself in the rich history and culture of the French capital. Explore Paris and enjoy the ultimate freedom to take in the city at your own pace. A choice of live guided commentary in English on our red route or recorded commentary in 11 languages are available.",
+                "address_string": "11 avenue de l'Opera Stop 1, 75001 Paris France",
+                "latitude": "48.86527",
+                "longitude": "2.33439",
+                "phone": "+33 1 53 95 39 53",
+                "rating": "4.0",
+                "hours": [
+                    "Monday: 09:00 - 17:00",
+                    "Tuesday: 09:00 - 17:00",
+                    "Wednesday: 09:00 - 17:00",
+                    "Thursday: 09:00 - 17:00",
+                    "Friday: 09:00 - 17:00",
+                    "Saturday: 09:00 - 17:00",
+                    "Sunday: 09:00 - 17:00"
+                ],
+                "groups": [
+                    {
+                        "name": "Tours",
+                        "localized_name": "Tours",
+                        "categories": [
+                            {
+                                "name": "Hop-On Hop-Off Tours",
+                                "localized_name": "Hop-On Hop-Off Tours"
+                            },
+                            {
+                                "name": "City Tours",
+                                "localized_name": "City Tours"
+                            },
+                            {
+                                "name": "Bus Tours",
+                                "localized_name": "Bus Tours"
+                            }
+                        ]
+                    }
+                ],
+                "reviews": []
+            },
+            "Le Marais": {
+                "address": "Le Marais 3e Arrondissement, 75003 Paris France",
+                "location_id": "292257",
+                "description": "Get lost in one of the most charming neighborhoods in Paris, brimming with unique boutiques and stylish art galleries. Besides its vibrant LGBTQIA+ community, Le Marais also has a rich Jewish heritage, with winding streets lined with historic medieval architecture. If you're looking for a night out, head to one of the many gay bars or clubs that the area is known for. Take a walking tour to discover fascinating insights about the neighborhood, or a food tour to have a taste of the area's vibrant culinary scene—travelers say the falafel is some of the best! Visit during the week for fewer crowds and wear comfortable walking shoes to navigate the neighborhood's cobblestone streets. – Tripadvisor",
+                "address_string": "Le Marais 3e Arrondissement, 75003 Paris France",
+                "latitude": "48.861237",
+                "longitude": "2.358197",
+                "phone": "+33 9 52 89 24 05",
+                "rating": "4.5",
+                "hours": [],
+                "groups": [
+                    {
+                        "name": "Sights & Landmarks",
+                        "localized_name": "Sights & Landmarks",
+                        "categories": [
+                            {
+                                "name": "Neighborhoods",
+                                "localized_name": "Neighborhoods"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Other",
+                        "localized_name": "Other",
+                        "categories": [
+                            {
+                                "name": "Neighborhoods",
+                                "localized_name": "Neighborhoods"
+                            }
+                        ]
+                    }
+                ],
+                "reviews": [
+                    {
+                        "title": "One of the Top 5 Iconic site in Paris",
+                        "review_text": "Le Marais has become a trendy district of the Marais. Definitely Iconic like the Latin Quarter and La Rive Gauche, as its graffitis sometimes prove it. \nIt is located in the 4th arrondissement. It is full of museums, trendy boutiques, galleries and bars, some of which are gay. \nIt also used to contain the Jewish quarter of the city. This district is still home to many kosher restaurants.\nAnother iconic site is the Place des Vosges, verdant, which houses elegant arcades and the Victor Hugo museum, where the writer lived. \nThe streets around the Saint-Paul metro station lead to the Maison Européenne de la Photographie but you have not less intersting museums such as Les Archives Nationales and Le Musee Carnavalet, ideal for rainy days.\n\nBut actually if we forget the trendy aspect of the Marais, I love it for its narrow streets and its Louis XIII architecture which takes me back to the history of Paris."
+                    },
+                    {
+                        "title": "Best place in Paris",
+                        "review_text": "Place to be. Was here for whole october and there is no boring days at all. People are nice and really international. Also lot of great restaurants and coffee shops"
+                    },
+                    {
+                        "title": "Charming area of the Right Bank to explore in Paris",
+                        "review_text": "This is a charming district on the Right Bank in central Paris. There are quieter neighbourhoods you can stroll as well as important sightseeing including several museums, churches and historic hotels, Opera house, quaint public squares and monuments to enjoy. \n\nYou will also find a nice range of hotels and dining opportunities, all nicely connected to the rest of the city by buses and the Metro. It is a really nice location of Paris to spend a day or more exploring, even longer if you plan to stay overnight in this area of the city."
+                    },
+                    {
+                        "title": "A Charming Parisian Neighborhood",
+                        "review_text": "Le Marais is absolutely perfect! Our apartment was right next to the Place des Vosges, and we were surrounded by great restaurants, bakeries, and grocery stores. Plus, there are two free museums just a 2-5 minute walk away. The area is truly beautiful."
+                    },
+                    {
+                        "title": "Le Marais is perfect",
+                        "review_text": "This neighborhood has it all; museums, history and food abound.  The young energy and edgy fashions make it a constant feast for the eye.  Our apartment was quiet and restful for evenings, yet riveting nightlife is only a block away."
+                    }
+                ]
+            },
+            "Paris Las Vegas": {
+                "address": "3655 Las Vegas Blvd S, Las Vegas, NV 89109-4345",
+                "location_id": "592412",
+                "description": "You won’t get a view like this at any other Las Vegas pool. Pool á París is located right underneath the hotel’s Eiffel Tower replica at Paris Las Vegas, positioned in the heart of the Las Vegas Strip. Take rest and relaxation to the next level with a lounge chair, daybed or cabana rental at Pool á París. The romantic atmosphere paired with various amenities will leave you rejuvenated and ready for the evening on the famed Las Vegas Strip.",
+                "address_string": "3655 Las Vegas Blvd S, Las Vegas, NV 89109-4345",
+                "latitude": "36.112152",
+                "longitude": "-115.17155",
+                "phone": "+1 877-796-2096",
+                "rating": "4.0",
+                "hours": [],
+                "groups": [
+                    {
+                        "name": "Sights & Landmarks",
+                        "localized_name": "Sights & Landmarks",
+                        "categories": [
+                            {
+                                "name": "Points of Interest & Landmarks",
+                                "localized_name": "Points of Interest & Landmarks"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Casinos & Gambling",
+                        "localized_name": "Casinos & Gambling",
+                        "categories": [
+                            {
+                                "name": "Casinos",
+                                "localized_name": "Casinos"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Fun & Games",
+                        "localized_name": "Fun & Games",
+                        "categories": [
+                            {
+                                "name": "Casinos",
+                                "localized_name": "Casinos"
+                            }
+                        ]
+                    }
+                ],
+                "reviews": [
+                    {
+                        "title": "Enjoyed the Paris stay",
+                        "review_text": "Our room had amazing views and was spacious, comfortable and clean. Easy check in and friendly accommodating staff. It was a hike to the Versailles tower from check-in as they hadn’t finished the direct walkway yet but taxis and transportation were close to the bottom of the elevators. Pools were great as were the variety of restaurants and food. Staying there again for NFR we liked it so well."
+                    },
+                    {
+                        "title": "This is NOT a 4-star hotel",
+                        "review_text": "This is NOT a 4-star hotel by any stretch of the imagination.  The rooms are very dated, sheets dirty with holes, missing knob on the dresser and the check-in staff was rude.  The restaurants are limited in this hotel.  The best thing about this hotel is the location, the bellhop, housekeeping, and wait staff were nice.  Other that that, there's nothing."
+                    },
+                    {
+                        "title": "Go somewhere else",
+                        "review_text": "Please go somewhere else - pay a bit more if you have to. The queue for check in was over an hour - we were slightly early and were told to either pay $50 for early check in or join the queue again. There was an automatic check in machine but it wasn't working. There was only 3 clerks on, and the queue was out of the reception and into the casino.We were celebrating our 41st wedding anniversary and asked if an upgrade was possible and the clerk literally snorted and laughed at us.  I said that I didn't expect that response, she told us that the staff were not allowed to arrange upgrades, and she was fed up of people asking, and she was thinking of just walking out, and how stressed and understaffed they were, and her manager didn't care. We paid for the early check in, just so we didn't have to queue again. It certainly put a dampener on our visit.The room was dated but OK, but no tea or coffee making facilities. We asked if we could get a kettle and were told that no rooms have that facility any more. $8 for a cup of very weak tea was a bit excessive, I thought, and when I asked for another tea bag as it was so weak, was asked for another $8! Lots of very drunk and noisy people coming back to their rooms during the night and shouting and slamming doors. There was a lot of mess in the corridors- dropped popcorn etc, and this was not cleared up. We visited lots of the other hotels, and none of them had such problems with checking in queues. We found the reception staff off hand and unfriendly, and the bar staff weren't much better. We ordered a coctkail for me and my husband asked for a whiskey. The barman asked which one, and my husband ordered one. \"That's a Scotch, not a whiskey says the barman\" - we giggled and said - oh that's what you call it over here- he very rudely replied that it was called Scotch everywhere, and you should know what you want to order and avoid me wasting my time having to explain things to you. This trip to Las Vegas was part of a special holiday and the visit to Paris Hotel was the lowest point in our trip. The customer care was much better in other hotels - we used the bars there. Go some where else"
+                    },
+                    {
+                        "title": "Paris Las Vegas Just Meh",
+                        "review_text": "The hotel is nice enough, clean, beautiful decor, room was fine.  We had a pool view, and the windows were so dirty that the view was obstructed.  We aren't high-rolling gamblers and that has a strong affect on how customers are treated.  Desk clerks are \"low talkers\", quickly making offers for upgrades if you pay extra, and if you decline, they're not very nice. Check in system is antiquated, one long line to see a clerk; we paid for early check in, but they wanted you to get back in the line when you're room is ready, instead of using the kiosks in the lobby.  Not sure why they aren't using modern technology. \n Best part - we paid the extra $80+tax for a lounger bed at the pool - it gave us a great afternoon, includes bottled waters, and the pool area is beautiful; staff at pool were very friendly.  Worst part - no coffee in the room and in the hotel restaurants, it's $9+ a cup!  That's ridiculous.  They have a fridge in the room, they could have coffee makers like every other hotel in the USA.  I signed up for Caesars Rewards and it proved to be useless, unless you're spending lots of money in the casino.  There is also a lot of construction in the area, so even the Bellagio fountains were partially obstructed."
+                    },
+                    {
+                        "title": "WARNING ABOUT PARIS HOTEL VEGAS",
+                        "review_text": "ATTENTION EVERYONE, A WARNING about the PARIS HOTEL IN VEGAS: NEVER stay here because it is NOT safe. There seems to be an inside job happening that you’d never suspect. The worst part is when I reported it to the front desk, they didn’t care at all. They made me wait and did nothing. Security was no help either. I asked them to check the cameras by the elevator to identify who went into my room, but they refused, saying it’s ‘confidential.’ I had a gut feeling something was off.\n\nSo please, if you’re going to Vegas, be extra careful. Bring additional locks because even if your door is locked, they can still open it with their own keys. So, PEOPLE, DO NOT stay at the Paris Hotel in Vegas. At first, the staff seems nice, but once you check in, you’re on your own. They don’t care about you, your comfort, or helping you in any way. I’m not just upset about my stolen backpack—this is a warning for others to know what’s really going on at Paris Hotel in Vegas. Even if you lock your door, they have their own key.\n\nI’m not going to stress over it anymore, but since they’re NOT helping me or even showing basic concern, I will make sure my story is heard. People need to know that this PARIS HOTEL IS NOT SAFE. These thieves are professionals, and it feels like they somehow knew exactly when I was alone in the room while my husband and brother-in-law were at a concert. How else would they know exactly where I put my backpack?\n\nI lost so many valuable and sentimental items: my wedding ring, a pearl ring with diamonds that was a graduation gift from my sister, and other precious jewelry with memories attached, plus my wallet, driver’s license, and credit cards. Yes, these are just things, and I’m thankful I’m safe and my dog is unharmed, but people need to know what’s happening at this Pais hotel. When will they take action—when someone gets hurt?\n\nMy triplet siblings and I came to Vegas to celebrate our 50th birthday early, arriving on Tuesday, September 17, 2024. Everything was great until our last day, Saturday, September 21,2024 our birthday. What a heartbreaking way to end our trip. 😢😔"
+                    }
+                ]
+            }
+        },
+        "geo": {
+            "Paris": {
+                "address": "Paris France",
+                "location_id": "187147",
+                "description": "Lingering over pain au chocolat in a sidewalk café, relaxing after a day of strolling along the Seine and marveling at icons like the Eiffel Tower and the Arc de Triomphe… the perfect Paris experience combines leisure and liveliness with enough time to savor both an exquisite meal and exhibits at the Louvre. Awaken your spirit at Notre Dame, bargain hunt at the Marché aux Puces de Montreuil or for goodies at the Marché Biologique Raspail, then cap it all off with a risqué show at the Moulin Rouge.",
+                "address_string": "Paris France",
+                "latitude": "48.857037",
+                "longitude": "2.349401",
+                "reviews": [
+                    {
+                        "title": "Amazing food and service! ⭐️⭐️⭐️⭐️⭐️",
+                        "review_text": "Beautiful food and fantastic service from staff. We had been on the move all day in Paris without a bite to eat and stumbled across this lovely little place. I had a Frutti Di Mare (Seafood Pizza) and my husband had a Bolognaise pasta - both were beautiful meals. The pizza dough was the best I have ever tasted. \n\nStaff provided a fantastic service and we received a warm welcome. We will be back when we visit Paris, thank you."
+                    },
+                    {
+                        "title": "Really a Hidden gem",
+                        "review_text": "A hidden gem (and secret!), perfect location right around the l'Arc de Triomphe and the best service ever! Starting with an amazing breakfast - French style from the bread to the cheese and local products - to really great personal service including an early morning wake-up call. Even being a little late for breakfast or early the next day and rushing out, to-go bag included. \n\nI can only truly recommend this gem in the heart of the city, just a stroll from the Champs-Elysees!"
+                    },
+                    {
+                        "title": "Great Staff, Great Hotel, Great Location",
+                        "review_text": "The staff at Hotel Du Danube were absolutely phenomenal! So welcoming and nice and always answered our questions or gave advice on what to do, see, or eat. The location of the hotel can not be beat. Centrally located, we walked literally to every major tourist site with absolutely no issues. I would book a trip back to Paris just for this hotel experience alone!"
+                    }
+                ]
+            },
+            "Disneyland Paris": {
+                "address": "Boulevard de Parc, 77700, Marne-la-Vallee France",
+                "location_id": "189258",
+                "description": "Welcome to the place where everyone can shine their brightest!\n\nSince opening in 1992, Disneyland Paris® has welcomed hundreds of millions of guests through its gates, making it Europe's number-one tourist destination\n\nWith the majestic Sleeping Beauty castle as its heart, Disneyland park is the fantastical home to five incredible lands. For 30 magical years, it's been the place where extraordinary stories come to life before your very eyes. Buckle up because you’re about to whizz around Discoveryland, Fantasyland, Frontierland, Adventureland, and Main Street U.S.A.®\n\nFeel unique magic in the air, as the 30th Anniversary festive aura transforms Disneyland park into a vibrant wonderland. With stunning surroundings, the mesmerizing Gardens of Wonder, and many eye-catching surprises, you're sure to get swept up in the celebratory spirit.\n\nAs night falls, prepare to be amazed by the award-winning Disney D-Light, where spectacular drone light choreography illuminates the sky.",
+                "address_string": "Boulevard de Parc, 77700, Marne-la-Vallee France",
+                "latitude": "48.872417",
+                "longitude": "2.776952",
+                "reviews": []
+            },
+            "Paris Las Vegas": {
+                "address": "3655 S Las Vegas Blvd, Las Vegas, NV 89109",
+                "location_id": "143336",
+                "description": "Experience everything you love about Paris, in the heart of the Las Vegas Strip. The city of lights shine on the strip. One night with us is all it takes to realize everything's sexier in Paris. Give in to your every desire at Paris Las Vegas Hotel and Casino, whether you crave decadent dining, world-class entertainment or thrilling nightlife. Guest rooms at Paris Las Vegas Hotel & Casino have a distinctly chic European look, with Versailles-style fixtures and luxury romantic décor. Red Rooms are sophisticated and modern while the splurge-worthy Louis XV Suite features chandeliers and oversized bathtubs.",
+                "address_string": "3655 S Las Vegas Blvd, Las Vegas, NV 89109",
+                "latitude": "36.11246",
+                "longitude": "-115.17071",
+                "reviews": [
+                    {
+                        "title": "3 day stay!",
+                        "review_text": "We stayed 3 nights at Paris.  The casino was great and the restaurants were as well.  But the rooms have not been taken care of at all.  Probably will not stay again unless the rooms have been updated.  Very sad, this used to be the place to stay but not anymore."
+                    },
+                    {
+                        "title": "Better than these reviews say",
+                        "review_text": "We enjoyed our stay at Paris last weekend. Yes the line to check in was very long, however there are multiple electronic stations where you can check in yourself and that line was short, so we checked in within a few minutes, even adding late checkin for ourselves with no issue. The beds were comfortable, the room was very clean, and the shower was probably the largest hotel shower I've ever seen. We had the prefix brunch at the Eiffel Tower restaurant; I highly recommend the creme brulee french toast, it was incredible. I would definitely stay at Paris again."
+                    },
+                    {
+                        "title": "Worn down somewhat",
+                        "review_text": "I was there 2 or 3 years ago and was impressed....but, that was then...my latest trip was not as impressive. Hotel rooms have worn down somewhat. Peeling wallpaper, thread bare carpet patches, awful dingy hard towels an dirty bed linens. It could have been worse, my travel companions room had dirty underwear,  filthy tubs and pills on the floor, they changed rooms and it was just as dirty with difficulties getting housekeeping services. Expected better for the price..."
+                    },
+                    {
+                        "title": "Hotel was nice, but beds were so uncomfortable",
+                        "review_text": "The hotel was nice overall. The bathroom was clean with the exception of an old bar of soap with hair on it. The beds though were so uncomfortable. The sheets were also very rough and made our skin red. Overall I’d say 3/5 stars. Mostly because we didn’t get much sleep due to the bed situation"
+                    },
+                    {
+                        "title": "Cold Water Conference",
+                        "review_text": "Stayed with Paris Hotel numerous times for the annual SEMA show.  Usually with a Nice experience.  This visit however was 1st met with a Room and a Safe that would Not function.  Calling down to the main office, we than had a person visit and confirm, the Safe Inoperable.  Paris moved us to another room on the same floor and we settled in.  Only to realize the sink would not provide Warm to Hot water until it was running for 10-15 minutes straight.   This is huge with more than one person in the room, and a complete waste of water.   Oddly enough, the shower would warm up in a normal manner.  Secondly, the TV would lose internet connectivity so often that we would give up on watching TV in the early morning or evening."
+                    }
+                ]
+            },
+            "Ritz Paris": {
+                "address": "15, Place Vendome, 75001 Paris France",
+                "location_id": "188728",
+                "description": "Located on the iconic Place Vendôme, the Ritz Paris is one of the most legendary hotels in the City of Lights. Refinement of French art de vivre meets elegance of Belle Époque décor. Exquisitely appointed 71 rooms and 71 suites bear the name of F. Scott Fitzgerald or Marcel Proust. Ritz Paris is a place where dreams come to life. The famous Bar Vendôme welcomes guests to savor dishes at any hour of the day while the Ritz Bar is the perfect place to enjoy zodiac-themed cocktails. Ritz Paris Le Comptoir celebrates modern conviviality and French gourmandise, with exceptional pastries by Chef François Perret. At the École Ritz Escoffier, enthusiasts, from novice to professional, can perfect their approach to French cuisine and pastry-making. The Ritz Club & Spa and its sumptuous pool elevates well-being to an art form. Last but not least, Salon Proust is the place to enjoy a delightful teatime à la française and no visit to the Ritz Paris would be complete without stopping by the iconic Bar Hemingway.",
+                "address_string": "15, Place Vendome, 75001 Paris France",
+                "latitude": "48.868008",
+                "longitude": "2.328764",
+                "reviews": [
+                    {
+                        "title": "If a mistake is made, quick reparations are done.",
+                        "review_text": "I attended the Escoffier class in the morning and was escorted to the room personally, a lovely touch. However, another woman's purse and luggage was located within. \n\nPrompt apologies were communicated and my luggage was delivered within 15 minutes or so. My fatigue was overwhelming so I declined the offer to unpack. \n\nLater, I looked in the Hemingway bar which intimate but doesn't open up for conversation with its limited seats at the bar. You need to bring your friends with you.\n\nI moved to the Vendome bar with lovely piano tunes and had a lively conversation with an attorney from Finland and later, a couple from Australia. Ambiance and environment were super.\n\n"
+                    },
+                    {
+                        "title": "Perfect in every way!",
+                        "review_text": "This was my first stay at the Ritz, but it won’t be my last. Every staff member that I encountered was professional but friendly and made me feel quite welcomed. \n\nOne of the great perks of a stay at the Ritz is that your room is ready when you arrive, regardless of the time (as long as you let them know your arrival time in advance).  Many flights from the US arrive quite early in the morning, so this was a huge plus for me. It is also possible to delay check out until 3 pm on your day of departure. \n\nI have already booked a second stay for January 2025"
+                    },
+                    {
+                        "title": "Beautiful place but food only average",
+                        "review_text": "Had lunch in the Ritz on Monday after Arc weekend.. Nice table in garden room.. very good Regnard wine.. we ordered 2 Croque Monsieur and  a chicken Caesar Salad.. the service was very good.. polite, friendly and professional... the food was a let down, unfortunately.. it was well presented and in a timely fashion.. but the salad was lacking in taste and flavour.. the Croque was described as average by those who ate it.. cocktails after lunch were lovely... it was a pity about the food.. fabulous place though.. our wine waiter, Axel, was the epitome of French charm at it's best.."
+                    },
+                    {
+                        "title": "Chapter and Verse of Comfort",
+                        "review_text": "As a bookworm, I was in heaven. Each floor was themed after a different literary genre, with quotes adorning the walls and books available to borrow everywhere. The cozy reading nooks scattered throughout were perfect for losing oneself in a story. The staff, well-versed in literature, were always ready with a recommendation. It was a bibliophile's dream come true!"
+                    },
+                    {
+                        "title": "Epitome of parisian luxury",
+                        "review_text": "This hotel is truly in a league of its own. The concierge service deserves special mention - their knowledge and efficiency were outstanding. They anticipated our needs and made excellent recommendations that enhanced our Paris experience.\nthe attention to detail throughout the hotel is remarkable. from the exquisitely appointed rooms to the flawless service in every interaction, the ritz maintains its reputation as an icon of luxury hospitality.\nWhile the stay was short, the memories will last a lifetime. for those seeking the pinnacle of parisian luxury, the ritz paris delivers an unforgettable experience that justifies its legendary status. truly a 5-star gem in every sense."
+                    }
+                ]
+            },
+            "The Paris Catacombs": {
+                "address": "1 Avenue du Colonel Henri Rol-Tanguy, 75014 Paris France",
+                "location_id": "189229",
+                "description": "A genuine labyrinth in the heart of underground Paris, this ossuary houses the remains of approximately six million Parisians. The history of the Catacombs dates back to the late 18th century when the city's cemeteries were closed due to health reasons and its contents were moved to an underground site. Today, you can walk down the spiral staircase and take a guided tour of the network of tunnels or explore it at your own pace. It's recommended to buy skip-the-line tickets online to avoid snaking lines. You can easily reach the Catacombs by hopping on the Paris Metro. – Tripadvisor",
+                "address_string": "1 Avenue du Colonel Henri Rol-Tanguy, 75014 Paris France",
+                "latitude": "48.83387",
+                "longitude": "2.332481",
+                "reviews": [
+                    {
+                        "title": "Great catacombs DO NOT USE HEADOUT TOURS",
+                        "review_text": "Great experience and fascinating to understand the history behind the catacombs BUT don’t book through HEADOUT Paris is our advice. \nSee HEADOUT Paris reviews for reasons."
+                    },
+                    {
+                        "title": "Absolutely amazing",
+                        "review_text": "This is a must see. Save money and just go online and buy tickets for 29 Euros and take an Uber there-instead of over $100 on a tour formal tour. You wear an audio device that explains everything in great detail as you walk through. All the history around the catacombs."
+                    },
+                    {
+                        "title": "Surreal experience...",
+                        "review_text": "This has been on my bucket list for a few yrs now and went back to Paris just to visit these catacombs..creepy but surreal experience to say the least.I did the self guided tour which was grand you just have to hang back abit from others to give yourself some space to take it all in.In my view it's a must see and I would highly recommend it.Tickets are really only sold on the official website and are only available 7 days in advance of your visit so 100% book online,they get realised at 10am Paris time each day in blocks of 15 mins and believe me when I say they sell out fast,most days are just about sold out by lunchtime so don't dilly dally waiting for a particular time I would just book what's available and work your day around it.You can't buy tickets onsite for same day."
+                    },
+                    {
+                        "title": "Death in Paris",
+                        "review_text": "Go! This definitely was creepy. I've never been surrounded by aisles of bones and skulls before. You need to be able to walk a bit. We did not have a guide or use the self guided tour, we just walked and read what info was posted inside, which was adequate. Definitely different then any tourist experience I've ever had. It really did give me a chill. It somehow also connected me to Paris in seeing the bones of its now departed residents. I liked the gift shop at the end of the tour."
+                    },
+                    {
+                        "title": "Interesting, but wouldn't go again",
+                        "review_text": "The background story is very interesting, and the sheer number of people entombed here is impressive, but the overall experience is fairly monotonous.  \n\nFor those with limited mobility, you may want to reconsider as there are ~140 steps up and down into the catacombs and there is no elevator.  Additionally, there are damp gravel pathways and it's fairly dim down there.  My 75 y/o father did not enjoy it due to these issues.  I think they are well spelled out before you enter, but it was a lot for him.\n\nThere is also a long underground walk from the entrance building to the first sites, so again not a good idea if you have limited mobility."
+                    }
+                ]
+            },
+            "Le Bristol Paris": {
+                "address": "112 Rue du Faubourg Saint Honore 8th Arr., 75008 Paris France",
+                "location_id": "188729",
+                "description": "Faubourg Saint Honoré, au cœur du Paris de la mode, Le Bristol Paris écrit son histoire depuis 1925. Elle nous raconte l’élégance de son décor entièrement rénové, agrémenté de meubles XVIIIe, l’audace des soirées Bristol After Dark qui revisitent les codes des nuits parisiennes, la maitrise d’un service alliant art, chaleur et grand professionnalisme. Brasserie une étoile ou table triplement étoilée, nos Chefs subliment la gastronomie française. De l’extraordinaire piscine suspendue au-dessus des toits, aux 1200 m2 de verdure et de calme de son jardin intérieur, Le Bristol est un Palace unique où l’on se sent bien.",
+                "address_string": "112 Rue du Faubourg Saint Honore 8th Arr., 75008 Paris France",
+                "latitude": "48.871685",
+                "longitude": "2.3148",
+                "reviews": [
+                    {
+                        "title": "Hello Paris!",
+                        "review_text": "Great location, friendly service excellent housekeeping, overall a great experience! Definitely the best hotel in town. "
+                    },
+                    {
+                        "title": "Hotel Heaven",
+                        "review_text": "Once again another fabulous stay at Le Bristol! If heaven has a hotel this would be it. Every detail in the room from the bed to the towels is perfect. The concierge team is outstanding , they took care of all of our dining and tours. The staff is so friendly and sincere can't wait to return again."
+                    },
+                    {
+                        "title": "Still the One",
+                        "review_text": "We have stayed at this luxury hotel multiple times over the years. With each returning visit, there are pleasant surprises, as the team is always exploring new ways to enhance the space, the brand and the experience. What doesn't change is the culture of top drawer hospitality and extraordinary service that is consistent in everything they do and everywhere you turn. Old school excellence, elegance and warmth at its best. We look forward to returning next year...if we can wait that long."
+                    },
+                    {
+                        "title": "Exceptional in every way!",
+                        "review_text": "Just about perfect in every way, true grande dame boutique hotel. Gorgeous on inside and outside, beautiful lobby and rooms, 3 star Michelin restaurant, phenomenal food, service and attentiveness. Pretty much our favorite hotel in the world!  Yes, it's very expensive but perfection is not cheap! "
+                    },
+                    {
+                        "title": "Delightful Discovery",
+                        "review_text": "This place is a breath of fresh air in a world of cookie-cutter experiences. The attention to detail is remarkable, from the thoughtful layout to the personalized service. Every aspect seems designed to delight and surprise. The staff's genuine enthusiasm is contagious, making e"
+                    }
+                ]
+            },
+            "Paris Metro": {
+                "address": "Paris France",
+                "location_id": "2323543",
+                "description": null,
+                "address_string": "Paris France",
+                "latitude": "48.864166",
+                "longitude": "2.330278",
+                "reviews": [
+                    {
+                        "title": "Worst experience at Bir Hakeim Metro station",
+                        "review_text": "We had to take the metro to reach our bus station, but the staff wouldn’t accept cash. Luckily, I had a virtual card, so we managed to pay. However, the ticket they gave us wouldn’t validate. When I went back to the staff for help, they told me to join the line again, even though it was super long and we were running late.\n\nI politely asked for assistance again, but instead of helping, the staff started using foul language. I was with my sister, and we didn’t have time to argue, so I just let it go. In the end, they opened the gate for us, but it was a terrible experience.\n\nI wouldn’t recommend using the metro if you’re short on time. The staff was rude and unhelpful, and honestly, it didn’t feel safe. It’s disappointing that behavior like this goes unchecked."
+                    },
+                    {
+                        "title": "WARNING METRO STAFF SCAM AND BULLY TOURISTS",
+                        "review_text": "Awful experience on Metro - we bought tickets which but my partners didn't validate for some reason. Just after going through we were surrounded by 3 guards aggressively wanting to check tickets. When my partners was said to be 'invalid' as if it had not gone through the barrier they demanded a €60 fine - no discussion. We explained we had just bought it with help from a staff member for the final journey we needed to make back to the Eurostar and asked if we could point her out. She stormed off and refused to let us point her out. When she returned she said the ticket office staff said no one helped!! They said they would call police which would raise the fine to €200. They were bullying and aggressive and it was very clear there was a genuine mistake as they had watched us the whole time buying the ticket and go through. \nWe will never visit Paris again and if you are going avoid the Metro - there is definately scamming there with tourists from the very people who should be looking out for you. What an awful way to treat tourists. Made me appreciate the UK and Londons underground staff. We were glad to be home and will not visit France again ever."
+                    },
+                    {
+                        "title": "Fantastic System",
+                        "review_text": "Just back from a 3 night stay in Paris with 2 children aged 14 and 12. I had lived in Paris 30 years ago, but my wife and kids were new to the city.\n\nThe Paris Metro system is fantastic. If you are staying in the city you are probably less than 250m from an entrance into the Metro and your destination is equally close to a stop. If your destination is on the same line as your start location just follow the signs for that line - there will be 2 options, one for each direction, and the direction is indicated by the name of the last station in that direction. Sometimes they will also list out the stops in each direction, but not always. If its on a different line you will need to change - this involves getting off at a stop and following signs for the next line/direction you need to take. You won't have to leave the Metro system, so you don't need a second ticket. \nWe used the phone app Bonjour RATP to see the best route (including transfers). I would suggest practice using this app before you go if you are new to subway systems.\n\nWe used paper tickets as we didn't know how much we'd use the Metro, but a Navigo Easy card each preloaded with tickets would have been cheaper and simpler. There are other options such as day passes etc. The paper tickets we bought were called t+ tickets and they cover any journeys within the metro system except to Orly Airport.\n\nHang on to your ticket until you leave the Metro system! Twice we had to use the same ticket twice as there was a second set of turnstiles for some reason. Also, while we didn't see any ticket inspectors, they do check tickets and you'll be fined if you have thrown your ticket away.\n\nA few words of warning:\n\nTake precautions against pick pockets - they will target tourists and its hard to look like a local! Carriages can be crowded so valuables need to be well secured. We didn't see any pickpockets, but there were warnings everywhere. I also bought any tickets in Republique rather than the more touristy stations.\n\nWe took the Metro from Universite Saint Denis to Republic and back as we arrived on the bus from Beauvais airport. I felt it was quite challenging travelling as a family with suitcases in rush hour. We had to manoeuvre to make sure we were near the carriage doors so we could get out in time (Parisiens are impressively polite though!) If the kids were younger I would have looked into another form of transportation for this journey.\n\nThe system is old, and unlike more modern systems it doesn't seem very accessible. If you are unable to use stairs then do your research before travelling - while some stations have lifts I didn't see many.\n\nSome Metro journeys involve quite a bit of walking within the system (to/from platforms, between lines etc)\n\nSome trains are very busy - so you'll find yourself quite squashed in. The longest wait time we saw was 4 minutes though, so if you are concerned about a train being excessively full, then wait for the next one.\n\nConclusion:\nOverall we took 12 journeys on the Metro in 3.5 days, most journeys took less than 20 minutes. We stayed in Republique, which has a number of lines, so most journeys didn't need a transfer. We packed loads into our trip to Paris and there is no way we could have seen and done as much without such an efficient form of transportation, and the kids really enjoyed the novelty of it."
+                    },
+                    {
+                        "title": "Best metro !",
+                        "review_text": "Our second visit this year and it really is the easiest and best metro system have ever used. Fast efficient and fairly cheap, miles better than its London, New York or Berlin alternatives as have used them all. The navigo card is brilliant"
+                    },
+                    {
+                        "title": "About what you'd expect",
+                        "review_text": "The paper tickets are tiny and stop working after like a day, no matter if it's meant to last a few days. Something to do with the magnetic strip if it touches your phone or if it gets bent so on. plus how can you keep track of a peice of paper that small for a few days. It's about 2cm high and 5cm wide. I wasted like €20  because the ticket cost €35 to begin with, that was meant to last 72 hours stopped working in 24 hours.\n\nThe staff will refuse to speak english and make you buy a Navigo card and ignore the fact you paid for a ticket. The Navigo card is better.\n\nSubway was frequent if not crowded, easy to navigate and get around."
+                    }
+                ]
+            },
+            "Novotel Paris Les Halles": {
+                "address": "8 Place Marguerite de Navarre, 75001 Paris France",
+                "location_id": "197424",
+                "description": "Notre hôtel se rénove et évolue pour sublimer votre expérience ! Chaque changement est pensé avec soin pour vous garantir un séjour agréable, dans un cadre confortable et accueillant. Équipées d'une télévision à écran plat, d'une climatisation et d'un minibar, les chambres du Novotel Paris Les Halles offrent tout le confort dont vous avez besoin. Vous pourrez même rester connecté grâce au wi-fi gratuit. L'hôtel dispose de nombreux atouts, tels qu'un service de chambre et une conciergerie. Le centre de fitness et le petit déjeuner contribueront à rendre votre séjour encore plus spécial. Que vous soyez en voyage d'affaires, d'agrément ou les deux, le Novotel Paris Les Halles rendra votre séjour à Paris inoubliable.",
+                "address_string": "8 Place Marguerite de Navarre, 75001 Paris France",
+                "latitude": "48.861023",
+                "longitude": "2.346508",
+                "reviews": [
+                    {
+                        "title": "We can’t sleep because of bad services.",
+                        "review_text": "Aircon is not working.  Telephone is not working. We spend two (2) nights without sleep because of a very hot room. We reported the issue on the receptionist twice.  They just promised to fix it never done anything. Me and my wife are very frustrated.  We don’t recommend this hotel."
+                    },
+                    {
+                        "title": "Excellent hotel, very  professional personal, very well placed, nearby everything, I’ll come back for sure!!!",
+                        "review_text": "Excellent, specially personal of the Hotel, particularly Paulo such a nice man, continuously worry about any need that we have, he helped us in many ways. Hope in my next visit all the amenities are set, like restaurant, the entrance, breakfast used to be better when I visited it in 2022, best regards to all the personal they’re the best!"
+                    },
+                    {
+                        "title": "My favorite hotel in Paris",
+                        "review_text": "My favorite hotel in the heart of my favorite district of Paris! Convenient location (close to train, shopping, restaurants) yet quiet and charming. Breakfast was lovely, well stocked in-room coffee/tea, friendly staff, very clean hotel that is well maintained (elevators fast!)"
+                    },
+                    {
+                        "title": "Great location, helpful staff but currently baorded up as being renovated.",
+                        "review_text": "Stayed here for 2 nights at the end of a month long trip. Great location and as per other reviews the staff are very friendly and helpful. However, we were unaware that the hotel is currently being renovated. The front is all boarded up and the outdoor courtyard is not available. As a result there is no natural light coming into the hotel. When we arrived security had to come out and get us as they obviously saw we could not find the entrance. We didn't enjoy our stay as it felt dark and pokey."
+                    },
+                    {
+                        "title": "Very nice experience in paris",
+                        "review_text": "Paulo one of the best employees of the Novotel hotel, very servicial and kind. He help us too much in our time in paris. He told and explain many things to do in paris and places to know, he recommend many restaurants and was very good. He help us to do our visit was very easy."
+                    }
+                ]
+            },
+            "Bustronome Paris": {
+                "address": "2 Avenue Kleber, 75016 Paris France",
+                "location_id": "7621672",
+                "description": "Aboard a double-decker bus converted into a restaurant, guests will enjoy a friendly welcome and a wide variety of dishes in a fashionable setting. The BUSTRONOME : a Parisian invitation to rediscover some of the City of Light's most beautiful locations while enjoying fine French cuisine. This singular journey combines a visual experience with a treat for the taste buds; Paris residents and tourists alike can indulge their love of culture while savouring good food.",
+                "address_string": "2 Avenue Kleber, 75016 Paris France",
+                "latitude": "48.87277",
+                "longitude": "2.293885",
+                "reviews": [
+                    {
+                        "title": "Amazing experience with fabulous food!",
+                        "review_text": "Loved this experience, we would highly recommend, food was of amazing standard considering it was made in a small bus kitchen.  Staff were friendly and helpful, sights were great and loved the extra stop by the Eiffel Tower.  There was a five course meal served with wine which included tuna, fish, beef, cheese and desert.  Tips: book in advance especially in busy times, you might need to request a non alcoholic or soft drink (outside of water) as these are not always served as standard, if you run out of wine we were able to request more, staying on after the small break stop is a must because this is when you will get the Eiffel Tower experience."
+                    },
+                    {
+                        "title": "Sights of Paris and Dinner",
+                        "review_text": "Fabian and Lea our servers were spectacular. The whole idea of eating and seeing all the sites is just cool. The food was really good. A full 6 courses. They were also very accommodating to my dietary requirements. A wonderful experience."
+                    },
+                    {
+                        "title": "Not worth the price",
+                        "review_text": "I booked this experience based upon the Frenchies YouTube review as they stated how great the food was and a lovely experience. The poached egg starter and strawberry dessert were good but everything in between was not that great, especially the fish and duck. The duck was overcooked and the fish wasn’t seasoned well. I had just left the Loire Valley and ate at some amazing restaurants and this just didn’t even compare. The wine was also poor. There was a couple seated behind us and I heard the gentleman telling the wait staff that the only good thing was the bread and he told them he didn’t even want the duck brought to the table because the food had been so poor. It is a very jerky experience and I gave up trying to figure out what I was looking at, as my information wasn’t loading. This was a very overpriced, underwhelming experience and I wouldn’t repeat it. It was extremely disappointing to stop at Invalides for pictures, instead of outside the Eiffel Tower."
+                    },
+                    {
+                        "title": "Paris looks magical from the bus at night",
+                        "review_text": "great service, great experience, dinner exceeded all expectations, 6 courses of dinner, each one was very tasty.I will visit again."
+                    },
+                    {
+                        "title": "Fabulous experience",
+                        "review_text": "Amazing experience, especially following the Olympic Games\n\nStaff were delightful, food was delicious \n\nWe had a fabulous time, highly recommend"
+                    }
+                ]
+            },
+            "Generator Paris": {
+                "address": "9-11 Place du Colonel Fabien, 75010 Paris France",
+                "location_id": "7392376",
+                "description": "Generator Paris is a design-led hotel, offering both private and shared accommodations, located in the lively 10th district in Paris. Free WiFi access is available and it features a stylish lounge area with a games room. You can enjoy locally inspired dishes at the on-site Café Fabien and listen to DJ music while having a drink from the basement bar. Each of the contemporary rooms here provides air conditioning, bed linen, and a private bathroom with a shower. Some private twin rooms also offer a private terrace. A continental breakfast is prepared every morning, you will also find a 24-hour front desk, a laundry room, and a rooftop terrace as well as the shared lounge area.",
+                "address_string": "9-11 Place du Colonel Fabien, 75010 Paris France",
+                "latitude": "48.878223",
+                "longitude": "2.36958",
+                "reviews": [
+                    {
+                        "title": "AVOID AVOID AVOID",
+                        "review_text": "SO many things wrong with this hostel. First, the staff were all so unfriendly, condescending, aggressive and SO rude. Secondly, the rooms were MANKY. There were stains ALL OVER our sheets, gum on the bed frames, nails on the floor and hair all under the pillows. The bathrooms were full of mold and again hair. The rooms were SO hot and humid ALL THE TIME and the AC wouldn’t work and the windows won’t open fully. \nThirdly, the beds were incredibly uncomfortable and the pillows didn’t support our necks at all - we all woke up with sore necks and backs the next morning with barely any sleep. \nFourthly, everything was VERY overpriced- 3€ for 500ml of water?? MAD. And 7.50€ to rent a towel?? HELLO??? \nI could name incidents that occurred when I stayed but I feel I could get into trouble if I mention them. But AVOID THIS HOSTEL AT ALL COST!!"
+                    },
+                    {
+                        "title": "Great Experience",
+                        "review_text": "We organized a quick visit to Paris with friends with children in tow. We found a structure with welcoming staff, with the reception always open and available to answer requests. The stay met expectations, the rooms are functional and clean. No annoying noises. I recommend booking at Generator Paris"
+                    },
+                    {
+                        "title": "Single Woman - One Week in Mixed Dorm (6 Bed)",
+                        "review_text": "Generally it's a fine place to stay if you need a place for a few nights - but what I didn't see in other reviews is that the bathrooms weren't terribly clean (tho the bedrooms were fine, cleanliness wise). And the price was pretty good but the location isn't so great. To be polite, it's not in a great area, so usually when I got up for the day I would immediately take the metro and head towards more central Paris to find a cafe or something. (Though the metro is extremely close so that was nice!) They do have luggage storage you can pay for, but it's easier to just keep it in your room (in my opinion). And I had 2 giant pieces of luggages which I was able to just put in the corner of the room and had no issues. (And then I put my backpack and whatnot in the storage under the bed.) \n\nThe room was clean but just seemed like it wasn't super well maintained. I only say that because it seemed the window was broken and there was a temporary sign saying not to open it. (So the room would sometimes get a little stuffy/warm since we couldn't let any fresh air in.) And the hinges on my storage container under the bed were broken. Minor things of course, but worth mentioning. \n\nI had great experiences with the people I had in my room, they were all very friendly and I even spent a couple days walking around Paris with a couple of them! No issues at all with it being a mixed dorm. (I liked to refer to them as my \"temporary friends\" bc we would chat and hang out in Paris for a few days and then one of us would check out of the hostel and have to say goodbye lol.) \n\nAnd the staff were very lovely and helpful and are happy to help in English or French.\n\nOverall I had a pleasant stay, but I just wanted to be honest about some of the negative points that I didn't see in other reviews before I booked. "
+                    },
+                    {
+                        "title": "Cost-aware Business Trip",
+                        "review_text": "Positive experience on a last-minute business trip...wish the architect and lighting designer had been less excited by the word generator and more excited about contributing to Paris."
+                    },
+                    {
+                        "title": "Top place",
+                        "review_text": "Top place to party or just to take a drink!!!🥳 The staff is very nice and international and they made lots of partys where everyone is wellcome. You can meet people from all the worls, from studens to startupers businessman or globetroters!"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -6,6 +6,7 @@ wikivoyage.xml
 wikivoyage.json
 raw_wikivoyage.json
 cleaned_wikivoyage.json
+city_descriptions.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -1,0 +1,112 @@
+/scratch/mjd9571/VentureAI
+# conda environments: # base /ext3/miniconda3 cambrian /scratch/mjd9571/conda/envs_dirs/cambrian juypter Untitled.ipynb VentureAI.png cleaned_wikivoyage.json cleaning_wikivoyage.py deprecated first_tests myenv new_falcon_model.py new_falcon_test-error.txt new_falcon_test.out new_falcon_test.sbatch xml_to_json.py /scratch/mjd9571/conda/envs_dirs/juypter multimodal_env /scratch/mjd9571/conda/envs_dirs/multimodal_env test /scratch/mjd9571/conda/envs_dirs/test
+Thu Nov 14 12:29:33 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Quadro RTX 8000                On  | 00000000:06:00.0 Off |                    0 |
+| N/A   31C    P8              24W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  Quadro RTX 8000                On  | 00000000:2F:00.0 Off |                    0 |
+| N/A   28C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   2  Quadro RTX 8000                On  | 00000000:86:00.0 Off |                    0 |
+| N/A   28C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   3  Quadro RTX 8000                On  | 00000000:D8:00.0 Off |                    0 |
+| N/A   26C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Using device: cuda
+Successfully loaded city data from cleaned_wikivoyage.json.
+Successfully loaded model 'tiiuae/falcon-40b'.
+No cities identified in the user input.
+
+Generated Prompt:
+ I would like to travel from New York City to Sheffield for 7 days. Give me a trip plan that focuses on museums. 
+
+--- Itinerary 1 ---
+I would like to travel from New York City to Sheffield for 7 days. Give me a trip plan that focuses on museums.
+We are a family of two adults, a teenager, and a preteen. We love art museums but also would like to visit a zoo and aquarium if time permits.
+I plan to travel either the first two weeks of August or the last two. I think that is a little late in the school year, but I will be taking family medical leave that I am thinking of extending through the end of summer school.
+If I had the funds, I'd take a train right to Yorkshire Sculpture Park.
+I'm sure someone better up on transportation costs and practical details will soon be along to help you.
+Thanks, Sandra. Yorkshire Sculpture Park looks fascinating, and it's on our tentative list for the first week of the trip.
+If you want to travel by train, the obvious option is either to travel to London King's Cross and from there to Sheffield, or to take a train from Newark Penn to Newark Airport and then fly to Heathrow and then take the tube into London and then a train to Sheffield. The total travel time from NYC would be about 10 or 11 hours, depending on your airline connection. You might need to change either at London Euston or at Leeds, depending on your train choice. You would need to buy tickets that include the tube in London if you fly. You can book the tube via this link: (this site also books tickets on a range of other railways)
+You could also fly from Newark to Liverpool or Manchester and then take a train to Sheffield. In this case you could just buy a ticket from Newark to where-ever you want to go to in the UK. However you probably wouldn't get the full benefit from a railcard. Also if you travel to Euston or King's Cross then you might find that it is quicker and cheaper to take the Tube rather than get the train from Liverpool or Manchester as long as you book the full journey in advance online for the Tube and the train.
+Trains are generally cheaper when booked in advance. You can book via. You can use to see if it is cheaper to take 2 singles on public transport to get between A-B and B-C. You could split the journey in Manchester or at Euston. The latter is quicker but you wouldn’t get the benefit of a railcard.
+You can find out more about taking the train in the US from this UK site:
+Or even better from this British Train travel guide: (there is a separate one for America)
+(you might even find it helpful if you do go to Euston or King’s Cross to know where to get the Underground at)
+There are lots of cheap hotels in London. Try this website. You might find a cheap 3 star hotel room at a bargain price if you book weeks ahead. I have never stayed at any of them so can’t guarantee anything but it is worth a look.
+You will find a range of prices of hotels in London. I find the following quite good:
+For an idea of prices of hotels in Sheffield, try this:
+For museums and galleries in London:
+For Sheffield:
+If you fly Ryanair to Liverpool or Manchester, a 16-30 railcard which you will need to order 5-6 weeks before you leave costs about £30, it will give you a third off tickets but you can't use it on the Heathrow Express and you will need to book the tickets in advance although you will need to pay at the station. You are meant to have an ISIC card and have a postcode in an EU country although you will need to lie on the former and use a UK post code if you don't.
+I found the information about the railcard very difficult to find when I got mine a couple of years ago, so I will type it out. There are websites that are more up-to-date, but I can't find the one again:
+A 2011/2012 16-25 railcard — currently £25 online, it costs £28 from train stations — gives you a third off standard any time tickets on any UK rail network (apart from the Heathrow Express — see more here). It also gets you third off standard off-peak tickets on National Express coaches.
+16-25 Railcard conditions are as follows:
+You have to be between 16 and 25 and live in Britain (you can use a UK postcode if you’re an overseas resident)
+You must travel under your own steam and you can’t have a 16-25 Railcard in your own name if you’ve also got one in the name of your spouse
+
+--- Itinerary 2 ---
+I would like to travel from New York City to Sheffield for 7 days. Give me a trip plan that focuses on museums.
+I would like to travel from New York City to Sheffield for 7 days. Give me a trip plan that focuses on museums.
+answered by
+John Foye from Los Angeles, United States
+You could do a really basic trip to New York that would fit your needs by doing this:
+Take a train up to Philadelphia. Go to the Eastern State Penitentiary, a very cool and creepy old prison that’s open in the summer.
+Then take a bus into Washington DC and go to the National Archives and the Library of Congress.
+Then take a train up to New York and find yourself a cheap hotel in the Theatre District.
+Then see at least 3 museums in 3 days, like this:
+See the Guggenheim on your first day. Second day visit the Metropolitan Museum of Art and the Cloisters. The third day see the Museum of Modern Art and the Intrepid. (the last 2 are great museum but also have ships which are fun) If you need to cut it down to 2 days you can see the Guggenheim on the second day.
+Then return to Philadelphia and take a train back to NYC, or just take the train for the whole trip!
+Here’s a travel plan to help you find your way:
+Have fun!
+answered by
+Alexandra from Houston, United States
+Since you have 7 days and you're looking for the best museums, I'd suggest a trip that looks like this:
+Day 1 - Fly into to Philadelphia (it's much cheaper than New York), spend the day looking around the city. If it's nice out in the evening, go to the Boathouse Row. If not, definitely visit the Eastern State Penitentiary. It's super cool, and it's not too far from the city!
+Day 2 - Visit the Mutter Museum (it's a collection of medical oddities, and it's very interesting), then go to the Liberty Bell. If you want, you can do a little bit of shopping in the afternoon. In the evening, take the train to NYC.
+Day 3 - I'd suggest the Guggenheim Museum, but that's up to you. It's got a huge collection of art, and it's got a really cool collection of art from Andy Warhol. In the afternoon, go to Times Square (it's a bit of a tourist trap, but you're right in the middle of Broadway).
+Day 4 - Go to the Metropolitan Museum of Art to start (it's a huge museum with almost too much to see!). In the afternoon, try to snag some cheap tickets to a play on Broadway, or just walk around the theater district and find someplace to eat.
+Day 5 - The Smithsonian American History Museum is HUGE, but definitely worth a trip!! You'll never regret going the Smithsonian!
+Day 6 - The Louvre and the Musée d'Orsay are some of Paris' most well-known museums. They're both absolutely breathtaking!
+Day 7 - The Museé du quai Branly is a more contemporary museum, but it's just as cool as some of the more prestigious French museums!
+The entire travel plan costs around $1400 without airfare, but you should be able to get some pretty good deals through Kayak or Travelocity if you book it yourself!
+I've made this trip plan to help you out!
+Have a good trip!
+
+--- Itinerary 3 ---
+I would like to travel from New York City to Sheffield for 7 days. Give me a trip plan that focuses on museums.
+ANSWER
+Sheffield is home to a lot of great museums. Some of the great places to go are The National Emergency Services Museum, The Graves Gallery, and Weston Park Museum. All of these are great places that are full of history. The National Emergency services museum contains artifacts related to the emergency services such as the fire service and the police service. This is a great place to go and learn about the things that keep us safe on a daily basis.
+Another great museum is the Weston Park Museum. The Weston Park Museum is great for someone who wants a large amount of history, from different time periods, in just one place. It is also great for someone who want to go to just one museum that is full of history, from a wide range of areas. One section of the museum is dedicated to the history of Sheffield through different ages. You can learn about the early history of Sheffield, and see the changes that the area has undergone. Also great is the museum’s ancient Greek section. This large section has artifacts, some over 2500 years old, that are great to see. From vases to busts, the pieces give a real idea of the life during that time period.
+On your trip to Sheffield, I would suggest that you go to the The Graves Art Gallery. This museum is the only one in Sheffield that is dedicated to art, which will give you a real opportunity to see great art work. The art in this gallery dates back to the 1700’s, and is all very different and interesting. From sculpture to paintings, this museum has it all. Most of the paintings are very colorful and interesting in that they express very raw emotional experience. This is a great place to go if you enjoy art.
+All of these museums are very fascinating in different ways. If you go to all three of these museums you will get a good idea of the history of the area.
+
+--- Itinerary 4 ---
+I would like to travel from New York City to Sheffield for 7 days. Give me a trip plan that focuses on museums. I would like to have this trip plan focus on the museums that cover historical aspects of Britain, with the primary goal of seeing the collections at the Kelham Island Museum. Also, I would like to have a trip that allows day trips to explore Sheffield. This trip might also extend into Yorkshire, with some time in York and other nearby towns. I'm traveling alone. This trip will be sometime after June 14th 2011. Thanks.
+I've never actually been to Sheffield but these are my suggestions.
+I think it's a good idea to get either the national rail pass or the national rail season ticket if you're going to be seeing other parts of the country. If you're going to only explore Sheffield then it's probably not worth it as it's much easier to buy singles. If you're going to be traveling other parts of the country I will highly suggest getting the rail pass or season ticket. I've gotten both and I thought they were great because they were really convenient and also cost effective. If you're going to be traveling other places in the UK, the national rail is for you.
+If you're going to places outside of Sheffield then it's probably going to be easier for you to take the train unless of course you have a friend with a car to drive you around. If you don't go outside of Sheffield, I suggest taking local transportation to explore the city.
+You're definitely going to visit Kelham Island. To help in deciding what else you might want to do in Sheffield, I suggest first checking this out
+It will help you find places to see and things to do in the city.
+And of course you must check out York. It's a beautiful city. This site helps in deciding what to do there....
+

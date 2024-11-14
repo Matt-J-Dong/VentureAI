@@ -1,0 +1,5 @@
+.env: line 1: HUGGING_FACE_HUB_TOKEN: command not found
+Traceback (most recent call last):
+  File "/scratch/mjd9571/VentureAI/llama_model.py", line 9, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'

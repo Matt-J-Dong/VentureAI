@@ -33,5 +33,5 @@ fi
 # wandb login --relogin \$WANDB_API_KEY
 
 # Run your script
-python model.py
+python falcon_model.py
 "

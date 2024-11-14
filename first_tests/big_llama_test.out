@@ -1,0 +1,34 @@
+/scratch/mjd9571/VentureAI
+# conda environments: # base /ext3/miniconda3 cambrian /scratch/mjd9571/conda/envs_dirs/cambrian juypter README.md Untitled.ipynb VentureAI.png big_llama_test-error.txt big_llama_test.out big_llama_test.sbatch bloom_model.py bloom_test-error.txt bloom_test.out bloom_test.sbatch cleaned_wikivoyage.json cleaning_wikivoyage.py deprecated falcon_model.py falcon_test-error.txt falcon_test.out falcon_test.sbatch flan_model.py flan_test-error.txt flan_test.out flan_test.sbatch llama_model.py llama_test-error.txt llama_test.out llama_test.sbatch mistral_model.py mistral_test-error.txt mistral_test.out mistral_test.sbatch myenv read_wikivoyage.py test_new_model.py travelplanner.py xml_to_json.py /scratch/mjd9571/conda/envs_dirs/juypter multimodal_env /scratch/mjd9571/conda/envs_dirs/multimodal_env test /scratch/mjd9571/conda/envs_dirs/test
+Thu Nov 14 09:41:05 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-SXM4-80GB          On  | 00000000:31:00.0 Off |                    0 |
+| N/A   24C    P0              56W / 500W |      0MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100-SXM4-80GB          On  | 00000000:4B:00.0 Off |                    0 |
+| N/A   24C    P0              57W / 500W |      0MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   2  NVIDIA A100-SXM4-80GB          On  | 00000000:CA:00.0 Off |                    0 |
+| N/A   25C    P0              59W / 500W |      0MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   3  NVIDIA A100-SXM4-80GB          On  | 00000000:E3:00.0 Off |                    0 |
+| N/A   24C    P0              59W / 500W |      0MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+

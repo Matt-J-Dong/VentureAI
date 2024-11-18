@@ -5,9 +5,9 @@
 #SBATCH --gres=gpu:4
 #SBATCH --time=12:00:00
 #SBATCH --mem=64GB
-#SBATCH --job-name=new_falcon_test
-#SBATCH --output=new_falcon_test.out
-#SBATCH --error=new_falcon_test-error.txt
+#SBATCH --job-name=mistral_test
+#SBATCH --output=mistral_test.out
+#SBATCH --error=mistral_test-error.txt
 #SBATCH --mail-user=matthew.dong@nyu.edu
 #SBATCH --mail-type=ALL
 
@@ -33,5 +33,5 @@ fi
 # wandb login --relogin \$WANDB_API_KEY
 
 # Run your script
-python new_falcon_model.py
+python mistral_model.py
 "

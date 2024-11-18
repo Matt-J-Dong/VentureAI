@@ -1,6 +1,6 @@
 /scratch/mjd9571/VentureAI
-# conda environments: # base /ext3/miniconda3 cambrian /scratch/mjd9571/conda/envs_dirs/cambrian juypter Untitled.ipynb VentureAI.png bloom_model.py bloom_test.sbatch cleaned_wikivoyage.json cleaning_wikivoyage.py deprecated falcon_model.py falcon_test.sbatch first_tests flan_model.py flan_test.sbatch llama_model.py llama_test.sbatch mistral_model.py mistral_test.sbatch myenv new_falcon_test-error.txt new_falcon_test.out xml_to_json.py /scratch/mjd9571/conda/envs_dirs/juypter multimodal_env /scratch/mjd9571/conda/envs_dirs/multimodal_env test /scratch/mjd9571/conda/envs_dirs/test
-Mon Nov 18 14:17:24 2024       
+# conda environments: # base /ext3/miniconda3 cambrian /scratch/mjd9571/conda/envs_dirs/cambrian juypter Untitled.ipynb VentureAI.png bloom_model.py bloom_test-error.txt bloom_test.out bloom_test.sbatch cleaned_wikivoyage.json cleaning_wikivoyage.py deprecated falcon_model.py falcon_test.sbatch first_tests flan_model.py flan_test-error.txt flan_test.out flan_test.sbatch llama_model.py llama_test.sbatch mistral_model.py mistral_test-error.txt mistral_test.out mistral_test.sbatch myenv new_falcon_test-error.txt new_falcon_test.out xml_to_json.py /scratch/mjd9571/conda/envs_dirs/juypter multimodal_env /scratch/mjd9571/conda/envs_dirs/multimodal_env test /scratch/mjd9571/conda/envs_dirs/test
+Mon Nov 18 14:25:32 2024       
 +---------------------------------------------------------------------------------------+
 | NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
 |-----------------------------------------+----------------------+----------------------+
@@ -9,19 +9,19 @@ Mon Nov 18 14:17:24 2024
 |                                         |                      |               MIG M. |
 |=========================================+======================+======================|
 |   0  Quadro RTX 8000                On  | 00000000:06:00.0 Off |                    0 |
-| N/A   26C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+| N/A   30C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
 |                                         |                      |                  N/A |
 +-----------------------------------------+----------------------+----------------------+
 |   1  Quadro RTX 8000                On  | 00000000:2F:00.0 Off |                    0 |
-| N/A   26C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+| N/A   29C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
 |                                         |                      |                  N/A |
 +-----------------------------------------+----------------------+----------------------+
 |   2  Quadro RTX 8000                On  | 00000000:86:00.0 Off |                    0 |
-| N/A   26C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+| N/A   29C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
 |                                         |                      |                  N/A |
 +-----------------------------------------+----------------------+----------------------+
 |   3  Quadro RTX 8000                On  | 00000000:D8:00.0 Off |                    0 |
-| N/A   36C    P8              25W / 250W |      0MiB / 46080MiB |      0%      Default |
+| N/A   28C    P8              14W / 250W |      0MiB / 46080MiB |      0%      Default |
 |                                         |                      |                  N/A |
 +-----------------------------------------+----------------------+----------------------+
                                                                                          
@@ -34,7 +34,7 @@ Mon Nov 18 14:17:24 2024
 +---------------------------------------------------------------------------------------+
 Using device: cuda
 Successfully loaded city data from cleaned_wikivoyage.json.
-Successfully loaded model 'tiiuae/falcon-40b'.
+Successfully loaded model 'mistralai/Mistral-Nemo-Base-2407'.
 Total pages to process: 75961
 Alias is not a string for city: 1770. Setting alias to empty string.
 Alias is not a string for city: 1liner. Setting alias to empty string.

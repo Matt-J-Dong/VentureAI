@@ -1,0 +1,18 @@
+.env: line 1: HUGGING_FACE_HUB_TOKEN: command not found
+/scratch/mjd9571/conda/envs_dirs/juypter/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py:809: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/9 [00:00<?, ?it/s]Loading checkpoint shards:  11%|█         | 1/9 [00:11<01:33, 11.70s/it]Loading checkpoint shards:  22%|██▏       | 2/9 [00:23<01:21, 11.63s/it]Loading checkpoint shards:  33%|███▎      | 3/9 [00:34<01:09, 11.59s/it]Loading checkpoint shards:  44%|████▍     | 4/9 [00:46<00:57, 11.57s/it]Loading checkpoint shards:  56%|█████▌    | 5/9 [00:57<00:46, 11.58s/it]Loading checkpoint shards:  67%|██████▋   | 6/9 [01:09<00:34, 11.64s/it]Loading checkpoint shards:  78%|███████▊  | 7/9 [01:21<00:23, 11.60s/it]Loading checkpoint shards:  89%|████████▉ | 8/9 [01:34<00:12, 12.19s/it]Loading checkpoint shards: 100%|██████████| 9/9 [01:45<00:00, 11.71s/it]Loading checkpoint shards: 100%|██████████| 9/9 [01:45<00:00, 11.70s/it]
+Traceback (most recent call last):
+  File "/scratch/mjd9571/VentureAI/falcon_model.py", line 259, in <module>
+    itineraries = generate_itinerary(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/falcon_model.py", line 226, in generate_itinerary
+    matched_cities = identify_cities_in_input(user_input, city_data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/falcon_model.py", line 103, in identify_cities_in_input
+    match = re.search(r"'''[^']+''' is in ([^,]+), ([^\.]+)\.", revision_text)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/conda/envs_dirs/juypter/lib/python3.11/re/__init__.py", line 176, in search
+    return _compile(pattern, flags).search(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'dict'

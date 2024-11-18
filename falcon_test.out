@@ -1,0 +1,72 @@
+/scratch/mjd9571/VentureAI
+# conda environments: # base /ext3/miniconda3 cambrian /scratch/mjd9571/conda/envs_dirs/cambrian juypter Untitled.ipynb VentureAI.png bloom_model.py bloom_test-error.txt bloom_test.out bloom_test.sbatch cleaned_wikivoyage.json cleaning_wikivoyage.py deprecated falcon_model.py falcon_test-error.txt falcon_test.out falcon_test.sbatch first_tests flan_model.py flan_test-error.txt flan_test.out flan_test.sbatch llama_model.py llama_test-error.txt llama_test.out llama_test.sbatch locations_info.json mistral_model.py mistral_test-error.txt mistral_test.out mistral_test.sbatch myenv new_falcon_test-error.txt new_falcon_test.out package.py query_wikivoyage.py tripadvisor.py xml_to_json.py /scratch/mjd9571/conda/envs_dirs/juypter multimodal_env /scratch/mjd9571/conda/envs_dirs/multimodal_env test /scratch/mjd9571/conda/envs_dirs/test
+Mon Nov 18 17:06:09 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Quadro RTX 8000                On  | 00000000:06:00.0 Off |                    0 |
+| N/A   27C    P8              14W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  Quadro RTX 8000                On  | 00000000:2F:00.0 Off |                    0 |
+| N/A   27C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   2  Quadro RTX 8000                On  | 00000000:86:00.0 Off |                    0 |
+| N/A   26C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   3  Quadro RTX 8000                On  | 00000000:D8:00.0 Off |                    0 |
+| N/A   25C    P8              14W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Using device: cuda
+Successfully loaded city data from cleaned_wikivoyage.json.
+Successfully loaded model 'tiiuae/falcon-40b'.
+Total pages to process: 75961
+Alias is not a string for city: 1770. Setting alias to empty string.
+Alias is not a string for city: 1liner. Setting alias to empty string.
+Alias is not a string for city: 2010 FIFA World Cup. Setting alias to empty string.
+Alias is not a string for city: 's-Gravenhage. Setting alias to empty string.
+Alias is not a string for city: 's Hertogenbosch. Setting alias to empty string.
+Alias is not a string for city: 't Gooi. Setting alias to empty string.
+Alias is not a string for city: 29 Palms. Setting alias to empty string.
+Alias is not a string for city: 3 Days in Block Island. Setting alias to empty string.
+Alias is not a string for city: 7 2. Setting alias to empty string.
+Alias is not a string for city: 7+2. Setting alias to empty string.
+Alias is not a string for city: Aaiún. Setting alias to empty string.
+Alias is not a string for city: Aaiun. Setting alias to empty string.
+Alias is not a string for city: Aalesund. Setting alias to empty string.
+Alias is not a string for city: Aargau. Setting alias to empty string.
+Alias is not a string for city: Aas. Setting alias to empty string.
+Alias is not a string for city: Aba as Sa'ud. Setting alias to empty string.
+Alias is not a string for city: Abbeville (Picardie). Setting alias to empty string.
+Alias is not a string for city: Aberarth. Setting alias to empty string.
+Alias is not a string for city: Aberdeen (Hong Kong). Setting alias to empty string.
+Alias is not a string for city: Aberdeen (Scotland). Setting alias to empty string.
+Alias is not a string for city: Aberdovey. Setting alias to empty string.
+Alias is not a string for city: Abergynolwyn. Setting alias to empty string.
+Alias is not a string for city: Abertawe. Setting alias to empty string.
+Alias is not a string for city: Abia. Setting alias to empty string.
+Alias is not a string for city: Abita Springs (Louisiana). Setting alias to empty string.
+Alias is not a string for city: Able Tasman National Park. Setting alias to empty string.
+Alias is not a string for city: Abovyan. Setting alias to empty string.
+Alias is not a string for city: Abra. Setting alias to empty string.
+Alias is not a string for city: Abruzzo (region). Setting alias to empty string.
+Alias is not a string for city: Abseron Rayonu. Setting alias to empty string.
+Alias is not a string for city: Abseron Yasaqligi. Setting alias to empty string.
+Alias is not a string for city: Absheron Peninsula. Setting alias to empty string.
+Alias is not a string for city: Abu Gosh. Setting alias to empty string.
+Alias is not a string for city: Aït Benhaddou. Setting alias to empty string.

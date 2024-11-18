@@ -12,7 +12,7 @@ from typing import Optional, Dict
 
 # Load environment variables from .env file
 load_dotenv()
-HUGGING_FACE_TOKEN = os.getenv("HUGGING_FACE_HUB_TOKEN")
+HUGGING_FACE_TOKEN = os.getenv("HUGGING_FACE_HUB_TOKEN")  # Ensure the variable name matches your .env
 
 if not HUGGING_FACE_TOKEN:
     raise ValueError("HUGGING_FACE_HUB_TOKEN is not set in the .env file.")
@@ -51,9 +51,6 @@ CITY_DATA_FILE = "cleaned_wikivoyage.json"
 # Load the city data
 city_data = load_city_data(CITY_DATA_FILE)
 
-# ===========================
-# Define Utility Functions
-# ===========================
 
 def identify_cities_in_input(user_input: str, city_data: Dict) -> list:
     """
@@ -68,7 +65,6 @@ def identify_cities_in_input(user_input: str, city_data: Dict) -> list:
     """
     matched_cities = []
     pages = city_data.get("mediawiki", {}).get("page", [])
-
     print(f"Total pages to process: {len(pages)}")  # Debugging statement
 
     for page in pages:
@@ -76,27 +72,47 @@ def identify_cities_in_input(user_input: str, city_data: Dict) -> list:
         alias = page.get("redirect", "")
 
         # Debugging: Print the types and values of name and alias
-        #print(f"Processing page: name={name} (type: {type(name)}), alias={alias} (type: {type(alias)})")
+        print(f"Processing page: name='{name}' (type: {type(name)}), alias='{alias}' (type: {type(alias)})")
 
         # Ensure name and alias are strings
         if not isinstance(name, str):
             print(f"Skipping page with non-string name: {name}")
             continue  # Skip this page if name is not a string
         if not isinstance(alias, str):
-            print(f"Alias is not a string for city: {name}. Setting alias to empty string.")
+            # Alias might not always be present; set to empty string if not
             alias = ""
+            print(f"Alias is not a string for city: {name}. Setting alias to empty string.")
 
         # Only proceed if the city name or alias is in the user input
-        name_pattern = rf"\b{re.escape(name)}\b"
+        try:
+            name_pattern = rf"\b{re.escape(name)}\b"
+        except TypeError as e:
+            print(f"Error escaping city name '{name}': {e}")
+            continue  # Skip this city
+
         alias_pattern = rf"\b{re.escape(alias)}\b" if alias else ''
 
         if re.search(name_pattern, user_input, re.IGNORECASE) or \
            (alias and re.search(alias_pattern, user_input, re.IGNORECASE)):
-            # Simple extraction from revision.text (this can be improved)
-            revision_text = page.get("revision", {}).get("text", "")
+            
+            revision = page.get("revision", {})
+            revision_text = revision.get("text", "")
+            
+            # Handle cases where revision_text might be a dictionary or not a string
+            if isinstance(revision_text, dict):
+                revision_text = revision_text.get("_text", "")
+            if not isinstance(revision_text, str):
+                print(f"Revision text is not a string for city: {name}. Setting to empty string.")
+                revision_text = ""
+
             country = ""
             province = ""
             description = ""
+
+            # Heuristic: Check if the revision_text contains "is in" to identify city pages
+            if "is in" not in revision_text:
+                print(f"Skipping non-city page: {name}")
+                continue  # Skip pages that do not describe a city
 
             # Attempt to extract country and province from the description
             # This is a simplistic approach and may need more sophisticated parsing
@@ -106,11 +122,15 @@ def identify_cities_in_input(user_input: str, city_data: Dict) -> list:
                 country = match.group(2).strip()
                 print(f"Extracted province: {province}, country: {country}")  # Debugging statement
             else:
-                print(f"No match found for country and province extraction in city: {name}")  # Debugging statement
+                print(f"No match found for country and province extraction in city: {name}")
 
             # Extract description as the first sentence
             if revision_text:
-                description = revision_text
+                first_sentence = revision_text.split('. ')[0]
+                description = first_sentence.replace("'''", "").strip()
+                print(f"Extracted description: {description}")  # Debugging statement
+            else:
+                print(f"No revision text available for description extraction in city: {name}")
 
             city_info = {
                 "name": name,
@@ -123,8 +143,7 @@ def identify_cities_in_input(user_input: str, city_data: Dict) -> list:
             matched_cities.append(city_info)
             print(f"Matched City: {city_info['name']}")  # Debugging statement
         else:
-            continue
-            #print(f"No match for city: {name}")  # Debugging statement
+            print(f"No match for city: {name}")  # Debugging statement
 
     if matched_cities:
         print(f"Identified cities in input: {[city['name'] for city in matched_cities]}")
@@ -132,6 +151,7 @@ def identify_cities_in_input(user_input: str, city_data: Dict) -> list:
         print("No cities identified in the user input.")
 
     return matched_cities
+
 
 def generate_prompt_with_city_context(user_input: str, matched_cities: list) -> str:
     """
@@ -146,14 +166,14 @@ def generate_prompt_with_city_context(user_input: str, matched_cities: list) -> 
     """
     contexts = []
     for city in matched_cities:
-        context_parts = [f"{city['name']}, commonly known as {city.get('alias', city['name'])},"]
+        context_parts = [f"{city['name']}"]
         if city.get('country'):
             context_parts.append(f"is a city in {city['country']}")
         if city.get('province'):
             context_parts.append(f"and the capital of {city['province']}.")
         if city.get('description'):
             context_parts.append(f"{city['description']}.")
-        
+
         context = " ".join(context_parts)
         contexts.append(context)
         print(f"Constructed Context for {city['name']}: {context}")  # Debugging statement
@@ -165,12 +185,9 @@ def generate_prompt_with_city_context(user_input: str, matched_cities: list) -> 
     else:
         prompt = user_input
 
-    print("Generated Prompt:\n", prompt, "-END OF GENERATED PROMPT-\n")  # Debugging statement
+    print("---GENERATED PROMPT---\n", prompt, "\n---END OF GENERATED PROMPT---\n")  # Debugging statement
     return prompt
 
-# ===========================
-# Setup Hugging Face Pipeline
-# ===========================
 
 def setup_text_generation_pipeline(model_name: str, token: str):
     """
@@ -184,13 +201,14 @@ def setup_text_generation_pipeline(model_name: str, token: str):
         pipeline: The Hugging Face text generation pipeline.
     """
     try:
-        tokenizer = AutoTokenizer.from_pretrained(model_name, use_auth_token=token)
+        tokenizer = AutoTokenizer.from_pretrained(model_name, token=token)
         text_gen_pipeline = pipeline(
             "text-generation",
             model=model_name,
             tokenizer=tokenizer,
             torch_dtype=torch.bfloat16 if torch.cuda.is_available() else torch.float32,
             device_map="auto",
+            token=token
         )
         print(f"Successfully loaded model '{model_name}'.")
         return text_gen_pipeline
@@ -203,11 +221,12 @@ MODEL_NAME = "tiiuae/falcon-40b"
 # Initialize the text generation pipeline
 text_generation_pipeline = setup_text_generation_pipeline(MODEL_NAME, HUGGING_FACE_TOKEN)
 
+
 # ===========================
 # Generate Itinerary
 # ===========================
 
-def generate_itinerary(user_input: str, city_data: Dict, pipeline, max_length: int = 300, 
+def generate_itinerary(user_input: str, city_data: Dict, pipeline, max_length: int = 300,
                       do_sample: bool = True, top_k: int = 10, num_return_sequences: int = 2) -> list:
     """
     Generate a travel itinerary based on user input.
@@ -226,12 +245,12 @@ def generate_itinerary(user_input: str, city_data: Dict, pipeline, max_length: i
     """
     # Identify cities in the user input
     matched_cities = identify_cities_in_input(user_input, city_data)
-    
+
     # Generate the prompt with city context
     prompt = generate_prompt_with_city_context(user_input, matched_cities)
-    
-    print("\nGenerated Prompt:\n", prompt, "\n")
-    
+
+    print("---FED TO LLM---\n", prompt, "\n---END OF FED TO LLM---\n")  # Debugging statement
+
     # Generate sequences based on the prompt
     try:
         sequences = pipeline(
@@ -244,9 +263,10 @@ def generate_itinerary(user_input: str, city_data: Dict, pipeline, max_length: i
         )
     except Exception as e:
         raise RuntimeError(f"Failed to generate text: {e}")
-    
+
     # Extract generated texts
     itineraries = [seq['generated_text'] for seq in sequences]
+    itineraries = f"---LLM Generated Response:---\n" + itineraries
     return itineraries
 
 # ===========================
@@ -256,18 +276,19 @@ def generate_itinerary(user_input: str, city_data: Dict, pipeline, max_length: i
 if __name__ == "__main__":
     # Example user query
     user_input_example = "I would like to travel from New York City to Acadiana for 7 days. Give me a trip plan that focuses on museums."
-    
+
     # Generate itineraries
     itineraries = generate_itinerary(
         user_input=user_input_example,
         city_data=city_data,
         pipeline=text_generation_pipeline,
-        max_length=1000,  # Increased for more detailed itineraries
+        max_length=1000,  # Adjusted for more detailed itineraries
         do_sample=True,
-        top_k=50,        # Increased top_k for more diversity
-        num_return_sequences=4
+        top_k=50,        # Adjusted for more diversity
+        num_return_sequences=4  # Adjusted to generate 2 itineraries
     )
-    
+
     # Print the generated itineraries
     for idx, itinerary in enumerate(itineraries, 1):
-        print(f"--- Itinerary {idx} ---\n{itinerary}\n")
+        print(f"--- Itinerary {idx} ---\n{itinerary}\n--- End of Itinerary {idx}---\n")
+

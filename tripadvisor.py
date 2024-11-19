@@ -192,14 +192,9 @@ def location_details_geo(locationId, api_key, locations_info, search_query, cate
 
     return locations_info
 
-
-def main():
-    search_query = 'Paris'
-    # Parameters for TripAdvisor API (CANNOT BE CHANGED)
+def get_all_details(search_query, locations_info):
     categories = ['restaurants', 'hotels', 'attractions', 'geo']
-    locations_info = {search_query: {}}
 
-    
     for category in categories:
         category_info = find_search(search_query, category, api_key)
 
@@ -217,6 +212,17 @@ def main():
                 locations_info = location_details_attractions(locationId, api_key, locations_info, search_query, category, location)
             elif category == 'geo':
                 locations_info = location_details_geo(locationId, api_key, locations_info, search_query, category, location)
+
+    return locations_info
+
+def main():
+    search_query = 'Paris'
+    # Parameters for TripAdvisor API (CANNOT BE CHANGED)
+    locations_info = {search_query: {}}
+
+    locations_info = get_all_details(search_query, locations_info)
+    
+    
 
 
     with open('locations_info.json', 'w', encoding='utf-8') as f:

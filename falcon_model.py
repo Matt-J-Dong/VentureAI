@@ -267,7 +267,6 @@ def generate_itinerary(user_input: str, city_data: Dict, pipeline, max_length: i
 
     # Extract generated texts
     itineraries = [seq['generated_text'] for seq in sequences]
-    itineraries = f"---LLM Generated Response:---\n" + itineraries
     return itineraries
 
 # ===========================

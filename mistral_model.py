@@ -5,6 +5,7 @@ import torch
 from dotenv import load_dotenv
 from transformers import AutoTokenizer, pipeline
 from typing import Optional, Dict
+from tripadvisor import get_all_details
 
 # ===========================
 # Configuration and Setup
@@ -254,20 +255,31 @@ def generate_itinerary(user_input: str, city_data: Dict, pipeline, max_length: i
 # ===========================
 
 if __name__ == "__main__":
-    # Example user query
-    user_input_example = "I would like to travel from New York City to Acadiana for 7 days. Give me a trip plan that focuses on museums."
+    import json
+
+    # TODO: we will use this set later as a way to automate this. for now it is manual
+    with open('city_names.json', 'r') as json_file:
+        city_names = set(json.load(json_file))  
+
+    city_to = "Paris"
+    locations_info = get_all_details(city_to, {city_to: {}})
     
+    # Example user query
+    user_input_example = f"I would like to travel from New York City to {city_to} for 7 days. Give me a trip plan that focuses on restaurants. The information below is about {city_to}; use it for your response\n"
+    user_input_example = user_input_example + str(locations_info)    
+    
+
     # Generate itineraries
     itineraries = generate_itinerary(
         user_input=user_input_example,
         city_data=city_data,
         pipeline=text_generation_pipeline,
-        max_length=1000,  # Increased for more detailed itineraries
+        max_length=1000,  # Adjusted for more detailed itineraries
         do_sample=True,
-        top_k=50,        # Increased top_k for more diversity
-        num_return_sequences=4
+        top_k=50,        # Adjusted for more diversity
+        num_return_sequences=4  # Adjusted to generate 2 itineraries
     )
-    
+
     # Print the generated itineraries
     for idx, itinerary in enumerate(itineraries, 1):
-        print(f"--- Itinerary {idx} ---\n{itinerary}\n")
+        print(f"--- Itinerary {idx} ---\n{itinerary}\n--- End of Itinerary {idx}---\n")

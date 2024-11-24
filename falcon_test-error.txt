@@ -1,18 +1,41 @@
 .env: line 1: HUGGING_FACE_HUB_TOKEN: command not found
-/scratch/mjd9571/conda/envs_dirs/juypter/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py:809: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.
-  warnings.warn(
-Loading checkpoint shards:   0%|          | 0/9 [00:00<?, ?it/s]Loading checkpoint shards:  11%|█         | 1/9 [00:11<01:33, 11.70s/it]Loading checkpoint shards:  22%|██▏       | 2/9 [00:23<01:21, 11.63s/it]Loading checkpoint shards:  33%|███▎      | 3/9 [00:34<01:09, 11.59s/it]Loading checkpoint shards:  44%|████▍     | 4/9 [00:46<00:57, 11.57s/it]Loading checkpoint shards:  56%|█████▌    | 5/9 [00:57<00:46, 11.58s/it]Loading checkpoint shards:  67%|██████▋   | 6/9 [01:09<00:34, 11.64s/it]Loading checkpoint shards:  78%|███████▊  | 7/9 [01:21<00:23, 11.60s/it]Loading checkpoint shards:  89%|████████▉ | 8/9 [01:34<00:12, 12.19s/it]Loading checkpoint shards: 100%|██████████| 9/9 [01:45<00:00, 11.71s/it]Loading checkpoint shards: 100%|██████████| 9/9 [01:45<00:00, 11.70s/it]
+Loading checkpoint shards:   0%|          | 0/9 [00:00<?, ?it/s]Loading checkpoint shards:  11%|█         | 1/9 [00:12<01:36, 12.11s/it]Loading checkpoint shards:  22%|██▏       | 2/9 [00:24<01:24, 12.03s/it]Loading checkpoint shards:  33%|███▎      | 3/9 [00:35<01:11, 11.93s/it]Loading checkpoint shards:  44%|████▍     | 4/9 [00:47<00:59, 11.91s/it]Loading checkpoint shards:  56%|█████▌    | 5/9 [00:59<00:47, 11.95s/it]Loading checkpoint shards:  67%|██████▋   | 6/9 [01:11<00:35, 11.93s/it]Loading checkpoint shards:  78%|███████▊  | 7/9 [01:23<00:24, 12.05s/it]Loading checkpoint shards:  89%|████████▉ | 8/9 [01:38<00:12, 12.90s/it]Loading checkpoint shards: 100%|██████████| 9/9 [01:50<00:00, 12.43s/it]Loading checkpoint shards: 100%|██████████| 9/9 [01:50<00:00, 12.24s/it]
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+Setting `pad_token_id` to `eos_token_id`:None for open-end generation.
 Traceback (most recent call last):
-  File "/scratch/mjd9571/VentureAI/falcon_model.py", line 259, in <module>
+  File "/scratch/mjd9571/VentureAI/falcon_model.py", line 257, in generate_itinerary
+    sequences = pipeline(
+                ^^^^^^^^^
+  File "/scratch/mjd9571/conda/envs_dirs/juypter/lib/python3.11/site-packages/transformers/pipelines/text_generation.py", line 272, in __call__
+    return super().__call__(text_inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/conda/envs_dirs/juypter/lib/python3.11/site-packages/transformers/pipelines/base.py", line 1302, in __call__
+    return self.run_single(inputs, preprocess_params, forward_params, postprocess_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/conda/envs_dirs/juypter/lib/python3.11/site-packages/transformers/pipelines/base.py", line 1309, in run_single
+    model_outputs = self.forward(model_inputs, **forward_params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/conda/envs_dirs/juypter/lib/python3.11/site-packages/transformers/pipelines/base.py", line 1209, in forward
+    model_outputs = self._forward(model_inputs, **forward_params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/conda/envs_dirs/juypter/lib/python3.11/site-packages/transformers/pipelines/text_generation.py", line 370, in _forward
+    generated_sequence = self.model.generate(input_ids=input_ids, attention_mask=attention_mask, **generate_kwargs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/conda/envs_dirs/juypter/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/conda/envs_dirs/juypter/lib/python3.11/site-packages/transformers/generation/utils.py", line 2068, in generate
+    self._validate_generated_length(generation_config, input_ids_length, has_default_max_length)
+  File "/scratch/mjd9571/conda/envs_dirs/juypter/lib/python3.11/site-packages/transformers/generation/utils.py", line 1383, in _validate_generated_length
+    raise ValueError(
+ValueError: Input length of input_ids is 1000, but `max_length` is set to 1000. This can lead to unexpected behavior. You should consider increasing `max_length` or, better yet, setting `max_new_tokens`.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/scratch/mjd9571/VentureAI/falcon_model.py", line 292, in <module>
     itineraries = generate_itinerary(
                   ^^^^^^^^^^^^^^^^^^^
-  File "/scratch/mjd9571/VentureAI/falcon_model.py", line 226, in generate_itinerary
-    matched_cities = identify_cities_in_input(user_input, city_data)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/scratch/mjd9571/VentureAI/falcon_model.py", line 103, in identify_cities_in_input
-    match = re.search(r"'''[^']+''' is in ([^,]+), ([^\.]+)\.", revision_text)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/scratch/mjd9571/conda/envs_dirs/juypter/lib/python3.11/re/__init__.py", line 176, in search
-    return _compile(pattern, flags).search(string)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: expected string or bytes-like object, got 'dict'
+  File "/scratch/mjd9571/VentureAI/falcon_model.py", line 266, in generate_itinerary
+    raise RuntimeError(f"Failed to generate text: {e}")
+RuntimeError: Failed to generate text: Input length of input_ids is 1000, but `max_length` is set to 1000. This can lead to unexpected behavior. You should consider increasing `max_length` or, better yet, setting `max_new_tokens`.

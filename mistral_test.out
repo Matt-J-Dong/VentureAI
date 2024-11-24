@@ -1,6 +1,6 @@
 /scratch/mjd9571/VentureAI
-# conda environments: # base /ext3/miniconda3 cambrian /scratch/mjd9571/conda/envs_dirs/cambrian juypter Untitled.ipynb VentureAI.png bloom_model.py bloom_test-error.txt bloom_test.out bloom_test.sbatch cleaned_wikivoyage.json cleaning_wikivoyage.py deprecated falcon_model.py falcon_test.sbatch first_tests flan_model.py flan_test-error.txt flan_test.out flan_test.sbatch llama_model.py llama_test.sbatch mistral_model.py mistral_test-error.txt mistral_test.out mistral_test.sbatch myenv new_falcon_test-error.txt new_falcon_test.out xml_to_json.py /scratch/mjd9571/conda/envs_dirs/juypter multimodal_env /scratch/mjd9571/conda/envs_dirs/multimodal_env test /scratch/mjd9571/conda/envs_dirs/test
-Mon Nov 18 14:25:32 2024       
+# conda environments: # base /ext3/miniconda3 cambrian /scratch/mjd9571/conda/envs_dirs/cambrian juypter Untitled.ipynb VentureAI.png __pycache__ bloom_model.py bloom_test-error.txt bloom_test.out bloom_test.sbatch city_names.json cleaned_wikivoyage.json cleaning_wikivoyage.py deprecated falcon_model.py falcon_test-error.txt falcon_test.out falcon_test.sbatch first_tests flan_model.py flan_test-error.txt flan_test.out flan_test.sbatch llama_model.py llama_test-error.txt llama_test.out llama_test.sbatch locations_info.json mistral_model.py mistral_test-error.txt mistral_test.out mistral_test.sbatch myenv new_falcon_test-error.txt new_falcon_test.out package.py query_wikivoyage.py travelplanner.py tripadvisor.py xml_to_json.py /scratch/mjd9571/conda/envs_dirs/juypter multimodal_env /scratch/mjd9571/conda/envs_dirs/multimodal_env test /scratch/mjd9571/conda/envs_dirs/test
+Wed Nov 20 05:01:12 2024       
 +---------------------------------------------------------------------------------------+
 | NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
 |-----------------------------------------+----------------------+----------------------+
@@ -9,19 +9,19 @@ Mon Nov 18 14:25:32 2024
 |                                         |                      |               MIG M. |
 |=========================================+======================+======================|
 |   0  Quadro RTX 8000                On  | 00000000:06:00.0 Off |                    0 |
-| N/A   30C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+| N/A   56C    P8              16W / 250W |      0MiB / 46080MiB |      0%      Default |
 |                                         |                      |                  N/A |
 +-----------------------------------------+----------------------+----------------------+
 |   1  Quadro RTX 8000                On  | 00000000:2F:00.0 Off |                    0 |
-| N/A   29C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+| N/A   27C    P8              12W / 250W |      0MiB / 46080MiB |      0%      Default |
 |                                         |                      |                  N/A |
 +-----------------------------------------+----------------------+----------------------+
 |   2  Quadro RTX 8000                On  | 00000000:86:00.0 Off |                    0 |
-| N/A   29C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+| N/A   30C    P8              14W / 250W |      0MiB / 46080MiB |      0%      Default |
 |                                         |                      |                  N/A |
 +-----------------------------------------+----------------------+----------------------+
 |   3  Quadro RTX 8000                On  | 00000000:D8:00.0 Off |                    0 |
-| N/A   28C    P8              14W / 250W |      0MiB / 46080MiB |      0%      Default |
+| N/A   25C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
 |                                         |                      |                  N/A |
 +-----------------------------------------+----------------------+----------------------+
                                                                                          
@@ -70,3 +70,122 @@ Alias is not a string for city: Abseron Yasaqligi. Setting alias to empty string
 Alias is not a string for city: Absheron Peninsula. Setting alias to empty string.
 Alias is not a string for city: Abu Gosh. Setting alias to empty string.
 Alias is not a string for city: Aït Benhaddou. Setting alias to empty string.
+Alias is not a string for city: Acailandia. Setting alias to empty string.
+Alias is not a string for city: Acarigua. Setting alias to empty string.
+Alias is not a string for city: Accessing email. Setting alias to empty string.
+Alias is not a string for city: Accomac (Virginia). Setting alias to empty string.
+Alias is not a string for city: Acela Express. Setting alias to empty string.
+Alias is not a string for city: Achziv. Setting alias to empty string.
+Alias is not a string for city: Acquila (province). Setting alias to empty string.
+Alias is not a string for city: Acre (England). Setting alias to empty string.
+Alias is not a string for city: Acropolis. Setting alias to empty string.
+Alias is not a string for city: Across Australia with the Ghan. Setting alias to empty string.
+Alias is not a string for city: ACT. Setting alias to empty string.
+Alias is not a string for city: Acushnet. Setting alias to empty string.
+Alias is not a string for city: Adamawa. Setting alias to empty string.
+Alias is not a string for city: Adamawa phrasebook. Setting alias to empty string.
+Alias is not a string for city: Adampol. Setting alias to empty string.
+Alias is not a string for city: Adams (disambiguation). Setting alias to empty string.
+Alias is not a string for city: Adams County (Illinois). Setting alias to empty string.
+Alias is not a string for city: Adams County (North Dakota). Setting alias to empty string.
+Alias is not a string for city: Adams County (Washington). Setting alias to empty string.
+Alias is not a string for city: A Day In Providence. Setting alias to empty string.
+Alias is not a string for city: A Day Trip Through Allston. Setting alias to empty string.
+Alias is not a string for city: Ad Dakhiliyah. Setting alias to empty string.
+Alias is not a string for city: Ad-Dakhla. Setting alias to empty string.
+Alias is not a string for city: Ad Dakhliyah. Setting alias to empty string.
+Alias is not a string for city: Ad Dammam. Setting alias to empty string.
+Alias is not a string for city: Ad Dammām. Setting alias to empty string.
+Alias is not a string for city: Addo National Park. Setting alias to empty string.
+Alias is not a string for city: Adelong. Setting alias to empty string.
+Alias is not a string for city: Blambangan. Setting alias to empty string.
+Alias is not a string for city: Adilabad (district). Setting alias to empty string.
+Alias is not a string for city: Adlestrop. Setting alias to empty string.
+Alias is not a string for city: Adygea. Setting alias to empty string.
+Alias is not a string for city: Aegadi Islands. Setting alias to empty string.
+Alias is not a string for city: Aegina (city). Setting alias to empty string.
+Alias is not a string for city: Aegina Town. Setting alias to empty string.
+Alias is not a string for city: A Family Weekend in Newport (Summertime). Setting alias to empty string.
+Alias is not a string for city: Afar. Setting alias to empty string.
+Alias is not a string for city: Afghanistan/East. Setting alias to empty string.
+Alias is not a string for city: Afghanistan/Northeast. Setting alias to empty string.
+Alias is not a string for city: Afghanistan/Northwest. Setting alias to empty string.
+Alias is not a string for city: Afghanistan/South. Setting alias to empty string.
+Alias is not a string for city: Afghanistan/West. Setting alias to empty string.
+Alias is not a string for city: Afrodisias. Setting alias to empty string.
+Alias is not a string for city: Afsluitdijk. Setting alias to empty string.
+Alias is not a string for city: Afyon. Setting alias to empty string.
+Alias is not a string for city: Agades. Setting alias to empty string.
+Alias is not a string for city: Agassiz. Setting alias to empty string.
+Alias is not a string for city: Agawam (Massachusetts). Setting alias to empty string.
+Alias is not a string for city: Agdam Rayonu. Setting alias to empty string.
+Alias is not a string for city: Agdas Rayonu. Setting alias to empty string.
+Alias is not a string for city: Ageo japan. Setting alias to empty string.
+Alias is not a string for city: Aggressive Dogs. Setting alias to empty string.
+Alias is not a string for city: Aggtelek. Setting alias to empty string.
+Alias is not a string for city: Aghaboe. Setting alias to empty string.
+Alias is not a string for city: Agia Napa. Setting alias to empty string.
+Alias is not a string for city: Agjabadi Rayon. Setting alias to empty string.
+Alias is not a string for city: Agjabadi Rayonu. Setting alias to empty string.
+Alias is not a string for city: Agnes Water. Setting alias to empty string.
+Alias is not a string for city: Agra Cantt. Setting alias to empty string.
+Alias is not a string for city: Agra Fort. Setting alias to empty string.
+Alias is not a string for city: Agrigento Province. Setting alias to empty string.
+Alias is not a string for city: Agrotourism. Setting alias to empty string.
+Alias is not a string for city: Agstafa Rayonu. Setting alias to empty string.
+Alias is not a string for city: Agsu Rayonu. Setting alias to empty string.
+Alias is not a string for city: Agua prieta. Setting alias to empty string.
+Alias is not a string for city: Aguas de Lindoia. Setting alias to empty string.
+Alias is not a string for city: Agulhas. Setting alias to empty string.
+Alias is not a string for city: Ahmadabad. Setting alias to empty string.
+Alias is not a string for city: Ahmadnagar. Setting alias to empty string.
+Alias is not a string for city: Ahmedebad. Setting alias to empty string.
+Alias is not a string for city: Ahmednagar (district). Setting alias to empty string.
+Alias is not a string for city: Ai-Ais/Richtersveld Transfrontier Park. Setting alias to empty string.
+Alias is not a string for city: Ai-Ais / Richtersveld Transfrontier Park. Setting alias to empty string.
+Alias is not a string for city: Ai-Ais Hot Springs Game Park. Setting alias to empty string.
+Alias is not a string for city: Ai Ais Richtersveld Transfrontier Park. Setting alias to empty string.
+Alias is not a string for city: Aigues Mortes. Setting alias to empty string.
+Alias is not a string for city: Ailsa craig. Setting alias to empty string.
+Alias is not a string for city: Ain. Setting alias to empty string.
+Alias is not a string for city: Ain El Mraiseh. Setting alias to empty string.
+Alias is not a string for city: Ainos. Setting alias to empty string.
+Alias is not a string for city: Aioun. Setting alias to empty string.
+Alias is not a string for city: Air charter. Setting alias to empty string.
+Alias is not a string for city: Airdrie (disambiguation). Setting alias to empty string.
+Alias is not a string for city: Airline consolidators. Setting alias to empty string.
+Alias is not a string for city: Airplane. Setting alias to empty string.
+Alias is not a string for city: Airplane seat maps. Setting alias to empty string.
+Alias is not a string for city: Airplane Seat Maps. Setting alias to empty string.
+Alias is not a string for city: Airport Security. Setting alias to empty string.
+Alias is not a string for city: Air taxi. Setting alias to empty string.
+Alias is not a string for city: Airlines in Africa. Setting alias to empty string.
+Alias is not a string for city: Aisa. Setting alias to empty string.
+Alias is not a string for city: Aisne. Setting alias to empty string.
+Alias is not a string for city: Ait bahadou. Setting alias to empty string.
+Alias is not a string for city: Ait-Benhaddou. Setting alias to empty string.
+Alias is not a string for city: Ait Benhaddou. Setting alias to empty string.
+Alias is not a string for city: Aix En Provence. Setting alias to empty string.
+Alias is not a string for city: Aizu Wakamatsu. Setting alias to empty string.
+Alias is not a string for city: Ajanta. Setting alias to empty string.
+Alias is not a string for city: Ajara. Setting alias to empty string.
+Alias is not a string for city: Ajaria. Setting alias to empty string.
+Alias is not a string for city: Akabane. Setting alias to empty string.
+Alias is not a string for city: Akan. Setting alias to empty string.
+Alias is not a string for city: Akashi Kaikyo Bridge. Setting alias to empty string.
+Alias is not a string for city: Akçay. Setting alias to empty string.
+Alias is not a string for city: Akcakoca. Setting alias to empty string.
+Alias is not a string for city: Akcay. Setting alias to empty string.
+Alias is not a string for city: Akdeniz. Setting alias to empty string.
+Alias is not a string for city: Akeanon. Setting alias to empty string.
+Alias is not a string for city: Akhziv. Setting alias to empty string.
+Alias is not a string for city: Akhziv National Park. Setting alias to empty string.
+Alias is not a string for city: Akita prefecture. Setting alias to empty string.
+Alias is not a string for city: Akiyoshidai. Setting alias to empty string.
+Alias is not a string for city: Akiyoshidai Quasi-National Park. Setting alias to empty string.
+Alias is not a string for city: Akola (district). Setting alias to empty string.
+Alias is not a string for city: Aksaray Province. Setting alias to empty string.
+Alias is not a string for city: Akshardham. Setting alias to empty string.
+Alias is not a string for city: Aksu Zhabagly. Setting alias to empty string.
+Alias is not a string for city: Akyab. Setting alias to empty string.
+Alias is not a string for city: Al. Setting alias to empty string.

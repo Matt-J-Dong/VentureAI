@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/scratch/mjd9571/VentureAI/autotrain/autotrain.py", line 1, in <module>
+    from autotrain import AutoTrain
+  File "/scratch/mjd9571/VentureAI/autotrain/autotrain.py", line 1, in <module>
+    from autotrain import AutoTrain
+ImportError: cannot import name 'AutoTrain' from partially initialized module 'autotrain' (most likely due to a circular import) (/scratch/mjd9571/VentureAI/autotrain/autotrain.py)

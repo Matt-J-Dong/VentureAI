@@ -1,0 +1,34 @@
+/scratch/mjd9571/VentureAI/autotrain
+# conda environments: # base /ext3/miniconda3 cambrian /scratch/mjd9571/conda/envs_dirs/cambrian juypter autotrain-error.txt autotrain.out autotrain.py autotrain.sbatch autotrain.sh train.csv validation.csv /scratch/mjd9571/conda/envs_dirs/juypter multimodal_env /scratch/mjd9571/conda/envs_dirs/multimodal_env test /scratch/mjd9571/conda/envs_dirs/test
+Sun Nov 24 19:32:24 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Quadro RTX 8000                On  | 00000000:06:00.0 Off |                    0 |
+| N/A   28C    P8              12W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  Quadro RTX 8000                On  | 00000000:2F:00.0 Off |                    0 |
+| N/A   29C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   2  Quadro RTX 8000                On  | 00000000:86:00.0 Off |                    0 |
+| N/A   27C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   3  Quadro RTX 8000                On  | 00000000:D8:00.0 Off |                    0 |
+| N/A   26C    P8              13W / 250W |      0MiB / 46080MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+

@@ -12,12 +12,11 @@
 #SBATCH --mail-type=ALL
 
 singularity exec --nv --overlay $SCRATCH/new_env/overlay-50G-10M.ext3:ro /scratch/work/public/singularity/cuda11.8.86-cudnn8.7-devel-ubuntu22.04.2.sif /bin/bash -c "
-source /ext3/miniconda3/etc/profile.d/conda.sh
-conda activate juypter
+source myenv/bin/activate
 
 # Verify environment
 pwd
-env_list=\$(conda env list)
+env_list=\$(pip list)
 echo "\$env_list"
 
 # Check GPU status

@@ -1,12 +1,14 @@
+#!/bin/bash
+
 autotrain llm \
 --train \
---model 'tiiuae/falcon-40b' \
---project-name 'Refined_Chat_Bot' \
+--model 'tiiuae/falcon-7b' \
+--project-name 'autotrain-test' \
 --data-path './data' \
---text-column "input" \
+--text-column "text" \
 --lr 2e-3 \
---batch-size 32 \
---epochs 8 \
+--batch-size 1 \
+--epochs 1 \
 --block-size 1024 \
 --warmup-ratio 0.01 \
 --lora-r 16 \

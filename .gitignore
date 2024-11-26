@@ -1,4 +1,12 @@
-#Personal myenv that isn't even in use:
+#Autotrain:
+autotrain-test/
+
+#Not Autotrain:
+falcon-7b-finetuned/
+falcon-40b-finetuned/
+fine_tuning/wandb/
+
+#Personal myenv:
 myenv/
 
 #Large data

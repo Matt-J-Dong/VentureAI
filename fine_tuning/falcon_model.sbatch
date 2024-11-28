@@ -12,7 +12,9 @@
 #SBATCH --mail-type=ALL
 
 singularity exec --nv --overlay $SCRATCH/new_env/overlay-50G-10M.ext3:ro /scratch/work/public/singularity/cuda11.8.86-cudnn8.7-devel-ubuntu22.04.2.sif /bin/bash -c "
+cd $SCRATCH/VentureAI
 source myenv/bin/activate
+cd $SCRATCH/VentureAI/fine_tuning
 
 # Verify environment
 pwd

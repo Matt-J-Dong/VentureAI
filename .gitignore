@@ -5,6 +5,7 @@ autotrain-test/
 falcon-7b-finetuned/
 falcon-40b-finetuned/
 fine_tuning/wandb/
+fine_tuning/train.csv
 
 #Personal myenv:
 myenv/

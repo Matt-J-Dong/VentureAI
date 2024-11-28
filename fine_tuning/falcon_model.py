@@ -35,12 +35,13 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 
 # Load your dataset
-dataset = load_dataset('csv', data_files={'train': 'train.csv', 'validation': 'validation.csv'})
+#dataset = load_dataset('csv', data_files={'train': 'train.csv', 'validation': 'validation.csv'})
+dataset = load_dataset('csv', data_files={'train': 'train.csv'})
 
 # Preprocessing function
 def preprocess_function(examples):
-    inputs = examples['input']
-    outputs = examples['output']
+    inputs = examples['prompt']
+    outputs = examples['response']
     # Combine inputs and outputs
     texts = [inp + "\n" + out for inp, out in zip(inputs, outputs)]
     tokenized = tokenizer(texts, padding='max_length', truncation=True, max_length=1024)

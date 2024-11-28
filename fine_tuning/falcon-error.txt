@@ -1,3 +1,32 @@
-/bin/bash: line 2: myenv/bin/activate: No such file or directory
-WARNING: There was an error checking the latest version of pip.
-./falcon_model.sh: line 3: python: command not found
+
+[notice] A new release of pip is available: 24.0 -> 24.3.1
+[notice] To update, run: pip install --upgrade pip
+
+WARNING: You are currently loading Falcon using legacy code contained in the model repository. Falcon has now been fully ported into the Hugging Face transformers library. For the most up-to-date and high-performance version of the Falcon model code, please update to the latest version of transformers and then load the model without the trust_remote_code=True argument.
+
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+Loading checkpoint shards:   0%|          | 0/9 [00:00<?, ?it/s]Loading checkpoint shards:  11%|█         | 1/9 [00:23<03:04, 23.01s/it]Loading checkpoint shards:  22%|██▏       | 2/9 [00:43<02:31, 21.66s/it]Loading checkpoint shards:  33%|███▎      | 3/9 [00:55<01:41, 16.93s/it]Loading checkpoint shards:  44%|████▍     | 4/9 [01:02<01:05, 13.07s/it]Loading checkpoint shards:  56%|█████▌    | 5/9 [01:09<00:43, 10.83s/it]Loading checkpoint shards:  67%|██████▋   | 6/9 [01:15<00:28,  9.44s/it]Loading checkpoint shards:  78%|███████▊  | 7/9 [01:22<00:17,  8.57s/it]Loading checkpoint shards:  89%|████████▉ | 8/9 [01:29<00:08,  8.01s/it]Loading checkpoint shards: 100%|██████████| 9/9 [01:34<00:00,  7.19s/it]Loading checkpoint shards: 100%|██████████| 9/9 [01:34<00:00, 10.53s/it]
+Traceback (most recent call last):
+  File "/scratch/mjd9571/VentureAI/fine_tuning/falcon_model.py", line 38, in <module>
+    dataset = load_dataset('csv', data_files={'train': 'train.csv', 'validation': 'validation.csv'})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/datasets/load.py", line 2132, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/datasets/load.py", line 1853, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/datasets/load.py", line 1562, in dataset_module_factory
+    ).get_module()
+      ^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/datasets/load.py", line 942, in get_module
+    data_files = DataFilesDict.from_patterns(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/datasets/data_files.py", line 721, in from_patterns
+    else DataFilesList.from_patterns(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/datasets/data_files.py", line 624, in from_patterns
+    resolve_pattern(
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/datasets/data_files.py", line 411, in resolve_pattern
+    raise FileNotFoundError(error_msg)
+FileNotFoundError: Unable to find '/scratch/mjd9571/VentureAI/fine_tuning/validation.csv'

@@ -31,7 +31,7 @@ model = AutoModelForCausalLM.from_pretrained(
 data = pd.read_csv('train.csv')
 
 # Load only the first 1% of the dataset for testing purposes
-data = data.head(int(len(data) * 1))
+data = data.head(int(len(data) * 0.01))
 
 # Define a custom Dataset class
 class PromptResponseDataset(Dataset):

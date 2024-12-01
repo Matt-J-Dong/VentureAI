@@ -1,0 +1,33 @@
+
+[notice] A new release of pip is available: 24.0 -> 24.3.1
+[notice] To update, run: pip install --upgrade pip
+/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py:809: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/9 [00:00<?, ?it/s]Loading checkpoint shards:  11%|█         | 1/9 [00:19<02:37, 19.72s/it]Loading checkpoint shards:  22%|██▏       | 2/9 [00:39<02:19, 19.92s/it]Loading checkpoint shards:  33%|███▎      | 3/9 [00:58<01:57, 19.60s/it]Loading checkpoint shards:  44%|████▍     | 4/9 [01:18<01:36, 19.39s/it]Loading checkpoint shards:  56%|█████▌    | 5/9 [01:37<01:17, 19.27s/it]Loading checkpoint shards:  67%|██████▋   | 6/9 [01:56<00:57, 19.17s/it]Loading checkpoint shards:  78%|███████▊  | 7/9 [02:15<00:38, 19.16s/it]Loading checkpoint shards:  89%|████████▉ | 8/9 [02:36<00:19, 19.94s/it]Loading checkpoint shards: 100%|██████████| 9/9 [02:54<00:00, 19.24s/it]Loading checkpoint shards: 100%|██████████| 9/9 [02:54<00:00, 19.39s/it]
+Traceback (most recent call last):
+  File "/scratch/mjd9571/VentureAI/fine_tuning/falcon2_model.py", line 50, in <module>
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4303, in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/accelerate/big_modeling.py", line 352, in dispatch_model
+    check_device_map(model, device_map)
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/accelerate/utils/modeling.py", line 1407, in check_device_map
+    all_model_tensors = [name for name, _ in model.state_dict().items()]
+                                             ^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 2219, in state_dict
+    module.state_dict(
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 2219, in state_dict
+    module.state_dict(
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 2219, in state_dict
+    module.state_dict(
+  [Previous line repeated 2 more times]
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 2216, in state_dict
+    self._save_to_state_dict(destination, prefix, keep_vars)
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/bitsandbytes/nn/modules.py", line 928, in _save_to_state_dict
+    param_from_weight = getattr(self.weight, scb_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tensor' object has no attribute 'SCB'

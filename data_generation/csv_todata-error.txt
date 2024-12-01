@@ -1,0 +1,9 @@
+WARNING: Could not find any nv files on this host!
+
+[notice] A new release of pip is available: 24.0 -> 24.3.1
+[notice] To update, run: pip install --upgrade pip
+/bin/bash: line 12: nvidia-smi: command not found
+Traceback (most recent call last):
+  File "/scratch/mjd9571/VentureAI/data_generation/1_csv_to_structured_data.py", line 1, in <module>
+    import openai
+ModuleNotFoundError: No module named 'openai'

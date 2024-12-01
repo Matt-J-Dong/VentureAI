@@ -4,9 +4,9 @@
 #SBATCH --cpus-per-task=4                # uses 4 compute cores per task
 #SBATCH --time=48:00:00
 #SBATCH --mem=64GB
-#SBATCH --job-name=csv_todata
-#SBATCH --output=csv_todata.out
-#SBATCH --error=csv_todata-error.txt
+#SBATCH --job-name=csv_todata2
+#SBATCH --output=csv_todata2.out
+#SBATCH --error=csv_todata2-error.txt
 #SBATCH --mail-user=matthew.dong@nyu.edu
 #SBATCH --mail-type=ALL
 
@@ -33,5 +33,5 @@ fi
 # wandb login --relogin \$WANDB_API_KEY
 
 # Run your script
-./1_csv_to_structured_data.sh
+./2_csv_to_structured_data.sh
 "

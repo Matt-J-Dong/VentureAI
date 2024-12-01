@@ -1,8 +1,10 @@
 import openai
 import sys
 import csv
+import os
+from dotenv import load_dotenv
 
-#from google.colab import userdata
+# Load environment variables
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -59,12 +61,16 @@ def main():
     # Extract prompts and responses from the input CSV
     prompts_responses = extract_prompts_and_responses(input_csv_file)
 
+    # Determine the number of rows to process (half of the dataset)
+    half_length = len(prompts_responses) // 2
+    prompts_responses = prompts_responses[half_length:]
+
     # List to store results
     results = []
 
-    # Process each data point in the CSV
+    # Process each data point in the first half of the CSV
     for idx, (prompt, data) in enumerate(prompts_responses, start=1):
-        print(f"Processing row {idx}...") #Debugging line
+        print(f"Processing row {idx}...")  # Debugging line
 
         # Construct the input for OpenAI
         input_prompt = (
@@ -80,7 +86,6 @@ def main():
 
         # Append the result to the list
         results.append({"prompt": prompt, "response": response})
-        #break #Break to generate only 1 for testing
 
     # Save the results to the output CSV
     save_results_to_csv(results, output_csv_file)

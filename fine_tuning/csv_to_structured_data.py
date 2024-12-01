@@ -3,7 +3,6 @@ import sys
 
 #from google.colab import userdata
 
-openai.api_key = ''
 
 # Function to use OpenAI's new API for solving a math problem
 def generate_solution_with_openai(prompt, model="gpt-4o-mini"):

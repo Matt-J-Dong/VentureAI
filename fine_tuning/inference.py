@@ -12,21 +12,42 @@ if not HUGGING_FACE_TOKEN:
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 
-# Load fine-tuned model
-tokenizer = AutoTokenizer.from_pretrained("./falcon-40b-finetuned")
-model = AutoModelForCausalLM.from_pretrained("./falcon-40b-finetuned", device_map="auto")
+# Load the trained model and tokenizer
+model_dir = "./trained_falcon_7b"
 
-generator = pipeline("text-generation", model=model, tokenizer=tokenizer)
+print("Loading model...")
+tokenizer = AutoTokenizer.from_pretrained(model_dir)
+model = AutoModelForCausalLM.from_pretrained(model_dir, torch_dtype=torch.bfloat16, device_map="auto")
 
-# Prepare input text
-input_text = "Provide a 4-day itinerary for 3 friends traveling from Chicago to New Orleans from July 1st to July 4th, 2022, with a budget of $4,000.\n"
-input_ids = tokenizer(input_text, return_tensors="pt").input_ids.to(model.device)
+# Set model to evaluation mode
+model.eval()
 
-# Generate output
-outputs = model.generate(input_ids, max_length=400, num_return_sequences=2, do_sample=True, temperature=0.4)
+# Define a function for inference
+def generate_response(prompt, max_length=100):
+    # Tokenize the prompt
+    input_ids = tokenizer(prompt, return_tensors="pt").input_ids.to(model.device)
 
-# Decode and print the generated text
-generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-print(generated_text)
+    # Generate response
+    with torch.no_grad():
+        output_ids = model.generate(
+            input_ids=input_ids,
+            max_length=max_length,
+            pad_token_id=tokenizer.eos_token_id,  # Ensure proper padding
+            eos_token_id=tokenizer.eos_token_id,  # Stop generation at end-of-sequence token
+        )
+    
+    # Decode the generated response
+    response = tokenizer.decode(output_ids[0], skip_special_tokens=True)
+    return response
 
+# Example usage
+if __name__ == "__main__":
+    print("\nModel loaded. Ready for inference.\n")
 
+    while True:
+        prompt = input("Enter a prompt (or type 'exit' to quit): ")
+        if prompt.lower() == 'exit':
+            break
+        
+        response = generate_response(prompt, max_length=200)
+        print(f"\nResponse:\n{response}\n")

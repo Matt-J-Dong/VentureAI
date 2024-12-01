@@ -1,16 +1,15 @@
 import openai
 import sys
+import csv
 
 #from google.colab import userdata
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
-openai.api_key = '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'
-
-# Function to use OpenAI's new API for solving a math problem
+# Function to use OpenAI's new API for solving a problem
 def generate_solution_with_openai(prompt, model="gpt-4o-mini"):
-    # Prepare the chat-based input prompt for the newer API format
     messages = [{"role": "user", "content": f"{prompt}"}]
 
-    # Make an API call to OpenAI's model using the new chat completion method
     try:
         response = openai.ChatCompletion.create(
             model=model,
@@ -24,48 +23,69 @@ def generate_solution_with_openai(prompt, model="gpt-4o-mini"):
         print(f"An error occurred: {e}")
         return None
 
-import csv
-
+# Function to extract prompts and responses from a CSV file
 def extract_prompts_and_responses(csv_file_path):
     csv.field_size_limit(sys.maxsize)
-    # Dictionary to store prompts as keys and responses as values
-    prompts_responses = {}
+    prompts_responses = []
 
     # Open the CSV file
     with open(csv_file_path, mode='r', encoding='utf-8') as file:
-        # Read the CSV file
         reader = csv.DictReader(file)
 
         # Iterate through each row in the CSV
         for row in reader:
-            # Extract the prompt and response
             prompt = row['prompt']
             response = row['response']
-            
-            # Add them to the dictionary
-            prompts_responses[prompt] = response
+            prompts_responses.append((prompt, response))
 
     return prompts_responses
 
-# Generate a solution with minimal prompting
-csv_file_path = 'fine_tuning/train.csv'
+# Function to save the results to a new CSV file
+def save_results_to_csv(results, output_file_path):
+    # Open the CSV file for writing
+    with open(output_file_path, mode='w', encoding='utf-8', newline='') as file:
+        writer = csv.DictWriter(file, fieldnames=["prompt", "response"])
+        writer.writeheader()
 
-# Extract the prompts and responses
-prompts_responses_dict = extract_prompts_and_responses(csv_file_path)
+        # Write each result row to the CSV
+        for row in results:
+            writer.writerow(row)
 
-# Print the result
-input = ""
+# Main function to process the CSV and generate results
+def main():
+    input_csv_file = './train.csv'
+    output_csv_file = './results.csv'
 
-for prompt, data in prompts_responses_dict.items():
-    input = "I am providing you with a Query that will ask you to plan a trip for me with instructions. I will also provide you with data regarding the location I want to travel to. Only use that data provided to answer the prompt; Do not come up with anything new.\n"
-    input += f"{data}\n"
-    input += f"{prompt}\n"
-    #print(input)
-    break
+    # Extract prompts and responses from the input CSV
+    prompts_responses = extract_prompts_and_responses(input_csv_file)
 
+    # List to store results
+    results = []
 
-solution = generate_solution_with_openai(input)
+    # Process each data point in the CSV
+    for idx, (prompt, data) in enumerate(prompts_responses, start=1):
+        print(f"Processing row {idx}...") #Debugging line
 
-# Print the results
-#print("Problem:", problem)
-print("Solution:", solution)
+        # Construct the input for OpenAI
+        input_prompt = (
+            "I am providing you with a Query that will ask you to plan a trip for me with instructions. "
+            "I will also provide you with data regarding the location I want to travel to. "
+            "Only use that data provided to answer the prompt; do not come up with anything new.\n"
+        )
+        input_prompt += f"{data}\n"
+        input_prompt += f"{prompt}\n"
+
+        # Generate a solution using OpenAI
+        response = generate_solution_with_openai(input_prompt)
+
+        # Append the result to the list
+        results.append({"prompt": prompt, "response": response})
+        #break #Break to generate only 1 for testing
+
+    # Save the results to the output CSV
+    save_results_to_csv(results, output_csv_file)
+    print(f"Results saved to '{output_csv_file}'.")
+
+# Run the main function
+if __name__ == "__main__":
+    main()

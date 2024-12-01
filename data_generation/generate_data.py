@@ -2,6 +2,7 @@ import json
 import pandas as pd
 from typing import List, Dict
 import os
+import csv
 
 def load_titles_list(file_path: str) -> List[str]:
     """
@@ -59,7 +60,6 @@ def load_cleaned_wikivoyage(file_path: str) -> Dict[str, str]:
             continue
         # Check if the page has 'redirect' field; skip if present
         if "redirect" in page:
-            print(f"Page {idx}: '{title}' has a 'redirect' field. Skipping.")
             continue
         revision = page.get("revision", {})
         text = revision.get("text", "")
@@ -107,7 +107,6 @@ def create_prompts_responses(titles: List[str], mapping: Dict[str, str]) -> List
             "prompt": prompt,
             "response": response
         })
-        print(f"Title {idx}: '{title}' processed.")
     print(f"\nTotal prompts and responses created: {len(data)}")
     if missing_titles:
         print(f"Total titles missing in JSON: {len(missing_titles)}")
@@ -115,7 +114,7 @@ def create_prompts_responses(titles: List[str], mapping: Dict[str, str]) -> List
 
 def save_to_csv(data: List[Dict[str, str]], output_file: str):
     """
-    Save the prompts and responses to a CSV file.
+    Save the prompts and responses to a CSV file, ensuring proper handling of quotes and line breaks.
 
     Args:
         data (List[Dict[str, str]]): List of dictionaries with 'title', 'prompt', 'response'.
@@ -124,9 +123,21 @@ def save_to_csv(data: List[Dict[str, str]], output_file: str):
     if not data:
         print("No data to save.")
         return
+
     df = pd.DataFrame(data)
+
+    # Optional: Sanitize response texts by replacing double quotes with escaped quotes
+    df['response'] = df['response'].str.replace('"', '""')
+
     try:
-        df.to_csv(output_file, index=False, encoding='utf-8')
+        df.to_csv(
+            output_file,
+            index=False,
+            encoding='utf-8-sig',         # Use UTF-8 with BOM for better compatibility
+            quoting=csv.QUOTE_ALL,        # Enclose all fields in quotes
+            #line_terminator='\n',         # Use LF as line terminator
+            escapechar='\\'               # Escape character for special cases
+        )
         print(f"Data successfully saved to '{output_file}'.")
     except Exception as e:
         print(f"Error saving to CSV: {e}")
@@ -136,9 +147,9 @@ def main():
     Main function to execute the prompt and response creation.
     """
     # Define file paths
-    titles_list_path = "titles_list.txt"  # Path to 'titles_list.txt'
+    titles_list_path = "titles_list.txt"          # Path to 'titles_list.txt'
     cleaned_wikivoyage_path = "cleaned_wikivoyage.json"  # Path to 'cleaned_wikivoyage.json'
-    output_csv_path = "prompts_responses.csv"  # Desired output CSV file name
+    output_csv_path = "prompts_responses.csv"     # Desired output CSV file name
 
     # Check if titles_list.txt exists
     if not os.path.exists(titles_list_path):
@@ -167,5 +178,14 @@ def main():
     # Save to CSV
     save_to_csv(prompts_responses, output_csv_path)
 
+    # Optional: Validate the CSV by loading it back into Pandas
+    try:
+        df_loaded = pd.read_csv(output_csv_path, encoding='utf-8-sig', quoting=csv.QUOTE_ALL)
+        print(f"CSV successfully loaded back into Pandas. Shape: {df_loaded.shape}")
+        print(df_loaded)
+    except Exception as e:
+        print(f"Error loading CSV into Pandas: {e}")
+
 if __name__ == "__main__":
     main()
+

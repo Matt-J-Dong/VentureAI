@@ -7,6 +7,8 @@ falcon-40b-finetuned/
 fine_tuning/wandb/
 */train.csv
 fine_tuning/trained_falcon_7b/
+fine_tuning/trained_falcon_7b_test_data/
+fine_tuning/trained_falcon_7b_9/
 
 #Personal myenv:
 myenv/

@@ -1,6 +1,5 @@
 import torch
-# from torch.cuda.amp import
-from torch import GradScaler, autocast #GradScaler and autocast moved here to avoid deprecation
+from torch import GradScaler, autocast
 from torch.utils.data import Dataset, DataLoader 
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from torch.optim import AdamW
@@ -9,23 +8,30 @@ from tqdm import tqdm  # Import tqdm for progress bars
 
 # Clear CUDA cache
 torch.cuda.empty_cache()
-#scaler = GradScaler('cuda')  # Updated to avoid deprecation
 
 # Load the Falcon-7B model and tokenizer
-model_name = "tiiuae/falcon-7b"
+model_name = "tiiuae/falcon-7b-instruct"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-tokenizer.pad_token = tokenizer.eos_token  # Set pad_token to eos_token
+
+# Add a unique pad token if it doesn't already exist
+if tokenizer.pad_token is None:
+    tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+
+# Set pad_token to a unique token
+tokenizer.pad_token = '[PAD]'
 
 # Load the model with device_map to distribute across GPUs
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
     device_map="auto",
-    #torch_dtype=torch.float16,       # Added fp16 to increase speed
     torch_dtype=torch.bfloat16,  # Use bfloat16
-    offload_folder="offload",        # Optional: specify folder for CPU offloading
-    offload_state_dict=True          # Optional: offload state dict to CPU
+    offload_folder="offload",    # Optional: specify folder for CPU offloading
+    offload_state_dict=True       # Optional: offload state dict to CPU
 )
+
+# Resize token embeddings to account for the new pad token
+model.resize_token_embeddings(len(tokenizer))
 
 # Read the data from train.csv
 data = pd.read_csv('../data_generation/combined_results.csv')
@@ -67,8 +73,8 @@ class PromptResponseDataset(Dataset):
 
 # Create the dataset and dataloader
 dataset = PromptResponseDataset(data, tokenizer)
-#dataloader = DataLoader(dataset, batch_size=32, shuffle=True) #batch size of 16 is too big! Crazy. A100 size
-dataloader = DataLoader(dataset, batch_size=8, shuffle=True) #batch size of 16 is too big! Crazy. Coping V100
+#dataloader = DataLoader(dataset, batch_size=8, shuffle=True)  # Adjust batch size as needed
+dataloader = DataLoader(dataset, batch_size=16, shuffle=True)  # Adjust batch size as needed
 
 # Set up the optimizer
 optimizer = AdamW(model.parameters(), lr=5e-5)
@@ -85,7 +91,7 @@ for epoch in range(epochs):
         attention_mask = batch['attention_mask'].to(model.device)
         labels = batch['labels'].to(model.device)
 
-        with autocast('cuda', dtype=torch.bfloat16):  # Ensure autocast uses fp16
+        with autocast('cuda', dtype=torch.bfloat16):  # Ensure autocast uses bfloat16
             outputs = model(
                 input_ids=input_ids,
                 attention_mask=attention_mask,
@@ -93,9 +99,9 @@ for epoch in range(epochs):
             )
             loss = outputs.loss
 
-        #scaler.scale(loss).backward()
-        #scaler.step(optimizer)
-        #scaler.update()
+        # Backpropagation without GradScaler since bfloat16 is supported
+        loss.backward()
+        optimizer.step()
 
         # Update progress bar with current loss
         progress_bar.set_postfix({'loss': loss.item()})
@@ -103,11 +109,11 @@ for epoch in range(epochs):
         if (batch_idx + 1) % 10 == 0:
             print(f"Batch {batch_idx + 1}/{len(dataloader)} - Loss: {loss.item()}")
 
-
     print(f"Epoch {epoch+1} completed. Loss: {loss.item()}")
 
 print("Training completed.")
 
-output_dir = "./trained_falcon_7b_test_data"
+# Save the trained model and tokenizer
+output_dir = "./trained_falcon_7b_9"
 model.save_pretrained(output_dir)
 tokenizer.save_pretrained(output_dir)

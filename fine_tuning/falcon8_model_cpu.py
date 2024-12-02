@@ -68,7 +68,8 @@ class PromptResponseDataset(Dataset):
 # Create the dataset and dataloader
 dataset = PromptResponseDataset(data, tokenizer)
 #dataloader = DataLoader(dataset, batch_size=32, shuffle=True) #batch size of 16 is too big! Crazy. A100 size
-dataloader = DataLoader(dataset, batch_size=8, shuffle=True) #batch size of 16 is too big! Crazy. Coping V100
+#dataloader = DataLoader(dataset, batch_size=8, shuffle=True) #batch size of 16 is too big! Crazy. Coping V100
+dataloader = DataLoader(dataset, batch_size=128, shuffle=True) #batch size of 16 is too big! Crazy. Coping V100
 
 # Set up the optimizer
 optimizer = AdamW(model.parameters(), lr=5e-5)

@@ -10,7 +10,7 @@ from tqdm import tqdm  # Import tqdm for progress bars
 torch.cuda.empty_cache()
 
 # Load the Falcon-7B model and tokenizer
-model_name = "tiiuae/falcon-7b"
+model_name = "tiiuae/falcon-7b-instruct"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
@@ -114,6 +114,6 @@ for epoch in range(epochs):
 print("Training completed.")
 
 # Save the trained model and tokenizer
-output_dir = "./trained_falcon_7b_9"
+output_dir = "./trained_falcon_7b_9_instruct"
 model.save_pretrained(output_dir)
 tokenizer.save_pretrained(output_dir)

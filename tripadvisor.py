@@ -1,5 +1,6 @@
 import requests
 import json
+import os
 
 api_key = '8B04F7B58B534C8284B9F96767D3A913'
 
@@ -215,19 +216,44 @@ def get_all_details(search_query, locations_info):
 
     return locations_info
 
+def load_existing_data(file_path):
+    if os.path.exists(file_path):
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return json.load(f)  # Load existing JSON data
+    return {}
+
+
 def main():
-    search_query = 'Paris'
-    # Parameters for TripAdvisor API (CANNOT BE CHANGED)
-    locations_info = {search_query: {}}
 
-    locations_info = get_all_details(search_query, locations_info)
-    
-    
+    cities = []
+    with open('cities.txt', mode='r', encoding='utf-8') as file:
+        for line in file:
+            cities.append(line.strip())  
 
+    # print(cities)
+    existing_data = {}
+
+    for search_query in cities:
+        try:
+            locations_info = {search_query: {}}
+            locations_info = get_all_details(search_query, locations_info)
+            existing_data[search_query] = locations_info[search_query]
+            print(f"Data for {search_query} processed successfully.")
+
+        except Exception as e:
+            # Log the error and continue with the next city
+            print(f"Error {e} processing data. TripAvisor API does not support {search_query}")
 
     with open('locations_info.json', 'w', encoding='utf-8') as f:
-        json.dump(locations_info, f, indent=4, ensure_ascii=False)
-    print(f"Data written to locations_info.json")
+        json.dump(existing_data, f, indent=4, ensure_ascii=False)
+    print(f"All data written to locations_info.json")
+
+    
+    
+    
+
+
+    
 
 if __name__ == "__main__":
     main()

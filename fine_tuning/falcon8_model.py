@@ -12,7 +12,7 @@ torch.cuda.empty_cache()
 #scaler = GradScaler('cuda')  # Updated to avoid deprecation
 
 # Load the Falcon-7B model and tokenizer
-model_name = "tiiuae/falcon-7b"
+model_name = "tiiuae/falcon-7b-instruct"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 tokenizer.pad_token = tokenizer.eos_token  # Set pad_token to eos_token
@@ -108,6 +108,6 @@ for epoch in range(epochs):
 
 print("Training completed.")
 
-output_dir = "./trained_falcon_7b_test_data"
+output_dir = "./trained_falcon_7b_8_instruct"
 model.save_pretrained(output_dir)
 tokenizer.save_pretrained(output_dir)

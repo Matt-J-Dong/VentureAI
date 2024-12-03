@@ -11,6 +11,7 @@ fine_tuning/trained_falcon_7b_test_data/
 fine_tuning/trained_falcon_7b_9/
 fine_tuning/trained_falcon_7b_9_instruct/
 fine_tuning/trained_falcon_7b_a/
+fine_tuning/trained_falcon_7b_b/
 
 #Personal myenv:
 myenv/

@@ -225,12 +225,12 @@ def load_existing_data(file_path):
 
 def main():
 
-    cities = []
-    with open('cities.txt', mode='r', encoding='utf-8') as file:
-        for line in file:
-            cities.append(line.strip())  
+    cities = ['Paris, France', 'Tokyo, Japan', 'London, United Kingdom', 'Madrid, Spain', 'Florence, Spain', 'Kyoto, Japan', 'Istanbul, Turkey']
+    # with open('cities.txt', mode='r', encoding='utf-8') as file:
+    #     for line in file:
+    #         cities.append(line.strip())  
 
-    # print(cities)
+    # # print(cities)
     existing_data = {}
 
     for search_query in cities:

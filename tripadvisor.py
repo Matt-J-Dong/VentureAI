@@ -70,16 +70,16 @@ def location_details_restaurants(locationId, api_key, locations_info, search_que
         if search_query in locations_info and category in locations_info[search_query]:
             locations_info[search_query][category][location].update({
                 'description': description,
-                'latitude': latitude,
-                'longitude': longitude,
-                'phone': phone,
-                'rating': rating,
+                #'latitude': latitude,
+                #'longitude': longitude,
+                #'phone': phone,
+                #'rating': rating,
                 'hours': weekday_text,
                 'cuisine': cuisine_names,
                 'pice_level': price_level
             })
         
-        locations_info = get_location_reviews(locationId, api_key, locations_info, search_query, category, location)
+        #locations_info = get_location_reviews(locationId, api_key, locations_info, search_query, category, location)
 
     except json.JSONDecodeError:
         print("Error decoding JSON from response text.")
@@ -102,22 +102,22 @@ def location_details_hotels(locationId, api_key, locations_info, search_query, c
         rating = json_response.get('rating')
         price_level = json_response.get('price_level')
         weekday_text = json_response.get('hours', {}).get('weekday_text', [])
-        amenities = json_response.get('amenities', [])
+        #amenities = json_response.get('amenities', [])
 
         # Update the inner dictionary for the specific hotel
         if search_query in locations_info and category in locations_info[search_query]:
             locations_info[search_query][category][location].update({
                 'description': description,
-                'address_string': address_string,
-                'latitude': latitude,
-                'longitude': longitude,
-                'rating': rating,
+                #'address_string': address_string,
+                #'latitude': latitude,
+                #'longitude': longitude,
+                #'rating': rating,
                 'price_level': price_level,
-                'hours': weekday_text,
-                'amenities': amenities
+                #'hours': weekday_text,
+                #'amenities': amenities
             })
 
-        locations_info = get_location_reviews(locationId, api_key, locations_info, search_query, category, location)
+        #locations_info = get_location_reviews(locationId, api_key, locations_info, search_query, category, location)
 
     except json.JSONDecodeError:
         print("Error decoding JSON from response text.")
@@ -146,16 +146,16 @@ def location_details_attractions(locationId, api_key, locations_info, search_que
         if search_query in locations_info and category in locations_info[search_query]:
             locations_info[search_query][category][location].update({
                 'description': description,
-                'address_string': address_string,
-                'latitude': latitude,
-                'longitude': longitude,
-                'phone': phone,
-                'rating': rating,
+                #'address_string': address_string,
+                #'latitude': latitude,
+                #'longitude': longitude,
+                #'phone': phone,
+                #'rating': rating,
                 'hours': weekday_text,
-                'groups': groups
+                #'groups': groups
             })
         
-        locations_info = get_location_reviews(locationId, api_key, locations_info, search_query, category, location)
+        #locations_info = get_location_reviews(locationId, api_key, locations_info, search_query, category, location)
 
     except json.JSONDecodeError:
         print("Error decoding JSON from response text.")
@@ -194,7 +194,7 @@ def location_details_geo(locationId, api_key, locations_info, search_query, cate
     return locations_info
 
 def get_all_details(search_query, locations_info):
-    categories = ['restaurants', 'hotels', 'attractions', 'geo']
+    categories = ['restaurants', 'hotels', 'attractions']
 
     for category in categories:
         category_info = find_search(search_query, category, api_key)
@@ -211,8 +211,8 @@ def get_all_details(search_query, locations_info):
                 locations_info = location_details_hotels(locationId, api_key, locations_info, search_query, category, location)
             elif category == 'attractions':
                 locations_info = location_details_attractions(locationId, api_key, locations_info, search_query, category, location)
-            elif category == 'geo':
-                locations_info = location_details_geo(locationId, api_key, locations_info, search_query, category, location)
+            # elif category == 'geo':
+            #     locations_info = location_details_geo(locationId, api_key, locations_info, search_query, category, location)
 
     return locations_info
 

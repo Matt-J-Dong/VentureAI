@@ -215,7 +215,7 @@ def main():
     device = accelerator.device
 
     # Load tokenizer
-    tokenizer = AutoTokenizer.from_pretrained("tiiuae/falcon-7b")
+    tokenizer = AutoTokenizer.from_pretrained("tiiuae/falcon-7b-instruct")
     # Add a unique pad token if it doesn't already exist
     if tokenizer.pad_token is None:
         tokenizer.add_special_tokens({'pad_token': '[PAD]'})
@@ -229,7 +229,7 @@ def main():
 
     # Load model
     model = AutoModelForCausalLM.from_pretrained(
-        "tiiuae/falcon-7b",
+        "tiiuae/falcon-7b-instruct",
         torch_dtype=torch.float16,  # Use float16 to reduce memory usage
     )
     # Resize token embeddings

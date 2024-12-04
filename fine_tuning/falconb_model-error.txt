@@ -1,0 +1,31 @@
+
+[notice] A new release of pip is available: 24.0 -> 24.3.1
+[notice] To update, run: pip install --upgrade pip
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:26<00:26, 26.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:37<00:00, 17.31s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:37<00:00, 18.62s/it]
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+Training:   0%|          | 0/90 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+                                                Traceback (most recent call last):
+  File "/scratch/mjd9571/VentureAI/fine_tuning/falconb_model.py", line 262, in <module>
+    main()
+  File "/scratch/mjd9571/VentureAI/fine_tuning/falconb_model.py", line 249, in main
+    train_model(
+  File "/scratch/mjd9571/VentureAI/fine_tuning/falconb_model.py", line 147, in train_model
+    optimizer.step()
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/accelerate/optimizer.py", line 171, in step
+    self.optimizer.step(closure)
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/optim/lr_scheduler.py", line 137, in wrapper
+    return func.__get__(opt, opt.__class__)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/optim/optimizer.py", line 487, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/optim/optimizer.py", line 91, in _use_grad
+    ret = func(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/optim/adamw.py", line 209, in step
+    has_complex = self._init_group(
+                  ^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/optim/adamw.py", line 148, in _init_group
+    state["exp_avg"] = torch.zeros_like(
+                       ^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 42.00 MiB. GPU 0 has a total capacity of 44.48 GiB of which 23.31 MiB is free. Including non-PyTorch memory, this process has 44.46 GiB memory in use. Of the allocated memory 44.05 GiB is allocated by PyTorch, and 202.73 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

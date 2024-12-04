@@ -12,6 +12,10 @@ fine_tuning/trained_falcon_7b_9/
 fine_tuning/trained_falcon_7b_9_instruct/
 fine_tuning/trained_falcon_7b_a/
 fine_tuning/trained_falcon_7b_b/
+fine_tuning/trained_falcon_7b_c/
+fine_tuning/trained_model/
+fine_tuning/log/
+fine_tuning/trained_falcon_7b_8_instruct/
 
 #Personal myenv:
 myenv/

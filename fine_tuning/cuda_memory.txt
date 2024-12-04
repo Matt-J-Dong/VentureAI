@@ -1,0 +1,681 @@
+CUDA Memory Usage Log
+
+2024-12-04 14:46:16,377 - Starting Training Script
+2024-12-04 14:46:16,378 - Starting Training Script
+2024-12-04 14:46:16,382 - Process 3: Initialized on device cuda:3
+2024-12-04 14:46:16,383 - Process 1: Initialized on device cuda:1
+2024-12-04 14:46:16,384 - Starting Training Script
+2024-12-04 14:46:16,386 - Starting Training Script
+2024-12-04 14:46:16,387 - Process 0: Initialized on device cuda:0
+2024-12-04 14:46:16,391 - Process 2: Initialized on device cuda:2
+2024-12-04 14:46:16,591 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:46:16,591 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:46:16,591 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:46:16,591 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:46:16,591 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:46:16,592 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:46:16,618 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:46:16,618 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:46:46,410 - After model loading and moving to device | Allocated: 26465.18 MB | Reserved: 26538.00 MB | Max Allocated: 26465.18 MB | Max Reserved: 26538.00 MB
+2024-12-04 14:46:47,880 - After model loading and moving to device | Allocated: 26465.18 MB | Reserved: 26538.00 MB | Max Allocated: 26465.18 MB | Max Reserved: 26538.00 MB
+2024-12-04 14:46:50,739 - After model loading and moving to device | Allocated: 26465.18 MB | Reserved: 26538.00 MB | Max Allocated: 26465.18 MB | Max Reserved: 26538.00 MB
+2024-12-04 14:47:06,473 - After model loading and moving to device | Allocated: 26465.18 MB | Reserved: 26538.00 MB | Max Allocated: 26465.18 MB | Max Reserved: 26538.00 MB
+2024-12-04 14:47:10,176 - CUDA Out of Memory Error: CUDA out of memory. Tried to allocate 25.79 GiB. GPU 3 has a total capacity of 44.48 GiB of which 18.29 GiB is free. Including non-PyTorch memory, this process has 26.19 GiB memory in use. Of the allocated memory 25.84 GiB is allocated by PyTorch, and 72.82 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-04 14:47:10,179 - CUDA Out of Memory Error: CUDA out of memory. Tried to allocate 25.79 GiB. GPU 2 has a total capacity of 44.48 GiB of which 18.29 GiB is free. Including non-PyTorch memory, this process has 26.19 GiB memory in use. Of the allocated memory 25.84 GiB is allocated by PyTorch, and 72.82 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-04 14:47:10,221 - CUDA Out of Memory Error: CUDA out of memory. Tried to allocate 25.79 GiB. GPU 1 has a total capacity of 44.48 GiB of which 18.29 GiB is free. Including non-PyTorch memory, this process has 26.19 GiB memory in use. Of the allocated memory 25.84 GiB is allocated by PyTorch, and 72.82 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-04 14:47:10,221 - CUDA Out of Memory Error: CUDA out of memory. Tried to allocate 25.79 GiB. GPU 0 has a total capacity of 44.48 GiB of which 18.29 GiB is free. Including non-PyTorch memory, this process has 26.19 GiB memory in use. Of the allocated memory 25.84 GiB is allocated by PyTorch, and 72.82 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-04 14:47:10,687 - Destroyed the distributed process group
+2024-12-04 14:47:10,689 - Destroyed the distributed process group
+2024-12-04 14:47:10,730 - Destroyed the distributed process group
+2024-12-04 14:47:10,735 - Destroyed the distributed process group
+2024-12-04 14:54:00,608 - Starting Training Script
+2024-12-04 14:54:00,608 - Starting Training Script
+2024-12-04 14:54:00,608 - Starting Training Script
+2024-12-04 14:54:00,611 - Starting Training Script
+2024-12-04 14:54:00,753 - Process 1: Initialized on device cuda:1
+2024-12-04 14:54:00,756 - Process 3: Initialized on device cuda:3
+2024-12-04 14:54:00,756 - Process 0: Initialized on device cuda:0
+2024-12-04 14:54:00,763 - Process 2: Initialized on device cuda:2
+2024-12-04 14:54:00,951 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:54:00,952 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:54:00,954 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:54:00,954 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:54:00,967 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:54:00,967 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:54:00,984 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:54:00,984 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:54:24,377 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 14:54:24,384 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 14:54:24,550 - Process 0: Wrapped model with LoRA
+2024-12-04 14:54:24,555 - Process 2: Wrapped model with LoRA
+2024-12-04 14:54:24,935 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 14:54:24,935 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 14:54:25,074 - Process 1: Wrapped model with LoRA
+2024-12-04 14:54:25,074 - Process 3: Wrapped model with LoRA
+2024-12-04 14:54:25,516 - Process 0: Wrapped model with DistributedDataParallel
+2024-12-04 14:54:25,516 - Process 1: Wrapped model with DistributedDataParallel
+2024-12-04 14:54:25,517 - Process 3: Wrapped model with DistributedDataParallel
+2024-12-04 14:54:25,517 - Process 2: Wrapped model with DistributedDataParallel
+2024-12-04 14:54:25,930 - Loaded 3280 samples for training
+2024-12-04 14:54:25,931 - Process 0: Created DataLoader with batch size 1
+2024-12-04 14:54:25,932 - Loaded 3280 samples for training
+2024-12-04 14:54:25,932 - Loaded 3280 samples for training
+2024-12-04 14:54:25,933 - Process 2: Created DataLoader with batch size 1
+2024-12-04 14:54:25,933 - Process 3: Created DataLoader with batch size 1
+2024-12-04 14:54:25,933 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 14:54:25,934 - Initialized GradScaler for mixed precision
+2024-12-04 14:54:25,935 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 14:54:25,935 - Initialized GradScaler for mixed precision
+2024-12-04 14:54:25,935 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 14:54:25,936 - Initialized GradScaler for mixed precision
+2024-12-04 14:54:25,936 - Loaded 3280 samples for training
+2024-12-04 14:54:25,937 - Epoch 1/1 started
+2024-12-04 14:54:25,937 - Process 1: Created DataLoader with batch size 1
+2024-12-04 14:54:25,940 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 14:54:25,940 - Initialized GradScaler for mixed precision
+2024-12-04 14:54:27,326 - Before forward pass - Epoch 1, Batch 1 | Allocated: 6966.93 MB | Reserved: 13798.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 13798.00 MB
+2024-12-04 14:54:27,450 - An unexpected error occurred: set_autocast_enabled(): argument 'enabled' (position 2) must be bool, not str
+2024-12-04 14:54:27,612 - Before forward pass - Epoch 1, Batch 1 | Allocated: 6966.93 MB | Reserved: 13798.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 13798.00 MB
+2024-12-04 14:54:27,868 - Before forward pass - Epoch 1, Batch 1 | Allocated: 6966.93 MB | Reserved: 13798.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 13798.00 MB
+2024-12-04 14:54:27,887 - An unexpected error occurred: set_autocast_enabled(): argument 'enabled' (position 2) must be bool, not str
+2024-12-04 14:54:27,962 - An unexpected error occurred: set_autocast_enabled(): argument 'enabled' (position 2) must be bool, not str
+2024-12-04 14:54:27,972 - Before forward pass - Epoch 1, Batch 1 | Allocated: 6966.93 MB | Reserved: 13798.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 13798.00 MB
+2024-12-04 14:54:28,018 - An unexpected error occurred: set_autocast_enabled(): argument 'enabled' (position 2) must be bool, not str
+2024-12-04 14:54:28,082 - Destroyed the distributed process group
+2024-12-04 14:54:28,399 - Destroyed the distributed process group
+2024-12-04 14:54:28,473 - Destroyed the distributed process group
+2024-12-04 14:54:28,528 - Destroyed the distributed process group
+2024-12-04 14:57:59,635 - Starting Training Script
+2024-12-04 14:57:59,749 - Starting Training Script
+2024-12-04 14:57:59,750 - Starting Training Script
+2024-12-04 14:57:59,761 - Process 0: Initialized on device cuda:0
+2024-12-04 14:57:59,774 - Starting Training Script
+2024-12-04 14:57:59,805 - Process 2: Initialized on device cuda:2
+2024-12-04 14:57:59,807 - Process 3: Initialized on device cuda:3
+2024-12-04 14:57:59,823 - Process 1: Initialized on device cuda:1
+2024-12-04 14:57:59,954 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:57:59,955 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:58:00,004 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:58:00,005 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:58:00,007 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:58:00,007 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:58:00,028 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:58:00,028 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:58:23,796 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 14:58:23,946 - Process 0: Wrapped model with LoRA
+2024-12-04 14:58:24,053 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 14:58:24,192 - Process 2: Wrapped model with LoRA
+2024-12-04 14:58:25,747 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 14:58:25,895 - Process 3: Wrapped model with LoRA
+2024-12-04 14:58:26,322 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 14:58:26,481 - Process 1: Wrapped model with LoRA
+2024-12-04 14:58:26,877 - Process 1: Wrapped model with DistributedDataParallel
+2024-12-04 14:58:26,879 - Process 2: Wrapped model with DistributedDataParallel
+2024-12-04 14:58:26,879 - Process 0: Wrapped model with DistributedDataParallel
+2024-12-04 14:58:26,879 - Process 3: Wrapped model with DistributedDataParallel
+2024-12-04 14:58:27,289 - Loaded 3280 samples for training
+2024-12-04 14:58:27,290 - Process 1: Created DataLoader with batch size 1
+2024-12-04 14:58:27,291 - Loaded 3280 samples for training
+2024-12-04 14:58:27,291 - Loaded 3280 samples for training
+2024-12-04 14:58:27,291 - Process 2: Created DataLoader with batch size 1
+2024-12-04 14:58:27,292 - Process 3: Created DataLoader with batch size 1
+2024-12-04 14:58:27,292 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 14:58:27,292 - Initialized GradScaler for mixed precision
+2024-12-04 14:58:27,293 - Loaded 3280 samples for training
+2024-12-04 14:58:27,293 - Process 0: Created DataLoader with batch size 1
+2024-12-04 14:58:27,294 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 14:58:27,294 - Initialized GradScaler for mixed precision
+2024-12-04 14:58:27,294 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 14:58:27,295 - Initialized GradScaler for mixed precision
+2024-12-04 14:58:27,296 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 14:58:27,296 - Initialized GradScaler for mixed precision
+2024-12-04 14:58:27,299 - Epoch 1/1 started
+2024-12-04 14:58:27,304 - Before forward pass - Epoch 1, Batch 1 | Allocated: 6966.93 MB | Reserved: 13798.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 13798.00 MB
+2024-12-04 14:58:27,306 - Before forward pass - Epoch 1, Batch 1 | Allocated: 6966.93 MB | Reserved: 13798.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 13798.00 MB
+2024-12-04 14:58:27,308 - Before forward pass - Epoch 1, Batch 1 | Allocated: 6966.93 MB | Reserved: 13798.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 13798.00 MB
+2024-12-04 14:58:27,313 - Before forward pass - Epoch 1, Batch 1 | Allocated: 6966.93 MB | Reserved: 13798.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 13798.00 MB
+2024-12-04 14:58:27,481 - An unexpected error occurred: set_autocast_enabled(): argument 'enabled' (position 2) must be bool, not str
+2024-12-04 14:58:27,481 - An unexpected error occurred: set_autocast_enabled(): argument 'enabled' (position 2) must be bool, not str
+2024-12-04 14:58:27,481 - An unexpected error occurred: set_autocast_enabled(): argument 'enabled' (position 2) must be bool, not str
+2024-12-04 14:58:27,482 - An unexpected error occurred: set_autocast_enabled(): argument 'enabled' (position 2) must be bool, not str
+2024-12-04 14:58:27,993 - Destroyed the distributed process group
+2024-12-04 14:58:27,993 - Destroyed the distributed process group
+2024-12-04 14:58:27,994 - Destroyed the distributed process group
+2024-12-04 14:58:27,994 - Destroyed the distributed process group
+2024-12-04 14:59:16,959 - Starting Training Script
+2024-12-04 14:59:16,961 - Starting Training Script
+2024-12-04 14:59:16,963 - Starting Training Script
+2024-12-04 14:59:16,963 - Starting Training Script
+2024-12-04 14:59:17,104 - Process 1: Initialized on device cuda:1
+2024-12-04 14:59:17,108 - Process 2: Initialized on device cuda:2
+2024-12-04 14:59:17,111 - Process 3: Initialized on device cuda:3
+2024-12-04 14:59:17,117 - Process 0: Initialized on device cuda:0
+2024-12-04 14:59:17,369 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:59:17,369 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:59:17,386 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:59:17,386 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:59:17,417 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:59:17,417 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:59:17,450 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 14:59:17,450 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 14:59:40,643 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 14:59:40,687 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 14:59:40,786 - Process 3: Wrapped model with LoRA
+2024-12-04 14:59:40,825 - Process 1: Wrapped model with LoRA
+2024-12-04 14:59:41,346 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 14:59:41,348 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 14:59:41,485 - Process 2: Wrapped model with LoRA
+2024-12-04 14:59:41,486 - Process 0: Wrapped model with LoRA
+2024-12-04 14:59:41,997 - Process 0: Wrapped model with DistributedDataParallel
+2024-12-04 14:59:41,997 - Process 1: Wrapped model with DistributedDataParallel
+2024-12-04 14:59:41,999 - Process 3: Wrapped model with DistributedDataParallel
+2024-12-04 14:59:42,000 - Process 2: Wrapped model with DistributedDataParallel
+2024-12-04 14:59:42,409 - Loaded 3280 samples for training
+2024-12-04 14:59:42,410 - Process 1: Created DataLoader with batch size 1
+2024-12-04 14:59:42,411 - Loaded 3280 samples for training
+2024-12-04 14:59:42,411 - Process 2: Created DataLoader with batch size 1
+2024-12-04 14:59:42,412 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 14:59:42,413 - Initialized GradScaler for mixed precision
+2024-12-04 14:59:42,414 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 14:59:42,414 - Initialized GradScaler for mixed precision
+2024-12-04 14:59:42,418 - Loaded 3280 samples for training
+2024-12-04 14:59:42,418 - Process 3: Created DataLoader with batch size 1
+2024-12-04 14:59:42,419 - Loaded 3280 samples for training
+2024-12-04 14:59:42,420 - Process 0: Created DataLoader with batch size 1
+2024-12-04 14:59:42,421 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 14:59:42,421 - Initialized GradScaler for mixed precision
+2024-12-04 14:59:42,423 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 14:59:42,423 - Initialized GradScaler for mixed precision
+2024-12-04 14:59:42,424 - Before forward pass - Epoch 1, Batch 1 | Allocated: 6966.93 MB | Reserved: 13798.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 13798.00 MB
+2024-12-04 14:59:42,426 - Epoch 1/1 started
+2024-12-04 14:59:42,426 - Before forward pass - Epoch 1, Batch 1 | Allocated: 6966.93 MB | Reserved: 13798.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 13798.00 MB
+2024-12-04 14:59:42,434 - Before forward pass - Epoch 1, Batch 1 | Allocated: 6966.93 MB | Reserved: 13798.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 13798.00 MB
+2024-12-04 14:59:42,435 - Before forward pass - Epoch 1, Batch 1 | Allocated: 6966.93 MB | Reserved: 13798.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 13798.00 MB
+2024-12-04 14:59:43,811 - After forward pass - Epoch 1, Batch 1 | Allocated: 8170.02 MB | Reserved: 13924.00 MB | Max Allocated: 8197.21 MB | Max Reserved: 13924.00 MB
+2024-12-04 14:59:43,827 - After forward pass - Epoch 1, Batch 1 | Allocated: 8170.98 MB | Reserved: 13926.00 MB | Max Allocated: 8198.16 MB | Max Reserved: 13926.00 MB
+2024-12-04 14:59:43,841 - After forward pass - Epoch 1, Batch 1 | Allocated: 8168.22 MB | Reserved: 13922.00 MB | Max Allocated: 8195.40 MB | Max Reserved: 13922.00 MB
+2024-12-04 14:59:43,848 - After forward pass - Epoch 1, Batch 1 | Allocated: 8172.27 MB | Reserved: 13926.00 MB | Max Allocated: 8199.49 MB | Max Reserved: 13926.00 MB
+2024-12-04 14:59:44,712 - After backward pass - Epoch 1, Batch 1 | Allocated: 7571.95 MB | Reserved: 13926.00 MB | Max Allocated: 8531.39 MB | Max Reserved: 13926.00 MB
+2024-12-04 14:59:44,712 - After backward pass - Epoch 1, Batch 1 | Allocated: 7570.99 MB | Reserved: 13926.00 MB | Max Allocated: 8530.43 MB | Max Reserved: 13926.00 MB
+2024-12-04 14:59:44,712 - After backward pass - Epoch 1, Batch 1 | Allocated: 7573.24 MB | Reserved: 13926.00 MB | Max Allocated: 8532.68 MB | Max Reserved: 13926.00 MB
+2024-12-04 14:59:44,712 - After backward pass - Epoch 1, Batch 1 | Allocated: 7569.19 MB | Reserved: 13924.00 MB | Max Allocated: 8528.63 MB | Max Reserved: 13924.00 MB
+2024-12-04 14:59:44,718 - Before forward pass - Epoch 1, Batch 2 | Allocated: 7533.44 MB | Reserved: 13924.00 MB | Max Allocated: 8528.63 MB | Max Reserved: 13924.00 MB
+2024-12-04 14:59:44,719 - Before forward pass - Epoch 1, Batch 2 | Allocated: 7536.20 MB | Reserved: 13926.00 MB | Max Allocated: 8531.39 MB | Max Reserved: 13926.00 MB
+2024-12-04 14:59:44,720 - Before forward pass - Epoch 1, Batch 2 | Allocated: 7537.49 MB | Reserved: 13926.00 MB | Max Allocated: 8532.68 MB | Max Reserved: 13926.00 MB
+2024-12-04 14:59:44,722 - Before forward pass - Epoch 1, Batch 2 | Allocated: 7535.24 MB | Reserved: 13926.00 MB | Max Allocated: 8530.43 MB | Max Reserved: 13926.00 MB
+2024-12-04 14:59:45,035 - After forward pass - Epoch 1, Batch 2 | Allocated: 8188.05 MB | Reserved: 13988.00 MB | Max Allocated: 8722.78 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:45,038 - After forward pass - Epoch 1, Batch 2 | Allocated: 8184.44 MB | Reserved: 13986.00 MB | Max Allocated: 8719.16 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:45,053 - After forward pass - Epoch 1, Batch 2 | Allocated: 8184.85 MB | Reserved: 13988.00 MB | Max Allocated: 8719.61 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:45,105 - After forward pass - Epoch 1, Batch 2 | Allocated: 8187.06 MB | Reserved: 13986.00 MB | Max Allocated: 8721.75 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:45,632 - After backward pass - Epoch 1, Batch 2 | Allocated: 7575.26 MB | Reserved: 13986.00 MB | Max Allocated: 8719.16 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:45,632 - After backward pass - Epoch 1, Batch 2 | Allocated: 7574.99 MB | Reserved: 13988.00 MB | Max Allocated: 8719.61 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:45,632 - After backward pass - Epoch 1, Batch 2 | Allocated: 7578.86 MB | Reserved: 13988.00 MB | Max Allocated: 8722.78 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:45,635 - After backward pass - Epoch 1, Batch 2 | Allocated: 7577.87 MB | Reserved: 13986.00 MB | Max Allocated: 8721.75 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:45,637 - Before forward pass - Epoch 1, Batch 3 | Allocated: 7539.51 MB | Reserved: 13986.00 MB | Max Allocated: 8719.16 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:45,639 - Before forward pass - Epoch 1, Batch 3 | Allocated: 7539.24 MB | Reserved: 13988.00 MB | Max Allocated: 8719.61 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:45,640 - Before forward pass - Epoch 1, Batch 3 | Allocated: 7543.11 MB | Reserved: 13988.00 MB | Max Allocated: 8722.78 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:45,640 - Before forward pass - Epoch 1, Batch 3 | Allocated: 7542.12 MB | Reserved: 13986.00 MB | Max Allocated: 8721.75 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:45,936 - After forward pass - Epoch 1, Batch 3 | Allocated: 8180.44 MB | Reserved: 13988.00 MB | Max Allocated: 8722.78 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:45,946 - After forward pass - Epoch 1, Batch 3 | Allocated: 8180.85 MB | Reserved: 13988.00 MB | Max Allocated: 8719.61 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:45,958 - After forward pass - Epoch 1, Batch 3 | Allocated: 8181.94 MB | Reserved: 13986.00 MB | Max Allocated: 8720.93 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:46,018 - After forward pass - Epoch 1, Batch 3 | Allocated: 8181.93 MB | Reserved: 13986.00 MB | Max Allocated: 8721.75 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:46,548 - After backward pass - Epoch 1, Batch 3 | Allocated: 7573.29 MB | Reserved: 13986.00 MB | Max Allocated: 8720.93 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:46,548 - After backward pass - Epoch 1, Batch 3 | Allocated: 7572.12 MB | Reserved: 13988.00 MB | Max Allocated: 8722.78 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:46,548 - After backward pass - Epoch 1, Batch 3 | Allocated: 7568.94 MB | Reserved: 13988.00 MB | Max Allocated: 8719.61 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:46,551 - After backward pass - Epoch 1, Batch 3 | Allocated: 7572.40 MB | Reserved: 13986.00 MB | Max Allocated: 8721.75 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:46,555 - Before forward pass - Epoch 1, Batch 4 | Allocated: 7536.37 MB | Reserved: 13988.00 MB | Max Allocated: 8722.78 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:46,557 - Before forward pass - Epoch 1, Batch 4 | Allocated: 7533.19 MB | Reserved: 13988.00 MB | Max Allocated: 8719.61 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:46,557 - Before forward pass - Epoch 1, Batch 4 | Allocated: 7536.65 MB | Reserved: 13986.00 MB | Max Allocated: 8721.75 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:46,560 - Before forward pass - Epoch 1, Batch 4 | Allocated: 7537.54 MB | Reserved: 13986.00 MB | Max Allocated: 8720.93 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:46,860 - After forward pass - Epoch 1, Batch 4 | Allocated: 8181.35 MB | Reserved: 13988.00 MB | Max Allocated: 8722.78 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:46,865 - After forward pass - Epoch 1, Batch 4 | Allocated: 8182.88 MB | Reserved: 13988.00 MB | Max Allocated: 8719.61 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:46,867 - After forward pass - Epoch 1, Batch 4 | Allocated: 8180.11 MB | Reserved: 13986.00 MB | Max Allocated: 8720.93 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:46,938 - After forward pass - Epoch 1, Batch 4 | Allocated: 8183.90 MB | Reserved: 13986.00 MB | Max Allocated: 8721.75 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:47,466 - After backward pass - Epoch 1, Batch 4 | Allocated: 7570.37 MB | Reserved: 13988.00 MB | Max Allocated: 8719.61 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:47,466 - After backward pass - Epoch 1, Batch 4 | Allocated: 7571.89 MB | Reserved: 13988.00 MB | Max Allocated: 8722.78 MB | Max Reserved: 13988.00 MB
+2024-12-04 14:59:47,466 - After backward pass - Epoch 1, Batch 4 | Allocated: 7572.90 MB | Reserved: 13986.00 MB | Max Allocated: 8720.93 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:47,469 - After backward pass - Epoch 1, Batch 4 | Allocated: 7574.04 MB | Reserved: 13986.00 MB | Max Allocated: 8721.75 MB | Max Reserved: 13986.00 MB
+2024-12-04 14:59:47,567 - After optimizer step - Epoch 1, Batch 4 | Allocated: 7607.64 MB | Reserved: 14042.00 MB | Max Allocated: 8722.78 MB | Max Reserved: 14042.00 MB
+2024-12-04 14:59:47,568 - Epoch 1, Batch 4/820 - Loss: 2.5749
+2024-12-04 14:59:47,571 - After optimizer step - Epoch 1, Batch 4 | Allocated: 7608.65 MB | Reserved: 14040.00 MB | Max Allocated: 8720.93 MB | Max Reserved: 14040.00 MB
+2024-12-04 14:59:47,574 - Before forward pass - Epoch 1, Batch 5 | Allocated: 7607.64 MB | Reserved: 14042.00 MB | Max Allocated: 8722.78 MB | Max Reserved: 14042.00 MB
+2024-12-04 14:59:47,574 - After optimizer step - Epoch 1, Batch 4 | Allocated: 7606.12 MB | Reserved: 14040.00 MB | Max Allocated: 8719.61 MB | Max Reserved: 14040.00 MB
+2024-12-04 14:59:47,576 - Before forward pass - Epoch 1, Batch 5 | Allocated: 7608.65 MB | Reserved: 14040.00 MB | Max Allocated: 8720.93 MB | Max Reserved: 14040.00 MB
+2024-12-04 14:59:47,580 - Before forward pass - Epoch 1, Batch 5 | Allocated: 7606.12 MB | Reserved: 14040.00 MB | Max Allocated: 8719.61 MB | Max Reserved: 14040.00 MB
+2024-12-04 14:59:47,594 - After optimizer step - Epoch 1, Batch 4 | Allocated: 7609.79 MB | Reserved: 14042.00 MB | Max Allocated: 8721.75 MB | Max Reserved: 14042.00 MB
+2024-12-04 14:59:47,600 - Before forward pass - Epoch 1, Batch 5 | Allocated: 7609.79 MB | Reserved: 14042.00 MB | Max Allocated: 8721.75 MB | Max Reserved: 14042.00 MB
+2024-12-04 14:59:47,867 - After forward pass - Epoch 1, Batch 5 | Allocated: 8251.79 MB | Reserved: 14070.00 MB | Max Allocated: 8785.50 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:47,884 - After forward pass - Epoch 1, Batch 5 | Allocated: 8248.75 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:47,892 - After forward pass - Epoch 1, Batch 5 | Allocated: 8250.86 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:47,994 - After forward pass - Epoch 1, Batch 5 | Allocated: 8255.02 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:48,624 - After backward pass - Epoch 1, Batch 5 | Allocated: 7643.69 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:48,624 - After backward pass - Epoch 1, Batch 5 | Allocated: 7642.48 MB | Reserved: 14070.00 MB | Max Allocated: 8785.50 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:48,625 - After backward pass - Epoch 1, Batch 5 | Allocated: 7641.10 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:48,625 - After backward pass - Epoch 1, Batch 5 | Allocated: 7647.12 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:48,629 - Before forward pass - Epoch 1, Batch 6 | Allocated: 7605.35 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:48,630 - Before forward pass - Epoch 1, Batch 6 | Allocated: 7606.73 MB | Reserved: 14070.00 MB | Max Allocated: 8785.50 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:48,631 - Before forward pass - Epoch 1, Batch 6 | Allocated: 7607.94 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:48,632 - Before forward pass - Epoch 1, Batch 6 | Allocated: 7611.37 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:48,926 - After forward pass - Epoch 1, Batch 6 | Allocated: 8251.02 MB | Reserved: 14070.00 MB | Max Allocated: 8786.51 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:48,940 - After forward pass - Epoch 1, Batch 6 | Allocated: 8249.45 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:48,949 - After forward pass - Epoch 1, Batch 6 | Allocated: 8250.80 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:48,981 - After forward pass - Epoch 1, Batch 6 | Allocated: 8252.70 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:49,510 - After backward pass - Epoch 1, Batch 6 | Allocated: 7644.29 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:49,510 - After backward pass - Epoch 1, Batch 6 | Allocated: 7641.04 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:49,510 - After backward pass - Epoch 1, Batch 6 | Allocated: 7641.58 MB | Reserved: 14070.00 MB | Max Allocated: 8786.51 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:49,513 - After backward pass - Epoch 1, Batch 6 | Allocated: 7644.45 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:49,518 - Before forward pass - Epoch 1, Batch 7 | Allocated: 7605.83 MB | Reserved: 14070.00 MB | Max Allocated: 8786.51 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:49,519 - Before forward pass - Epoch 1, Batch 7 | Allocated: 7608.70 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:49,522 - Before forward pass - Epoch 1, Batch 7 | Allocated: 7605.29 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:49,523 - Before forward pass - Epoch 1, Batch 7 | Allocated: 7608.54 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:49,807 - After forward pass - Epoch 1, Batch 7 | Allocated: 8253.75 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:49,813 - After forward pass - Epoch 1, Batch 7 | Allocated: 8249.00 MB | Reserved: 14070.00 MB | Max Allocated: 8786.51 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:49,835 - After forward pass - Epoch 1, Batch 7 | Allocated: 8250.86 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:49,904 - After forward pass - Epoch 1, Batch 7 | Allocated: 8246.78 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:50,429 - After backward pass - Epoch 1, Batch 7 | Allocated: 7640.16 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:50,429 - After backward pass - Epoch 1, Batch 7 | Allocated: 7642.06 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:50,430 - After backward pass - Epoch 1, Batch 7 | Allocated: 7640.22 MB | Reserved: 14070.00 MB | Max Allocated: 8786.51 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:50,432 - After backward pass - Epoch 1, Batch 7 | Allocated: 7640.51 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:50,436 - Before forward pass - Epoch 1, Batch 8 | Allocated: 7606.31 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:50,436 - Before forward pass - Epoch 1, Batch 8 | Allocated: 7604.47 MB | Reserved: 14070.00 MB | Max Allocated: 8786.51 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:50,438 - Before forward pass - Epoch 1, Batch 8 | Allocated: 7604.41 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:50,441 - Before forward pass - Epoch 1, Batch 8 | Allocated: 7604.76 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:50,743 - After forward pass - Epoch 1, Batch 8 | Allocated: 8253.78 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:50,748 - After forward pass - Epoch 1, Batch 8 | Allocated: 8251.73 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:50,753 - After forward pass - Epoch 1, Batch 8 | Allocated: 8247.10 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:50,789 - After forward pass - Epoch 1, Batch 8 | Allocated: 8250.13 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:51,318 - After backward pass - Epoch 1, Batch 8 | Allocated: 7639.66 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:51,318 - After backward pass - Epoch 1, Batch 8 | Allocated: 7641.73 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:51,319 - After backward pass - Epoch 1, Batch 8 | Allocated: 7645.32 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:51,320 - After backward pass - Epoch 1, Batch 8 | Allocated: 7641.86 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:51,339 - After optimizer step - Epoch 1, Batch 8 | Allocated: 7609.57 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:51,340 - Epoch 1, Batch 8/820 - Loss: 2.4160
+2024-12-04 14:59:51,340 - After optimizer step - Epoch 1, Batch 8 | Allocated: 7603.91 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:51,340 - After optimizer step - Epoch 1, Batch 8 | Allocated: 7605.98 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:51,345 - Before forward pass - Epoch 1, Batch 9 | Allocated: 7609.57 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:51,346 - After optimizer step - Epoch 1, Batch 8 | Allocated: 7606.11 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:51,346 - Before forward pass - Epoch 1, Batch 9 | Allocated: 7605.98 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:51,346 - Before forward pass - Epoch 1, Batch 9 | Allocated: 7603.91 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:51,351 - Before forward pass - Epoch 1, Batch 9 | Allocated: 7606.11 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:51,639 - After forward pass - Epoch 1, Batch 9 | Allocated: 8249.79 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:51,655 - After forward pass - Epoch 1, Batch 9 | Allocated: 8245.11 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:51,665 - After forward pass - Epoch 1, Batch 9 | Allocated: 8251.35 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:51,719 - After forward pass - Epoch 1, Batch 9 | Allocated: 8253.20 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:52,247 - After backward pass - Epoch 1, Batch 9 | Allocated: 7637.30 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:52,247 - After backward pass - Epoch 1, Batch 9 | Allocated: 7643.59 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:52,247 - After backward pass - Epoch 1, Batch 9 | Allocated: 7644.67 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:52,252 - After backward pass - Epoch 1, Batch 9 | Allocated: 7641.52 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:52,253 - Before forward pass - Epoch 1, Batch 10 | Allocated: 7607.84 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:52,254 - Before forward pass - Epoch 1, Batch 10 | Allocated: 7608.92 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:52,257 - Before forward pass - Epoch 1, Batch 10 | Allocated: 7601.55 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:52,260 - Before forward pass - Epoch 1, Batch 10 | Allocated: 7605.77 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:52,551 - After forward pass - Epoch 1, Batch 10 | Allocated: 8251.20 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:52,557 - After forward pass - Epoch 1, Batch 10 | Allocated: 8248.47 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:52,562 - After forward pass - Epoch 1, Batch 10 | Allocated: 8244.90 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:52,639 - After forward pass - Epoch 1, Batch 10 | Allocated: 8253.64 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:53,165 - After backward pass - Epoch 1, Batch 10 | Allocated: 7641.92 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:53,165 - After backward pass - Epoch 1, Batch 10 | Allocated: 7642.95 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:53,165 - After backward pass - Epoch 1, Batch 10 | Allocated: 7637.39 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:53,168 - After backward pass - Epoch 1, Batch 10 | Allocated: 7642.47 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:53,171 - Before forward pass - Epoch 1, Batch 11 | Allocated: 7606.17 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:53,171 - Before forward pass - Epoch 1, Batch 11 | Allocated: 7601.64 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:53,175 - Before forward pass - Epoch 1, Batch 11 | Allocated: 7607.20 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:53,176 - Before forward pass - Epoch 1, Batch 11 | Allocated: 7606.72 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:53,481 - After forward pass - Epoch 1, Batch 11 | Allocated: 8252.17 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:53,487 - After forward pass - Epoch 1, Batch 11 | Allocated: 8248.37 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:53,488 - After forward pass - Epoch 1, Batch 11 | Allocated: 8244.37 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:53,551 - After forward pass - Epoch 1, Batch 11 | Allocated: 8247.41 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,079 - After backward pass - Epoch 1, Batch 11 | Allocated: 7640.12 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,079 - After backward pass - Epoch 1, Batch 11 | Allocated: 7642.17 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:54,080 - After backward pass - Epoch 1, Batch 11 | Allocated: 7644.65 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,083 - After backward pass - Epoch 1, Batch 11 | Allocated: 7641.97 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,086 - Before forward pass - Epoch 1, Batch 12 | Allocated: 7606.42 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:54,086 - Before forward pass - Epoch 1, Batch 12 | Allocated: 7608.90 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,087 - Before forward pass - Epoch 1, Batch 12 | Allocated: 7604.37 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,091 - Before forward pass - Epoch 1, Batch 12 | Allocated: 7606.22 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,379 - After forward pass - Epoch 1, Batch 12 | Allocated: 8252.41 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,392 - After forward pass - Epoch 1, Batch 12 | Allocated: 8249.12 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,402 - After forward pass - Epoch 1, Batch 12 | Allocated: 8248.17 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:54,441 - After forward pass - Epoch 1, Batch 12 | Allocated: 8246.77 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,969 - After backward pass - Epoch 1, Batch 12 | Allocated: 7642.59 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,969 - After backward pass - Epoch 1, Batch 12 | Allocated: 7641.88 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,969 - After backward pass - Epoch 1, Batch 12 | Allocated: 7641.33 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:54,973 - After backward pass - Epoch 1, Batch 12 | Allocated: 7640.16 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,992 - After optimizer step - Epoch 1, Batch 12 | Allocated: 7605.58 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:54,995 - After optimizer step - Epoch 1, Batch 12 | Allocated: 7606.13 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,995 - Epoch 1, Batch 12/820 - Loss: 2.4775
+2024-12-04 14:59:54,996 - After optimizer step - Epoch 1, Batch 12 | Allocated: 7604.41 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:54,999 - Before forward pass - Epoch 1, Batch 13 | Allocated: 7605.58 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:54,999 - After optimizer step - Epoch 1, Batch 12 | Allocated: 7606.84 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:55,001 - Before forward pass - Epoch 1, Batch 13 | Allocated: 7604.41 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:55,002 - Before forward pass - Epoch 1, Batch 13 | Allocated: 7606.13 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:55,012 - Before forward pass - Epoch 1, Batch 13 | Allocated: 7606.84 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:55,299 - After forward pass - Epoch 1, Batch 13 | Allocated: 8250.19 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:55,313 - After forward pass - Epoch 1, Batch 13 | Allocated: 8251.79 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:55,318 - After forward pass - Epoch 1, Batch 13 | Allocated: 8247.57 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:55,401 - After forward pass - Epoch 1, Batch 13 | Allocated: 8250.16 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:55,927 - After backward pass - Epoch 1, Batch 13 | Allocated: 7643.01 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:55,928 - After backward pass - Epoch 1, Batch 13 | Allocated: 7642.27 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:55,928 - After backward pass - Epoch 1, Batch 13 | Allocated: 7640.08 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:55,930 - After backward pass - Epoch 1, Batch 13 | Allocated: 7642.25 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:55,935 - Before forward pass - Epoch 1, Batch 14 | Allocated: 7606.52 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:55,935 - Before forward pass - Epoch 1, Batch 14 | Allocated: 7604.33 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:55,935 - Before forward pass - Epoch 1, Batch 14 | Allocated: 7607.26 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:55,939 - Before forward pass - Epoch 1, Batch 14 | Allocated: 7606.50 MB | Reserved: 14070.00 MB | Max Allocated: 8785.44 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:56,228 - After forward pass - Epoch 1, Batch 14 | Allocated: 8250.38 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:56,240 - After forward pass - Epoch 1, Batch 14 | Allocated: 8249.82 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:56,250 - After forward pass - Epoch 1, Batch 14 | Allocated: 8244.34 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:56,328 - After forward pass - Epoch 1, Batch 14 | Allocated: 8254.07 MB | Reserved: 14070.00 MB | Max Allocated: 8787.52 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:56,853 - After backward pass - Epoch 1, Batch 14 | Allocated: 7639.99 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:56,853 - After backward pass - Epoch 1, Batch 14 | Allocated: 7643.29 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:56,854 - After backward pass - Epoch 1, Batch 14 | Allocated: 7641.10 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:56,856 - After backward pass - Epoch 1, Batch 14 | Allocated: 7644.45 MB | Reserved: 14070.00 MB | Max Allocated: 8787.52 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:56,861 - Before forward pass - Epoch 1, Batch 15 | Allocated: 7605.35 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:56,861 - Before forward pass - Epoch 1, Batch 15 | Allocated: 7607.54 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:56,863 - Before forward pass - Epoch 1, Batch 15 | Allocated: 7604.24 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:56,863 - Before forward pass - Epoch 1, Batch 15 | Allocated: 7608.70 MB | Reserved: 14070.00 MB | Max Allocated: 8787.52 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:57,151 - After forward pass - Epoch 1, Batch 15 | Allocated: 8249.01 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:57,159 - After forward pass - Epoch 1, Batch 15 | Allocated: 8244.35 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:57,178 - After forward pass - Epoch 1, Batch 15 | Allocated: 8245.46 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:57,261 - After forward pass - Epoch 1, Batch 15 | Allocated: 8254.60 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:57,786 - After backward pass - Epoch 1, Batch 15 | Allocated: 7639.05 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:57,786 - After backward pass - Epoch 1, Batch 15 | Allocated: 7638.50 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:57,787 - After backward pass - Epoch 1, Batch 15 | Allocated: 7640.69 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:57,789 - After backward pass - Epoch 1, Batch 15 | Allocated: 7645.66 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:57,793 - Before forward pass - Epoch 1, Batch 16 | Allocated: 7602.75 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:57,794 - Before forward pass - Epoch 1, Batch 16 | Allocated: 7603.30 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:57,795 - Before forward pass - Epoch 1, Batch 16 | Allocated: 7604.94 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:57,797 - Before forward pass - Epoch 1, Batch 16 | Allocated: 7609.91 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:58,091 - After forward pass - Epoch 1, Batch 16 | Allocated: 8245.46 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:58,102 - After forward pass - Epoch 1, Batch 16 | Allocated: 8249.30 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:58,103 - After forward pass - Epoch 1, Batch 16 | Allocated: 8245.70 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:58,186 - After forward pass - Epoch 1, Batch 16 | Allocated: 8248.64 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:58,712 - After backward pass - Epoch 1, Batch 16 | Allocated: 7638.38 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:58,712 - After backward pass - Epoch 1, Batch 16 | Allocated: 7643.80 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:58,712 - After backward pass - Epoch 1, Batch 16 | Allocated: 7639.72 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:58,714 - After backward pass - Epoch 1, Batch 16 | Allocated: 7644.90 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:58,733 - After optimizer step - Epoch 1, Batch 16 | Allocated: 7608.05 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:58,733 - Epoch 1, Batch 16/820 - Loss: 2.4961
+2024-12-04 14:59:58,735 - After optimizer step - Epoch 1, Batch 16 | Allocated: 7603.97 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:58,735 - After optimizer step - Epoch 1, Batch 16 | Allocated: 7602.63 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:58,739 - After optimizer step - Epoch 1, Batch 16 | Allocated: 7609.15 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:58,740 - Before forward pass - Epoch 1, Batch 17 | Allocated: 7608.05 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:58,741 - Before forward pass - Epoch 1, Batch 17 | Allocated: 7602.63 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:58,741 - Before forward pass - Epoch 1, Batch 17 | Allocated: 7603.97 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:58,746 - Before forward pass - Epoch 1, Batch 17 | Allocated: 7609.15 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:59,032 - After forward pass - Epoch 1, Batch 17 | Allocated: 8247.89 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:59,049 - After forward pass - Epoch 1, Batch 17 | Allocated: 8249.77 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:59,052 - After forward pass - Epoch 1, Batch 17 | Allocated: 8248.49 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:59,126 - After forward pass - Epoch 1, Batch 17 | Allocated: 8245.94 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:59,651 - After backward pass - Epoch 1, Batch 17 | Allocated: 7640.52 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:59,651 - After backward pass - Epoch 1, Batch 17 | Allocated: 7643.29 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:59,651 - After backward pass - Epoch 1, Batch 17 | Allocated: 7639.96 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:59,653 - After backward pass - Epoch 1, Batch 17 | Allocated: 7640.00 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:59,657 - Before forward pass - Epoch 1, Batch 18 | Allocated: 7607.54 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:59,659 - Before forward pass - Epoch 1, Batch 18 | Allocated: 7604.21 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:59,661 - Before forward pass - Epoch 1, Batch 18 | Allocated: 7604.25 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:59,662 - Before forward pass - Epoch 1, Batch 18 | Allocated: 7604.77 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:59,956 - After forward pass - Epoch 1, Batch 18 | Allocated: 8251.23 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 14:59:59,970 - After forward pass - Epoch 1, Batch 18 | Allocated: 8248.43 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 14:59:59,979 - After forward pass - Epoch 1, Batch 18 | Allocated: 8252.60 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:00,035 - After forward pass - Epoch 1, Batch 18 | Allocated: 8247.88 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:00,560 - After backward pass - Epoch 1, Batch 18 | Allocated: 7643.58 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:00,560 - After backward pass - Epoch 1, Batch 18 | Allocated: 7645.42 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:00,560 - After backward pass - Epoch 1, Batch 18 | Allocated: 7643.76 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:00,563 - After backward pass - Epoch 1, Batch 18 | Allocated: 7639.83 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:00,567 - Before forward pass - Epoch 1, Batch 19 | Allocated: 7607.83 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:00,567 - Before forward pass - Epoch 1, Batch 19 | Allocated: 7609.67 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:00,568 - Before forward pass - Epoch 1, Batch 19 | Allocated: 7608.01 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:00,572 - Before forward pass - Epoch 1, Batch 19 | Allocated: 7604.08 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:00,871 - After forward pass - Epoch 1, Batch 19 | Allocated: 8249.80 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:00,883 - After forward pass - Epoch 1, Batch 19 | Allocated: 8253.53 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:00,888 - After forward pass - Epoch 1, Batch 19 | Allocated: 8245.86 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:00,952 - After forward pass - Epoch 1, Batch 19 | Allocated: 8248.49 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:01,477 - After backward pass - Epoch 1, Batch 19 | Allocated: 7644.59 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:01,477 - After backward pass - Epoch 1, Batch 19 | Allocated: 7641.67 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:01,478 - After backward pass - Epoch 1, Batch 19 | Allocated: 7640.80 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:01,480 - After backward pass - Epoch 1, Batch 19 | Allocated: 7641.86 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:01,484 - Before forward pass - Epoch 1, Batch 20 | Allocated: 7605.92 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:01,484 - Before forward pass - Epoch 1, Batch 20 | Allocated: 7605.05 MB | Reserved: 14066.00 MB | Max Allocated: 8784.44 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:01,485 - Before forward pass - Epoch 1, Batch 20 | Allocated: 7608.84 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:01,486 - Before forward pass - Epoch 1, Batch 20 | Allocated: 7606.11 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:01,787 - After forward pass - Epoch 1, Batch 20 | Allocated: 8252.41 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:01,788 - After forward pass - Epoch 1, Batch 20 | Allocated: 8251.27 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:01,805 - After forward pass - Epoch 1, Batch 20 | Allocated: 8252.75 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:01,851 - After forward pass - Epoch 1, Batch 20 | Allocated: 8247.97 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:02,375 - After backward pass - Epoch 1, Batch 20 | Allocated: 7643.56 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:02,375 - After backward pass - Epoch 1, Batch 20 | Allocated: 7645.62 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:02,376 - After backward pass - Epoch 1, Batch 20 | Allocated: 7645.25 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:02,379 - After backward pass - Epoch 1, Batch 20 | Allocated: 7640.88 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:02,396 - After optimizer step - Epoch 1, Batch 20 | Allocated: 7607.81 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:02,396 - Epoch 1, Batch 20/820 - Loss: 2.4196
+2024-12-04 15:00:02,398 - After optimizer step - Epoch 1, Batch 20 | Allocated: 7609.50 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:02,398 - Before forward pass - Epoch 1, Batch 21 | Allocated: 7607.81 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:02,401 - After optimizer step - Epoch 1, Batch 20 | Allocated: 7605.13 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:02,402 - After optimizer step - Epoch 1, Batch 20 | Allocated: 7609.87 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:02,403 - Before forward pass - Epoch 1, Batch 21 | Allocated: 7609.50 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:02,407 - Before forward pass - Epoch 1, Batch 21 | Allocated: 7605.13 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:02,409 - Before forward pass - Epoch 1, Batch 21 | Allocated: 7609.87 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:02,705 - After forward pass - Epoch 1, Batch 21 | Allocated: 8245.97 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:02,711 - After forward pass - Epoch 1, Batch 21 | Allocated: 8249.25 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:02,715 - After forward pass - Epoch 1, Batch 21 | Allocated: 8251.18 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:02,765 - After forward pass - Epoch 1, Batch 21 | Allocated: 8254.96 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:03,293 - After backward pass - Epoch 1, Batch 21 | Allocated: 7640.63 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:03,294 - After backward pass - Epoch 1, Batch 21 | Allocated: 7640.86 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:03,294 - After backward pass - Epoch 1, Batch 21 | Allocated: 7639.09 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:03,299 - After backward pass - Epoch 1, Batch 21 | Allocated: 7644.59 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:03,300 - Before forward pass - Epoch 1, Batch 22 | Allocated: 7605.11 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:03,301 - Before forward pass - Epoch 1, Batch 22 | Allocated: 7603.34 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:03,303 - Before forward pass - Epoch 1, Batch 22 | Allocated: 7604.88 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:03,305 - Before forward pass - Epoch 1, Batch 22 | Allocated: 7608.84 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:03,594 - After forward pass - Epoch 1, Batch 22 | Allocated: 8250.12 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:03,608 - After forward pass - Epoch 1, Batch 22 | Allocated: 8251.97 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:03,626 - After forward pass - Epoch 1, Batch 22 | Allocated: 8252.85 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:03,666 - After forward pass - Epoch 1, Batch 22 | Allocated: 8245.72 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:04,190 - After backward pass - Epoch 1, Batch 22 | Allocated: 7643.78 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:04,190 - After backward pass - Epoch 1, Batch 22 | Allocated: 7641.00 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:04,190 - After backward pass - Epoch 1, Batch 22 | Allocated: 7645.89 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:04,194 - After backward pass - Epoch 1, Batch 22 | Allocated: 7639.99 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:04,196 - Before forward pass - Epoch 1, Batch 23 | Allocated: 7605.25 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:04,197 - Before forward pass - Epoch 1, Batch 23 | Allocated: 7610.14 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:04,197 - Before forward pass - Epoch 1, Batch 23 | Allocated: 7608.03 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:04,200 - Before forward pass - Epoch 1, Batch 23 | Allocated: 7604.24 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:04,489 - After forward pass - Epoch 1, Batch 23 | Allocated: 8250.43 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:04,508 - After forward pass - Epoch 1, Batch 23 | Allocated: 8244.19 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:04,519 - After forward pass - Epoch 1, Batch 23 | Allocated: 8247.04 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:04,560 - After forward pass - Epoch 1, Batch 23 | Allocated: 8252.93 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:05,092 - After backward pass - Epoch 1, Batch 23 | Allocated: 7640.13 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:05,092 - After backward pass - Epoch 1, Batch 23 | Allocated: 7642.11 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:05,093 - After backward pass - Epoch 1, Batch 23 | Allocated: 7638.54 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:05,096 - After backward pass - Epoch 1, Batch 23 | Allocated: 7644.17 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:05,100 - Before forward pass - Epoch 1, Batch 24 | Allocated: 7606.36 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:05,101 - Before forward pass - Epoch 1, Batch 24 | Allocated: 7602.79 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:05,103 - Before forward pass - Epoch 1, Batch 24 | Allocated: 7608.42 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:05,117 - Before forward pass - Epoch 1, Batch 24 | Allocated: 7604.38 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:05,407 - After forward pass - Epoch 1, Batch 24 | Allocated: 8249.67 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:05,407 - After forward pass - Epoch 1, Batch 24 | Allocated: 8251.08 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:05,440 - After forward pass - Epoch 1, Batch 24 | Allocated: 8251.21 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:05,482 - After forward pass - Epoch 1, Batch 24 | Allocated: 8250.46 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,008 - After backward pass - Epoch 1, Batch 24 | Allocated: 7640.02 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,008 - After backward pass - Epoch 1, Batch 24 | Allocated: 7643.87 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,009 - After backward pass - Epoch 1, Batch 24 | Allocated: 7643.06 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:06,011 - After backward pass - Epoch 1, Batch 24 | Allocated: 7641.34 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,028 - After optimizer step - Epoch 1, Batch 24 | Allocated: 7608.12 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,028 - Epoch 1, Batch 24/820 - Loss: 2.9402
+2024-12-04 15:00:06,032 - After optimizer step - Epoch 1, Batch 24 | Allocated: 7605.59 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,034 - Before forward pass - Epoch 1, Batch 25 | Allocated: 7608.12 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,036 - After optimizer step - Epoch 1, Batch 24 | Allocated: 7607.31 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:06,037 - Before forward pass - Epoch 1, Batch 25 | Allocated: 7605.59 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,039 - Before forward pass - Epoch 1, Batch 25 | Allocated: 7607.31 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:06,046 - After optimizer step - Epoch 1, Batch 24 | Allocated: 7604.27 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,051 - Before forward pass - Epoch 1, Batch 25 | Allocated: 7604.27 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,337 - After forward pass - Epoch 1, Batch 25 | Allocated: 8247.73 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,361 - After forward pass - Epoch 1, Batch 25 | Allocated: 8250.15 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,364 - After forward pass - Epoch 1, Batch 25 | Allocated: 8248.42 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:06,402 - After forward pass - Epoch 1, Batch 25 | Allocated: 8249.94 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,938 - After backward pass - Epoch 1, Batch 25 | Allocated: 7641.44 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,938 - After backward pass - Epoch 1, Batch 25 | Allocated: 7642.52 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,938 - After backward pass - Epoch 1, Batch 25 | Allocated: 7641.52 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:06,939 - After backward pass - Epoch 1, Batch 25 | Allocated: 7641.46 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,944 - Before forward pass - Epoch 1, Batch 26 | Allocated: 7605.69 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,946 - Before forward pass - Epoch 1, Batch 26 | Allocated: 7605.71 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:06,946 - Before forward pass - Epoch 1, Batch 26 | Allocated: 7605.77 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:06,946 - Before forward pass - Epoch 1, Batch 26 | Allocated: 7606.77 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:07,236 - After forward pass - Epoch 1, Batch 26 | Allocated: 8247.73 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:07,241 - After forward pass - Epoch 1, Batch 26 | Allocated: 8248.10 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:07,260 - After forward pass - Epoch 1, Batch 26 | Allocated: 8247.02 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:07,348 - After forward pass - Epoch 1, Batch 26 | Allocated: 8248.46 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:07,872 - After backward pass - Epoch 1, Batch 26 | Allocated: 7639.87 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:07,873 - After backward pass - Epoch 1, Batch 26 | Allocated: 7640.54 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:07,873 - After backward pass - Epoch 1, Batch 26 | Allocated: 7642.51 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:07,876 - After backward pass - Epoch 1, Batch 26 | Allocated: 7643.19 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:07,879 - Before forward pass - Epoch 1, Batch 27 | Allocated: 7604.12 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:07,880 - Before forward pass - Epoch 1, Batch 27 | Allocated: 7604.79 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:07,881 - Before forward pass - Epoch 1, Batch 27 | Allocated: 7606.76 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:07,881 - Before forward pass - Epoch 1, Batch 27 | Allocated: 7607.44 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:08,171 - After forward pass - Epoch 1, Batch 27 | Allocated: 8245.71 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:08,171 - After forward pass - Epoch 1, Batch 27 | Allocated: 8250.84 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:08,188 - After forward pass - Epoch 1, Batch 27 | Allocated: 8244.63 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:08,260 - After forward pass - Epoch 1, Batch 27 | Allocated: 8247.91 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:08,787 - After backward pass - Epoch 1, Batch 27 | Allocated: 7640.89 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:08,787 - After backward pass - Epoch 1, Batch 27 | Allocated: 7639.50 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:08,787 - After backward pass - Epoch 1, Batch 27 | Allocated: 7639.11 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:08,792 - After backward pass - Epoch 1, Batch 27 | Allocated: 7641.70 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:08,793 - Before forward pass - Epoch 1, Batch 28 | Allocated: 7603.75 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:08,795 - Before forward pass - Epoch 1, Batch 28 | Allocated: 7603.36 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:08,795 - Before forward pass - Epoch 1, Batch 28 | Allocated: 7605.14 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:08,797 - Before forward pass - Epoch 1, Batch 28 | Allocated: 7605.95 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:09,092 - After forward pass - Epoch 1, Batch 28 | Allocated: 8252.91 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:09,106 - After forward pass - Epoch 1, Batch 28 | Allocated: 8249.52 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:09,107 - After forward pass - Epoch 1, Batch 28 | Allocated: 8246.20 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:09,155 - After forward pass - Epoch 1, Batch 28 | Allocated: 8250.02 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:09,682 - After backward pass - Epoch 1, Batch 28 | Allocated: 7639.82 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:09,682 - After backward pass - Epoch 1, Batch 28 | Allocated: 7639.31 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:09,682 - After backward pass - Epoch 1, Batch 28 | Allocated: 7646.94 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:09,686 - After backward pass - Epoch 1, Batch 28 | Allocated: 7641.47 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:09,703 - After optimizer step - Epoch 1, Batch 28 | Allocated: 7611.19 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:09,703 - Epoch 1, Batch 28/820 - Loss: 2.6124
+2024-12-04 15:00:09,704 - After optimizer step - Epoch 1, Batch 28 | Allocated: 7603.56 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:09,708 - After optimizer step - Epoch 1, Batch 28 | Allocated: 7605.72 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:09,708 - Before forward pass - Epoch 1, Batch 29 | Allocated: 7611.19 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:09,709 - After optimizer step - Epoch 1, Batch 28 | Allocated: 7604.07 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:09,709 - Before forward pass - Epoch 1, Batch 29 | Allocated: 7603.56 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:09,714 - Before forward pass - Epoch 1, Batch 29 | Allocated: 7605.72 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:09,714 - Before forward pass - Epoch 1, Batch 29 | Allocated: 7604.07 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:10,001 - After forward pass - Epoch 1, Batch 29 | Allocated: 8249.24 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:10,001 - After forward pass - Epoch 1, Batch 29 | Allocated: 8246.99 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:10,040 - After forward pass - Epoch 1, Batch 29 | Allocated: 8246.71 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:10,072 - After forward pass - Epoch 1, Batch 29 | Allocated: 8248.90 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:10,597 - After backward pass - Epoch 1, Batch 29 | Allocated: 7641.49 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:10,597 - After backward pass - Epoch 1, Batch 29 | Allocated: 7643.92 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:10,597 - After backward pass - Epoch 1, Batch 29 | Allocated: 7642.29 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:10,600 - After backward pass - Epoch 1, Batch 29 | Allocated: 7641.17 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:10,605 - Before forward pass - Epoch 1, Batch 30 | Allocated: 7608.17 MB | Reserved: 14070.00 MB | Max Allocated: 8786.57 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:10,606 - Before forward pass - Epoch 1, Batch 30 | Allocated: 7605.42 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:10,606 - Before forward pass - Epoch 1, Batch 30 | Allocated: 7605.74 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:10,608 - Before forward pass - Epoch 1, Batch 30 | Allocated: 7606.54 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:10,912 - After forward pass - Epoch 1, Batch 30 | Allocated: 8252.99 MB | Reserved: 14070.00 MB | Max Allocated: 8788.38 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:10,919 - After forward pass - Epoch 1, Batch 30 | Allocated: 8244.27 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:10,921 - After forward pass - Epoch 1, Batch 30 | Allocated: 8252.91 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:10,973 - After forward pass - Epoch 1, Batch 30 | Allocated: 8250.64 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:11,500 - After backward pass - Epoch 1, Batch 30 | Allocated: 7647.97 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:11,500 - After backward pass - Epoch 1, Batch 30 | Allocated: 7641.90 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:11,501 - After backward pass - Epoch 1, Batch 30 | Allocated: 7645.40 MB | Reserved: 14070.00 MB | Max Allocated: 8788.38 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:11,504 - After backward pass - Epoch 1, Batch 30 | Allocated: 7645.48 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:11,508 - Before forward pass - Epoch 1, Batch 31 | Allocated: 7606.15 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:11,508 - Before forward pass - Epoch 1, Batch 31 | Allocated: 7609.65 MB | Reserved: 14070.00 MB | Max Allocated: 8788.38 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:11,509 - Before forward pass - Epoch 1, Batch 31 | Allocated: 7612.22 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:11,510 - Before forward pass - Epoch 1, Batch 31 | Allocated: 7609.73 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:11,799 - After forward pass - Epoch 1, Batch 31 | Allocated: 8245.72 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:11,813 - After forward pass - Epoch 1, Batch 31 | Allocated: 8250.28 MB | Reserved: 14070.00 MB | Max Allocated: 8788.38 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:11,829 - After forward pass - Epoch 1, Batch 31 | Allocated: 8245.72 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:11,889 - After forward pass - Epoch 1, Batch 31 | Allocated: 8248.34 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:12,415 - After backward pass - Epoch 1, Batch 31 | Allocated: 7639.62 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:12,415 - After backward pass - Epoch 1, Batch 31 | Allocated: 7644.16 MB | Reserved: 14070.00 MB | Max Allocated: 8788.38 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:12,415 - After backward pass - Epoch 1, Batch 31 | Allocated: 7640.36 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:12,418 - After backward pass - Epoch 1, Batch 31 | Allocated: 7642.51 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:12,420 - Before forward pass - Epoch 1, Batch 32 | Allocated: 7608.41 MB | Reserved: 14070.00 MB | Max Allocated: 8788.38 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:12,421 - Before forward pass - Epoch 1, Batch 32 | Allocated: 7604.61 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:12,424 - Before forward pass - Epoch 1, Batch 32 | Allocated: 7603.87 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:12,425 - Before forward pass - Epoch 1, Batch 32 | Allocated: 7606.76 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:12,853 - After forward pass - Epoch 1, Batch 32 | Allocated: 8250.85 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:12,876 - After forward pass - Epoch 1, Batch 32 | Allocated: 8249.98 MB | Reserved: 14070.00 MB | Max Allocated: 8788.38 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:12,879 - After forward pass - Epoch 1, Batch 32 | Allocated: 8250.15 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:12,909 - After forward pass - Epoch 1, Batch 32 | Allocated: 8251.87 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:13,446 - After backward pass - Epoch 1, Batch 32 | Allocated: 7640.73 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:13,446 - After backward pass - Epoch 1, Batch 32 | Allocated: 7643.47 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:13,446 - After backward pass - Epoch 1, Batch 32 | Allocated: 7641.25 MB | Reserved: 14070.00 MB | Max Allocated: 8788.38 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:13,449 - After backward pass - Epoch 1, Batch 32 | Allocated: 7643.63 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:13,466 - After optimizer step - Epoch 1, Batch 32 | Allocated: 7605.50 MB | Reserved: 14070.00 MB | Max Allocated: 8788.38 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:13,467 - Epoch 1, Batch 32/820 - Loss: 2.3172
+2024-12-04 15:00:13,469 - After optimizer step - Epoch 1, Batch 32 | Allocated: 7607.72 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:13,470 - After optimizer step - Epoch 1, Batch 32 | Allocated: 7607.88 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:13,472 - Before forward pass - Epoch 1, Batch 33 | Allocated: 7605.50 MB | Reserved: 14070.00 MB | Max Allocated: 8788.38 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:13,473 - After optimizer step - Epoch 1, Batch 32 | Allocated: 7604.98 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:13,474 - Before forward pass - Epoch 1, Batch 33 | Allocated: 7607.72 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:13,475 - Before forward pass - Epoch 1, Batch 33 | Allocated: 7607.88 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:13,477 - Before forward pass - Epoch 1, Batch 33 | Allocated: 7604.98 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:13,764 - After forward pass - Epoch 1, Batch 33 | Allocated: 8251.42 MB | Reserved: 14070.00 MB | Max Allocated: 8788.38 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:13,779 - After forward pass - Epoch 1, Batch 33 | Allocated: 8251.60 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:13,799 - After forward pass - Epoch 1, Batch 33 | Allocated: 8247.33 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:13,859 - After forward pass - Epoch 1, Batch 33 | Allocated: 8254.45 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:14,384 - After backward pass - Epoch 1, Batch 33 | Allocated: 7643.08 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:14,384 - After backward pass - Epoch 1, Batch 33 | Allocated: 7640.85 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:14,384 - After backward pass - Epoch 1, Batch 33 | Allocated: 7644.04 MB | Reserved: 14070.00 MB | Max Allocated: 8788.38 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:14,387 - After backward pass - Epoch 1, Batch 33 | Allocated: 7644.94 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:14,389 - Before forward pass - Epoch 1, Batch 34 | Allocated: 7608.29 MB | Reserved: 14070.00 MB | Max Allocated: 8788.38 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:14,390 - Before forward pass - Epoch 1, Batch 34 | Allocated: 7609.19 MB | Reserved: 14070.00 MB | Max Allocated: 8789.75 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:00:14,392 - Before forward pass - Epoch 1, Batch 34 | Allocated: 7605.10 MB | Reserved: 14066.00 MB | Max Allocated: 8786.32 MB | Max Reserved: 14066.00 MB
+2024-12-04 15:00:14,393 - Before forward pass - Epoch 1, Batch 34 | Allocated: 7607.33 MB | Reserved: 14070.00 MB | Max Allocated: 8790.34 MB | Max Reserved: 14070.00 MB
+2024-12-04 15:01:17,648 - Starting Training Script
+2024-12-04 15:01:17,680 - Starting Training Script
+2024-12-04 15:01:17,701 - Starting Training Script
+2024-12-04 15:01:17,706 - Starting Training Script
+2024-12-04 15:01:17,774 - Process 2: Initialized on device cuda:2
+2024-12-04 15:01:17,777 - Process 1: Initialized on device cuda:1
+2024-12-04 15:01:17,784 - Process 0: Initialized on device cuda:0
+2024-12-04 15:01:17,786 - Process 3: Initialized on device cuda:3
+2024-12-04 15:01:17,984 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 15:01:17,984 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 15:01:18,001 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 15:01:18,001 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 15:01:18,030 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 15:01:18,031 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 15:01:18,039 - Pad Token: <|endoftext|> (ID: 11)
+2024-12-04 15:01:18,039 - EOS Token: <|endoftext|> (ID: 11)
+2024-12-04 15:01:41,397 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 15:01:41,402 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 15:01:41,540 - Process 3: Wrapped model with LoRA
+2024-12-04 15:01:41,545 - Process 2: Wrapped model with LoRA
+2024-12-04 15:01:41,849 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 15:01:41,903 - After model loading and moving to device | Allocated: 6895.17 MB | Reserved: 7448.00 MB | Max Allocated: 7655.95 MB | Max Reserved: 8170.00 MB
+2024-12-04 15:01:41,987 - Process 1: Wrapped model with LoRA
+2024-12-04 15:01:42,042 - Process 0: Wrapped model with LoRA
+2024-12-04 15:01:42,427 - Process 0: Wrapped model with DistributedDataParallel
+2024-12-04 15:01:42,428 - Process 1: Wrapped model with DistributedDataParallel
+2024-12-04 15:01:42,428 - Process 3: Wrapped model with DistributedDataParallel
+2024-12-04 15:01:42,429 - Process 2: Wrapped model with DistributedDataParallel
+2024-12-04 15:01:42,838 - Loaded 3280 samples for training
+2024-12-04 15:01:42,839 - Process 1: Created DataLoader with batch size 1
+2024-12-04 15:01:42,839 - Loaded 3280 samples for training
+2024-12-04 15:01:42,839 - Process 0: Created DataLoader with batch size 1
+2024-12-04 15:01:42,840 - Loaded 3280 samples for training
+2024-12-04 15:01:42,841 - Process 3: Created DataLoader with batch size 1
+2024-12-04 15:01:42,841 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 15:01:42,841 - Initialized GradScaler for mixed precision
+2024-12-04 15:01:42,841 - An unexpected error occurred: profile.__init__() got an unexpected keyword argument 'USE_KINETO'
+2024-12-04 15:01:42,842 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 15:01:42,842 - Initialized GradScaler for mixed precision
+2024-12-04 15:01:42,842 - An unexpected error occurred: profile.__init__() got an unexpected keyword argument 'USE_KINETO'
+2024-12-04 15:01:42,843 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 15:01:42,843 - Initialized GradScaler for mixed precision
+2024-12-04 15:01:42,843 - An unexpected error occurred: profile.__init__() got an unexpected keyword argument 'USE_KINETO'
+2024-12-04 15:01:42,852 - Loaded 3280 samples for training
+2024-12-04 15:01:42,853 - Process 2: Created DataLoader with batch size 1
+2024-12-04 15:01:42,856 - Initialized AdamW optimizer for LoRA parameters
+2024-12-04 15:01:42,856 - Initialized GradScaler for mixed precision
+2024-12-04 15:01:42,856 - An unexpected error occurred: profile.__init__() got an unexpected keyword argument 'USE_KINETO'
+2024-12-04 15:01:43,536 - Destroyed the distributed process group
+2024-12-04 15:01:43,538 - Destroyed the distributed process group
+2024-12-04 15:01:43,540 - Destroyed the distributed process group
+2024-12-04 15:01:43,541 - Destroyed the distributed process group

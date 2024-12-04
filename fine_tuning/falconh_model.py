@@ -148,7 +148,7 @@ def main():
         data = pd.read_csv(data_path)
 
         # Load only the first 10% of the dataset for testing purposes
-        data = data.head(int(len(data) * 1))
+        data = data.head(int(len(data) * 0.01))
         if enable_logging:
             logger.info(f"Loaded {len(data)} samples for training")
 
@@ -236,7 +236,7 @@ def main():
 
                     log_cuda_memory(logger, f"Before forward pass - Epoch {epoch+1}, Batch {batch_idx+1}", enable_logging)
                     with record_function("forward_pass"):
-                        with autocast('cuda'):
+                        with autocast('cuda', dtype=torch.float16):
                             outputs = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
                             loss = outputs.loss / gradient_accumulation_steps  # Scale loss for accumulation
                     log_cuda_memory(logger, f"After forward pass - Epoch {epoch+1}, Batch {batch_idx+1}", enable_logging)

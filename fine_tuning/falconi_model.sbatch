@@ -5,9 +5,9 @@
 #SBATCH --gres=gpu:4
 #SBATCH --time=48:00:00
 #SBATCH --mem=64GB
-#SBATCH --job-name=falconi_model_instruct
-#SBATCH --output=falconi_model_instruct.out
-#SBATCH --error=falconi_model_instruct-error.txt
+#SBATCH --job-name=falconi_model
+#SBATCH --output=falconi_model.out
+#SBATCH --error=falconi_model-error.txt
 #SBATCH --mail-user=matthew.dong@nyu.edu
 #SBATCH --mail-type=ALL
 

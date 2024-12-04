@@ -14,6 +14,7 @@ from peft import LoraConfig, get_peft_model, TaskType
 import logging
 import datetime
 import bitsandbytes as bnb
+import warnings
 
 def setup_logging(log_file='cuda_memory.txt'):
     """
@@ -76,6 +77,82 @@ def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoi
     if enable_logging and logger is not None:
         logger.info(f"Saved checkpoint: {checkpoint_path}")
     print(f"Saved checkpoint: {checkpoint_path}")
+
+def find_latest_checkpoint(checkpoint_dir='checkpoints'):
+    """
+    Finds the latest checkpoint file based on epoch and batch index.
+
+    Args:
+        checkpoint_dir (str): Directory containing checkpoint files.
+
+    Returns:
+        str or None: Path to the latest checkpoint file, or None if none found.
+    """
+    if not os.path.exists(checkpoint_dir):
+        return None
+    checkpoint_files = [f for f in os.listdir(checkpoint_dir) if f.startswith('checkpoint_epoch_') and f.endswith('.pt')]
+    if not checkpoint_files:
+        return None
+    # Sort files by epoch and batch index
+    def extract_epoch_batch(filename):
+        # filename: 'checkpoint_epoch_{epoch}_batch_{batch_idx}.pt'
+        parts = filename.rstrip('.pt').split('_')
+        try:
+            epoch = int(parts[2])
+            batch = int(parts[4])
+            return (epoch, batch)
+        except (IndexError, ValueError):
+            return (0,0)
+    checkpoint_files.sort(key=lambda x: extract_epoch_batch(x), reverse=True)
+    latest_checkpoint = checkpoint_files[0]
+    return os.path.join(checkpoint_dir, latest_checkpoint)
+
+def load_checkpoint(checkpoint_path, model, optimizer, scaler, losses, device, local_rank, enable_logging, logger):
+    """
+    Loads the checkpoint from the specified path into the model, optimizer, scaler, and losses.
+
+    Args:
+        checkpoint_path (str): Path to the checkpoint file.
+        model (torch.nn.Module): The model.
+        optimizer (torch.optim.Optimizer): The optimizer.
+        scaler (torch.cuda.amp.GradScaler): The gradient scaler.
+        losses (list): The list to append loaded losses.
+        device (torch.device): The device to map the checkpoint.
+        local_rank (int): Rank of the current process.
+        enable_logging (bool): Whether logging is enabled.
+        logger (logging.Logger): Logger instance.
+
+    Returns:
+        epoch (int): Loaded epoch.
+        batch_idx (int): Loaded batch index.
+    """
+    if local_rank != 0:
+        return 0, 0  # Other ranks start from epoch 0, batch 0
+
+    if checkpoint_path is None:
+        if enable_logging:
+            logger.info("No checkpoint found. Starting training from scratch.")
+        print("No checkpoint found. Starting training from scratch.")
+        return 0, 0
+
+    if enable_logging:
+        logger.info(f"Loading checkpoint from {checkpoint_path}")
+    print(f"Loading checkpoint from {checkpoint_path}")
+
+    checkpoint = torch.load(checkpoint_path, map_location=device)
+
+    model.module.load_state_dict(checkpoint['model_state_dict'])
+    optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    scaler.load_state_dict(checkpoint['scaler_state_dict'])
+    losses.extend(checkpoint['losses'])
+
+    epoch = checkpoint['epoch']
+    batch_idx = checkpoint['batch_idx']
+
+    if enable_logging:
+        logger.info(f"Loaded checkpoint: Epoch {epoch}, Batch {batch_idx}")
+
+    return epoch, batch_idx
 
 def main():
     parser = argparse.ArgumentParser()
@@ -141,14 +218,55 @@ def main():
         if enable_logging:
             logger.info(f"Process {local_rank}: Wrapped model with DistributedDataParallel")
 
+        # Initialize optimizer and scaler before loading checkpoint
+        optimizer = bnb.optim.AdamW8bit(model.parameters(), lr=5e-5)  # 8-bit AdamW
+        if enable_logging:
+            logger.info("Initialized 8-bit AdamW optimizer")
+
+        scaler = GradScaler()
+        if enable_logging:
+            logger.info("Initialized GradScaler for mixed precision")
+
+        # Load the latest checkpoint if available
+        checkpoint_dir = 'checkpoints'
+        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir)
+        loaded_epoch, loaded_batch_idx = 0, 0
+        if latest_checkpoint_path:
+            loaded_epoch, loaded_batch_idx = load_checkpoint(
+                latest_checkpoint_path,
+                model,
+                optimizer,
+                scaler,
+                losses=[],
+                device=device,
+                local_rank=local_rank,
+                enable_logging=enable_logging,
+                logger=logger
+            )
+        else:
+            if enable_logging:
+                logger.info("No checkpoints found. Starting training from scratch.")
+            print("No checkpoints found. Starting training from scratch.")
+
+        # Broadcast the loaded_epoch and loaded_batch_idx to all ranks
+        loaded_epoch_tensor = torch.tensor(loaded_epoch).to(device)
+        loaded_batch_idx_tensor = torch.tensor(loaded_batch_idx).to(device)
+        dist.broadcast(loaded_epoch_tensor, src=0)
+        dist.broadcast(loaded_batch_idx_tensor, src=0)
+        loaded_epoch = loaded_epoch_tensor.item()
+        loaded_batch_idx = loaded_batch_idx_tensor.item()
+
+        if enable_logging and loaded_epoch > 0:
+            logger.info(f"Resuming from Epoch {loaded_epoch}, Batch {loaded_batch_idx}")
+
         # Read the data from the CSV file
         data_path = '../data_generation/combined_results.csv'
         if not os.path.exists(data_path):
             raise FileNotFoundError(f"Data file not found at {data_path}")
         data = pd.read_csv(data_path)
 
-        # Load only the first 10% of the dataset for testing purposes
-        data = data.head(int(len(data) * 1))
+        # Load only the first 1% of the dataset for testing purposes
+        data = data.head(int(len(data) * 0.01))
         if enable_logging:
             logger.info(f"Loaded {len(data)} samples for training")
 
@@ -184,30 +302,25 @@ def main():
 
         # Create the dataset and DistributedSampler
         dataset = PromptResponseDataset(data, tokenizer)
-        sampler = DistributedSampler(dataset)
+        sampler = DistributedSampler(dataset, shuffle=True, epoch=loaded_epoch)
         dataloader = DataLoader(dataset, batch_size=1, sampler=sampler, pin_memory=True, num_workers=num_workers)
         if enable_logging:
             logger.info(f"Process {local_rank}: Created DataLoader with batch size 1 and num_workers={num_workers}")
 
-        # Utilize 8-bit Optimizer
-        optimizer = bnb.optim.AdamW8bit(model.parameters(), lr=5e-5)  # 8-bit AdamW
-        if enable_logging:
-            logger.info("Initialized 8-bit AdamW optimizer")
-
-        # Initialize the GradScaler for mixed precision
-        scaler = GradScaler()
-        if enable_logging:
-            logger.info("Initialized GradScaler for mixed precision")
-
         # Add this list to store the loss values
         losses = []
+        # If checkpoint has losses, they have been loaded into 'losses' list via load_checkpoint
+        if latest_checkpoint_path:
+            # Reload the latest checkpoint and load optimizer and scaler states
+            # This ensures that 'losses' list is populated
+            checkpoint = torch.load(latest_checkpoint_path, map_location=device)
+            losses = checkpoint['losses']
 
         # Define gradient accumulation steps
         gradient_accumulation_steps = 4
         accumulated_loss = 0.0  # To track accumulated loss for logging
 
         # Create checkpoint directory
-        checkpoint_dir = 'checkpoints'
         os.makedirs(checkpoint_dir, exist_ok=True)
 
         # Memory profiling
@@ -222,13 +335,32 @@ def main():
             # Training loop with mixed precision and gradient accumulation
             epochs = 2
             model.train()
-            for epoch in range(epochs):
+            for epoch in range(loaded_epoch, epochs):
                 sampler.set_epoch(epoch)  # Shuffle data differently at each epoch
                 if local_rank == 0 and enable_logging:
                     logger.info(f"Epoch {epoch+1}/{epochs} started")
                     print(f"Epoch {epoch+1}/{epochs}")
                 progress_bar = tqdm(dataloader, desc=f"Rank {local_rank} Training", leave=False) if local_rank == 0 else dataloader
-                for batch_idx, batch in enumerate(progress_bar):
+
+                # Initialize the DataLoader iterator
+                dataloader_iter = iter(dataloader)
+
+                # If starting epoch, skip the first loaded_batch_idx batches
+                if epoch == loaded_epoch and loaded_batch_idx > 0:
+                    for _ in range(loaded_batch_idx):
+                        try:
+                            next(dataloader_iter)
+                        except StopIteration:
+                            break
+                    if enable_logging:
+                        logger.info(f"Skipped first {loaded_batch_idx} batches of epoch {epoch+1}")
+
+                for batch_idx in range(loaded_batch_idx if epoch == loaded_epoch else 0, len(dataloader)):
+                    try:
+                        batch = next(dataloader_iter)
+                    except StopIteration:
+                        break
+
                     optimizer.zero_grad(set_to_none=True)
                     input_ids = batch['input_ids'].to(device, non_blocking=True)
                     attention_mask = batch['attention_mask'].to(device, non_blocking=True)
@@ -236,7 +368,7 @@ def main():
 
                     log_cuda_memory(logger, f"Before forward pass - Epoch {epoch+1}, Batch {batch_idx+1}", enable_logging)
                     with record_function("forward_pass"):
-                        with autocast('cuda'):
+                        with autocast('cuda', dtype=torch.float16):
                             outputs = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
                             loss = outputs.loss / gradient_accumulation_steps  # Scale loss for accumulation
                     log_cuda_memory(logger, f"After forward pass - Epoch {epoch+1}, Batch {batch_idx+1}", enable_logging)
@@ -247,7 +379,7 @@ def main():
                     log_cuda_memory(logger, f"After backward pass - Epoch {epoch+1}, Batch {batch_idx+1}", enable_logging)
 
                     # Update optimizer every gradient_accumulation_steps
-                    if (batch_idx + 1) % gradient_accumulation_steps == 0 or (batch_idx + 1) == len(dataloader):
+                    if (batch_idx +1) % gradient_accumulation_steps == 0 or (batch_idx +1) == len(dataloader):
                         with record_function("optimizer_step"):
                             scaler.unscale_(optimizer)
                             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
@@ -265,10 +397,10 @@ def main():
                                 logger.info(f"Epoch {epoch+1}, Batch {batch_idx+1}/{len(dataloader)} - Loss: {current_loss:.4f}")
 
                         # Save checkpoint every 100 batches
-                        if (batch_idx + 1) % 100 == 0:
+                        if (batch_idx +1) % 100 ==0:
                             save_checkpoint(
-                                epoch=epoch + 1,
-                                batch_idx=batch_idx + 1,
+                                epoch=epoch +1,
+                                batch_idx=batch_idx +1,
                                 model=model,
                                 optimizer=optimizer,
                                 scaler=scaler,
@@ -281,33 +413,30 @@ def main():
 
                     prof.step()
 
-                if local_rank == 0:
-                    print(f"Epoch {epoch+1} completed. Loss: {loss.item():.4f}")
-                    if enable_logging:
-                        logger.info(f"Epoch {epoch+1} completed. Loss: {loss.item():.4f}")
-                    # Save final checkpoint at the end of the epoch
-                    save_checkpoint(
-                        epoch=epoch + 1,
-                        batch_idx=len(dataloader),
-                        model=model,
-                        optimizer=optimizer,
-                        scaler=scaler,
-                        losses=losses,
-                        checkpoint_dir=checkpoint_dir,
-                        local_rank=local_rank,
-                        enable_logging=enable_logging,
-                        logger=logger
-                    )
-                    output_dir = "./trained_model"
-                    model.module.save_pretrained(output_dir)  # Use model.module when saving
-                    tokenizer.save_pretrained(output_dir)
-                    if enable_logging:
-                        logger.info(f"Model saved to {output_dir}")
-
             if local_rank == 0:
                 print("Training completed.")
                 if enable_logging:
                     logger.info("Training completed.")
+                # Save final checkpoint at the end of the last epoch
+                save_checkpoint(
+                    epoch=epochs,
+                    batch_idx=len(dataloader),
+                    model=model,
+                    optimizer=optimizer,
+                    scaler=scaler,
+                    losses=losses,
+                    checkpoint_dir=checkpoint_dir,
+                    local_rank=local_rank,
+                    enable_logging=enable_logging,
+                    logger=logger
+                )
+                # Save the trained model and tokenizer
+                output_dir = "./trained_model"
+                model.module.save_pretrained(output_dir)  # Use model.module when saving
+                tokenizer.save_pretrained(output_dir)
+                if enable_logging:
+                    logger.info(f"Model saved to {output_dir}")
+
                 # Save losses for visualization
                 with open("losses.txt", "w") as f:
                     f.write("\n".join(map(str, losses)))
@@ -328,16 +457,16 @@ def main():
                     logger.info("Saved training loss curve to loss_curve.png")
 
     except torch.cuda.OutOfMemoryError as e:
-        if enable_logging:
+        if enable_logging and logger is not None:
             logger.error(f"CUDA Out of Memory Error: {e}")
         print(f"CUDA Out of Memory: {e}")
     except Exception as e:
-        if enable_logging:
+        if enable_logging and logger is not None:
             logger.error(f"An unexpected error occurred: {e}")
         print(f"An unexpected error occurred: {e}")
     finally:
         dist.destroy_process_group()
-        if enable_logging:
+        if enable_logging and logger is not None:
             logger.info("Destroyed the distributed process group")
 
 if __name__ == "__main__":

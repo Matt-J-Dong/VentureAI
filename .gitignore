@@ -1,3 +1,6 @@
+#Checkpoints:
+fine_tuning/checkpoints
+
 #Autotrain:
 autotrain-test/
 

@@ -326,18 +326,18 @@ def main():
                 if enable_logging:
                     logger.info("Saved training loss curve to loss_curve.png")
 
-        except torch.cuda.OutOfMemoryError as e:
-            if enable_logging:
-                logger.error(f"CUDA Out of Memory Error: {e}")
-            print(f"CUDA Out of Memory: {e}")
-        except Exception as e:
-            if enable_logging:
-                logger.error(f"An unexpected error occurred: {e}")
-            print(f"An unexpected error occurred: {e}")
-        finally:
-            dist.destroy_process_group()
-            if enable_logging:
-                logger.info("Destroyed the distributed process group")
+    except torch.cuda.OutOfMemoryError as e:
+        if enable_logging:
+            logger.error(f"CUDA Out of Memory Error: {e}")
+        print(f"CUDA Out of Memory: {e}")
+    except Exception as e:
+        if enable_logging:
+            logger.error(f"An unexpected error occurred: {e}")
+        print(f"An unexpected error occurred: {e}")
+    finally:
+        dist.destroy_process_group()
+        if enable_logging:
+            logger.info("Destroyed the distributed process group")
 
 if __name__ == "__main__":
     main()

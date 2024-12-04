@@ -40,7 +40,7 @@ def main():
     args = parser.parse_args()
     local_rank = args.local_rank
 
-    num_workers = 0  # Change this value as needed
+    num_workers = 4  # Change this value as needed
     enable_logging = num_workers == 0  # Enable logging only if num_workers=0
 
     logger = setup_logging('cuda_memory.txt') if enable_logging else None

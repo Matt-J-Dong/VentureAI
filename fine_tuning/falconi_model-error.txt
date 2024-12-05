@@ -1,0 +1,37 @@
+
+[notice] A new release of pip is available: 24.0 -> 24.3.1
+[notice] To update, run: pip install --upgrade pip
+/scratch/mjd9571/VentureAI/myenv/bin/python: can't open file '/scratch/mjd9571/VentureAI/fine_tuning/nproc_per_nodes==4': [Errno 2] No such file or directory
+E1204 22:09:54.024000 1295705 torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 2) local_rank: 0 (pid: 1295724) of binary: /scratch/mjd9571/VentureAI/myenv/bin/python
+Traceback (most recent call last):
+  File "/scratch/mjd9571/VentureAI/myenv/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/run.py", line 919, in main
+    run(args)
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+nproc_per_nodes==4 FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-12-04_22:09:54
+  host      : gr043.hpc.nyu.edu
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 1295724)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

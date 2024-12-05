@@ -261,7 +261,7 @@ def main():
         data = pd.read_csv(data_path)
 
         # Load only the first 1% of the dataset for testing purposes
-        data = data.head(int(len(data) * 0.01))
+        data = data.head(int(len(data) * 1))
         if enable_logging:
             logger.info(f"Loaded {len(data)} samples for training")
         print(f"Loaded {len(data)} samples for training")
@@ -299,7 +299,7 @@ def main():
         # Create the dataset and DistributedSampler
         dataset = PromptResponseDataset(data, tokenizer)
         sampler = DistributedSampler(dataset, shuffle=True, num_replicas=dist.get_world_size(), rank=dist.get_rank())
-        dataloader = DataLoader(dataset, batch_size=16, sampler=sampler, pin_memory=True, num_workers=num_workers)
+        dataloader = DataLoader(dataset, batch_size=64, sampler=sampler, pin_memory=True, num_workers=num_workers)
         if enable_logging:
             logger.info(f"Process {local_rank}: Created DataLoader with batch size 16 and num_workers={num_workers}")
         print(f"Process {local_rank}: Created DataLoader with batch size 16 and num_workers={num_workers}")

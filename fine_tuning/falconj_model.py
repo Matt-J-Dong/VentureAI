@@ -297,12 +297,13 @@ def main():
                 }
 
         # Create the dataset and DistributedSampler
+        batch_size = 32
         dataset = PromptResponseDataset(data, tokenizer)
         sampler = DistributedSampler(dataset, shuffle=True, num_replicas=dist.get_world_size(), rank=dist.get_rank())
-        dataloader = DataLoader(dataset, batch_size=64, sampler=sampler, pin_memory=True, num_workers=num_workers)
+        dataloader = DataLoader(dataset, batch_size=batch_size, sampler=sampler, pin_memory=True, num_workers=num_workers)
         if enable_logging:
-            logger.info(f"Process {local_rank}: Created DataLoader with batch size 64 and num_workers={num_workers}")
-        print(f"Process {local_rank}: Created DataLoader with batch size 64 and num_workers={num_workers}")
+            logger.info(f"Process {local_rank}: Created DataLoader with batch size {batch_size} and num_workers={num_workers}")
+        print(f"Process {local_rank}: Created DataLoader with batch size {batch_size} and num_workers={num_workers}")
 
         # Find the latest checkpoint if available, ensuring batch_idx <= len(dataloader)
         len_dataloader = len(dataloader)

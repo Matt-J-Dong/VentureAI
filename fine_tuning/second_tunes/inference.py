@@ -22,26 +22,18 @@ model = AutoModelForCausalLM.from_pretrained(model_dir, torch_dtype=torch.bfloat
 # Set model to evaluation mode
 model.eval()
 
-# Define a function for inference with enhanced generation parameters
-def generate_response(prompt, max_length=2000, temperature=0.7, top_p=0.9, repetition_penalty=1.2, no_repeat_ngram_size=3):
-    # Tokenize the prompt with attention mask
-    encoding = tokenizer(prompt, return_tensors="pt", padding=True, truncation=True)
-    input_ids = encoding['input_ids'].to(model.device)
-    attention_mask = encoding['attention_mask'].to(model.device)
+# Define a function for inference
+def generate_response(prompt, max_length=100):
+    # Tokenize the prompt
+    input_ids = tokenizer(prompt, return_tensors="pt").input_ids.to(model.device)
 
-    # Generate response with adjusted parameters
+    # Generate response
     with torch.no_grad():
         output_ids = model.generate(
             input_ids=input_ids,
-            attention_mask=attention_mask,
-            max_length=max_length,               # Increased max_length for longer responses
-            temperature=temperature,             # Controls randomness
-            top_p=top_p,                         # Nucleus sampling
-            repetition_penalty=repetition_penalty,  # Penalizes repetition
-            no_repeat_ngram_size=no_repeat_ngram_size,  # Prevents repeating n-grams
-            pad_token_id=tokenizer.pad_token_id,    # Use the new pad token
-            eos_token_id=tokenizer.eos_token_id,    # Stop generation at eos token
-            do_sample=True,                        # Enable sampling for variability
+            max_length=max_length,
+            pad_token_id=tokenizer.eos_token_id,  # Ensure proper padding
+            eos_token_id=tokenizer.eos_token_id,  # Stop generation at end-of-sequence token
         )
     
     # Decode the generated response
@@ -59,4 +51,3 @@ if __name__ == "__main__":
         
         response = generate_response(prompt, max_length=2000)
         print(f"\nResponse:\n{response}\n")
-

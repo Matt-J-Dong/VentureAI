@@ -270,7 +270,7 @@ def main():
 
         # Define a custom Dataset class
         class PromptResponseDataset(Dataset):
-            def __init__(self, dataframe, tokenizer, max_length=128):  # Reduced max_length
+            def __init__(self, dataframe, tokenizer, max_length=512):  # Reduced max_length
                 self.dataframe = dataframe.reset_index(drop=True)
                 self.tokenizer = tokenizer
                 self.max_length = max_length

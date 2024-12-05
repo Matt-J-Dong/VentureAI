@@ -1,3 +1,3 @@
 #!/bin/bash
 
-torchrun --nproc_per_node==4 falconi_model.py
+torchrun --nproc_per_node=4 falconi_model.py

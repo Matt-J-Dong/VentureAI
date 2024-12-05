@@ -261,7 +261,7 @@ def main():
         data = pd.read_csv(data_path)
 
         # Load only the first 1% of the dataset for testing purposes
-        data = data.head(int(len(data) * 1))
+        data = data.head(int(len(data) * 0.01))
         if enable_logging:
             logger.info(f"Loaded {len(data)} samples for training")
         print(f"Loaded {len(data)} samples for training")
@@ -297,13 +297,12 @@ def main():
                 }
 
         # Create the dataset and DistributedSampler
-        batch_size = 64
         dataset = PromptResponseDataset(data, tokenizer)
         sampler = DistributedSampler(dataset, shuffle=True, num_replicas=dist.get_world_size(), rank=dist.get_rank())
-        dataloader = DataLoader(dataset, batch_size=batch_size, sampler=sampler, pin_memory=True, num_workers=num_workers)
+        dataloader = DataLoader(dataset, batch_size=64, sampler=sampler, pin_memory=True, num_workers=num_workers)
         if enable_logging:
-            logger.info(f"Process {local_rank}: Created DataLoader with batch size {batch_size} and num_workers={num_workers}")
-        print(f"Process {local_rank}: Created DataLoader with batch size {batch_size} and num_workers={num_workers}")
+            logger.info(f"Process {local_rank}: Created DataLoader with batch size 64 and num_workers={num_workers}")
+        print(f"Process {local_rank}: Created DataLoader with batch size 64 and num_workers={num_workers}")
 
         # Find the latest checkpoint if available, ensuring batch_idx <= len(dataloader)
         len_dataloader = len(dataloader)
@@ -372,6 +371,7 @@ def main():
 
         # Initialize profiler if profiling is enabled
         if enable_profiling:
+            os.makedirs('profiler_logs', exist_ok=True)
             profiler = profile(
                 activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA],
                 record_shapes=True,
@@ -457,55 +457,58 @@ def main():
                 if enable_profiling:
                     profiler.step()
 
+            # After completing an epoch, perform epoch-level logging and checkpointing
+            if local_rank == 0:
+                print(f"Epoch {epoch+1} completed. Last Loss: {loss.item():.4f}")
+                if enable_logging:
+                    logger.info(f"Epoch {epoch+1} completed. Last Loss: {loss.item():.4f}")
+                # Save final checkpoint at the end of the epoch
+                save_checkpoint(
+                    epoch=epoch + 1,
+                    batch_idx=len(dataloader),
+                    model=model,
+                    optimizer=optimizer,
+                    scaler=scaler,
+                    losses=losses,
+                    checkpoint_dir=checkpoint_dir,
+                    local_rank=local_rank,
+                    enable_logging=enable_logging,
+                    logger=logger
+                )
+                # Save the trained model and tokenizer
+                output_dir = "./trained_model"
+                model.module.save_pretrained(output_dir)  # Use model.module when saving
+                tokenizer.save_pretrained(output_dir)
+                if enable_logging:
+                    logger.info(f"Model saved to {output_dir}")
+
+                # Save losses for visualization
+                with open("losses.txt", "w") as f:
+                    f.write("\n".join(map(str, losses)))
+                if enable_logging:
+                    logger.info("Saved training losses to losses.txt")
+
+                # Plot the training loss curve
+                plt.figure(figsize=(10, 6))
+                plt.plot(losses, label="Training Loss")
+                plt.xlabel("Batch Iterations")
+                plt.ylabel("Loss")
+                plt.title("Training Loss Curve")
+                plt.legend()
+                plt.grid(True)
+                plt.savefig("loss_curve.png")
+                plt.show()
+                if enable_logging:
+                    logger.info("Saved training loss curve to loss_curve.png")
+
         # Stop the profiler after training loop
         if enable_profiling:
             profiler.stop()
 
         if local_rank == 0:
-            print(f"Epoch {epoch+1} completed. Loss: {loss.item():.4f}")
-            if enable_logging:
-                logger.info(f"Epoch {epoch+1} completed. Loss: {loss.item():.4f}")
-            # Save final checkpoint at the end of the epoch
-            save_checkpoint(
-                epoch=epoch + 1,
-                batch_idx=len(dataloader),
-                model=model,
-                optimizer=optimizer,
-                scaler=scaler,
-                losses=losses,
-                checkpoint_dir=checkpoint_dir,
-                local_rank=local_rank,
-                enable_logging=enable_logging,
-                logger=logger
-            )
-            # Save the trained model and tokenizer
-            output_dir = "./trained_model"
-            model.module.save_pretrained(output_dir)  # Use model.module when saving
-            tokenizer.save_pretrained(output_dir)
-            if enable_logging:
-                logger.info(f"Model saved to {output_dir}")
-
             print("Training completed.")
             if enable_logging:
                 logger.info("Training completed.")
-            # Save losses for visualization
-            with open("losses.txt", "w") as f:
-                f.write("\n".join(map(str, losses)))
-            if enable_logging:
-                logger.info("Saved training losses to losses.txt")
-
-            # Plot the training loss curve
-            plt.figure(figsize=(10, 6))
-            plt.plot(losses, label="Training Loss")
-            plt.xlabel("Batch Iterations")
-            plt.ylabel("Loss")
-            plt.title("Training Loss Curve")
-            plt.legend()
-            plt.grid(True)
-            plt.savefig("loss_curve.png")
-            plt.show()
-            if enable_logging:
-                logger.info("Saved training loss curve to loss_curve.png")
 
     except torch.cuda.OutOfMemoryError as e:
         if enable_logging and logger is not None:

@@ -297,7 +297,7 @@ def main():
                 }
 
         # Create the dataset and DistributedSampler
-        batch_size = 32
+        batch_size = 16
         dataset = PromptResponseDataset(data, tokenizer)
         sampler = DistributedSampler(dataset, shuffle=True, num_replicas=dist.get_world_size(), rank=dist.get_rank())
         dataloader = DataLoader(dataset, batch_size=batch_size, sampler=sampler, pin_memory=True, num_workers=num_workers)

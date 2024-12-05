@@ -177,8 +177,10 @@ def load_checkpoint(checkpoint_path, model, optimizer, scaler, losses, device, l
         checkpoint = torch.load(checkpoint_path, map_location=device)
 
     model.module.load_state_dict(checkpoint['model_state_dict'])
-    optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
-    scaler.load_state_dict(checkpoint['scaler_state_dict'])
+    if optimizer is not None:
+        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    if scaler is not None:
+        scaler.load_state_dict(checkpoint['scaler_state_dict'])
     losses.extend(checkpoint['losses'])
 
     epoch = checkpoint['epoch']
@@ -268,7 +270,7 @@ def main():
 
         # Define a custom Dataset class
         class PromptResponseDataset(Dataset):
-            def __init__(self, dataframe, tokenizer, max_length=512):
+            def __init__(self, dataframe, tokenizer, max_length=128):  # Reduced max_length
                 self.dataframe = dataframe.reset_index(drop=True)
                 self.tokenizer = tokenizer
                 self.max_length = max_length
@@ -389,7 +391,7 @@ def main():
             sampler.set_epoch(epoch)  # Shuffle data differently at each epoch
             if local_rank == 0 and enable_logging:
                 logger.info(f"Epoch {epoch+1}/{total_epochs} started")
-                print(f"Epoch {epoch+1}/{total_epochs}")
+                print(f"Epoch {epoch+1}/{total_epochs} started")
             progress_bar = tqdm(dataloader, desc=f"Rank {local_rank} Training", leave=False) if local_rank == 0 else dataloader
             dataloader_iter = iter(dataloader)
 
@@ -458,50 +460,6 @@ def main():
                 if enable_profiling:
                     profiler.step()
 
-            # After completing an epoch, perform epoch-level logging and checkpointing
-            if local_rank == 0:
-                print(f"Epoch {epoch+1} completed. Last Loss: {loss.item():.4f}")
-                if enable_logging:
-                    logger.info(f"Epoch {epoch+1} completed. Last Loss: {loss.item():.4f}")
-                # Save final checkpoint at the end of the epoch
-                save_checkpoint(
-                    epoch=epoch + 1,
-                    batch_idx=len(dataloader),
-                    model=model,
-                    optimizer=optimizer,
-                    scaler=scaler,
-                    losses=losses,
-                    checkpoint_dir=checkpoint_dir,
-                    local_rank=local_rank,
-                    enable_logging=enable_logging,
-                    logger=logger
-                )
-                # Save the trained model and tokenizer
-                output_dir = "./trained_model"
-                model.module.save_pretrained(output_dir)  # Use model.module when saving
-                tokenizer.save_pretrained(output_dir)
-                if enable_logging:
-                    logger.info(f"Model saved to {output_dir}")
-
-                # Save losses for visualization
-                with open("losses.txt", "w") as f:
-                    f.write("\n".join(map(str, losses)))
-                if enable_logging:
-                    logger.info("Saved training losses to losses.txt")
-
-                # Plot the training loss curve
-                plt.figure(figsize=(10, 6))
-                plt.plot(losses, label="Training Loss")
-                plt.xlabel("Batch Iterations")
-                plt.ylabel("Loss")
-                plt.title("Training Loss Curve")
-                plt.legend()
-                plt.grid(True)
-                plt.savefig("loss_curve.png")
-                plt.show()
-                if enable_logging:
-                    logger.info("Saved training loss curve to loss_curve.png")
-
         # Stop the profiler after training loop
         if enable_profiling:
             profiler.stop()
@@ -510,6 +468,44 @@ def main():
             print("Training completed.")
             if enable_logging:
                 logger.info("Training completed.")
+            # Save final checkpoint at the end of the training
+            save_checkpoint(
+                epoch=epoch + 1,
+                batch_idx=len(dataloader),
+                model=model,
+                optimizer=optimizer,
+                scaler=scaler,
+                losses=losses,
+                checkpoint_dir=checkpoint_dir,
+                local_rank=local_rank,
+                enable_logging=enable_logging,
+                logger=logger
+            )
+            # Save the trained model and tokenizer
+            output_dir = "./trained_model"
+            model.module.save_pretrained(output_dir)  # Use model.module when saving
+            tokenizer.save_pretrained(output_dir)
+            if enable_logging:
+                logger.info(f"Model saved to {output_dir}")
+
+            # Save losses for visualization
+            with open("losses.txt", "w") as f:
+                f.write("\n".join(map(str, losses)))
+            if enable_logging:
+                logger.info("Saved training losses to losses.txt")
+
+            # Plot the training loss curve
+            plt.figure(figsize=(10, 6))
+            plt.plot(losses, label="Training Loss")
+            plt.xlabel("Batch Iterations")
+            plt.ylabel("Loss")
+            plt.title("Training Loss Curve")
+            plt.legend()
+            plt.grid(True)
+            plt.savefig("loss_curve.png")
+            plt.show()
+            if enable_logging:
+                logger.info("Saved training loss curve to loss_curve.png")
 
     except torch.cuda.OutOfMemoryError as e:
         if enable_logging and logger is not None:

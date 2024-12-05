@@ -1,5 +1,5 @@
 import torch
-from torch.cuda.amp import GradScaler, autocast
+from torch.amp import GradScaler, autocast
 from torch.utils.data import Dataset, DataLoader, DistributedSampler
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from torch.optim import AdamW
@@ -12,10 +12,184 @@ import matplotlib.pyplot as plt
 from torch.profiler import profile, record_function, ProfilerActivity
 from peft import LoraConfig, get_peft_model, TaskType
 import logging
-import warnings
+import datetime
 import bitsandbytes as bnb
+import warnings
 
-# [Other functions: setup_logging, log_cuda_memory, save_checkpoint, find_latest_checkpoint, load_checkpoint]
+def setup_logging(log_file='cuda_memory.txt'):
+    """
+    Sets up logging to the specified log_file.
+    """
+    logger = logging.getLogger('CUDA_Memory_Logger')
+    logger.setLevel(logging.INFO)
+    # Avoid adding multiple handlers if the logger already has handlers
+    if not logger.handlers:
+        fh = logging.FileHandler(log_file)
+        fh.setLevel(logging.INFO)
+        formatter = logging.Formatter('%(asctime)s - %(message)s')
+        fh.setFormatter(formatter)
+        logger.addHandler(fh)
+    return logger
+
+def log_cuda_memory(logger, message, enable_logging):
+    """
+    Logs CUDA memory usage if logging is enabled.
+    """
+    if enable_logging:
+        allocated = torch.cuda.memory_allocated()
+        reserved = torch.cuda.memory_reserved()
+        max_allocated = torch.cuda.max_memory_allocated()
+        max_reserved = torch.cuda.max_memory_reserved()
+        logger.info(f"{message} | Allocated: {allocated / (1024**2):.2f} MB | Reserved: {reserved / (1024**2):.2f} MB | Max Allocated: {max_allocated / (1024**2):.2f} MB | Max Reserved: {max_reserved / (1024**2):.2f} MB")
+
+def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoint_dir='checkpoints', local_rank=0, enable_logging=False, logger=None, max_checkpoints=5):
+    """
+    Saves a training checkpoint.
+
+    Args:
+        epoch (int): Current epoch number.
+        batch_idx (int): Current batch index.
+        model (torch.nn.Module): The model to save.
+        optimizer (torch.optim.Optimizer): The optimizer.
+        scaler (torch.cuda.amp.GradScaler): The gradient scaler.
+        losses (list): List of recorded losses.
+        checkpoint_dir (str): Directory to save checkpoints.
+        local_rank (int): Rank of the current process.
+        enable_logging (bool): Whether logging is enabled.
+        logger (logging.Logger): Logger instance.
+        max_checkpoints (int): Maximum number of checkpoints to retain.
+    """
+    if local_rank != 0:
+        return  # Only rank 0 saves checkpoints
+
+    os.makedirs(checkpoint_dir, exist_ok=True)
+    checkpoint_path = os.path.join(checkpoint_dir, f'checkpoint_epoch_{epoch}_batch_{batch_idx}.pt')
+
+    checkpoint = {
+        'epoch': epoch,
+        'batch_idx': batch_idx,
+        'model_state_dict': model.module.state_dict(),
+        'optimizer_state_dict': optimizer.state_dict(),
+        'scaler_state_dict': scaler.state_dict(),
+        'losses': losses
+    }
+
+    torch.save(checkpoint, checkpoint_path)
+    if enable_logging and logger is not None:
+        logger.info(f"Saved checkpoint: {checkpoint_path}")
+    print(f"Saved checkpoint: {checkpoint_path}")
+
+    # Cleanup old checkpoints
+    checkpoint_files = [f for f in os.listdir(checkpoint_dir) if f.startswith('checkpoint_epoch_') and f.endswith('.pt')]
+    if len(checkpoint_files) > max_checkpoints:
+        # Sort files by epoch and batch index in descending order
+        def extract_epoch_batch(filename):
+            # filename: 'checkpoint_epoch_{epoch}_batch_{batch_idx}.pt'
+            parts = filename.rstrip('.pt').split('_')
+            try:
+                epoch = int(parts[2])
+                batch = int(parts[4])
+                return (epoch, batch)
+            except (IndexError, ValueError):
+                return (0,0)
+        checkpoint_files.sort(key=lambda x: extract_epoch_batch(x), reverse=True)
+        # Remove older checkpoints beyond the max_checkpoints limit
+        for old_ckpt in checkpoint_files[max_checkpoints:]:
+            old_ckpt_path = os.path.join(checkpoint_dir, old_ckpt)
+            os.remove(old_ckpt_path)
+            if enable_logging and logger is not None:
+                logger.info(f"Removed old checkpoint: {old_ckpt_path}")
+
+def find_latest_checkpoint(checkpoint_dir='checkpoints', len_dataloader=None):
+    """
+    Finds the latest checkpoint file based on epoch and batch index,
+    ensuring that the batch index does not exceed the total number of batches.
+
+    Args:
+        checkpoint_dir (str): Directory containing checkpoint files.
+        len_dataloader (int): Total number of batches in the DataLoader.
+
+    Returns:
+        str or None: Path to the latest valid checkpoint file, or None if none found.
+    """
+    if not os.path.exists(checkpoint_dir):
+        return None
+    checkpoint_files = [f for f in os.listdir(checkpoint_dir) if f.startswith('checkpoint_epoch_') and f.endswith('.pt')]
+    if not checkpoint_files:
+        return None
+    # Sort files by epoch and batch index
+    def extract_epoch_batch(filename):
+        # filename: 'checkpoint_epoch_{epoch}_batch_{batch_idx}.pt'
+        parts = filename.rstrip('.pt').split('_')
+        try:
+            epoch = int(parts[2])
+            batch = int(parts[4])
+            return (epoch, batch)
+        except (IndexError, ValueError):
+            return (0,0)
+    # Filter out checkpoint files where batch_idx > len_dataloader
+    if len_dataloader is not None:
+        valid_checkpoint_files = [f for f in checkpoint_files if extract_epoch_batch(f)[1] <= len_dataloader]
+    else:
+        valid_checkpoint_files = checkpoint_files
+    if not valid_checkpoint_files:
+        return None
+    # Sort files by epoch and batch index in descending order
+    valid_checkpoint_files.sort(key=lambda x: extract_epoch_batch(x), reverse=True)
+    latest_checkpoint = valid_checkpoint_files[0]
+    return os.path.join(checkpoint_dir, latest_checkpoint)
+
+def load_checkpoint(checkpoint_path, model, optimizer, scaler, losses, device, local_rank, enable_logging, logger):
+    """
+    Loads the checkpoint from the specified path into the model, optimizer, scaler, and losses.
+
+    Args:
+        checkpoint_path (str): Path to the checkpoint file.
+        model (torch.nn.Module): The model.
+        optimizer (torch.optim.Optimizer): The optimizer.
+        scaler (torch.cuda.amp.GradScaler): The gradient scaler.
+        losses (list): The list to append loaded losses.
+        device (torch.device): The device to map the checkpoint.
+        local_rank (int): Rank of the current process.
+        enable_logging (bool): Whether logging is enabled.
+        logger (logging.Logger): Logger instance.
+
+    Returns:
+        epoch (int): Loaded epoch.
+        batch_idx (int): Loaded batch index.
+    """
+    if local_rank != 0:
+        return 0, 0  # Other ranks start from epoch 0, batch 0
+
+    if checkpoint_path is None:
+        if enable_logging:
+            logger.info("No checkpoint found. Starting training from scratch.")
+        print("No checkpoint found. Starting training from scratch.")
+        return 0, 0
+
+    if enable_logging:
+        logger.info(f"Loading checkpoint from {checkpoint_path}")
+    print(f"Loading checkpoint from {checkpoint_path}")
+
+    # Suppress the FutureWarning for torch.load
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", category=FutureWarning)
+        checkpoint = torch.load(checkpoint_path, map_location=device)
+
+    model.module.load_state_dict(checkpoint['model_state_dict'])
+    if optimizer is not None:
+        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    if scaler is not None:
+        scaler.load_state_dict(checkpoint['scaler_state_dict'])
+    losses.extend(checkpoint['losses'])
+
+    epoch = checkpoint['epoch']
+    batch_idx = checkpoint['batch_idx']
+
+    if enable_logging:
+        logger.info(f"Loaded checkpoint: Epoch {epoch}, Batch {batch_idx}")
+
+    return epoch, batch_idx
 
 def main():
     parser = argparse.ArgumentParser()
@@ -23,8 +197,9 @@ def main():
     args = parser.parse_args()
     local_rank = args.local_rank
 
-    num_workers = 4  # Change this value as needed
-    enable_logging = num_workers == 0  # Enable logging only if num_workers=0
+    # Define standard boolean flags for logging and profiling
+    enable_logging = False  # Set to True to enable logging
+    enable_profiling = False  # Set to True to enable profiling
 
     logger = setup_logging('cuda_memory.txt') if enable_logging else None
     if enable_logging:
@@ -89,7 +264,7 @@ def main():
         data = pd.read_csv(data_path)
 
         # Load only the first 1% of the dataset for testing purposes
-        data = data.head(int(len(data) * 0.01))
+        data = data.head(int(len(data) * 0.1))
         if enable_logging:
             logger.info(f"Loaded {len(data)} samples for training")
         print(f"Loaded {len(data)} samples for training")
@@ -125,7 +300,8 @@ def main():
                 }
 
         # Create the dataset and DistributedSampler
-        batch_size = 16
+        batch_size = 2  # Adjust batch size as needed
+        num_workers = 4 # Adjust num_workers as needed, 4 num_workers is about 500 MiB memory
         dataset = PromptResponseDataset(data, tokenizer)
         sampler = DistributedSampler(dataset, shuffle=True, num_replicas=dist.get_world_size(), rank=dist.get_rank())
         dataloader = DataLoader(dataset, batch_size=batch_size, sampler=sampler, pin_memory=True, num_workers=num_workers)
@@ -178,9 +354,6 @@ def main():
             logger.info(f"Resuming from Epoch {loaded_epoch}, Batch {loaded_batch_idx}")
             print(f"Resuming from Epoch {loaded_epoch}, Batch {loaded_batch_idx}")
 
-        # Initialize 'epoch' before the training loop
-        epoch = loaded_epoch - 1  # Initialize to one less than loaded_epoch
-
         # Define gradient accumulation steps
         gradient_accumulation_steps = 4
         accumulated_loss = 0.0  # To track accumulated loss for logging
@@ -188,9 +361,6 @@ def main():
         # Create checkpoint directory
         checkpoint_dir = 'checkpoints'
         os.makedirs(checkpoint_dir, exist_ok=True)
-
-        # Determine whether to enable profiling based on num_workers
-        enable_profiling = num_workers == 0
 
         # Initialize profiler if profiling is enabled
         if enable_profiling:
@@ -203,17 +373,24 @@ def main():
                 with_stack=True
             )
             profiler.start()
+            if enable_logging:
+                logger.info("Profiling started")
+            print("Profiling started")
 
         # Training loop with mixed precision and gradient accumulation
-        total_epochs = 2
+        total_epochs = 2  # Adjust total epochs as needed
         model.train()
         for epoch in range(loaded_epoch, total_epochs):
             sampler.set_epoch(epoch)  # Shuffle data differently at each epoch
             if local_rank == 0 and enable_logging:
                 logger.info(f"Epoch {epoch+1}/{total_epochs} started")
                 print(f"Epoch {epoch+1}/{total_epochs} started")
-            progress_bar = tqdm(dataloader, desc=f"Rank {local_rank} Training", leave=False) if local_rank == 0 else dataloader
-            dataloader_iter = iter(dataloader)
+
+            # Initialize progress bar only for local_rank == 0
+            if local_rank == 0:
+                progress_bar = tqdm(dataloader, desc=f"Epoch {epoch+1}", leave=False)
+            else:
+                progress_bar = dataloader  # No progress bar for other ranks
 
             # If resuming in the middle of an epoch, skip the first 'loaded_batch_idx' batches
             if epoch == loaded_epoch and loaded_batch_idx > 0:
@@ -226,7 +403,8 @@ def main():
                     except StopIteration:
                         break
 
-            for batch_idx, batch in enumerate(dataloader_iter, start=loaded_batch_idx if epoch == loaded_epoch else 0):
+            # Iterate over batches
+            for batch_idx, batch in enumerate(progress_bar, start=loaded_batch_idx if epoch == loaded_epoch else 0):
                 optimizer.zero_grad(set_to_none=True)
                 input_ids = batch['input_ids'].to(device, non_blocking=True)
                 attention_mask = batch['attention_mask'].to(device, non_blocking=True)
@@ -258,8 +436,8 @@ def main():
                         current_loss = accumulated_loss / gradient_accumulation_steps
                         losses.append(current_loss)
                         accumulated_loss = 0.0
+                        progress_bar.set_postfix({'loss': current_loss})
                         if enable_logging:
-                            progress_bar.set_postfix({'loss': current_loss})
                             logger.info(f"Epoch {epoch+1}, Batch {batch_idx+1}/{len(dataloader)} - Loss: {current_loss:.4f}")
 
                     # Save checkpoint every 100 batches
@@ -276,7 +454,6 @@ def main():
                             enable_logging=enable_logging,
                             logger=logger
                         )
-
                 # Step the profiler if profiling is enabled
                 if enable_profiling:
                     profiler.step()
@@ -287,6 +464,9 @@ def main():
         # Stop the profiler after training loop
         if enable_profiling:
             profiler.stop()
+            if enable_logging:
+                logger.info("Profiling stopped")
+            print("Profiling stopped")
 
         if local_rank == 0:
             print("Training completed.")

@@ -1,14 +1,115 @@
 
 [notice] A new release of pip is available: 24.0 -> 24.3.1
 [notice] To update, run: pip install --upgrade pip
-Traceback (most recent call last):
-  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/run.py", line 677, in determine_local_world_size
-    return int(nproc_per_node)
-           ^^^^^^^^^^^^^^^^^^^
-ValueError: invalid literal for int() with base 10: '=4'
+W1205 12:10:08.243000 253024 torch/distributed/run.py:793] 
+W1205 12:10:08.243000 253024 torch/distributed/run.py:793] *****************************************
+W1205 12:10:08.243000 253024 torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1205 12:10:08.243000 253024 torch/distributed/run.py:793] *****************************************
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:41<00:41, 41.27s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:41<00:41, 41.25s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:41<00:41, 41.40s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:41<00:41, 41.32s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:59<00:00, 27.98s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:59<00:00, 29.97s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:59<00:00, 27.99s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:59<00:00, 29.98s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:59<00:00, 27.98s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:59<00:00, 29.98s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [01:00<00:00, 28.03s/it]Loading checkpoint shards: 100%|██████████| 2/2 [01:00<00:00, 30.03s/it]
+[rank3]:[E1205 12:21:28.812380774 ProcessGroupNCCL.cpp:616] [Rank 3] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=28, OpType=BROADCAST, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600032 milliseconds before timing out.
+[rank1]:[E1205 12:21:28.822233493 ProcessGroupNCCL.cpp:616] [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=28, OpType=BROADCAST, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600044 milliseconds before timing out.
+[rank2]:[E1205 12:21:28.822881742 ProcessGroupNCCL.cpp:616] [Rank 2] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=28, OpType=BROADCAST, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600044 milliseconds before timing out.
+[rank3]:[E1205 12:21:29.904442548 ProcessGroupNCCL.cpp:1785] [PG ID 0 PG GUID 0(default_pg) Rank 3] Exception (either an error or timeout) detected by watchdog at work: 28, last enqueued NCCL work: 29, last completed NCCL work: 27.
+[rank2]:[E1205 12:21:29.904504816 ProcessGroupNCCL.cpp:1785] [PG ID 0 PG GUID 0(default_pg) Rank 2] Exception (either an error or timeout) detected by watchdog at work: 28, last enqueued NCCL work: 29, last completed NCCL work: 27.
+[rank1]:[E1205 12:21:29.923926644 ProcessGroupNCCL.cpp:1785] [PG ID 0 PG GUID 0(default_pg) Rank 1] Exception (either an error or timeout) detected by watchdog at work: 28, last enqueued NCCL work: 29, last completed NCCL work: 27.
+[rank3]:[E1205 12:21:30.999864794 ProcessGroupNCCL.cpp:1834] [PG ID 0 PG GUID 0(default_pg) Rank 3] Timeout at NCCL work: 28, last enqueued NCCL work: 29, last completed NCCL work: 27.
+[rank3]:[E1205 12:21:30.999905597 ProcessGroupNCCL.cpp:630] [Rank 3] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank3]:[E1205 12:21:30.999914998 ProcessGroupNCCL.cpp:636] [Rank 3] To avoid data inconsistency, we are taking the entire process down.
+[rank2]:[E1205 12:21:30.003085577 ProcessGroupNCCL.cpp:1834] [PG ID 0 PG GUID 0(default_pg) Rank 2] Timeout at NCCL work: 28, last enqueued NCCL work: 29, last completed NCCL work: 27.
+[rank2]:[E1205 12:21:30.004760337 ProcessGroupNCCL.cpp:630] [Rank 2] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank2]:[E1205 12:21:30.004771321 ProcessGroupNCCL.cpp:636] [Rank 2] To avoid data inconsistency, we are taking the entire process down.
+[rank3]:[E1205 12:21:30.103995929 ProcessGroupNCCL.cpp:1595] [PG ID 0 PG GUID 0(default_pg) Rank 3] Process group watchdog thread terminated with exception: [Rank 3] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=28, OpType=BROADCAST, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600032 milliseconds before timing out.
+Exception raised from checkTimeout at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:618 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x14e87916c446 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x282 (0x14e82f019772 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::watchdogHandler() + 0x233 (0x14e82f020bb3 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0x14d (0x14e82f02261d in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0x145c0 (0x14e8796535c0 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch.so)
+frame #5: <unknown function> + 0x94b43 (0x14e879e9eb43 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #6: <unknown function> + 0x126a00 (0x14e879f30a00 in /lib/x86_64-linux-gnu/libc.so.6)
 
-The above exception was the direct cause of the following exception:
+terminate called after throwing an instance of 'c10::DistBackendError'
+  what():  [PG ID 0 PG GUID 0(default_pg) Rank 3] Process group watchdog thread terminated with exception: [Rank 3] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=28, OpType=BROADCAST, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600032 milliseconds before timing out.
+Exception raised from checkTimeout at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:618 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x14e87916c446 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x282 (0x14e82f019772 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::watchdogHandler() + 0x233 (0x14e82f020bb3 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0x14d (0x14e82f02261d in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0x145c0 (0x14e8796535c0 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch.so)
+frame #5: <unknown function> + 0x94b43 (0x14e879e9eb43 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #6: <unknown function> + 0x126a00 (0x14e879f30a00 in /lib/x86_64-linux-gnu/libc.so.6)
 
+Exception raised from ncclCommWatchdog at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:1601 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x14e87916c446 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0xe4271b (0x14e82ec8f71b in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: <unknown function> + 0x145c0 (0x14e8796535c0 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch.so)
+frame #3: <unknown function> + 0x94b43 (0x14e879e9eb43 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #4: <unknown function> + 0x126a00 (0x14e879f30a00 in /lib/x86_64-linux-gnu/libc.so.6)
+
+[rank1]:[E1205 12:21:30.112210756 ProcessGroupNCCL.cpp:1834] [PG ID 0 PG GUID 0(default_pg) Rank 1] Timeout at NCCL work: 28, last enqueued NCCL work: 29, last completed NCCL work: 27.
+[rank1]:[E1205 12:21:30.112262373 ProcessGroupNCCL.cpp:630] [Rank 1] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank1]:[E1205 12:21:30.112271808 ProcessGroupNCCL.cpp:636] [Rank 1] To avoid data inconsistency, we are taking the entire process down.
+[rank1]:[E1205 12:21:30.113544876 ProcessGroupNCCL.cpp:1595] [PG ID 0 PG GUID 0(default_pg) Rank 1] Process group watchdog thread terminated with exception: [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=28, OpType=BROADCAST, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600044 milliseconds before timing out.
+Exception raised from checkTimeout at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:618 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x147f7496c446 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x282 (0x147f2a819772 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::watchdogHandler() + 0x233 (0x147f2a820bb3 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0x14d (0x147f2a82261d in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0x145c0 (0x147f74de95c0 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch.so)
+frame #5: <unknown function> + 0x94b43 (0x147f75634b43 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #6: <unknown function> + 0x126a00 (0x147f756c6a00 in /lib/x86_64-linux-gnu/libc.so.6)
+
+terminate called after throwing an instance of 'c10::DistBackendError'
+  what():  [PG ID 0 PG GUID 0(default_pg) Rank 1] Process group watchdog thread terminated with exception: [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=28, OpType=BROADCAST, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600044 milliseconds before timing out.
+Exception raised from checkTimeout at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:618 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x147f7496c446 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x282 (0x147f2a819772 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::watchdogHandler() + 0x233 (0x147f2a820bb3 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0x14d (0x147f2a82261d in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0x145c0 (0x147f74de95c0 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch.so)
+frame #5: <unknown function> + 0x94b43 (0x147f75634b43 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #6: <unknown function> + 0x126a00 (0x147f756c6a00 in /lib/x86_64-linux-gnu/libc.so.6)
+
+Exception raised from ncclCommWatchdog at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:1601 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x147f7496c446 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0xe4271b (0x147f2a48f71b in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: <unknown function> + 0x145c0 (0x147f74de95c0 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch.so)
+frame #3: <unknown function> + 0x94b43 (0x147f75634b43 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #4: <unknown function> + 0x126a00 (0x147f756c6a00 in /lib/x86_64-linux-gnu/libc.so.6)
+
+[rank2]:[E1205 12:21:30.124293166 ProcessGroupNCCL.cpp:1595] [PG ID 0 PG GUID 0(default_pg) Rank 2] Process group watchdog thread terminated with exception: [Rank 2] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=28, OpType=BROADCAST, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600044 milliseconds before timing out.
+Exception raised from checkTimeout at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:618 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x14a38976c446 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x282 (0x14a33f619772 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::watchdogHandler() + 0x233 (0x14a33f620bb3 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0x14d (0x14a33f62261d in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0x145c0 (0x14a389bba5c0 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch.so)
+frame #5: <unknown function> + 0x94b43 (0x14a38a405b43 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #6: <unknown function> + 0x126a00 (0x14a38a497a00 in /lib/x86_64-linux-gnu/libc.so.6)
+
+terminate called after throwing an instance of 'c10::DistBackendError'
+  what():  [PG ID 0 PG GUID 0(default_pg) Rank 2] Process group watchdog thread terminated with exception: [Rank 2] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=28, OpType=BROADCAST, NumelIn=1, NumelOut=1, Timeout(ms)=600000) ran for 600044 milliseconds before timing out.
+Exception raised from checkTimeout at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:618 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x14a38976c446 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x282 (0x14a33f619772 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::watchdogHandler() + 0x233 (0x14a33f620bb3 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0x14d (0x14a33f62261d in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0x145c0 (0x14a389bba5c0 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch.so)
+frame #5: <unknown function> + 0x94b43 (0x14a38a405b43 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #6: <unknown function> + 0x126a00 (0x14a38a497a00 in /lib/x86_64-linux-gnu/libc.so.6)
+
+Exception raised from ncclCommWatchdog at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:1601 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x96 (0x14a38976c446 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0xe4271b (0x14a33f28f71b in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: <unknown function> + 0x145c0 (0x14a389bba5c0 in /scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/lib/libtorch.so)
+frame #3: <unknown function> + 0x94b43 (0x14a38a405b43 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #4: <unknown function> + 0x126a00 (0x14a38a497a00 in /lib/x86_64-linux-gnu/libc.so.6)
+
+W1205 12:21:42.786000 253024 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 253044 closing signal SIGTERM
+E1205 12:21:42.804000 253024 torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: -6) local_rank: 1 (pid: 253043) of binary: /scratch/mjd9571/VentureAI/myenv/bin/python
 Traceback (most recent call last):
   File "/scratch/mjd9571/VentureAI/myenv/bin/torchrun", line 8, in <module>
     sys.exit(main())
@@ -18,12 +119,32 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^^^^
   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/run.py", line 919, in main
     run(args)
-  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/run.py", line 909, in run
-    config, cmd, cmd_args = config_from_args(args)
-                            ^^^^^^^^^^^^^^^^^^^^^^
-  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/run.py", line 790, in config_from_args
-    nproc_per_node = determine_local_world_size(args.nproc_per_node)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/run.py", line 706, in determine_local_world_size
-    raise ValueError(
-ValueError: Unsupported nproc_per_node value: =4
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+=======================================================
+falconj_model.py FAILED
+-------------------------------------------------------
+Failures:
+[1]:
+  time      : 2024-12-05_12:21:42
+  host      : gr003.hpc.nyu.edu
+  rank      : 3 (local_rank: 3)
+  exitcode  : -6 (pid: 253045)
+  error_file: <N/A>
+  traceback : Signal 6 (SIGABRT) received by PID 253045
+-------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-12-05_12:21:42
+  host      : gr003.hpc.nyu.edu
+  rank      : 1 (local_rank: 1)
+  exitcode  : -6 (pid: 253043)
+  error_file: <N/A>
+  traceback : Signal 6 (SIGABRT) received by PID 253043
+=======================================================

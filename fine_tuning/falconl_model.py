@@ -191,33 +191,44 @@ def load_checkpoint(checkpoint_path, model, optimizer, scaler, losses, device, l
 
     return epoch, batch_idx
 
-def debug_dataset(dataloader, tokenizer, num_samples=3):
+def count_trainable_parameters(model):
     """
-    Prints sample input_ids, attention_mask, and labels to verify dataset correctness.
-    
+    Counts the number of trainable parameters in the model.
+    """
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
+
+def debug_dataset(dataloader, tokenizer, num_samples=3, rank=0):
+    """
+    Saves sample input_ids, attention_mask, and labels to verify dataset correctness.
+
     Args:
         dataloader (DataLoader): The DataLoader to debug.
         tokenizer (AutoTokenizer): The tokenizer used.
-        num_samples (int): Number of samples to print.
+        num_samples (int): Number of samples to save.
+        rank (int): Rank of the current process.
     """
-    print("\n--- Debugging Dataset Samples ---\n")
-    for i, batch in enumerate(dataloader):
-        if i >= num_samples:
-            break
-        input_ids = batch['input_ids']
-        attention_mask = batch['attention_mask']
-        labels = batch['labels']
-        print(f"Sample {i+1}:")
-        print(f"Input IDs: {input_ids}")
-        print(f"Attention Mask: {attention_mask}")
-        print(f"Labels: {labels}")
-        print("\nDecoded Input:")
-        print(tokenizer.decode(input_ids[i], skip_special_tokens=True))
-        print("Decoded Labels:")
-        # Replace -100 with pad token for decoding
-        decoded_labels = [token if token != -100 else tokenizer.pad_token_id for token in labels[i]]
-        print(tokenizer.decode(decoded_labels, skip_special_tokens=True))
-        print("\n" + "-"*50 + "\n")
+    if rank != 0:
+        return  # Only process 0 performs debugging
+
+    with open("decoded_input.txt", "w") as f:
+        f.write("\n--- Debugging Dataset Samples ---\n\n")
+        for i, batch in enumerate(dataloader):
+            if i >= num_samples:
+                break
+            input_ids = batch['input_ids']
+            attention_mask = batch['attention_mask']
+            labels = batch['labels']
+            f.write(f"Sample {i+1}:\n")
+            f.write(f"Input IDs: {input_ids}\n")
+            f.write(f"Attention Mask: {attention_mask}\n")
+            f.write(f"Labels: {labels}\n\n")
+            f.write("Decoded Input:\n")
+            f.write(tokenizer.decode(input_ids[i], skip_special_tokens=True) + "\n")
+            f.write("Decoded Labels:\n")
+            # Replace -100 with pad token for decoding
+            decoded_labels = [token if token != -100 else tokenizer.pad_token_id for token in labels[i]]
+            f.write(tokenizer.decode(decoded_labels, skip_special_tokens=True) + "\n")
+            f.write("\n" + "-"*50 + "\n\n")
 
 def main():
     parser = argparse.ArgumentParser()
@@ -230,24 +241,24 @@ def main():
     enable_profiling = False  # Set to True to enable profiling
 
     logger = setup_logging('cuda_memory.txt') if enable_logging else None
-    if enable_logging:
+    if enable_logging and local_rank == 0:
         logger.info("Starting Training Script with logging enabled")
 
     try:
         # Initialize the process group
         dist.init_process_group(backend='nccl')
-        if enable_logging:
+        if enable_logging and local_rank == 0:
             logger.info("Initialized NCCL process group")
 
         # Set the device for this process
         torch.cuda.set_device(local_rank)
         device = torch.device(f'cuda:{local_rank}')
-        if enable_logging:
+        if enable_logging and local_rank == 0:
             logger.info(f"Process {local_rank}: Initialized on device {device}")
 
         # Enable cudnn benchmark for optimized performance
         torch.backends.cudnn.benchmark = True
-        if enable_logging:
+        if enable_logging and local_rank == 0:
             logger.info("Enabled cuDNN benchmark")
 
         # Load the model and tokenizer
@@ -256,7 +267,7 @@ def main():
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         tokenizer.pad_token = tokenizer.eos_token  # Set pad_token to eos_token
 
-        if enable_logging:
+        if enable_logging and local_rank == 0:
             logger.info(f"Pad Token: {tokenizer.pad_token} (ID: {tokenizer.pad_token_id})")
             logger.info(f"EOS Token: {tokenizer.eos_token} (ID: {tokenizer.eos_token_id})")
 
@@ -271,26 +282,47 @@ def main():
                 device_map={"": device},  # Load the entire model on the specified device
                 use_cache=False  # **Explicitly disable cache to save memory**
             )
-            log_cuda_memory(logger, "After model loading and moving to device", enable_logging)
+            if local_rank == 0:
+                log_cuda_memory(logger, "After model loading and moving to device", enable_logging)
 
-        # Configure LoRA
+        # **Inspect the Model's Module Names (Only for process 0)**
+        if local_rank == 0:
+            print("\n--- Model Modules ---")
+            for name, module in model.named_modules():
+                print(name)
+            print("----------------------\n")
+            if enable_logging:
+                logger.info("\n--- Model Modules ---")
+                for name, module in model.named_modules():
+                    logger.info(name)
+                logger.info("----------------------\n")
+
+        # Configure LoRA with updated target modules based on model's architecture
         lora_config = LoraConfig(
             r=16,
             lora_alpha=32,
-            target_modules=["query_key_value", "dense"],  # Adjust based on the model's architecture
+            target_modules=["query_key_value", "dense"],  # Update based on actual module names
             lora_dropout=0.1,
             bias="none",
             task_type=TaskType.CAUSAL_LM
         )
         model = get_peft_model(model, lora_config)
-        if enable_logging:
+        if enable_logging and local_rank == 0:
             logger.info(f"Process {local_rank}: Wrapped model with LoRA")
+
+        # Count and log trainable parameters
+        if local_rank == 0:
+            trainable_params = count_trainable_parameters(model)
+            print(f"Number of trainable parameters: {trainable_params}")
+            if enable_logging:
+                logger.info(f"Number of trainable parameters: {trainable_params}")
 
         # Enable Gradient Checkpointing using PyTorch's built-in method
         model.gradient_checkpointing_enable()
-        if enable_logging:
+        if enable_logging and local_rank == 0:
             logger.info("Enabled gradient checkpointing")
-        print("Enabled gradient checkpointing")
+        if local_rank == 0:
+            print("Enabled gradient checkpointing")
 
         # **Remove Activation Offloading with FairScale's checkpoint_wrapper**
         # This step was causing gradients to not be tracked properly.
@@ -298,9 +330,10 @@ def main():
         # for name, module in model.named_modules():
         #     if isinstance(module, torch.nn.Linear):
         #         setattr(model, name, checkpoint_wrapper(module))
-        # if enable_logging:
+        # if enable_logging and local_rank == 0:
         #     logger.info("Wrapped Linear layers with FairScale checkpoint_wrapper for activation offloading")
-        # print("Wrapped Linear layers with FairScale checkpoint_wrapper for activation offloading")
+        # if local_rank == 0:
+        #     print("Wrapped Linear layers with FairScale checkpoint_wrapper for activation offloading")
 
         # Wrap the model with DistributedDataParallel with optimized settings
         model = torch.nn.parallel.DistributedDataParallel(
@@ -309,9 +342,10 @@ def main():
             output_device=local_rank,
             find_unused_parameters=False  # **Set to False assuming all parameters are used**
         )
-        if enable_logging:
+        if enable_logging and local_rank == 0:
             logger.info(f"Process {local_rank}: Wrapped model with DistributedDataParallel with find_unused_parameters=False")
-        print(f"Process {local_rank}: Wrapped model with DistributedDataParallel with find_unused_parameters=False")
+        if local_rank == 0:
+            print(f"Process {local_rank}: Wrapped model with DistributedDataParallel with find_unused_parameters=False")
 
         # Read the data from the CSV file
         data_path = '../data_generation/combined_results.csv'
@@ -321,9 +355,10 @@ def main():
 
         # Load only the first 10% of the dataset for testing purposes
         data = data.head(int(len(data) * 0.1))
-        if enable_logging:
+        if enable_logging and local_rank == 0:
             logger.info(f"Loaded {len(data)} samples for training")
-        print(f"Loaded {len(data)} samples for training")
+        if local_rank == 0:
+            print(f"Loaded {len(data)} samples for training")
 
         # Define a custom Dataset class
         class PromptResponseDataset(Dataset):
@@ -353,12 +388,19 @@ def main():
                 # Create labels: mask the prompt tokens by setting them to -100
                 # so that loss is not computed on them
                 # Find the position where the response starts
-                # Assuming the response starts after the first eos_token
                 try:
-                    response_start = (input_ids == self.tokenizer.eos_token_id).nonzero(as_tuple=True)[0][1].item()
+                    # Locate the first eos_token_id which separates prompt and response
+                    eos_indices = (input_ids == self.tokenizer.eos_token_id).nonzero(as_tuple=True)[0]
+                    if len(eos_indices) < 1:
+                        # If no eos_token found, treat entire input as prompt
+                        response_start = len(input_ids)
+                    else:
+                        # Response starts after the first eos_token
+                        response_start = eos_indices[0].item()
                 except IndexError:
-                    # If eos_token not found twice, treat entire input as prompt
+                    # If eos_token not found, treat entire input as prompt
                     response_start = len(input_ids)
+                
                 labels = torch.full_like(input_ids, fill_value=-100)
                 labels[response_start + 1:] = input_ids[response_start + 1:]
                 
@@ -387,30 +429,32 @@ def main():
             prefetch_factor=2,
             persistent_workers=True
         )
-        if enable_logging:
+        if enable_logging and local_rank == 0:
             logger.info(f"Process {local_rank}: Created DataLoader with batch size {batch_size}, num_workers={num_workers}, prefetch_factor=2, persistent_workers=True")
-        print(f"Process {local_rank}: Created DataLoader with batch size {batch_size}, num_workers={num_workers}, prefetch_factor=2, persistent_workers=True")
+        if local_rank == 0:
+            print(f"Process {local_rank}: Created DataLoader with batch size {batch_size}, num_workers={num_workers}, prefetch_factor=2, persistent_workers=True")
 
-        # **Debugging the Dataset**
-        debug_dataset(dataloader, tokenizer, num_samples=3)
+        # **Debugging the Dataset** (Only for process 0)
+        if local_rank == 0:
+            debug_dataset(dataloader, tokenizer, num_samples=3, rank=local_rank)
 
         # Find the latest checkpoint if available
         len_dataloader = len(dataloader)
         latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints', len_dataloader=len_dataloader)
 
         # Initialize optimizer and scaler before loading checkpoint
-        optimizer = bnb.optim.AdamW8bit(model.parameters(), lr=5e-5)  # 8-bit AdamW
-        if enable_logging:
+        optimizer = bnb.optim.AdamW8bit(filter(lambda p: p.requires_grad, model.parameters()), lr=5e-5)  # 8-bit AdamW with only trainable params
+        if enable_logging and local_rank == 0:
             logger.info("Initialized 8-bit AdamW optimizer")
 
         scaler = GradScaler()
-        if enable_logging:
+        if enable_logging and local_rank == 0:
             logger.info("Initialized GradScaler for mixed precision")
 
         # Load the latest checkpoint if available
         loaded_epoch, loaded_batch_idx = 0, 0
         losses = []
-        if latest_checkpoint_path:
+        if latest_checkpoint_path and local_rank == 0:
             loaded_epoch, loaded_batch_idx = load_checkpoint(
                 latest_checkpoint_path,
                 model,
@@ -423,9 +467,10 @@ def main():
                 logger
             )
         else:
-            if enable_logging:
+            if enable_logging and local_rank == 0:
                 logger.info("No checkpoints found. Starting training from scratch.")
-            print("No checkpoints found. Starting training from scratch.")
+            if local_rank == 0:
+                print("No checkpoints found. Starting training from scratch.")
 
         # Broadcast the loaded_epoch and loaded_batch_idx to all ranks
         loaded_epoch_tensor = torch.tensor(loaded_epoch).to(device)
@@ -435,7 +480,7 @@ def main():
         loaded_epoch = loaded_epoch_tensor.item()
         loaded_batch_idx = loaded_batch_idx_tensor.item()
 
-        if enable_logging and loaded_epoch > 0:
+        if enable_logging and local_rank == 0 and loaded_epoch > 0:
             logger.info(f"Resuming from Epoch {loaded_epoch}, Batch {loaded_batch_idx}")
             print(f"Resuming from Epoch {loaded_epoch}, Batch {loaded_batch_idx}")
 
@@ -448,7 +493,7 @@ def main():
         os.makedirs(checkpoint_dir, exist_ok=True)
 
         # Initialize profiler if profiling is enabled
-        if enable_profiling:
+        if enable_profiling and local_rank == 0:
             os.makedirs('profiler_logs', exist_ok=True)
             profiler = profile(
                 activities=[ProfilerActivity.CPU, ProfilerActivity.CUDA],
@@ -467,11 +512,14 @@ def main():
         all_require_grad = True
         for name, param in model.module.named_parameters():
             if not param.requires_grad:
-                #print(f"WARNING: Parameter '{name}' does not require grad.")
+                if local_rank == 0:
+                    print(f"WARNING: Parameter '{name}' does not require grad.")
                 all_require_grad = False
-        if not all_require_grad and enable_logging:
+        if not all_require_grad and enable_logging and local_rank == 0:
             logger.warning("Some parameters do not require gradients.")
 
+        # Initialize 'epoch' before the loop
+        epoch = loaded_epoch
         # Training loop with mixed precision and gradient accumulation
         total_epochs = 2  # Adjust total epochs as needed
         model.train()
@@ -481,17 +529,15 @@ def main():
                 logger.info(f"Epoch {epoch+1}/{total_epochs} started")
                 print(f"Epoch {epoch+1}/{total_epochs} started")
 
-            # Initialize progress bar only for local_rank == 0
-            if local_rank == 0:
-                progress_bar = tqdm(dataloader, desc=f"Epoch {epoch+1}", leave=False)
-            else:
-                progress_bar = dataloader  # No progress bar for other ranks
+            # Initialize progress bar for all processes
+            progress_bar = tqdm(dataloader, desc=f"Process {local_rank} - Epoch {epoch+1}", leave=False)
 
             # If resuming in the middle of an epoch, skip the first 'loaded_batch_idx' batches
             if epoch == loaded_epoch and loaded_batch_idx > 0:
-                if enable_logging:
+                if enable_logging and local_rank == 0:
                     logger.info(f"Skipping first {loaded_batch_idx} batches of Epoch {epoch+1}")
-                print(f"Skipping first {loaded_batch_idx} batches of Epoch {epoch+1}")
+                if local_rank == 0:
+                    print(f"Skipping first {loaded_batch_idx} batches of Epoch {epoch+1}")
                 dataloader_iter = iter(dataloader)
                 for _ in range(loaded_batch_idx):
                     try:
@@ -508,17 +554,20 @@ def main():
                 attention_mask = batch['attention_mask'].to(device, non_blocking=True)
                 labels = batch['labels'].to(device, non_blocking=True)
 
-                log_cuda_memory(logger, f"Before forward pass - Epoch {epoch+1}, Batch {batch_idx+1}", enable_logging)
+                if local_rank == 0:
+                    log_cuda_memory(logger, f"Before forward pass - Epoch {epoch+1}, Batch {batch_idx+1}", enable_logging)
                 with record_function("forward_pass"):
                     with autocast(device_type='cuda', dtype=torch.float16):
                         outputs = model(input_ids=input_ids, attention_mask=attention_mask, labels=labels)
                         loss = outputs.loss / gradient_accumulation_steps  # Scale loss for accumulation
-                log_cuda_memory(logger, f"After forward pass - Epoch {epoch+1}, Batch {batch_idx+1}", enable_logging)
+                if local_rank == 0:
+                    log_cuda_memory(logger, f"After forward pass - Epoch {epoch+1}, Batch {batch_idx+1}", enable_logging)
 
                 with record_function("backward_pass"):
                     scaler.scale(loss).backward()
                     accumulated_loss += loss.item() * gradient_accumulation_steps
-                log_cuda_memory(logger, f"After backward pass - Epoch {epoch+1}, Batch {batch_idx+1}", enable_logging)
+                if local_rank == 0:
+                    log_cuda_memory(logger, f"After backward pass - Epoch {epoch+1}, Batch {batch_idx+1}", enable_logging)
 
                 # Update optimizer every gradient_accumulation_steps
                 if (batch_idx + 1) % gradient_accumulation_steps == 0 or (batch_idx + 1) == len(dataloader):
@@ -528,44 +577,45 @@ def main():
                         scaler.step(optimizer)
                         scaler.update()
                         optimizer.zero_grad(set_to_none=True)
-                    log_cuda_memory(logger, f"After optimizer step - Epoch {epoch+1}, Batch {batch_idx+1}", enable_logging)
-
                     if local_rank == 0:
+                        log_cuda_memory(logger, f"After optimizer step - Epoch {epoch+1}, Batch {batch_idx+1}", enable_logging)
+
                         current_loss = accumulated_loss / gradient_accumulation_steps
                         losses.append(current_loss)
                         accumulated_loss = 0.0
-                        progress_bar.set_postfix({'loss': current_loss})
+                        progress_bar.set_postfix({'loss': f"{current_loss:.4f}"})
                         if enable_logging:
                             logger.info(f"Epoch {epoch+1}, Batch {batch_idx+1}/{len(dataloader)} - Loss: {current_loss:.4f}")
 
                     # Save checkpoint every 100 batches
                     if (batch_idx + 1) % 100 == 0 and (batch_idx + 1) <= len(dataloader):
-                        save_checkpoint(
-                            epoch=epoch + 1,
-                            batch_idx=batch_idx + 1,
-                            model=model,
-                            optimizer=optimizer,
-                            scaler=scaler,
-                            losses=losses,
-                            checkpoint_dir=checkpoint_dir,
-                            local_rank=local_rank,
-                            enable_logging=enable_logging,
-                            logger=logger
-                        )
+                        if local_rank == 0:
+                            save_checkpoint(
+                                epoch=epoch + 1,
+                                batch_idx=batch_idx + 1,
+                                model=model,
+                                optimizer=optimizer,
+                                scaler=scaler,
+                                losses=losses,
+                                checkpoint_dir=checkpoint_dir,
+                                local_rank=local_rank,
+                                enable_logging=enable_logging,
+                                logger=logger
+                            )
 
                 # **Free Up Memory by Deleting Unused Variables and Clearing Cache**
                 del loss, outputs
                 torch.cuda.empty_cache()
 
                 # Step the profiler if profiling is enabled
-                if enable_profiling:
+                if enable_profiling and local_rank == 0:
                     profiler.step()
 
             # Reset loaded_batch_idx after the first epoch
             loaded_batch_idx = 0
 
         # Stop the profiler after training loop
-        if enable_profiling:
+        if enable_profiling and local_rank == 0:
             profiler.stop()
             if enable_logging:
                 logger.info("Profiling stopped")
@@ -615,16 +665,18 @@ def main():
                 logger.info("Saved training loss curve to loss_curve.png")
 
     except torch.cuda.OutOfMemoryError as e:
-        if enable_logging and logger is not None:
+        if enable_logging and logger is not None and local_rank == 0:
             logger.error(f"CUDA Out of Memory Error: {e}")
-        print(f"CUDA Out of Memory: {e}")
+        if local_rank == 0:
+            print(f"CUDA Out of Memory: {e}")
     except Exception as e:
-        if enable_logging and logger is not None:
+        if enable_logging and logger is not None and local_rank == 0:
             logger.error(f"An unexpected error occurred: {e}")
-        print(f"An unexpected error occurred: {e}")
+        if local_rank == 0:
+            print(f"An unexpected error occurred: {e}")
     finally:
         dist.destroy_process_group()
-        if enable_logging and logger is not None:
+        if enable_logging and logger is not None and local_rank == 0:
             logger.info("Destroyed the distributed process group")
 
 if __name__ == "__main__":

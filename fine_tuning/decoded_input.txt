@@ -1,0 +1,243 @@
+
+--- Debugging Dataset Samples ---
+
+Sample 1:
+Input IDs: tensor([[   52,   631,   606,  ...,   241, 20148, 31830],
+        [   52,   631,   606,  ...,    25,  1001,   763],
+        [   52,   631,   606,  ..., 46685,    23,  5712],
+        [   52,   631,   606,  ..., 55639,   763,    37]])
+Attention Mask: tensor([[1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1]])
+Labels: tensor([[ -100,  -100,  -100,  ...,   241, 20148, 31830],
+        [ -100,  -100,  -100,  ...,    25,  1001,   763],
+        [ -100,  -100,  -100,  ..., 46685,    23,  5712],
+        [ -100,  -100,  -100,  ..., 55639,   763,    37]])
+
+Decoded Input:
+I would like to travel from New York City to Afghanistan for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Afghanistan; use it for your response.
+### Trip Plan to Afghanistan (7 Days) - Focus on Restaurants
+
+**Day 1: Arrival in Kabul**
+- **Lunch**: Head to **Kabul's Mantu House** for traditional Afghan dumplings (Mantu), steamed and served with a yogurt sauce. It’s a local favorite for a reason!
+- **Dinner**: Visit **Mehman** for a taste of authentic Afghan dishes, particularly the Kabuli Pulao, the national dish of Afghanistan.
+
+**Day 2: Exploring Kabul**
+- **Breakfast**: Try **Cafe Khoshgel**, known for its freshly made Naan and local tea.
+- **Lunch**: Dine at **Kabul Restaurant**, which offers an extensive menu with a variety of qorma dishes.
+- **Dinner**: Enjoy a meal at **Ghazi Restaurant**, famous for its grilled meats and Afghan kebabs.
+
+**Day 3: Day Trip to Bamiyan**
+- **Lunch**: Depending on travel plans, have traditional dumplings at a local eatery in Bamiyan. If possible, bring a packed meal from Kabul.
+- **Dinner**: Return to Kabul and eat at **Tandoor Restaurant**, known for its vibrant atmosphere and various rice dishes.
+
+**Day 4: Mazar-e Sharif**
+- **Lunch**: Visit the often recommended **Frooq Restaurant**, famous for its local specialties including tasty Kebabs and Pilaf.
+- **Dinner**: Dine at **Kabul Beautiful**, which specializes in Afghan cuisine with a great selection of dishes. 
+
+**Day 5: Herat**
+- **Lunch**: Experience the local flavor at **Herat Restaurant**, where you can try local Herati dishes like Qorma Sabzi.
+- **Dinner**: Eat at **Baba Jan**, a well-known spot among locals for its quality food and atmosphere.
+
+**Day 6: Return to Kabul**
+- **Breakfast**: Start your day with delicious Obi Non (Uzbek-style bread) at a humble bakery
+Decoded Labels:
+### Trip Plan to Afghanistan (7 Days) - Focus on Restaurants
+
+**Day 1: Arrival in Kabul**
+- **Lunch**: Head to **Kabul's Mantu House** for traditional Afghan dumplings (Mantu), steamed and served with a yogurt sauce. It’s a local favorite for a reason!
+- **Dinner**: Visit **Mehman** for a taste of authentic Afghan dishes, particularly the Kabuli Pulao, the national dish of Afghanistan.
+
+**Day 2: Exploring Kabul**
+- **Breakfast**: Try **Cafe Khoshgel**, known for its freshly made Naan and local tea.
+- **Lunch**: Dine at **Kabul Restaurant**, which offers an extensive menu with a variety of qorma dishes.
+- **Dinner**: Enjoy a meal at **Ghazi Restaurant**, famous for its grilled meats and Afghan kebabs.
+
+**Day 3: Day Trip to Bamiyan**
+- **Lunch**: Depending on travel plans, have traditional dumplings at a local eatery in Bamiyan. If possible, bring a packed meal from Kabul.
+- **Dinner**: Return to Kabul and eat at **Tandoor Restaurant**, known for its vibrant atmosphere and various rice dishes.
+
+**Day 4: Mazar-e Sharif**
+- **Lunch**: Visit the often recommended **Frooq Restaurant**, famous for its local specialties including tasty Kebabs and Pilaf.
+- **Dinner**: Dine at **Kabul Beautiful**, which specializes in Afghan cuisine with a great selection of dishes. 
+
+**Day 5: Herat**
+- **Lunch**: Experience the local flavor at **Herat Restaurant**, where you can try local Herati dishes like Qorma Sabzi.
+- **Dinner**: Eat at **Baba Jan**, a well-known spot among locals for its quality food and atmosphere.
+
+**Day 6: Return to Kabul**
+- **Breakfast**: Start your day with delicious Obi Non (Uzbek-style bread) at a humble bakery
+
+--------------------------------------------------
+
+Sample 2:
+Input IDs: tensor([[   52,   631,   606,  ...,    25,  1001,  4493],
+        [   52,   631,   606,  ...,  6879,   335,   267],
+        [   52,   631,   606,  ..., 57961,   193,    24],
+        [   52,   631,   606,  ...,   312, 13578,  1021]])
+Attention Mask: tensor([[1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1]])
+Labels: tensor([[ -100,  -100,  -100,  ...,    25,  1001,  4493],
+        [ -100,  -100,  -100,  ...,  6879,   335,   267],
+        [ -100,  -100,  -100,  ..., 57961,   193,    24],
+        [ -100,  -100,  -100,  ...,   312, 13578,  1021]])
+
+Decoded Input:
+I would like to travel from New York City to Bloomsburg for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Bloomsburg; use it for your response.
+### 7-Day Trip Plan from New York City to Bloomsburg
+
+**Day 1: Arrival in Bloomsburg**  
+- **Travel**: Drive from New York City to Bloomsburg via Interstate 80, using exits 232 or 236.
+- **Accommodation**: Stay at College Hill Bed and Breakfast for a charming and cozy experience.
+- **Dinner**: Head to **Russell's Restaurant Inc** for a delicious welcome dinner featuring classic American cuisine.
+
+---
+
+**Day 2: Exploring Local Eats**  
+- **Breakfast**: Enjoy a hearty breakfast at the bed and breakfast.
+- **Lunch**: Try **Harry's Grill**, known for its friendly atmosphere and tasty sandwiches.
+- **Afternoon**: Visit the Haas Center on Bloomsburg University’s campus.
+- **Dinner**: Experience **Black Beard's Cove** for its lively atmosphere and great seafood.
+
+---
+
+**Day 3: Weekend Adventure**  
+- **Breakfast**: Breakfast at the bed and breakfast.
+- **Lunch**: Check out **Bennigan's Grill & Tavern** for a casual dining experience.
+- **Activity**: Explore the town and perhaps visit Can U Xcape, the local escape room.
+- **Dinner**: Enjoy dinner at **Clancy's**, which features a diverse menu and is popular with locals.
+
+---
+
+**Day 4: Local Culture and Cuisine**  
+- **Breakfast**: Start the day with breakfast at your bed and breakfast.
+- **Lunch**: Visit the Bloomsburg YMCA for some recreation, then grab lunch at **Romig's Cafe**.
+- **Activity**: Participate in the Renaissance Jamboree if it coincides with your visit in April.
+- **Dinner**: Dine at **Terrapin Cantina** for great Mexican food in a vibrant atmosphere.
+
+---
+
+**Day 5: Taste of Bloomsburg**  
+- **Breakfast**: Indulge in breakfast at the bed and breakfast.
+- **Lunch**: Head to **Rick's** for a quick, delicious meal with an
+Decoded Labels:
+### 7-Day Trip Plan from New York City to Bloomsburg
+
+**Day 1: Arrival in Bloomsburg**  
+- **Travel**: Drive from New York City to Bloomsburg via Interstate 80, using exits 232 or 236.
+- **Accommodation**: Stay at College Hill Bed and Breakfast for a charming and cozy experience.
+- **Dinner**: Head to **Russell's Restaurant Inc** for a delicious welcome dinner featuring classic American cuisine.
+
+---
+
+**Day 2: Exploring Local Eats**  
+- **Breakfast**: Enjoy a hearty breakfast at the bed and breakfast.
+- **Lunch**: Try **Harry's Grill**, known for its friendly atmosphere and tasty sandwiches.
+- **Afternoon**: Visit the Haas Center on Bloomsburg University’s campus.
+- **Dinner**: Experience **Black Beard's Cove** for its lively atmosphere and great seafood.
+
+---
+
+**Day 3: Weekend Adventure**  
+- **Breakfast**: Breakfast at the bed and breakfast.
+- **Lunch**: Check out **Bennigan's Grill & Tavern** for a casual dining experience.
+- **Activity**: Explore the town and perhaps visit Can U Xcape, the local escape room.
+- **Dinner**: Enjoy dinner at **Clancy's**, which features a diverse menu and is popular with locals.
+
+---
+
+**Day 4: Local Culture and Cuisine**  
+- **Breakfast**: Start the day with breakfast at your bed and breakfast.
+- **Lunch**: Visit the Bloomsburg YMCA for some recreation, then grab lunch at **Romig's Cafe**.
+- **Activity**: Participate in the Renaissance Jamboree if it coincides with your visit in April.
+- **Dinner**: Dine at **Terrapin Cantina** for great Mexican food in a vibrant atmosphere.
+
+---
+
+**Day 5: Taste of Bloomsburg**  
+- **Breakfast**: Indulge in breakfast at the bed and breakfast.
+- **Lunch**: Head to **Rick's** for a quick, delicious meal with an
+
+--------------------------------------------------
+
+Sample 3:
+Input IDs: tensor([[   52,   631,   606,  ...,    34,    37, 26850],
+        [   52,   631,   606,  ..., 15537,   574,    20],
+        [   52,   631,   606,  ...,   402,  1143,  1809],
+        [   52,   631,   606,  ...,   881,   299,   418]])
+Attention Mask: tensor([[1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1],
+        [1, 1, 1,  ..., 1, 1, 1]])
+Labels: tensor([[ -100,  -100,  -100,  ...,    34,    37, 26850],
+        [ -100,  -100,  -100,  ..., 15537,   574,    20],
+        [ -100,  -100,  -100,  ...,   402,  1143,  1809],
+        [ -100,  -100,  -100,  ...,   881,   299,   418]])
+
+Decoded Input:
+I would like to travel from New York City to Belek for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Belek; use it for your response.
+Here's your 7-day trip plan focusing on restaurants in Belek, Turkey. 
+
+### Day 1: Arrival in Belek
+- **Dinner**: Once you settle in, enjoy dinner at your hotel, which likely includes options in your package. Many hotels on the beach strip offer a variety of international and traditional Turkish cuisine.
+
+### Day 2: Exploring Belek Town
+- **Breakfast**: Start with breakfast at your hotel.
+- **Lunch**: Head to Belek town center for a casual lunch. Try one of the budget eateries near the clocktower, which are open into the small hours. Sample local dishes like kebabs or shawarma.
+- **Dinner**: Return to your hotel for another dining experience or explore another casual option in Belek town.
+
+### Day 3: Beach and Relaxation
+- **Breakfast**: Enjoy a leisurely breakfast at your hotel.
+- **Lunch**: For a change, have a beachside lunch at your hotel or any seaside cafes that are part of the resort.
+- **Dinner**: Consider dining at a different restaurant within your hotel for regional specialties.
+
+### Day 4: Visiting Aspendos
+- **Breakfast**: Breakfast at your hotel.
+- **Lunch**: After visiting the ancient city of Aspendos, find a local café or restaurant nearby for lunch.
+- **Dinner**: Head back to Belek and choose another local restaurant or return to your hotel for the evening meal.
+
+### Day 5: Golf and Leisure
+- **Breakfast**: Start your day at your hotel.
+- **Lunch**: If you’re playing golf, many golf courses have dining facilities; enjoy lunch there amidst the scenic views.
+- **Dinner**: After a day on the golf course, return to your hotel or explore dining options at another hotel within the vicinity.
+
+### Day 6: Boat Trip Adventure
+- **Breakfast**: Enjoy breakfast at your hotel.
+- **Lunch**: If you partake in a boat trip, check if they provide meals or find a place to eat at a nearby jetty.
+- **Dinner**: Celebrate your last night
+Decoded Labels:
+Here's your 7-day trip plan focusing on restaurants in Belek, Turkey. 
+
+### Day 1: Arrival in Belek
+- **Dinner**: Once you settle in, enjoy dinner at your hotel, which likely includes options in your package. Many hotels on the beach strip offer a variety of international and traditional Turkish cuisine.
+
+### Day 2: Exploring Belek Town
+- **Breakfast**: Start with breakfast at your hotel.
+- **Lunch**: Head to Belek town center for a casual lunch. Try one of the budget eateries near the clocktower, which are open into the small hours. Sample local dishes like kebabs or shawarma.
+- **Dinner**: Return to your hotel for another dining experience or explore another casual option in Belek town.
+
+### Day 3: Beach and Relaxation
+- **Breakfast**: Enjoy a leisurely breakfast at your hotel.
+- **Lunch**: For a change, have a beachside lunch at your hotel or any seaside cafes that are part of the resort.
+- **Dinner**: Consider dining at a different restaurant within your hotel for regional specialties.
+
+### Day 4: Visiting Aspendos
+- **Breakfast**: Breakfast at your hotel.
+- **Lunch**: After visiting the ancient city of Aspendos, find a local café or restaurant nearby for lunch.
+- **Dinner**: Head back to Belek and choose another local restaurant or return to your hotel for the evening meal.
+
+### Day 5: Golf and Leisure
+- **Breakfast**: Start your day at your hotel.
+- **Lunch**: If you’re playing golf, many golf courses have dining facilities; enjoy lunch there amidst the scenic views.
+- **Dinner**: After a day on the golf course, return to your hotel or explore dining options at another hotel within the vicinity.
+
+### Day 6: Boat Trip Adventure
+- **Breakfast**: Enjoy breakfast at your hotel.
+- **Lunch**: If you partake in a boat trip, check if they provide meals or find a place to eat at a nearby jetty.
+- **Dinner**: Celebrate your last night
+
+--------------------------------------------------
+

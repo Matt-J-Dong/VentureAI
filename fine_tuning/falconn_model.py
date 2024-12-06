@@ -246,7 +246,7 @@ def main():
             logger.info(f"Process {local_rank}: Initialized on device {device}")
 
         # Load the model and tokenizer
-        model_name = "tiiuae/falcon-7b"
+        model_name = "tiiuae/falcon-7b-instruct"
 
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         tokenizer.pad_token = tokenizer.eos_token  # Set pad_token to eos_token
@@ -292,7 +292,7 @@ def main():
         data = pd.read_csv(data_path)
 
         # Load only the first 1% of the dataset for testing purposes
-        data = data.head(int(len(data) * 1))
+        data = data.head(int(len(data) * 0.1))
         if enable_logging:
             logger.info(f"Loaded {len(data)} samples for training")
         print(f"Loaded {len(data)} samples for training")
@@ -437,7 +437,7 @@ def main():
         # Initialize 'epoch' before the loop
         epoch = loaded_epoch
         # Set total epochs to 1 as per user request
-        total_epochs = 3  # Adjust total epochs as needed
+        total_epochs = 1  # Adjust total epochs as needed
         model.train()
         for epoch in range(loaded_epoch, total_epochs):
             sampler.set_epoch(epoch)  # Shuffle data differently at each epoch
@@ -553,7 +553,7 @@ def main():
                 logger=logger
             )
             # Save the trained model and tokenizer
-            output_dir = "./trained_falcon7b"
+            output_dir = "./trained_model"
             model.module.save_pretrained(output_dir)  # Use model.module when saving
             tokenizer.save_pretrained(output_dir)
             if enable_logging:

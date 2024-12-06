@@ -553,14 +553,15 @@ def main():
                 logger=logger
             )
             # Save the trained model and tokenizer
-            output_dir = "./trained_model"
+            output_dir = "./trained_falcon7binstruct"
             model.module.save_pretrained(output_dir)  # Use model.module when saving
             tokenizer.save_pretrained(output_dir)
             if enable_logging:
                 logger.info(f"Model saved to {output_dir}")
 
             # Save losses for visualization
-            with open("losses.txt", "w") as f:
+            losses_dir = output_dir + "losses.txt"
+            with open(losses_dir, "w") as f:
                 f.write("\n".join(map(str, losses)))
             if enable_logging:
                 logger.info("Saved training losses to losses.txt")
@@ -573,7 +574,8 @@ def main():
             plt.title("Training Loss Curve")
             plt.legend()
             plt.grid(True)
-            plt.savefig("loss_curve.png")
+            plot_dir = output_dir + "loss_curve.png"
+            plt.savefig(plot_dir)
             plt.show()
             if enable_logging:
                 logger.info("Saved training loss curve to loss_curve.png")

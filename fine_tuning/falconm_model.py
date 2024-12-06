@@ -457,16 +457,12 @@ def main():
                     logger.info(f"Skipping first {loaded_batch_idx} batches of Epoch {epoch+1}")
                 if local_rank == 0:
                     print(f"Skipping first {loaded_batch_idx} batches of Epoch {epoch+1}")
-                dataloader_iter = iter(dataloader)
                 for _ in range(loaded_batch_idx):
                     try:
-                        next(dataloader_iter)
                         if local_rank == 0:
                             next(progress_bar)
                     except StopIteration:
                         break
-            else:
-                dataloader_iter = iter(dataloader)
 
             # Iterate over batches
             for batch_idx, batch in enumerate(progress_bar, start=loaded_batch_idx if epoch == loaded_epoch else 0):

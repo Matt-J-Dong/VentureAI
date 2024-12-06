@@ -1,20 +1,6 @@
-
---- Debugging Dataset Samples ---
+--- Decoded Inputs ---
 
 Sample 1:
-Input IDs: tensor([[   52,   631,   606,  ...,   241, 20148, 31830],
-        [   52,   631,   606,  ...,    25,  1001,   763],
-        [   52,   631,   606,  ..., 46685,    23,  5712],
-        [   52,   631,   606,  ..., 55639,   763,    37]])
-Attention Mask: tensor([[1, 1, 1,  ..., 1, 1, 1],
-        [1, 1, 1,  ..., 1, 1, 1],
-        [1, 1, 1,  ..., 1, 1, 1],
-        [1, 1, 1,  ..., 1, 1, 1]])
-Labels: tensor([[ -100,  -100,  -100,  ...,   241, 20148, 31830],
-        [ -100,  -100,  -100,  ...,    25,  1001,   763],
-        [ -100,  -100,  -100,  ..., 46685,    23,  5712],
-        [ -100,  -100,  -100,  ..., 55639,   763,    37]])
-
 Decoded Input:
 I would like to travel from New York City to Afghanistan for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Afghanistan; use it for your response.
 ### Trip Plan to Afghanistan (7 Days) - Focus on Restaurants
@@ -41,7 +27,7 @@ I would like to travel from New York City to Afghanistan for 7 days. Give me a t
 - **Dinner**: Eat at **Baba Jan**, a well-known spot among locals for its quality food and atmosphere.
 
 **Day 6: Return to Kabul**
-- **Breakfast**: Start your day with delicious Obi Non (Uzbek-style bread) at a humble bakery
+- **Breakfast**: Start your day with delicious Obi Non (Uzbek-style bread) at a humble
 Decoded Labels:
 ### Trip Plan to Afghanistan (7 Days) - Focus on Restaurants
 
@@ -67,177 +53,153 @@ Decoded Labels:
 - **Dinner**: Eat at **Baba Jan**, a well-known spot among locals for its quality food and atmosphere.
 
 **Day 6: Return to Kabul**
-- **Breakfast**: Start your day with delicious Obi Non (Uzbek-style bread) at a humble bakery
+- **Breakfast**: Start your day with delicious Obi Non (Uzbek-style bread) at a humble
 
 --------------------------------------------------
 
 Sample 2:
-Input IDs: tensor([[   52,   631,   606,  ...,    25,  1001,  4493],
-        [   52,   631,   606,  ...,  6879,   335,   267],
-        [   52,   631,   606,  ..., 57961,   193,    24],
-        [   52,   631,   606,  ...,   312, 13578,  1021]])
-Attention Mask: tensor([[1, 1, 1,  ..., 1, 1, 1],
-        [1, 1, 1,  ..., 1, 1, 1],
-        [1, 1, 1,  ..., 1, 1, 1],
-        [1, 1, 1,  ..., 1, 1, 1]])
-Labels: tensor([[ -100,  -100,  -100,  ...,    25,  1001,  4493],
-        [ -100,  -100,  -100,  ...,  6879,   335,   267],
-        [ -100,  -100,  -100,  ..., 57961,   193,    24],
-        [ -100,  -100,  -100,  ...,   312, 13578,  1021]])
-
 Decoded Input:
-I would like to travel from New York City to Bloomsburg for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Bloomsburg; use it for your response.
-### 7-Day Trip Plan from New York City to Bloomsburg
+I would like to travel from New York City to Bailey Island for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Bailey Island; use it for your response.
+### 7-Day Trip Plan to Bailey Island, Maine from New York City
 
-**Day 1: Arrival in Bloomsburg**  
-- **Travel**: Drive from New York City to Bloomsburg via Interstate 80, using exits 232 or 236.
-- **Accommodation**: Stay at College Hill Bed and Breakfast for a charming and cozy experience.
-- **Dinner**: Head to **Russell's Restaurant Inc** for a delicious welcome dinner featuring classic American cuisine.
+#### Day 1: Travel Day
+- **Morning:** Depart from New York City by car or by taking a bus to Portland, Maine.
+- **Afternoon:** Arrive in Portland. Have lunch at a local restaurant.
+- **Evening:** Take the Casco Bay Lines ferry to Bailey Island. Enjoy the scenic views during the ferry ride.
+- **Dinner:** Upon arrival, have dinner at a local eatery (options will be available on the island).
 
----
+#### Day 2: Exploring Local Eats
+- **Breakfast:** Start your day with a hearty breakfast at a local diner or café. 
+- **Lunch:** Enjoy a casual lunch at a seafood spot where you can taste fresh local catches, such as lobster rolls.
+- **Afternoon Activity:** Explore the sights, including the iconic lobster traps stacked in front yards. 
+- **Dinner:** Dine at a recommended restaurant on the island (look for fresh, local seafood options).
 
-**Day 2: Exploring Local Eats**  
-- **Breakfast**: Enjoy a hearty breakfast at the bed and breakfast.
-- **Lunch**: Try **Harry's Grill**, known for its friendly atmosphere and tasty sandwiches.
-- **Afternoon**: Visit the Haas Center on Bloomsburg University’s campus.
-- **Dinner**: Experience **Black Beard's Cove** for its lively atmosphere and great seafood.
+#### Day 3: Culinary Tour
+- **Breakfast:** Visit a breakfast spot popular among locals.
+- **Morning:** Take a walk along the coastline to build up an appetite.
+- **Lunch:** Try a sandwich shop or a local bistro.
+- **Dinner:** Opt for a restaurant that offers a multi-course meal featuring local ingredients.
 
----
+#### Day 4: More Island Flavor
+- **Breakfast:** Enjoy breakfast at a café known for its morning pastries.
+- **Lunch:** Have lunch that includes traditional Maine dishes.
+- **Afternoon:** Relax or participate in any local activities that might involve food.
+- **Dinner:** Sample dishes at a restaurant renowned for its use of traditional Maine recipes.
 
-**Day 3: Weekend Adventure**  
-- **Breakfast**: Breakfast at the bed and breakfast.
-- **Lunch**: Check out **Bennigan's Grill & Tavern** for a casual dining experience.
-- **Activity**: Explore the town and perhaps visit Can U Xcape, the local escape room.
-- **Dinner**: Enjoy dinner at **Clancy's**, which features a diverse menu and is popular with locals.
+#### Day 5: Discover New Spots
+- **Breakfast:** Start with breakfast at a different local haunt.
+- **Lunch:** Spend the day trying new restaurants or cafés you haven’t visited yet.
+- **Evening:** Take a relaxing stroll around the island and enjoy the landscape.
+- **Dinner:** Choose a place with an outdoor seating option to enjoy the ocean breeze and sunset while dining.
 
----
 
-**Day 4: Local Culture and Cuisine**  
-- **Breakfast**: Start the day with breakfast at your bed and breakfast.
-- **Lunch**: Visit the Bloomsburg YMCA for some recreation, then grab lunch at **Romig's Cafe**.
-- **Activity**: Participate in the Renaissance Jamboree if it coincides with your visit in April.
-- **Dinner**: Dine at **Terrapin Cantina** for great Mexican food in a vibrant atmosphere.
-
----
-
-**Day 5: Taste of Bloomsburg**  
-- **Breakfast**: Indulge in breakfast at the bed and breakfast.
-- **Lunch**: Head to **Rick's** for a quick, delicious meal with an
 Decoded Labels:
-### 7-Day Trip Plan from New York City to Bloomsburg
+### 7-Day Trip Plan to Bailey Island, Maine from New York City
 
-**Day 1: Arrival in Bloomsburg**  
-- **Travel**: Drive from New York City to Bloomsburg via Interstate 80, using exits 232 or 236.
-- **Accommodation**: Stay at College Hill Bed and Breakfast for a charming and cozy experience.
-- **Dinner**: Head to **Russell's Restaurant Inc** for a delicious welcome dinner featuring classic American cuisine.
+#### Day 1: Travel Day
+- **Morning:** Depart from New York City by car or by taking a bus to Portland, Maine.
+- **Afternoon:** Arrive in Portland. Have lunch at a local restaurant.
+- **Evening:** Take the Casco Bay Lines ferry to Bailey Island. Enjoy the scenic views during the ferry ride.
+- **Dinner:** Upon arrival, have dinner at a local eatery (options will be available on the island).
 
----
+#### Day 2: Exploring Local Eats
+- **Breakfast:** Start your day with a hearty breakfast at a local diner or café. 
+- **Lunch:** Enjoy a casual lunch at a seafood spot where you can taste fresh local catches, such as lobster rolls.
+- **Afternoon Activity:** Explore the sights, including the iconic lobster traps stacked in front yards. 
+- **Dinner:** Dine at a recommended restaurant on the island (look for fresh, local seafood options).
 
-**Day 2: Exploring Local Eats**  
-- **Breakfast**: Enjoy a hearty breakfast at the bed and breakfast.
-- **Lunch**: Try **Harry's Grill**, known for its friendly atmosphere and tasty sandwiches.
-- **Afternoon**: Visit the Haas Center on Bloomsburg University’s campus.
-- **Dinner**: Experience **Black Beard's Cove** for its lively atmosphere and great seafood.
+#### Day 3: Culinary Tour
+- **Breakfast:** Visit a breakfast spot popular among locals.
+- **Morning:** Take a walk along the coastline to build up an appetite.
+- **Lunch:** Try a sandwich shop or a local bistro.
+- **Dinner:** Opt for a restaurant that offers a multi-course meal featuring local ingredients.
 
----
+#### Day 4: More Island Flavor
+- **Breakfast:** Enjoy breakfast at a café known for its morning pastries.
+- **Lunch:** Have lunch that includes traditional Maine dishes.
+- **Afternoon:** Relax or participate in any local activities that might involve food.
+- **Dinner:** Sample dishes at a restaurant renowned for its use of traditional Maine recipes.
 
-**Day 3: Weekend Adventure**  
-- **Breakfast**: Breakfast at the bed and breakfast.
-- **Lunch**: Check out **Bennigan's Grill & Tavern** for a casual dining experience.
-- **Activity**: Explore the town and perhaps visit Can U Xcape, the local escape room.
-- **Dinner**: Enjoy dinner at **Clancy's**, which features a diverse menu and is popular with locals.
+#### Day 5: Discover New Spots
+- **Breakfast:** Start with breakfast at a different local haunt.
+- **Lunch:** Spend the day trying new restaurants or cafés you haven’t visited yet.
+- **Evening:** Take a relaxing stroll around the island and enjoy the landscape.
+- **Dinner:** Choose a place with an outdoor seating option to enjoy the ocean breeze and sunset while dining.
 
----
 
-**Day 4: Local Culture and Cuisine**  
-- **Breakfast**: Start the day with breakfast at your bed and breakfast.
-- **Lunch**: Visit the Bloomsburg YMCA for some recreation, then grab lunch at **Romig's Cafe**.
-- **Activity**: Participate in the Renaissance Jamboree if it coincides with your visit in April.
-- **Dinner**: Dine at **Terrapin Cantina** for great Mexican food in a vibrant atmosphere.
-
----
-
-**Day 5: Taste of Bloomsburg**  
-- **Breakfast**: Indulge in breakfast at the bed and breakfast.
-- **Lunch**: Head to **Rick's** for a quick, delicious meal with an
 
 --------------------------------------------------
 
 Sample 3:
-Input IDs: tensor([[   52,   631,   606,  ...,    34,    37, 26850],
-        [   52,   631,   606,  ..., 15537,   574,    20],
-        [   52,   631,   606,  ...,   402,  1143,  1809],
-        [   52,   631,   606,  ...,   881,   299,   418]])
-Attention Mask: tensor([[1, 1, 1,  ..., 1, 1, 1],
-        [1, 1, 1,  ..., 1, 1, 1],
-        [1, 1, 1,  ..., 1, 1, 1],
-        [1, 1, 1,  ..., 1, 1, 1]])
-Labels: tensor([[ -100,  -100,  -100,  ...,    34,    37, 26850],
-        [ -100,  -100,  -100,  ..., 15537,   574,    20],
-        [ -100,  -100,  -100,  ...,   402,  1143,  1809],
-        [ -100,  -100,  -100,  ...,   881,   299,   418]])
-
 Decoded Input:
-I would like to travel from New York City to Belek for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Belek; use it for your response.
-Here's your 7-day trip plan focusing on restaurants in Belek, Turkey. 
+I would like to travel from New York City to Blind River for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Blind River; use it for your response.
+### 7-Day Trip Plan to Blind River, Ontario, Focused on Restaurants
 
-### Day 1: Arrival in Belek
-- **Dinner**: Once you settle in, enjoy dinner at your hotel, which likely includes options in your package. Many hotels on the beach strip offer a variety of international and traditional Turkish cuisine.
+#### Day 1: Arrival in Blind River
+- **Travel from New York City**: Drive or take a bus to Blind River. 
+- **Lunch**: Stop at a local **mom and pop restaurant** for a homemade meal.
+- **Dinner**: Try a **fast-food chain** for a quick and easy option.
 
-### Day 2: Exploring Belek Town
-- **Breakfast**: Start with breakfast at your hotel.
-- **Lunch**: Head to Belek town center for a casual lunch. Try one of the budget eateries near the clocktower, which are open into the small hours. Sample local dishes like kebabs or shawarma.
-- **Dinner**: Return to your hotel for another dining experience or explore another casual option in Belek town.
+#### Day 2: Exploring Local Cuisine
+- **Breakfast**: Enjoy coffee and pastries at a local café. 
+- **Lunch**: Visit another **locally owned restaurant** known for comfort food.
+- **Dinner**: Explore a different fast-food location or an upscale local restaurant offering regional dishes.
 
-### Day 3: Beach and Relaxation
-- **Breakfast**: Enjoy a leisurely breakfast at your hotel.
-- **Lunch**: For a change, have a beachside lunch at your hotel or any seaside cafes that are part of the resort.
-- **Dinner**: Consider dining at a different restaurant within your hotel for regional specialties.
+#### Day 3: Outdoor Day and Dining
+- **Breakfast**: Start with breakfast at another **mom and pop diner**.
+- **Lunch**: Pack a picnic from a **grocery store** or local deli and enjoy it at a sandy beach.
+- **Dinner**: Savor a meal at one of the local eateries along **Causley Street**.
 
-### Day 4: Visiting Aspendos
-- **Breakfast**: Breakfast at your hotel.
-- **Lunch**: After visiting the ancient city of Aspendos, find a local café or restaurant nearby for lunch.
-- **Dinner**: Head back to Belek and choose another local restaurant or return to your hotel for the evening meal.
+#### Day 4: Cultural Exploration and Meals
+- **Breakfast**: Try a hearty breakfast at a cozy café.
+- **Lunch**: Stop by a convenience store for snacks or light meals.
+- **Dinner**: Dine at a restaurant featuring **Canadian cuisine** or traditional fare.
 
-### Day 5: Golf and Leisure
-- **Breakfast**: Start your day at your hotel.
-- **Lunch**: If you’re playing golf, many golf courses have dining facilities; enjoy lunch there amidst the scenic views.
-- **Dinner**: After a day on the golf course, return to your hotel or explore dining options at another hotel within the vicinity.
+#### Day 5: Road Trip to Nearby Attractions
+- **Breakfast**: Visit another local café for morning coffee and breakfast options.
+- **Lunch**: On your way to **Elliot Lake**, find a local spot for lunch.
+- **Dinner**: Return to Blind River and explore a new **local restaurant** for dinner.
 
-### Day 6: Boat Trip Adventure
-- **Breakfast**: Enjoy breakfast at your hotel.
-- **Lunch**: If you partake in a boat trip, check if they provide meals or find a place to eat at a nearby jetty.
-- **Dinner**: Celebrate your last night
+#### Day 6: Relaxation and Dining
+- **Breakfast**: Enjoy breakfast at your accommodation or favorite café.
+- **Lunch**: Visit a different shop on **Causley Street** for lunch.
+- **Dinner**: Try a new local or chain restaurant. Consider ordering delivery for a cozy night in.
+
+#### Day 7:
 Decoded Labels:
-Here's your 7-day trip plan focusing on restaurants in Belek, Turkey. 
+### 7-Day Trip Plan to Blind River, Ontario, Focused on Restaurants
 
-### Day 1: Arrival in Belek
-- **Dinner**: Once you settle in, enjoy dinner at your hotel, which likely includes options in your package. Many hotels on the beach strip offer a variety of international and traditional Turkish cuisine.
+#### Day 1: Arrival in Blind River
+- **Travel from New York City**: Drive or take a bus to Blind River. 
+- **Lunch**: Stop at a local **mom and pop restaurant** for a homemade meal.
+- **Dinner**: Try a **fast-food chain** for a quick and easy option.
 
-### Day 2: Exploring Belek Town
-- **Breakfast**: Start with breakfast at your hotel.
-- **Lunch**: Head to Belek town center for a casual lunch. Try one of the budget eateries near the clocktower, which are open into the small hours. Sample local dishes like kebabs or shawarma.
-- **Dinner**: Return to your hotel for another dining experience or explore another casual option in Belek town.
+#### Day 2: Exploring Local Cuisine
+- **Breakfast**: Enjoy coffee and pastries at a local café. 
+- **Lunch**: Visit another **locally owned restaurant** known for comfort food.
+- **Dinner**: Explore a different fast-food location or an upscale local restaurant offering regional dishes.
 
-### Day 3: Beach and Relaxation
-- **Breakfast**: Enjoy a leisurely breakfast at your hotel.
-- **Lunch**: For a change, have a beachside lunch at your hotel or any seaside cafes that are part of the resort.
-- **Dinner**: Consider dining at a different restaurant within your hotel for regional specialties.
+#### Day 3: Outdoor Day and Dining
+- **Breakfast**: Start with breakfast at another **mom and pop diner**.
+- **Lunch**: Pack a picnic from a **grocery store** or local deli and enjoy it at a sandy beach.
+- **Dinner**: Savor a meal at one of the local eateries along **Causley Street**.
 
-### Day 4: Visiting Aspendos
-- **Breakfast**: Breakfast at your hotel.
-- **Lunch**: After visiting the ancient city of Aspendos, find a local café or restaurant nearby for lunch.
-- **Dinner**: Head back to Belek and choose another local restaurant or return to your hotel for the evening meal.
+#### Day 4: Cultural Exploration and Meals
+- **Breakfast**: Try a hearty breakfast at a cozy café.
+- **Lunch**: Stop by a convenience store for snacks or light meals.
+- **Dinner**: Dine at a restaurant featuring **Canadian cuisine** or traditional fare.
 
-### Day 5: Golf and Leisure
-- **Breakfast**: Start your day at your hotel.
-- **Lunch**: If you’re playing golf, many golf courses have dining facilities; enjoy lunch there amidst the scenic views.
-- **Dinner**: After a day on the golf course, return to your hotel or explore dining options at another hotel within the vicinity.
+#### Day 5: Road Trip to Nearby Attractions
+- **Breakfast**: Visit another local café for morning coffee and breakfast options.
+- **Lunch**: On your way to **Elliot Lake**, find a local spot for lunch.
+- **Dinner**: Return to Blind River and explore a new **local restaurant** for dinner.
 
-### Day 6: Boat Trip Adventure
-- **Breakfast**: Enjoy breakfast at your hotel.
-- **Lunch**: If you partake in a boat trip, check if they provide meals or find a place to eat at a nearby jetty.
-- **Dinner**: Celebrate your last night
+#### Day 6: Relaxation and Dining
+- **Breakfast**: Enjoy breakfast at your accommodation or favorite café.
+- **Lunch**: Visit a different shop on **Causley Street** for lunch.
+- **Dinner**: Try a new local or chain restaurant. Consider ordering delivery for a cozy night in.
+
+#### Day 7:
 
 --------------------------------------------------
 

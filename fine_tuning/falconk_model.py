@@ -12,7 +12,6 @@ import matplotlib.pyplot as plt
 from torch.profiler import profile, record_function, ProfilerActivity
 from peft import LoraConfig, get_peft_model, TaskType
 import logging
-import datetime
 import bitsandbytes as bnb
 import warnings
 
@@ -191,33 +190,34 @@ def load_checkpoint(checkpoint_path, model, optimizer, scaler, losses, device, l
 
     return epoch, batch_idx
 
-def debug_dataset(dataloader, tokenizer, num_samples=3):
+def save_decoded_inputs(dataloader, tokenizer, num_samples=3, rank=0):
     """
-    Prints sample input_ids, attention_mask, and labels to verify dataset correctness.
-    
+    Saves decoded inputs and labels for a few samples to verify data correctness.
+
     Args:
-        dataloader (DataLoader): The DataLoader to debug.
-        tokenizer (AutoTokenizer): The tokenizer used.
-        num_samples (int): Number of samples to print.
+        dataloader (DataLoader): The DataLoader.
+        tokenizer (AutoTokenizer): The tokenizer.
+        num_samples (int): Number of samples to save.
+        rank (int): Process rank.
     """
-    print("\n--- Debugging Dataset Samples ---\n")
-    for i, batch in enumerate(dataloader):
-        if i >= num_samples:
-            break
-        input_ids = batch['input_ids']
-        attention_mask = batch['attention_mask']
-        labels = batch['labels']
-        print(f"Sample {i+1}:")
-        print(f"Input IDs: {input_ids}")
-        print(f"Attention Mask: {attention_mask}")
-        print(f"Labels: {labels}")
-        print("\nDecoded Input:")
-        print(tokenizer.decode(input_ids[i], skip_special_tokens=True))
-        print("Decoded Labels:")
-        # Replace -100 with pad token for decoding
-        decoded_labels = [token if token != -100 else tokenizer.pad_token_id for token in labels[i]]
-        print(tokenizer.decode(decoded_labels, skip_special_tokens=True))
-        print("\n" + "-"*50 + "\n")
+    if rank != 0:
+        return  # Only process 0 performs debugging
+
+    with open("decoded_input.txt", "w") as f:
+        f.write("--- Decoded Inputs ---\n\n")
+        for i, batch in enumerate(dataloader):
+            if i >= num_samples:
+                break
+            input_ids = batch['input_ids']
+            attention_mask = batch['attention_mask']
+            labels = batch['labels']
+            decoded_input = tokenizer.decode(input_ids[0], skip_special_tokens=True)
+            # Replace -100 with pad token for decoding labels
+            decoded_labels = tokenizer.decode([token if token != -100 else tokenizer.pad_token_id for token in labels[0]], skip_special_tokens=True)
+            f.write(f"Sample {i+1}:\n")
+            f.write(f"Decoded Input:\n{decoded_input}\n")
+            f.write(f"Decoded Labels:\n{decoded_labels}\n")
+            f.write("\n" + "-"*50 + "\n\n")
 
 def main():
     parser = argparse.ArgumentParser()
@@ -245,11 +245,6 @@ def main():
         if enable_logging:
             logger.info(f"Process {local_rank}: Initialized on device {device}")
 
-        # Enable cudnn benchmark for optimized performance
-        torch.backends.cudnn.benchmark = True
-        if enable_logging:
-            logger.info("Enabled cuDNN benchmark")
-
         # Load the model and tokenizer
         model_name = "tiiuae/falcon-7b-instruct"
 
@@ -263,13 +258,12 @@ def main():
         # Configure bitsandbytes for 8-bit loading
         bnb_config = BitsAndBytesConfig(load_in_8bit=True)
 
-        # Load the model with quantization and explicitly disable cache
+        # Load the model with quantization
         with record_function("model_loading"):
             model = AutoModelForCausalLM.from_pretrained(
                 model_name,
                 quantization_config=bnb_config,
-                device_map={"": device},  # Load the entire model on the specified device
-                use_cache=False  # **Explicitly disable cache to save memory**
+                device_map={"": device}  # Load the entire model on the specified device
             )
             log_cuda_memory(logger, "After model loading and moving to device", enable_logging)
 
@@ -286,32 +280,10 @@ def main():
         if enable_logging:
             logger.info(f"Process {local_rank}: Wrapped model with LoRA")
 
-        # Enable Gradient Checkpointing using PyTorch's built-in method
-        model.gradient_checkpointing_enable()
+        # Wrap the model with DistributedDataParallel
+        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[local_rank], output_device=local_rank)
         if enable_logging:
-            logger.info("Enabled gradient checkpointing")
-        print("Enabled gradient checkpointing")
-
-        # **Remove Activation Offloading with FairScale's checkpoint_wrapper**
-        # This step was causing gradients to not be tracked properly.
-        # If activation offloading is essential, consider alternative methods or ensure compatibility.
-        # for name, module in model.named_modules():
-        #     if isinstance(module, torch.nn.Linear):
-        #         setattr(model, name, checkpoint_wrapper(module))
-        # if enable_logging:
-        #     logger.info("Wrapped Linear layers with FairScale checkpoint_wrapper for activation offloading")
-        # print("Wrapped Linear layers with FairScale checkpoint_wrapper for activation offloading")
-
-        # Wrap the model with DistributedDataParallel with optimized settings
-        model = torch.nn.parallel.DistributedDataParallel(
-            model, 
-            device_ids=[local_rank], 
-            output_device=local_rank,
-            find_unused_parameters=False  # **Set to False assuming all parameters are used**
-        )
-        if enable_logging:
-            logger.info(f"Process {local_rank}: Wrapped model with DistributedDataParallel with find_unused_parameters=False")
-        print(f"Process {local_rank}: Wrapped model with DistributedDataParallel with find_unused_parameters=False")
+            logger.info(f"Process {local_rank}: Wrapped model with DistributedDataParallel")
 
         # Read the data from the CSV file
         data_path = '../data_generation/combined_results.csv'
@@ -319,8 +291,8 @@ def main():
             raise FileNotFoundError(f"Data file not found at {data_path}")
         data = pd.read_csv(data_path)
 
-        # Load only the first 10% of the dataset for testing purposes
-        data = data.head(int(len(data) * 0.1))
+        # Load only the first 1% of the dataset for testing purposes
+        data = data.head(int(len(data) * 0.01))
         if enable_logging:
             logger.info(f"Loaded {len(data)} samples for training")
         print(f"Loaded {len(data)} samples for training")
@@ -338,8 +310,7 @@ def main():
             def __getitem__(self, idx):
                 prompt = str(self.dataframe.iloc[idx]['prompt'])
                 response = str(self.dataframe.iloc[idx]['response'])
-                # Concatenate prompt and response with eos_token as separator
-                input_text = f"{prompt}{self.tokenizer.eos_token}{response}{self.tokenizer.eos_token}"
+                input_text = f"{self.tokenizer.eos_token}{prompt}{self.tokenizer.eos_token}{response}{self.tokenizer.eos_token}"
                 encoding = self.tokenizer(
                     input_text,
                     truncation=True,
@@ -349,19 +320,22 @@ def main():
                 )
                 input_ids = encoding['input_ids'].squeeze()
                 attention_mask = encoding['attention_mask'].squeeze()
-                
-                # Create labels: mask the prompt tokens by setting them to -100
-                # so that loss is not computed on them
-                # Find the position where the response starts
-                # Assuming the response starts after the first eos_token
-                try:
-                    response_start = (input_ids == self.tokenizer.eos_token_id).nonzero(as_tuple=True)[0][1].item()
-                except IndexError:
-                    # If eos_token not found twice, treat entire input as prompt
-                    response_start = len(input_ids)
-                labels = torch.full_like(input_ids, fill_value=-100)
-                labels[response_start + 1:] = input_ids[response_start + 1:]
-                
+
+                # Mask the prompt tokens by setting them to -100 in labels
+                # Find the first occurrence of eos_token_id to separate prompt and response
+                eos_token_id = self.tokenizer.eos_token_id
+                eos_indices = (input_ids == eos_token_id).nonzero(as_tuple=True)[0]
+
+                if len(eos_indices) < 2:
+                    # If not enough eos tokens, treat entire input as response
+                    response_start = 0
+                else:
+                    # Response starts after the second eos token
+                    response_start = eos_indices[1].item() + 1
+
+                labels = input_ids.clone()
+                labels[:response_start] = -100  # Ignore prompt tokens
+
                 return {
                     'input_ids': input_ids,
                     'attention_mask': attention_mask,
@@ -369,37 +343,26 @@ def main():
                 }
 
         # Create the dataset and DistributedSampler
-        batch_size = 4  # Adjust batch size as needed
-        num_workers = 4 # Adjust num_workers as needed, 4 num_workers is about 500 MiB memory
+        batch_size = 2  # Adjust batch size as needed
+        num_workers = 4  # Adjust num_workers as needed
         dataset = PromptResponseDataset(data, tokenizer)
-        sampler = DistributedSampler(
-            dataset, 
-            shuffle=True, 
-            num_replicas=dist.get_world_size(), 
-            rank=dist.get_rank()
-        )
-        dataloader = DataLoader(
-            dataset, 
-            batch_size=batch_size, 
-            sampler=sampler, 
-            pin_memory=True, 
-            num_workers=num_workers,
-            prefetch_factor=2,
-            persistent_workers=True
-        )
+        sampler = DistributedSampler(dataset, shuffle=True, num_replicas=dist.get_world_size(), rank=dist.get_rank())
+        dataloader = DataLoader(dataset, batch_size=batch_size, sampler=sampler, pin_memory=True, num_workers=num_workers)
         if enable_logging:
-            logger.info(f"Process {local_rank}: Created DataLoader with batch size {batch_size}, num_workers={num_workers}, prefetch_factor=2, persistent_workers=True")
-        print(f"Process {local_rank}: Created DataLoader with batch size {batch_size}, num_workers={num_workers}, prefetch_factor=2, persistent_workers=True")
+            logger.info(f"Process {local_rank}: Created DataLoader with batch size {batch_size} and num_workers={num_workers}")
+        print(f"Process {local_rank}: Created DataLoader with batch size {batch_size} and num_workers={num_workers}")
 
-        # **Debugging the Dataset**
-        debug_dataset(dataloader, tokenizer, num_samples=3)
+        # **Decode and Save Input Samples** (Only for process 0)
+        if local_rank == 0:
+            save_decoded_inputs(dataloader, tokenizer, num_samples=3, rank=local_rank)
+            print("Decoded inputs and labels saved to 'decoded_input.txt'.")
 
         # Find the latest checkpoint if available
         len_dataloader = len(dataloader)
         latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints', len_dataloader=len_dataloader)
 
         # Initialize optimizer and scaler before loading checkpoint
-        optimizer = bnb.optim.AdamW8bit(model.parameters(), lr=5e-5)  # 8-bit AdamW
+        optimizer = bnb.optim.AdamW8bit(filter(lambda p: p.requires_grad, model.parameters()), lr=5e-5)  # 8-bit AdamW with only trainable params
         if enable_logging:
             logger.info("Initialized 8-bit AdamW optimizer")
 
@@ -467,35 +430,41 @@ def main():
         all_require_grad = True
         for name, param in model.module.named_parameters():
             if not param.requires_grad:
-                #print(f"WARNING: Parameter '{name}' does not require grad.")
+                if local_rank == 0:
+                    pass
+                    #print(f"WARNING: Parameter '{name}' does not require grad.")
                 all_require_grad = False
-        if not all_require_grad and enable_logging:
+        if not all_require_grad and enable_logging and local_rank == 0:
             logger.warning("Some parameters do not require gradients.")
 
-        # Training loop with mixed precision and gradient accumulation
-        total_epochs = 2  # Adjust total epochs as needed
+        # Initialize 'epoch' before the loop
+        epoch = loaded_epoch
+        # Set total epochs to 1 as per user request
+        total_epochs = 1  # Adjust total epochs as needed
         model.train()
         for epoch in range(loaded_epoch, total_epochs):
             sampler.set_epoch(epoch)  # Shuffle data differently at each epoch
-            if local_rank == 0 and enable_logging:
+            if enable_logging and local_rank == 0:
                 logger.info(f"Epoch {epoch+1}/{total_epochs} started")
                 print(f"Epoch {epoch+1}/{total_epochs} started")
 
             # Initialize progress bar only for local_rank == 0
             if local_rank == 0:
-                progress_bar = tqdm(dataloader, desc=f"Epoch {epoch+1}", leave=False)
+                progress_bar = tqdm(dataloader, desc=f"Epoch {epoch+1}")
             else:
                 progress_bar = dataloader  # No progress bar for other ranks
 
             # If resuming in the middle of an epoch, skip the first 'loaded_batch_idx' batches
             if epoch == loaded_epoch and loaded_batch_idx > 0:
-                if enable_logging:
+                if enable_logging and local_rank == 0:
                     logger.info(f"Skipping first {loaded_batch_idx} batches of Epoch {epoch+1}")
-                print(f"Skipping first {loaded_batch_idx} batches of Epoch {epoch+1}")
+                if local_rank == 0:
+                    print(f"Skipping first {loaded_batch_idx} batches of Epoch {epoch+1}")
                 dataloader_iter = iter(dataloader)
                 for _ in range(loaded_batch_idx):
                     try:
                         next(dataloader_iter)
+                        next(progress_bar)
                     except StopIteration:
                         break
             else:
@@ -534,24 +503,25 @@ def main():
                         current_loss = accumulated_loss / gradient_accumulation_steps
                         losses.append(current_loss)
                         accumulated_loss = 0.0
-                        progress_bar.set_postfix({'loss': current_loss})
+                        progress_bar.set_postfix({'loss': f"{current_loss:.4f}"})
                         if enable_logging:
                             logger.info(f"Epoch {epoch+1}, Batch {batch_idx+1}/{len(dataloader)} - Loss: {current_loss:.4f}")
 
                     # Save checkpoint every 100 batches
                     if (batch_idx + 1) % 100 == 0 and (batch_idx + 1) <= len(dataloader):
-                        save_checkpoint(
-                            epoch=epoch + 1,
-                            batch_idx=batch_idx + 1,
-                            model=model,
-                            optimizer=optimizer,
-                            scaler=scaler,
-                            losses=losses,
-                            checkpoint_dir=checkpoint_dir,
-                            local_rank=local_rank,
-                            enable_logging=enable_logging,
-                            logger=logger
-                        )
+                        if local_rank == 0:
+                            save_checkpoint(
+                                epoch=epoch + 1,
+                                batch_idx=batch_idx + 1,
+                                model=model,
+                                optimizer=optimizer,
+                                scaler=scaler,
+                                losses=losses,
+                                checkpoint_dir=checkpoint_dir,
+                                local_rank=local_rank,
+                                enable_logging=enable_logging,
+                                logger=logger
+                            )
 
                 # **Free Up Memory by Deleting Unused Variables and Clearing Cache**
                 del loss, outputs

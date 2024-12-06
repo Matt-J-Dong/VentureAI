@@ -264,7 +264,7 @@ def main():
         data = pd.read_csv(data_path)
 
         # Load only the first 1% of the dataset for testing purposes
-        data = data.head(int(len(data) * 0.1))
+        data = data.head(int(len(data) * 1))
         if enable_logging:
             logger.info(f"Loaded {len(data)} samples for training")
         print(f"Loaded {len(data)} samples for training")

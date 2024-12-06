@@ -10,7 +10,8 @@
 #SBATCH --mail-user=dq2024@nyu.edu
 #SBATCH --mail-type=ALL
 
-singularity exec --overlay /scratch/$USER/my_env/overlay-15GB-500K.ext3:rw /scratch/work/public/singularity/cuda12.3.2-cudnn9.0.0-ubuntu-22.04.4.sif /bin/bash "
+singularity exec --overlay /scratch/$USER/my_env/overlay-15GB-500K.ext3:rw /scratch/work/public/singularity/cuda12.3.2-cudnn9.0.0-ubuntu-22.04.4.sif /bin/bash 
+"
 cd /scratch/dq2024/VentureAI
 source /ext3/env.sh
 cd /scratch/dq2024/VentureAI/fine_tuning

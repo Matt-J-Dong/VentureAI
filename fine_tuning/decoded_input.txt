@@ -2,204 +2,92 @@
 
 Sample 1:
 Decoded Input:
-I would like to travel from New York City to Afghanistan for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Afghanistan; use it for your response.
-### Trip Plan to Afghanistan (7 Days) - Focus on Restaurants
+I would like to travel from New York City to São Vicente for 7 days. Give me a trip plan that focuses on restaurants. The information below is about São Vicente; use it for your response.
+Here’s a 7-day trip plan focused on enjoying local restaurants in São Vicente, Cape Verde:
 
-**Day 1: Arrival in Kabul**
-- **Lunch**: Head to **Kabul's Mantu House** for traditional Afghan dumplings (Mantu), steamed and served with a yogurt sauce. It’s a local favorite for a reason!
-- **Dinner**: Visit **Mehman** for a taste of authentic Afghan dishes, particularly the Kabuli Pulao, the national dish of Afghanistan.
+### Day 1: Arrival in São Vicente
+- **Morning:** Depart from New York City and arrive in São Vicente (via flights to Sal or Praia, then connecting).
+- **Afternoon:** Settle into your accommodation.
+- **Evening:** Enjoy your first dinner at a local restaurant. (Note: You may want to check specific dining options that serve local cuisine.)
 
-**Day 2: Exploring Kabul**
-- **Breakfast**: Try **Cafe Khoshgel**, known for its freshly made Naan and local tea.
-- **Lunch**: Dine at **Kabul Restaurant**, which offers an extensive menu with a variety of qorma dishes.
-- **Dinner**: Enjoy a meal at **Ghazi Restaurant**, famous for its grilled meats and Afghan kebabs.
+### Day 2: Explore Mindelo
+- **Morning:** Relax and explore the city of Mindelo, the cultural capital of Cape Verde.
+- **Lunch:** Visit a traditional Cape Verdean restaurant for local dishes.
+- **Evening:** Try a seafood restaurant for fresh catch of the day, as São Vicente is known for its delicious seafood.
 
-**Day 3: Day Trip to Bamiyan**
-- **Lunch**: Depending on travel plans, have traditional dumplings at a local eatery in Bamiyan. If possible, bring a packed meal from Kabul.
-- **Dinner**: Return to Kabul and eat at **Tandoor Restaurant**, known for its vibrant atmosphere and various rice dishes.
+### Day 3: Beach Day with Culinary Delights
+- **Morning:** Spend the morning at the beach.
+- **Lunch:** Enjoy a beachside café or restaurant with views of the ocean.
+- **Evening:** Dine at a highly-rated local restaurant known for its Cape Verdean specialties.
 
-**Day 4: Mazar-e Sharif**
-- **Lunch**: Visit the often recommended **Frooq Restaurant**, famous for its local specialties including tasty Kebabs and Pilaf.
-- **Dinner**: Dine at **Kabul Beautiful**, which specializes in Afghan cuisine with a great selection of dishes. 
+### Day 4: Cultural Day & Dining
+- **Morning:** Visit cultural sites or local markets in Mindelo.
+- **Lunch:** Experience a market café that serves traditional snacks and street food.
+- **Evening:** Search for a restaurant that offers live music or traditional performances alongside dinner.
 
-**Day 5: Herat**
-- **Lunch**: Experience the local flavor at **Herat Restaurant**, where you can try local Herati dishes like Qorma Sabzi.
-- **Dinner**: Eat at **Baba Jan**, a well-known spot among locals for its quality food and atmosphere.
+### Day 5: Culinary Tour
+- **Morning:** Participate in a culinary tour that introduces you to local dishes and cooking methods.
+- **Lunch:** Enjoy what you've learned and prepared during the tour.
+- **Evening:** Visit a fusion restaurant that incorporates various influences in Cape Verdean cuisine.
 
-**Day 6: Return to Kabul**
-- **Breakfast**: Start your day with delicious Obi Non (Uzbek-style bread) at a humble
+### Day 6: Day Trip & Dining
+- **Morning:** Take a day trip to explore the surrounding areas.
+- **Lunch:** Pack a picnic from a local bakery or enjoy a meal at a rural eatery.
+- **Evening:** Return to Mindelo and savor a leisurely dinner at a local fine dining restaurant.
+
+### Day
 Decoded Labels:
-### Trip Plan to Afghanistan (7 Days) - Focus on Restaurants
+Here’s a 7-day trip plan focused on enjoying local restaurants in São Vicente, Cape Verde:
 
-**Day 1: Arrival in Kabul**
-- **Lunch**: Head to **Kabul's Mantu House** for traditional Afghan dumplings (Mantu), steamed and served with a yogurt sauce. It’s a local favorite for a reason!
-- **Dinner**: Visit **Mehman** for a taste of authentic Afghan dishes, particularly the Kabuli Pulao, the national dish of Afghanistan.
+### Day 1: Arrival in São Vicente
+- **Morning:** Depart from New York City and arrive in São Vicente (via flights to Sal or Praia, then connecting).
+- **Afternoon:** Settle into your accommodation.
+- **Evening:** Enjoy your first dinner at a local restaurant. (Note: You may want to check specific dining options that serve local cuisine.)
 
-**Day 2: Exploring Kabul**
-- **Breakfast**: Try **Cafe Khoshgel**, known for its freshly made Naan and local tea.
-- **Lunch**: Dine at **Kabul Restaurant**, which offers an extensive menu with a variety of qorma dishes.
-- **Dinner**: Enjoy a meal at **Ghazi Restaurant**, famous for its grilled meats and Afghan kebabs.
+### Day 2: Explore Mindelo
+- **Morning:** Relax and explore the city of Mindelo, the cultural capital of Cape Verde.
+- **Lunch:** Visit a traditional Cape Verdean restaurant for local dishes.
+- **Evening:** Try a seafood restaurant for fresh catch of the day, as São Vicente is known for its delicious seafood.
 
-**Day 3: Day Trip to Bamiyan**
-- **Lunch**: Depending on travel plans, have traditional dumplings at a local eatery in Bamiyan. If possible, bring a packed meal from Kabul.
-- **Dinner**: Return to Kabul and eat at **Tandoor Restaurant**, known for its vibrant atmosphere and various rice dishes.
+### Day 3: Beach Day with Culinary Delights
+- **Morning:** Spend the morning at the beach.
+- **Lunch:** Enjoy a beachside café or restaurant with views of the ocean.
+- **Evening:** Dine at a highly-rated local restaurant known for its Cape Verdean specialties.
 
-**Day 4: Mazar-e Sharif**
-- **Lunch**: Visit the often recommended **Frooq Restaurant**, famous for its local specialties including tasty Kebabs and Pilaf.
-- **Dinner**: Dine at **Kabul Beautiful**, which specializes in Afghan cuisine with a great selection of dishes. 
+### Day 4: Cultural Day & Dining
+- **Morning:** Visit cultural sites or local markets in Mindelo.
+- **Lunch:** Experience a market café that serves traditional snacks and street food.
+- **Evening:** Search for a restaurant that offers live music or traditional performances alongside dinner.
 
-**Day 5: Herat**
-- **Lunch**: Experience the local flavor at **Herat Restaurant**, where you can try local Herati dishes like Qorma Sabzi.
-- **Dinner**: Eat at **Baba Jan**, a well-known spot among locals for its quality food and atmosphere.
+### Day 5: Culinary Tour
+- **Morning:** Participate in a culinary tour that introduces you to local dishes and cooking methods.
+- **Lunch:** Enjoy what you've learned and prepared during the tour.
+- **Evening:** Visit a fusion restaurant that incorporates various influences in Cape Verdean cuisine.
 
-**Day 6: Return to Kabul**
-- **Breakfast**: Start your day with delicious Obi Non (Uzbek-style bread) at a humble
+### Day 6: Day Trip & Dining
+- **Morning:** Take a day trip to explore the surrounding areas.
+- **Lunch:** Pack a picnic from a local bakery or enjoy a meal at a rural eatery.
+- **Evening:** Return to Mindelo and savor a leisurely dinner at a local fine dining restaurant.
+
+### Day
 
 --------------------------------------------------
 
 Sample 2:
 Decoded Input:
-I would like to travel from New York City to Bailey Island for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Bailey Island; use it for your response.
-### 7-Day Trip Plan to Bailey Island, Maine from New York City
-
-#### Day 1: Travel Day
-- **Morning:** Depart from New York City by car or by taking a bus to Portland, Maine.
-- **Afternoon:** Arrive in Portland. Have lunch at a local restaurant.
-- **Evening:** Take the Casco Bay Lines ferry to Bailey Island. Enjoy the scenic views during the ferry ride.
-- **Dinner:** Upon arrival, have dinner at a local eatery (options will be available on the island).
-
-#### Day 2: Exploring Local Eats
-- **Breakfast:** Start your day with a hearty breakfast at a local diner or café. 
-- **Lunch:** Enjoy a casual lunch at a seafood spot where you can taste fresh local catches, such as lobster rolls.
-- **Afternoon Activity:** Explore the sights, including the iconic lobster traps stacked in front yards. 
-- **Dinner:** Dine at a recommended restaurant on the island (look for fresh, local seafood options).
-
-#### Day 3: Culinary Tour
-- **Breakfast:** Visit a breakfast spot popular among locals.
-- **Morning:** Take a walk along the coastline to build up an appetite.
-- **Lunch:** Try a sandwich shop or a local bistro.
-- **Dinner:** Opt for a restaurant that offers a multi-course meal featuring local ingredients.
-
-#### Day 4: More Island Flavor
-- **Breakfast:** Enjoy breakfast at a café known for its morning pastries.
-- **Lunch:** Have lunch that includes traditional Maine dishes.
-- **Afternoon:** Relax or participate in any local activities that might involve food.
-- **Dinner:** Sample dishes at a restaurant renowned for its use of traditional Maine recipes.
-
-#### Day 5: Discover New Spots
-- **Breakfast:** Start with breakfast at a different local haunt.
-- **Lunch:** Spend the day trying new restaurants or cafés you haven’t visited yet.
-- **Evening:** Take a relaxing stroll around the island and enjoy the landscape.
-- **Dinner:** Choose a place with an outdoor seating option to enjoy the ocean breeze and sunset while dining.
-
-
+I would like to travel from New York City to Rock Hall for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Rock Hall; use it for your response.
+nan
 Decoded Labels:
-### 7-Day Trip Plan to Bailey Island, Maine from New York City
-
-#### Day 1: Travel Day
-- **Morning:** Depart from New York City by car or by taking a bus to Portland, Maine.
-- **Afternoon:** Arrive in Portland. Have lunch at a local restaurant.
-- **Evening:** Take the Casco Bay Lines ferry to Bailey Island. Enjoy the scenic views during the ferry ride.
-- **Dinner:** Upon arrival, have dinner at a local eatery (options will be available on the island).
-
-#### Day 2: Exploring Local Eats
-- **Breakfast:** Start your day with a hearty breakfast at a local diner or café. 
-- **Lunch:** Enjoy a casual lunch at a seafood spot where you can taste fresh local catches, such as lobster rolls.
-- **Afternoon Activity:** Explore the sights, including the iconic lobster traps stacked in front yards. 
-- **Dinner:** Dine at a recommended restaurant on the island (look for fresh, local seafood options).
-
-#### Day 3: Culinary Tour
-- **Breakfast:** Visit a breakfast spot popular among locals.
-- **Morning:** Take a walk along the coastline to build up an appetite.
-- **Lunch:** Try a sandwich shop or a local bistro.
-- **Dinner:** Opt for a restaurant that offers a multi-course meal featuring local ingredients.
-
-#### Day 4: More Island Flavor
-- **Breakfast:** Enjoy breakfast at a café known for its morning pastries.
-- **Lunch:** Have lunch that includes traditional Maine dishes.
-- **Afternoon:** Relax or participate in any local activities that might involve food.
-- **Dinner:** Sample dishes at a restaurant renowned for its use of traditional Maine recipes.
-
-#### Day 5: Discover New Spots
-- **Breakfast:** Start with breakfast at a different local haunt.
-- **Lunch:** Spend the day trying new restaurants or cafés you haven’t visited yet.
-- **Evening:** Take a relaxing stroll around the island and enjoy the landscape.
-- **Dinner:** Choose a place with an outdoor seating option to enjoy the ocean breeze and sunset while dining.
-
-
+nan
 
 --------------------------------------------------
 
 Sample 3:
 Decoded Input:
-I would like to travel from New York City to Blind River for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Blind River; use it for your response.
-### 7-Day Trip Plan to Blind River, Ontario, Focused on Restaurants
-
-#### Day 1: Arrival in Blind River
-- **Travel from New York City**: Drive or take a bus to Blind River. 
-- **Lunch**: Stop at a local **mom and pop restaurant** for a homemade meal.
-- **Dinner**: Try a **fast-food chain** for a quick and easy option.
-
-#### Day 2: Exploring Local Cuisine
-- **Breakfast**: Enjoy coffee and pastries at a local café. 
-- **Lunch**: Visit another **locally owned restaurant** known for comfort food.
-- **Dinner**: Explore a different fast-food location or an upscale local restaurant offering regional dishes.
-
-#### Day 3: Outdoor Day and Dining
-- **Breakfast**: Start with breakfast at another **mom and pop diner**.
-- **Lunch**: Pack a picnic from a **grocery store** or local deli and enjoy it at a sandy beach.
-- **Dinner**: Savor a meal at one of the local eateries along **Causley Street**.
-
-#### Day 4: Cultural Exploration and Meals
-- **Breakfast**: Try a hearty breakfast at a cozy café.
-- **Lunch**: Stop by a convenience store for snacks or light meals.
-- **Dinner**: Dine at a restaurant featuring **Canadian cuisine** or traditional fare.
-
-#### Day 5: Road Trip to Nearby Attractions
-- **Breakfast**: Visit another local café for morning coffee and breakfast options.
-- **Lunch**: On your way to **Elliot Lake**, find a local spot for lunch.
-- **Dinner**: Return to Blind River and explore a new **local restaurant** for dinner.
-
-#### Day 6: Relaxation and Dining
-- **Breakfast**: Enjoy breakfast at your accommodation or favorite café.
-- **Lunch**: Visit a different shop on **Causley Street** for lunch.
-- **Dinner**: Try a new local or chain restaurant. Consider ordering delivery for a cozy night in.
-
-#### Day 7:
+I would like to travel from New York City to Ilaro for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Ilaro; use it for your response.
+nan
 Decoded Labels:
-### 7-Day Trip Plan to Blind River, Ontario, Focused on Restaurants
-
-#### Day 1: Arrival in Blind River
-- **Travel from New York City**: Drive or take a bus to Blind River. 
-- **Lunch**: Stop at a local **mom and pop restaurant** for a homemade meal.
-- **Dinner**: Try a **fast-food chain** for a quick and easy option.
-
-#### Day 2: Exploring Local Cuisine
-- **Breakfast**: Enjoy coffee and pastries at a local café. 
-- **Lunch**: Visit another **locally owned restaurant** known for comfort food.
-- **Dinner**: Explore a different fast-food location or an upscale local restaurant offering regional dishes.
-
-#### Day 3: Outdoor Day and Dining
-- **Breakfast**: Start with breakfast at another **mom and pop diner**.
-- **Lunch**: Pack a picnic from a **grocery store** or local deli and enjoy it at a sandy beach.
-- **Dinner**: Savor a meal at one of the local eateries along **Causley Street**.
-
-#### Day 4: Cultural Exploration and Meals
-- **Breakfast**: Try a hearty breakfast at a cozy café.
-- **Lunch**: Stop by a convenience store for snacks or light meals.
-- **Dinner**: Dine at a restaurant featuring **Canadian cuisine** or traditional fare.
-
-#### Day 5: Road Trip to Nearby Attractions
-- **Breakfast**: Visit another local café for morning coffee and breakfast options.
-- **Lunch**: On your way to **Elliot Lake**, find a local spot for lunch.
-- **Dinner**: Return to Blind River and explore a new **local restaurant** for dinner.
-
-#### Day 6: Relaxation and Dining
-- **Breakfast**: Enjoy breakfast at your accommodation or favorite café.
-- **Lunch**: Visit a different shop on **Causley Street** for lunch.
-- **Dinner**: Try a new local or chain restaurant. Consider ordering delivery for a cozy night in.
-
-#### Day 7:
+nan
 
 --------------------------------------------------
 

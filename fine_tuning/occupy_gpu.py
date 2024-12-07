@@ -359,7 +359,7 @@ def main():
 
         # Find the latest checkpoint if available
         len_dataloader = len(dataloader)
-        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints_falcon7binstruct', len_dataloader=len_dataloader)
+        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints_occupygpu', len_dataloader=len_dataloader)
 
         # Initialize optimizer and scaler before loading checkpoint
         optimizer = bnb.optim.AdamW8bit(filter(lambda p: p.requires_grad, model.parameters()), lr=5e-5)  # 8-bit AdamW with only trainable params
@@ -407,7 +407,7 @@ def main():
         accumulated_loss = 0.0  # To track accumulated loss for logging
 
         # Create checkpoint directory
-        checkpoint_dir = 'checkpoints_falcon7binstruct'
+        checkpoint_dir = 'checkpoints_occupygpu'
         os.makedirs(checkpoint_dir, exist_ok=True)
 
         # Initialize profiler if profiling is enabled

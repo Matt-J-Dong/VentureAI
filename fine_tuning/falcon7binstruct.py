@@ -359,7 +359,7 @@ def main():
 
         # Find the latest checkpoint if available
         len_dataloader = len(dataloader)
-        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints', len_dataloader=len_dataloader)
+        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints_falcon7binstruct', len_dataloader=len_dataloader)
 
         # Initialize optimizer and scaler before loading checkpoint
         optimizer = bnb.optim.AdamW8bit(filter(lambda p: p.requires_grad, model.parameters()), lr=5e-5)  # 8-bit AdamW with only trainable params
@@ -407,7 +407,7 @@ def main():
         accumulated_loss = 0.0  # To track accumulated loss for logging
 
         # Create checkpoint directory
-        checkpoint_dir = 'checkpoints'
+        checkpoint_dir = 'checkpoints_falcon7binstruct'
         os.makedirs(checkpoint_dir, exist_ok=True)
 
         # Initialize profiler if profiling is enabled
@@ -436,7 +436,7 @@ def main():
 
         # Initialize 'epoch' before the loop
         epoch = loaded_epoch
-        # Set total epochs to 1 as per user request
+        # Set total epochs to 3 as per user request
         total_epochs = 3  # Adjust total epochs as needed
         model.train()
         for epoch in range(loaded_epoch, total_epochs):
@@ -445,11 +445,12 @@ def main():
                 logger.info(f"Epoch {epoch+1}/{total_epochs} started")
                 print(f"Epoch {epoch+1}/{total_epochs} started")
 
-            # Initialize progress bar only for local_rank == 0
+            # Initialize progress bar and iterator based on the rank
             if local_rank == 0:
                 progress_bar = tqdm(dataloader, desc=f"Epoch {epoch+1}", leave=False)
+                dataloader_iter = iter(progress_bar)  # Create an iterator from tqdm
             else:
-                progress_bar = dataloader  # No progress bar for other ranks
+                dataloader_iter = iter(dataloader)  # Create a standard iterator for other ranks
 
             # If resuming in the middle of an epoch, skip the first 'loaded_batch_idx' batches
             if epoch == loaded_epoch and loaded_batch_idx > 0:
@@ -459,13 +460,12 @@ def main():
                     print(f"Skipping first {loaded_batch_idx} batches of Epoch {epoch+1}")
                 for _ in range(loaded_batch_idx):
                     try:
-                        if local_rank == 0:
-                            next(progress_bar)
+                        next(dataloader_iter)  # Advance the iterator
                     except StopIteration:
                         break
 
             # Iterate over batches
-            for batch_idx, batch in enumerate(progress_bar, start=loaded_batch_idx if epoch == loaded_epoch else 0):
+            for batch_idx, batch in enumerate(dataloader_iter, start=loaded_batch_idx if epoch == loaded_epoch else 0):
                 optimizer.zero_grad(set_to_none=True)
                 input_ids = batch['input_ids'].to(device, non_blocking=True)
                 attention_mask = batch['attention_mask'].to(device, non_blocking=True)
@@ -560,8 +560,8 @@ def main():
                 logger.info(f"Model saved to {output_dir}")
 
             # Save losses for visualization
-            losses_dir = output_dir + "losses.txt"
-            with open(losses_dir, "w") as f:
+            losses_path = os.path.join(output_dir, "losses.txt")
+            with open(losses_path, "w") as f:
                 f.write("\n".join(map(str, losses)))
             if enable_logging:
                 logger.info("Saved training losses to losses.txt")
@@ -574,8 +574,8 @@ def main():
             plt.title("Training Loss Curve")
             plt.legend()
             plt.grid(True)
-            plot_dir = output_dir + "loss_curve.png"
-            plt.savefig(plot_dir)
+            plot_path = os.path.join(output_dir, "loss_curve.png")
+            plt.savefig(plot_path)
             plt.show()
             if enable_logging:
                 logger.info("Saved training loss curve to loss_curve.png")
@@ -584,10 +584,6 @@ def main():
         if enable_logging and logger is not None:
             logger.error(f"CUDA Out of Memory Error: {e}")
         print(f"CUDA Out of Memory: {e}")
-    except Exception as e:
-        if enable_logging and logger is not None:
-            logger.error(f"An unexpected error occurred: {e}")
-        print(f"An unexpected error occurred: {e}")
     finally:
         dist.destroy_process_group()
         if enable_logging and logger is not None:

@@ -343,7 +343,7 @@ def main():
                 }
 
         # Create the dataset and DistributedSampler
-        batch_size = 4  # Adjust batch size as needed
+        batch_size = 8  # Adjust batch size as needed
         num_workers = 4  # Adjust num_workers as needed
         dataset = PromptResponseDataset(data, tokenizer)
         sampler = DistributedSampler(dataset, shuffle=True, num_replicas=dist.get_world_size(), rank=dist.get_rank())
@@ -359,7 +359,7 @@ def main():
 
         # Find the latest checkpoint if available
         len_dataloader = len(dataloader)
-        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints', len_dataloader=len_dataloader)
+        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints_falcon7b', len_dataloader=len_dataloader)
 
         # Initialize optimizer and scaler before loading checkpoint
         optimizer = bnb.optim.AdamW8bit(filter(lambda p: p.requires_grad, model.parameters()), lr=5e-5)  # 8-bit AdamW with only trainable params
@@ -407,7 +407,7 @@ def main():
         accumulated_loss = 0.0  # To track accumulated loss for logging
 
         # Create checkpoint directory
-        checkpoint_dir = 'checkpoints'
+        checkpoint_dir = 'checkpoints_falcon7b'
         os.makedirs(checkpoint_dir, exist_ok=True)
 
         # Initialize profiler if profiling is enabled
@@ -584,10 +584,6 @@ def main():
         if enable_logging and logger is not None:
             logger.error(f"CUDA Out of Memory Error: {e}")
         print(f"CUDA Out of Memory: {e}")
-    except Exception as e:
-        if enable_logging and logger is not None:
-            logger.error(f"An unexpected error occurred: {e}")
-        print(f"An unexpected error occurred: {e}")
     finally:
         dist.destroy_process_group()
         if enable_logging and logger is not None:

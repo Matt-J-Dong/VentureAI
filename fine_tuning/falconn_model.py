@@ -584,10 +584,6 @@ def main():
         if enable_logging and logger is not None:
             logger.error(f"CUDA Out of Memory Error: {e}")
         print(f"CUDA Out of Memory: {e}")
-    except Exception as e:
-        if enable_logging and logger is not None:
-            logger.error(f"An unexpected error occurred: {e}")
-        print(f"An unexpected error occurred: {e}")
     finally:
         dist.destroy_process_group()
         if enable_logging and logger is not None:

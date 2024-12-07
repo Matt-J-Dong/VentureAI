@@ -1,5 +1,7 @@
 #Checkpoints:
 fine_tuning/checkpoints
+fine_tuning/checkpoints_falcon7b
+fine_tuning/checkpoints_falcon7binstruct
 
 #Autotrain:
 autotrain-test/

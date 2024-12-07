@@ -14,6 +14,15 @@ from peft import LoraConfig, get_peft_model, TaskType
 import logging
 import bitsandbytes as bnb
 import warnings
+import functools  # Needed for partial
+
+# Import FSDP modules
+from torch.distributed.fsdp import FullyShardedDataParallel as FSDP
+from torch.distributed.fsdp.wrap import (
+    auto_wrap,
+    size_based_auto_wrap_policy,
+)
+from torch.distributed.fsdp.fully_sharded_data_parallel import MixedPrecision, ShardingStrategy
 
 def setup_logging(log_file='cuda_memory.txt'):
     """
@@ -44,19 +53,6 @@ def log_cuda_memory(logger, message, enable_logging):
 def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoint_dir='checkpoints', local_rank=0, enable_logging=False, logger=None, max_checkpoints=5):
     """
     Saves a training checkpoint.
-
-    Args:
-        epoch (int): Current epoch number.
-        batch_idx (int): Current batch index.
-        model (torch.nn.Module): The model to save.
-        optimizer (torch.optim.Optimizer): The optimizer.
-        scaler (torch.cuda.amp.GradScaler): The gradient scaler.
-        losses (list): List of recorded losses.
-        checkpoint_dir (str): Directory to save checkpoints.
-        local_rank (int): Rank of the current process.
-        enable_logging (bool): Whether logging is enabled.
-        logger (logging.Logger): Logger instance.
-        max_checkpoints (int): Maximum number of checkpoints to retain.
     """
     if local_rank != 0:
         return  # Only rank 0 saves checkpoints
@@ -67,7 +63,7 @@ def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoi
     checkpoint = {
         'epoch': epoch,
         'batch_idx': batch_idx,
-        'model_state_dict': model.module.state_dict(),
+        'model_state_dict': model.module.state_dict(),  # Access the wrapped model
         'optimizer_state_dict': optimizer.state_dict(),
         'scaler_state_dict': scaler.state_dict(),
         'losses': losses
@@ -103,13 +99,6 @@ def find_latest_checkpoint(checkpoint_dir='checkpoints', len_dataloader=None):
     """
     Finds the latest checkpoint file based on epoch and batch index,
     ensuring that the batch index does not exceed the total number of batches.
-
-    Args:
-        checkpoint_dir (str): Directory containing checkpoint files.
-        len_dataloader (int): Total number of batches in the DataLoader.
-
-    Returns:
-        str or None: Path to the latest valid checkpoint file, or None if none found.
     """
     if not os.path.exists(checkpoint_dir):
         return None
@@ -141,21 +130,6 @@ def find_latest_checkpoint(checkpoint_dir='checkpoints', len_dataloader=None):
 def load_checkpoint(checkpoint_path, model, optimizer, scaler, losses, device, local_rank, enable_logging, logger):
     """
     Loads the checkpoint from the specified path into the model, optimizer, scaler, and losses.
-
-    Args:
-        checkpoint_path (str): Path to the checkpoint file.
-        model (torch.nn.Module): The model.
-        optimizer (torch.optim.Optimizer): The optimizer.
-        scaler (torch.cuda.amp.GradScaler): The gradient scaler.
-        losses (list): The list to append loaded losses.
-        device (torch.device): The device to map the checkpoint.
-        local_rank (int): Rank of the current process.
-        enable_logging (bool): Whether logging is enabled.
-        logger (logging.Logger): Logger instance.
-
-    Returns:
-        epoch (int): Loaded epoch.
-        batch_idx (int): Loaded batch index.
     """
     if local_rank != 0:
         return 0, 0  # Other ranks start from epoch 0, batch 0
@@ -175,7 +149,7 @@ def load_checkpoint(checkpoint_path, model, optimizer, scaler, losses, device, l
         warnings.simplefilter("ignore", category=FutureWarning)
         checkpoint = torch.load(checkpoint_path, map_location=device)
 
-    model.module.load_state_dict(checkpoint['model_state_dict'])
+    model.module.load_state_dict(checkpoint['model_state_dict'])  # Access the wrapped model
     if optimizer is not None:
         optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
     if scaler is not None:
@@ -193,12 +167,6 @@ def load_checkpoint(checkpoint_path, model, optimizer, scaler, losses, device, l
 def save_decoded_inputs(dataloader, tokenizer, num_samples=3, rank=0):
     """
     Saves decoded inputs and labels for a few samples to verify data correctness.
-
-    Args:
-        dataloader (DataLoader): The DataLoader.
-        tokenizer (AutoTokenizer): The tokenizer.
-        num_samples (int): Number of samples to save.
-        rank (int): Process rank.
     """
     if rank != 0:
         return  # Only process 0 performs debugging
@@ -280,10 +248,22 @@ def main():
         if enable_logging:
             logger.info(f"Process {local_rank}: Wrapped model with LoRA")
 
-        # Wrap the model with DistributedDataParallel
-        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[local_rank], output_device=local_rank)
+        # Define a custom auto wrap policy using size_based_auto_wrap_policy
+        my_auto_wrap_policy = functools.partial(
+            size_based_auto_wrap_policy,
+            min_num_params=1e5  # Adjust this threshold as needed
+        )
+
+        # Wrap the model with FSDP using the updated auto wrap policy
+        model = FSDP(
+            model,
+            auto_wrap_policy=my_auto_wrap_policy,
+            sharding_strategy=ShardingStrategy.FULL_SHARD,
+            mixed_precision=MixedPrecision(fp_dtype=torch.float16),
+            device_id=device  # Ensure 'device_id' is correctly set
+        )
         if enable_logging:
-            logger.info(f"Process {local_rank}: Wrapped model with DistributedDataParallel")
+            logger.info(f"Process {local_rank}: Wrapped model with FSDP")
 
         # Read the data from the CSV file
         data_path = '../data_generation/combined_results.csv'
@@ -291,7 +271,7 @@ def main():
             raise FileNotFoundError(f"Data file not found at {data_path}")
         data = pd.read_csv(data_path)
 
-        # Load only the first 1% of the dataset for testing purposes
+        # Load only the first 10% of the dataset for testing purposes
         data = data.head(int(len(data) * 0.1))
         if enable_logging:
             logger.info(f"Loaded {len(data)} samples for training")
@@ -448,8 +428,9 @@ def main():
             # Initialize progress bar only for local_rank == 0
             if local_rank == 0:
                 progress_bar = tqdm(dataloader, desc=f"Epoch {epoch+1}", leave=False)
+                iterable = progress_bar
             else:
-                progress_bar = dataloader  # No progress bar for other ranks
+                iterable = dataloader  # No progress bar for other ranks
 
             # If resuming in the middle of an epoch, skip the first 'loaded_batch_idx' batches
             if epoch == loaded_epoch and loaded_batch_idx > 0:
@@ -460,7 +441,7 @@ def main():
                 dataloader_iter = iter(dataloader)
                 for _ in range(loaded_batch_idx):
                     try:
-                        next(dataloader_iter)
+                        batch = next(dataloader_iter)
                         if local_rank == 0:
                             next(progress_bar)
                     except StopIteration:
@@ -469,7 +450,7 @@ def main():
                 dataloader_iter = iter(dataloader)
 
             # Iterate over batches
-            for batch_idx, batch in enumerate(progress_bar, start=loaded_batch_idx if epoch == loaded_epoch else 0):
+            for batch_idx, batch in enumerate(dataloader_iter, start=loaded_batch_idx if epoch == loaded_epoch else 0):
                 optimizer.zero_grad(set_to_none=True)
                 input_ids = batch['input_ids'].to(device, non_blocking=True)
                 attention_mask = batch['attention_mask'].to(device, non_blocking=True)
@@ -564,7 +545,8 @@ def main():
                 logger.info(f"Model saved to {output_dir}")
 
             # Save losses for visualization
-            with open("losses.txt", "w") as f:
+            losses_path = os.path.join(output_dir, "losses.txt")
+            with open(losses_path, "w") as f:
                 f.write("\n".join(map(str, losses)))
             if enable_logging:
                 logger.info("Saved training losses to losses.txt")
@@ -577,7 +559,8 @@ def main():
             plt.title("Training Loss Curve")
             plt.legend()
             plt.grid(True)
-            plt.savefig("loss_curve.png")
+            plot_path = os.path.join(output_dir, "loss_curve.png")
+            plt.savefig(plot_path)
             plt.show()
             if enable_logging:
                 logger.info("Saved training loss curve to loss_curve.png")

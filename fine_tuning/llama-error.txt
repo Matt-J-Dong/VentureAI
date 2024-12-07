@@ -1,0 +1,119 @@
+
+[notice] A new release of pip is available: 24.0 -> 24.3.1
+[notice] To update, run: pip install --upgrade pip
+.env: line 1: HUGGING_FACE_HUB_TOKEN: command not found
+.env: line 2: OPENAI_API_KEY: command not found
+W1207 04:01:51.943000 3183032 torch/distributed/run.py:793] 
+W1207 04:01:51.943000 3183032 torch/distributed/run.py:793] *****************************************
+W1207 04:01:51.943000 3183032 torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1207 04:01:51.943000 3183032 torch/distributed/run.py:793] *****************************************
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:22<01:08, 22.79s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:22<01:08, 22.80s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:22<01:08, 22.83s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:22<01:08, 22.79s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:46<00:46, 23.23s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:46<00:46, 23.22s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:46<00:46, 23.23s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:46<00:46, 23.24s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [01:09<00:23, 23.05s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [01:09<00:23, 23.05s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [01:09<00:23, 23.05s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [01:09<00:23, 23.05s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 16.00s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 18.60s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 16.01s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 18.59s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 16.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 18.60s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 16.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 18.60s/it]
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 610, in <module>
+[rank2]:     main()
+[rank2]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 296, in main
+[rank2]:     model = get_peft_model(model, lora_config)
+[rank2]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/mapping.py", line 193, in get_peft_model
+[rank2]:     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 1609, in __init__
+[rank2]:     super().__init__(model, peft_config, adapter_name, **kwargs)
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 171, in __init__
+[rank2]:     self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
+[rank2]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/lora/model.py", line 141, in __init__
+[rank2]:     super().__init__(model, config, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 184, in __init__
+[rank2]:     self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 509, in inject_adapter
+[rank2]:     raise ValueError(
+[rank2]: ValueError: Target modules {'query_key_value', 'dense'} not found in the base model. Please check the target modules and try again.
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 610, in <module>
+[rank3]:     main()
+[rank3]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 296, in main
+[rank3]:     model = get_peft_model(model, lora_config)
+[rank3]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/mapping.py", line 193, in get_peft_model
+[rank3]:     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 1609, in __init__
+[rank3]:     super().__init__(model, peft_config, adapter_name, **kwargs)
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 171, in __init__
+[rank3]:     self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
+[rank3]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/lora/model.py", line 141, in __init__
+[rank3]:     super().__init__(model, config, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 184, in __init__
+[rank3]:     self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 509, in inject_adapter
+[rank3]:     raise ValueError(
+[rank3]: ValueError: Target modules {'dense', 'query_key_value'} not found in the base model. Please check the target modules and try again.
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 610, in <module>
+[rank1]:     main()
+[rank1]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 296, in main
+[rank1]:     model = get_peft_model(model, lora_config)
+[rank1]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/mapping.py", line 193, in get_peft_model
+[rank1]:     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 1609, in __init__
+[rank1]:     super().__init__(model, peft_config, adapter_name, **kwargs)
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 171, in __init__
+[rank1]:     self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
+[rank1]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/lora/model.py", line 141, in __init__
+[rank1]:     super().__init__(model, config, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 184, in __init__
+[rank1]:     self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 509, in inject_adapter
+[rank1]:     raise ValueError(
+[rank1]: ValueError: Target modules {'query_key_value', 'dense'} not found in the base model. Please check the target modules and try again.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 610, in <module>
+[rank0]:     main()
+[rank0]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 279, in main
+[rank0]:     with open(modules.txt, "w") as f:
+[rank0]:               ^^^^^^^
+[rank0]: NameError: name 'modules' is not defined. Did you mean: 'module'?
+W1207 04:04:03.689000 3183032 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 3183053 closing signal SIGTERM
+W1207 04:04:03.690000 3183032 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 3183054 closing signal SIGTERM
+W1207 04:04:03.690000 3183032 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 3183055 closing signal SIGTERM
+E1207 04:04:04.181000 3183032 torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 3 (pid: 3183056) of binary: /scratch/mjd9571/VentureAI/myenv/bin/python
+Traceback (most recent call last):
+  File "/scratch/mjd9571/VentureAI/myenv/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/run.py", line 919, in main
+    run(args)
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+llama.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-12-07_04:04:03
+  host      : ga007.hpc.nyu.edu
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 3183056)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

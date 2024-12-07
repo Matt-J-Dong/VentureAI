@@ -14,6 +14,11 @@ from peft import LoraConfig, get_peft_model, TaskType
 import logging
 import bitsandbytes as bnb
 import warnings
+from dotenv import load_dotenv
+
+# Set the environment variable for the Hugging Face token
+load_dotenv()
+os.environ["HUGGING_FACE_HUB_TOKEN"] = os.getenv("HUGGING_FACE_HUB_TOKEN")
 
 def setup_logging(log_file='cuda_memory.txt'):
     """
@@ -246,9 +251,9 @@ def main():
             logger.info(f"Process {local_rank}: Initialized on device {device}")
 
         # Load the model and tokenizer
-        model_name = "meta-llama/Llama-3.1-405B"
+        model_name = "meta-llama/Llama-3.1-8B"
 
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        tokenizer = AutoTokenizer.from_pretrained(model_name, token=True)
         tokenizer.pad_token = tokenizer.eos_token  # Set pad_token to eos_token
 
         if enable_logging:
@@ -266,6 +271,18 @@ def main():
                 device_map={"": device}  # Load the entire model on the specified device
             )
             log_cuda_memory(logger, "After model loading and moving to device", enable_logging)
+
+        # **Save Model Modules for Inspection**
+        output_dir = "./trained_llama"
+        modules_dir = output_dir + "modules.txt"
+        if local_rank == 0:
+            with open(modules.txt, "w") as f:
+                f.write("# Saved Model Modules\n\n")
+                f.write("MODULES = {\n")
+                for name, module in model.named_modules():
+                    f.write(f"    '{name}': '{type(module).__name__}',\n")
+                f.write("}\n")
+            print("Model modules saved to modules.py")
 
         # Configure LoRA
         lora_config = LoraConfig(

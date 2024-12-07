@@ -14,6 +14,11 @@ from peft import LoraConfig, get_peft_model, TaskType
 import logging
 import bitsandbytes as bnb
 import warnings
+from dotenv import load_dotenv
+
+# Set the environment variable for the Hugging Face token
+load_dotenv()
+os.environ["HUGGING_FACE_HUB_TOKEN"] = os.getenv("HUGGING_FACE_HUB_TOKEN")
 
 def setup_logging(log_file='cuda_memory.txt'):
     """
@@ -246,9 +251,9 @@ def main():
             logger.info(f"Process {local_rank}: Initialized on device {device}")
 
         # Load the model and tokenizer
-        model_name = "tiiuae/falcon-7b-instruct"
+        model_name = "meta-llama/Llama-3.1-8B-Instruct"
 
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        tokenizer = AutoTokenizer.from_pretrained(model_name, token=True)
         tokenizer.pad_token = tokenizer.eos_token  # Set pad_token to eos_token
 
         if enable_logging:
@@ -267,17 +272,6 @@ def main():
             )
             log_cuda_memory(logger, "After model loading and moving to device", enable_logging)
 
-        # **Save Model Modules for Inspection**
-        modules_dir = output_dir + "modules.txt"
-        with open(modules_dir, "w") as f:
-            f.write("# Saved Model Modules\n\n")
-            f.write("MODULES = {\n")
-            for name, module in model.named_modules():
-                f.write(f"    '{name}': '{type(module).__name__}',\n")
-            f.write("}\n")
-        print("Model modules saved to modules.py")
-
-        
         # Configure LoRA
         lora_config = LoraConfig(
             r=16,
@@ -303,7 +297,7 @@ def main():
         data = pd.read_csv(data_path)
 
         # Load only the first 1% of the dataset for testing purposes
-        data = data.head(int(len(data) * 0.1))
+        data = data.head(int(len(data) * 1))
         if enable_logging:
             logger.info(f"Loaded {len(data)} samples for training")
         print(f"Loaded {len(data)} samples for training")
@@ -370,7 +364,7 @@ def main():
 
         # Find the latest checkpoint if available
         len_dataloader = len(dataloader)
-        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints', len_dataloader=len_dataloader)
+        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints_falcon7binstruct', len_dataloader=len_dataloader)
 
         # Initialize optimizer and scaler before loading checkpoint
         optimizer = bnb.optim.AdamW8bit(filter(lambda p: p.requires_grad, model.parameters()), lr=5e-5)  # 8-bit AdamW with only trainable params
@@ -418,7 +412,7 @@ def main():
         accumulated_loss = 0.0  # To track accumulated loss for logging
 
         # Create checkpoint directory
-        checkpoint_dir = 'checkpoints'
+        checkpoint_dir = 'checkpoints_llamainstruct'
         os.makedirs(checkpoint_dir, exist_ok=True)
 
         # Initialize profiler if profiling is enabled
@@ -447,8 +441,8 @@ def main():
 
         # Initialize 'epoch' before the loop
         epoch = loaded_epoch
-        # Set total epochs to 1 as per user request
-        total_epochs = 1  # Adjust total epochs as needed
+        # Set total epochs to 3 as per user request
+        total_epochs = 3  # Adjust total epochs as needed
         model.train()
         for epoch in range(loaded_epoch, total_epochs):
             sampler.set_epoch(epoch)  # Shuffle data differently at each epoch
@@ -456,11 +450,12 @@ def main():
                 logger.info(f"Epoch {epoch+1}/{total_epochs} started")
                 print(f"Epoch {epoch+1}/{total_epochs} started")
 
-            # Initialize progress bar only for local_rank == 0
+            # Initialize progress bar and iterator based on the rank
             if local_rank == 0:
                 progress_bar = tqdm(dataloader, desc=f"Epoch {epoch+1}", leave=False)
+                dataloader_iter = iter(progress_bar)  # Create an iterator from tqdm
             else:
-                progress_bar = dataloader  # No progress bar for other ranks
+                dataloader_iter = iter(dataloader)  # Create a standard iterator for other ranks
 
             # If resuming in the middle of an epoch, skip the first 'loaded_batch_idx' batches
             if epoch == loaded_epoch and loaded_batch_idx > 0:
@@ -470,13 +465,12 @@ def main():
                     print(f"Skipping first {loaded_batch_idx} batches of Epoch {epoch+1}")
                 for _ in range(loaded_batch_idx):
                     try:
-                        if local_rank == 0:
-                            next(progress_bar)
+                        next(dataloader_iter)  # Advance the iterator
                     except StopIteration:
                         break
 
             # Iterate over batches
-            for batch_idx, batch in enumerate(progress_bar, start=loaded_batch_idx if epoch == loaded_epoch else 0):
+            for batch_idx, batch in enumerate(dataloader_iter, start=loaded_batch_idx if epoch == loaded_epoch else 0):
                 optimizer.zero_grad(set_to_none=True)
                 input_ids = batch['input_ids'].to(device, non_blocking=True)
                 attention_mask = batch['attention_mask'].to(device, non_blocking=True)
@@ -564,15 +558,15 @@ def main():
                 logger=logger
             )
             # Save the trained model and tokenizer
-            output_dir = "./trained_model"
+            output_dir = "./trained_falcon7binstruct"
             model.module.save_pretrained(output_dir)  # Use model.module when saving
             tokenizer.save_pretrained(output_dir)
             if enable_logging:
                 logger.info(f"Model saved to {output_dir}")
 
             # Save losses for visualization
-            losses_dir = output_dir + "losses.txt"
-            with open(losses_dir, "w") as f:
+            losses_path = os.path.join(output_dir, "losses.txt")
+            with open(losses_path, "w") as f:
                 f.write("\n".join(map(str, losses)))
             if enable_logging:
                 logger.info("Saved training losses to losses.txt")
@@ -585,8 +579,8 @@ def main():
             plt.title("Training Loss Curve")
             plt.legend()
             plt.grid(True)
-            plot_dir = output_dir + "loss_curve.png"
-            plt.savefig(plot_dir)
+            plot_path = os.path.join(output_dir, "loss_curve.png")
+            plt.savefig(plot_path)
             plt.show()
             if enable_logging:
                 logger.info("Saved training loss curve to loss_curve.png")

@@ -20,14 +20,15 @@ def format_cuisines(cuisines):
 def format_entity(entity, category):
     details = [f"Here are the {category}: \\"]
     for name, info in entity.items():
-        details.append(f"{name} \\")
+        #details.append(f"{name} \\")
         #details.append(f"Address: {info.get('address', 'No address provided.')}")
         #details.append(f"Location ID: {info.get('location_id', 'No location ID provided.')}")
         #details.append(f"Description: {info.get('description', 'No description provided.')}")
         if category == "restaurants":
         #     details.append(f"Hours:\n{format_hours(info.get('hours', []))}")
         #     details.append(f"Cuisine: {format_cuisines(info.get('cuisine', []))}")
-            details.append(f"Price Level: {info.get('pice_level', 'No price level specified.')} \\")
+            #details.append(f"Price Level: {info.get('pice_level', 'No price level specified.')} \\")
+            details.append(f"{name} {info.get('pice_level', 'No price level specified.')} \\")
         # elif category == "hotels":
         #     details.append(f"Price Level: {info.get('price_level', 'No price level specified.')}")
         # elif category == "attractions":

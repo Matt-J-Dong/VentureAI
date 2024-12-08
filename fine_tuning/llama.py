@@ -271,8 +271,10 @@ def main():
             log_cuda_memory(logger, "After model loading and moving to device", enable_logging)
 
         # **Save Model Modules for Inspection**
+        output_dir = "./trained_llama"
+        modules_path = os.path.join(output_dir, "modules.txt")
         if local_rank == 0:
-            with open("modules.txt", "w") as f:
+            with open(modules_path, "w") as f:
                 f.write("# Saved Model Modules\n\n")
                 f.write("MODULES = {\n")
                 for name, module in model.named_modules():
@@ -283,11 +285,19 @@ def main():
         # **Synchronize All Processes**
         dist.barrier()  # All processes wait here until rank 0 has written modules.txt
 
-        # Configure LoRA
+        # Configure LoRA with updated target modules based on Llama's architecture
         lora_config = LoraConfig(
             r=16,
             lora_alpha=32,
-            target_modules=["query_key_value", "dense"],  # Adjust based on the model's architecture
+            target_modules=[
+                "self_attn.q_proj",
+                "self_attn.k_proj",
+                "self_attn.v_proj",
+                "self_attn.o_proj",
+                "mlp.gate_proj",
+                "mlp.up_proj",
+                "mlp.down_proj"
+            ],  # Correct module names based on modules.txt
             lora_dropout=0.1,
             bias="none",
             task_type=TaskType.CAUSAL_LM

@@ -41,7 +41,7 @@ def log_cuda_memory(logger, message, enable_logging):
         max_reserved = torch.cuda.max_memory_reserved()
         logger.info(f"{message} | Allocated: {allocated / (1024**2):.2f} MB | Reserved: {reserved / (1024**2):.2f} MB | Max Allocated: {max_allocated / (1024**2):.2f} MB | Max Reserved: {max_reserved / (1024**2):.2f} MB")
 
-def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoint_dir='checkpoints', local_rank=0, enable_logging=False, logger=None, max_checkpoints=5):
+def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoint_dir='checkpoints_falcon7b_2', local_rank=0, enable_logging=False, logger=None, max_checkpoints=5):
     """
     Saves a training checkpoint.
 
@@ -99,7 +99,7 @@ def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoi
             if enable_logging and logger is not None:
                 logger.info(f"Removed old checkpoint: {old_ckpt_path}")
 
-def find_latest_checkpoint(checkpoint_dir='checkpoints', len_dataloader=None):
+def find_latest_checkpoint(checkpoint_dir='checkpoints_falcon7b_2', len_dataloader=None):
     """
     Finds the latest checkpoint file based on epoch and batch index,
     ensuring that the batch index does not exceed the total number of batches.
@@ -203,7 +203,9 @@ def save_decoded_inputs(dataloader, tokenizer, num_samples=3, rank=0):
     if rank != 0:
         return  # Only process 0 performs debugging
 
-    with open("decoded_input.txt", "w") as f:
+    output_dir = "./trained_falcon7b_2"
+    decoded_path = os.path.join(output_dir, "decoded_input.txt")
+    with open(decoded_path, "w") as f:
         f.write("--- Decoded Inputs ---\n\n")
         for i, batch in enumerate(dataloader):
             if i >= num_samples:
@@ -246,7 +248,7 @@ def main():
             logger.info(f"Process {local_rank}: Initialized on device {device}")
 
         # Load the model and tokenizer
-        model_name = "tiiuae/falcon-7b"
+        model_name = "tiiuae/falcon-7b-instruct"
 
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         tokenizer.pad_token = tokenizer.eos_token  # Set pad_token to eos_token
@@ -286,7 +288,7 @@ def main():
             logger.info(f"Process {local_rank}: Wrapped model with DistributedDataParallel")
 
         # Read the data from the CSV file
-        data_path = '../data_generation/combined_results.csv'
+        data_path = '../data_generation/combined_results_cleaned.csv'
         if not os.path.exists(data_path):
             raise FileNotFoundError(f"Data file not found at {data_path}")
         data = pd.read_csv(data_path)
@@ -343,7 +345,7 @@ def main():
                 }
 
         # Create the dataset and DistributedSampler
-        batch_size = 8  # Adjust batch size as needed
+        batch_size = 4  # Adjust batch size as needed
         num_workers = 4  # Adjust num_workers as needed
         dataset = PromptResponseDataset(data, tokenizer)
         sampler = DistributedSampler(dataset, shuffle=True, num_replicas=dist.get_world_size(), rank=dist.get_rank())
@@ -359,7 +361,7 @@ def main():
 
         # Find the latest checkpoint if available
         len_dataloader = len(dataloader)
-        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints_falcon7b', len_dataloader=len_dataloader)
+        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints_falcon7b_2', len_dataloader=len_dataloader)
 
         # Initialize optimizer and scaler before loading checkpoint
         optimizer = bnb.optim.AdamW8bit(filter(lambda p: p.requires_grad, model.parameters()), lr=5e-5)  # 8-bit AdamW with only trainable params
@@ -407,7 +409,7 @@ def main():
         accumulated_loss = 0.0  # To track accumulated loss for logging
 
         # Create checkpoint directory
-        checkpoint_dir = 'checkpoints_falcon7b'
+        checkpoint_dir = 'checkpoints_falcon7b_2'
         os.makedirs(checkpoint_dir, exist_ok=True)
 
         # Initialize profiler if profiling is enabled
@@ -436,7 +438,7 @@ def main():
 
         # Initialize 'epoch' before the loop
         epoch = loaded_epoch
-        # Set total epochs to 1 as per user request
+        # Set total epochs to 3 as per user request
         total_epochs = 3  # Adjust total epochs as needed
         model.train()
         for epoch in range(loaded_epoch, total_epochs):
@@ -445,11 +447,12 @@ def main():
                 logger.info(f"Epoch {epoch+1}/{total_epochs} started")
                 print(f"Epoch {epoch+1}/{total_epochs} started")
 
-            # Initialize progress bar only for local_rank == 0
+            # Initialize progress bar and iterator based on the rank
             if local_rank == 0:
                 progress_bar = tqdm(dataloader, desc=f"Epoch {epoch+1}", leave=False)
+                dataloader_iter = iter(progress_bar)  # Create an iterator from tqdm
             else:
-                progress_bar = dataloader  # No progress bar for other ranks
+                dataloader_iter = iter(dataloader)  # Create a standard iterator for other ranks
 
             # If resuming in the middle of an epoch, skip the first 'loaded_batch_idx' batches
             if epoch == loaded_epoch and loaded_batch_idx > 0:
@@ -459,13 +462,12 @@ def main():
                     print(f"Skipping first {loaded_batch_idx} batches of Epoch {epoch+1}")
                 for _ in range(loaded_batch_idx):
                     try:
-                        if local_rank == 0:
-                            next(progress_bar)
+                        next(dataloader_iter)  # Advance the iterator
                     except StopIteration:
                         break
 
             # Iterate over batches
-            for batch_idx, batch in enumerate(progress_bar, start=loaded_batch_idx if epoch == loaded_epoch else 0):
+            for batch_idx, batch in enumerate(dataloader_iter, start=loaded_batch_idx if epoch == loaded_epoch else 0):
                 optimizer.zero_grad(set_to_none=True)
                 input_ids = batch['input_ids'].to(device, non_blocking=True)
                 attention_mask = batch['attention_mask'].to(device, non_blocking=True)
@@ -553,15 +555,15 @@ def main():
                 logger=logger
             )
             # Save the trained model and tokenizer
-            output_dir = "./trained_falcon7b"
+            output_dir = "./trained_falcon7b_2"
             model.module.save_pretrained(output_dir)  # Use model.module when saving
             tokenizer.save_pretrained(output_dir)
             if enable_logging:
                 logger.info(f"Model saved to {output_dir}")
 
             # Save losses for visualization
-            losses_dir = output_dir + "losses.txt"
-            with open(losses_dir, "w") as f:
+            losses_path = os.path.join(output_dir, "losses.txt")
+            with open(losses_path, "w") as f:
                 f.write("\n".join(map(str, losses)))
             if enable_logging:
                 logger.info("Saved training losses to losses.txt")
@@ -574,8 +576,8 @@ def main():
             plt.title("Training Loss Curve")
             plt.legend()
             plt.grid(True)
-            plot_dir = output_dir + "loss_curve.png"
-            plt.savefig(plot_dir)
+            plot_path = os.path.join(output_dir, "loss_curve.png")
+            plt.savefig(plot_path)
             plt.show()
             if enable_logging:
                 logger.info("Saved training loss curve to loss_curve.png")

@@ -41,7 +41,7 @@ def log_cuda_memory(logger, message, enable_logging):
         max_reserved = torch.cuda.max_memory_reserved()
         logger.info(f"{message} | Allocated: {allocated / (1024**2):.2f} MB | Reserved: {reserved / (1024**2):.2f} MB | Max Allocated: {max_allocated / (1024**2):.2f} MB | Max Reserved: {max_reserved / (1024**2):.2f} MB")
 
-def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoint_dir='checkpoints', local_rank=0, enable_logging=False, logger=None, max_checkpoints=5):
+def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoint_dir='checkpoints_occupygpu', local_rank=0, enable_logging=False, logger=None, max_checkpoints=5):
     """
     Saves a training checkpoint.
 
@@ -292,7 +292,7 @@ def main():
         data = pd.read_csv(data_path)
 
         # Load only the first 1% of the dataset for testing purposes
-        data = data.head(int(len(data) * 1))
+        data = data.head(int(len(data) * 0.1))
         if enable_logging:
             logger.info(f"Loaded {len(data)} samples for training")
         print(f"Loaded {len(data)} samples for training")
@@ -407,7 +407,7 @@ def main():
         accumulated_loss = 0.0  # To track accumulated loss for logging
 
         # Create checkpoint directory
-        checkpoint_dir = 'checkpoints_occupygpu'
+        checkpoint_dir = 'checkpoints'
         os.makedirs(checkpoint_dir, exist_ok=True)
 
         # Initialize profiler if profiling is enabled
@@ -436,8 +436,8 @@ def main():
 
         # Initialize 'epoch' before the loop
         epoch = loaded_epoch
-        # Set total epochs to 3 as per user request
-        total_epochs = 3  # Adjust total epochs as needed
+        # Set total epochs to 1 as per user request
+        total_epochs = 1  # Adjust total epochs as needed
         model.train()
         for epoch in range(loaded_epoch, total_epochs):
             sampler.set_epoch(epoch)  # Shuffle data differently at each epoch
@@ -445,12 +445,11 @@ def main():
                 logger.info(f"Epoch {epoch+1}/{total_epochs} started")
                 print(f"Epoch {epoch+1}/{total_epochs} started")
 
-            # Initialize progress bar and iterator based on the rank
+            # Initialize progress bar only for local_rank == 0
             if local_rank == 0:
                 progress_bar = tqdm(dataloader, desc=f"Epoch {epoch+1}", leave=False)
-                dataloader_iter = iter(progress_bar)  # Create an iterator from tqdm
             else:
-                dataloader_iter = iter(dataloader)  # Create a standard iterator for other ranks
+                progress_bar = dataloader  # No progress bar for other ranks
 
             # If resuming in the middle of an epoch, skip the first 'loaded_batch_idx' batches
             if epoch == loaded_epoch and loaded_batch_idx > 0:
@@ -458,11 +457,16 @@ def main():
                     logger.info(f"Skipping first {loaded_batch_idx} batches of Epoch {epoch+1}")
                 if local_rank == 0:
                     print(f"Skipping first {loaded_batch_idx} batches of Epoch {epoch+1}")
+                dataloader_iter = iter(dataloader)
                 for _ in range(loaded_batch_idx):
                     try:
-                        next(dataloader_iter)  # Advance the iterator
+                        next(dataloader_iter)
+                        if local_rank == 0:
+                            next(progress_bar)
                     except StopIteration:
                         break
+            else:
+                dataloader_iter = iter(dataloader)
 
             # Iterate over batches
             for batch_idx, batch in enumerate(progress_bar, start=loaded_batch_idx if epoch == loaded_epoch else 0):
@@ -553,15 +557,14 @@ def main():
                 logger=logger
             )
             # Save the trained model and tokenizer
-            output_dir = "./trained_falcon7binstruct"
+            output_dir = "./trained_model"
             model.module.save_pretrained(output_dir)  # Use model.module when saving
             tokenizer.save_pretrained(output_dir)
             if enable_logging:
                 logger.info(f"Model saved to {output_dir}")
 
             # Save losses for visualization
-            losses_path = os.path.join(output_dir, "losses.txt")
-            with open(losses_path, "w") as f:
+            with open("losses.txt", "w") as f:
                 f.write("\n".join(map(str, losses)))
             if enable_logging:
                 logger.info("Saved training losses to losses.txt")
@@ -574,8 +577,7 @@ def main():
             plt.title("Training Loss Curve")
             plt.legend()
             plt.grid(True)
-            plot_path = os.path.join(output_dir, "loss_curve.png")
-            plt.savefig(plot_path)
+            plt.savefig("loss_curve.png")
             plt.show()
             if enable_logging:
                 logger.info("Saved training loss curve to loss_curve.png")
@@ -584,6 +586,10 @@ def main():
         if enable_logging and logger is not None:
             logger.error(f"CUDA Out of Memory Error: {e}")
         print(f"CUDA Out of Memory: {e}")
+    except Exception as e:
+        if enable_logging and logger is not None:
+            logger.error(f"An unexpected error occurred: {e}")
+        print(f"An unexpected error occurred: {e}")
     finally:
         dist.destroy_process_group()
         if enable_logging and logger is not None:

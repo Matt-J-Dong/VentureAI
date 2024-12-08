@@ -25,6 +25,7 @@ fine_tuning/log/
 fine_tuning/trained_falcon_7b_8_instruct/
 fine_tuning/trained_falcon7binstruct/
 fine_tuning/trained_falcon7b/
+fine_tuning/trained_llama/
 
 #Personal myenv:
 myenv/

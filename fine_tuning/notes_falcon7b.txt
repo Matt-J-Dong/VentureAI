@@ -1,0 +1,3 @@
+Still likes responding with code to hi prompt
+Putting in the full RAG data leads it to repeat the prompt
+Did work well for no RAG data?

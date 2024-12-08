@@ -251,7 +251,7 @@ def main():
         # Load the model and tokenizer
         model_name = "meta-llama/Llama-3.1-8B"
 
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        tokenizer = AutoTokenizer.from_pretrained(model_name, token = HUGGING_FACE_TOKEN)
         tokenizer.pad_token = tokenizer.eos_token  # Set pad_token to eos_token
 
         if enable_logging:

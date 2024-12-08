@@ -15,6 +15,13 @@ import logging
 import bitsandbytes as bnb
 import warnings
 
+# Load environment variables from .env file
+load_dotenv()
+HUGGING_FACE_TOKEN = os.getenv("HUGGING_FACE_HUB_TOKEN")
+
+if not HUGGING_FACE_TOKEN:
+    raise ValueError("HUGGING_FACE_HUB_TOKEN is not set in the .env file.")
+
 def setup_logging(log_file='cuda_memory.txt'):
     """
     Sets up logging to the specified log_file.
@@ -251,7 +258,7 @@ def main():
         # Load the model and tokenizer
         model_name = "meta-llama/Llama-3.1-8B-Instruct"
 
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        tokenizer = AutoTokenizer.from_pretrained(model_name, token = HUGGING_FACE_TOKEN)
         tokenizer.pad_token = tokenizer.eos_token  # Set pad_token to eos_token
 
         if enable_logging:

@@ -14,7 +14,15 @@ from peft import LoraConfig, get_peft_model, TaskType
 import logging
 import bitsandbytes as bnb
 import warnings
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
+HUGGING_FACE_TOKEN = os.getenv("HUGGING_FACE_HUB_TOKEN")
+
+if not HUGGING_FACE_TOKEN:
+    raise ValueError("HUGGING_FACE_HUB_TOKEN is not set in the .env file.")
+    
 def setup_logging(log_file='cuda_memory.txt'):
     """
     Sets up logging to the specified log_file.

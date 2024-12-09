@@ -14,6 +14,7 @@ from peft import LoraConfig, get_peft_model, TaskType
 import logging
 import bitsandbytes as bnb
 import warnings
+from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()

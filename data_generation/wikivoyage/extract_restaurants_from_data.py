@@ -303,6 +303,7 @@ def extract_restaurants(text):
         and not match.lower().startswith("the check")
         and not match.lower().startswith("specific")
         and not match.lower().startswith("diving")
+        and not match.lower().startswith("have")
         
 
         

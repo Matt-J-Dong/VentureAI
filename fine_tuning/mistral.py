@@ -14,7 +14,15 @@ from peft import LoraConfig, get_peft_model, TaskType
 import logging
 import bitsandbytes as bnb
 import warnings
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
+HUGGING_FACE_TOKEN = os.getenv("HUGGING_FACE_HUB_TOKEN")
+
+if not HUGGING_FACE_TOKEN:
+    raise ValueError("HUGGING_FACE_HUB_TOKEN is not set in the .env file.")
+    
 def setup_logging(log_file='cuda_memory.txt'):
     """
     Sets up logging to the specified log_file.
@@ -41,7 +49,7 @@ def log_cuda_memory(logger, message, enable_logging):
         max_reserved = torch.cuda.max_memory_reserved()
         logger.info(f"{message} | Allocated: {allocated / (1024**2):.2f} MB | Reserved: {reserved / (1024**2):.2f} MB | Max Allocated: {max_allocated / (1024**2):.2f} MB | Max Reserved: {max_reserved / (1024**2):.2f} MB")
 
-def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoint_dir='checkpoints', local_rank=0, enable_logging=False, logger=None, max_checkpoints=5):
+def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoint_dir='checkpoints_mistral', local_rank=0, enable_logging=False, logger=None, max_checkpoints=5):
     """
     Saves a training checkpoint.
 
@@ -99,7 +107,7 @@ def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoi
             if enable_logging and logger is not None:
                 logger.info(f"Removed old checkpoint: {old_ckpt_path}")
 
-def find_latest_checkpoint(checkpoint_dir='checkpoints', len_dataloader=None):
+def find_latest_checkpoint(checkpoint_dir='checkpoints_mistral', len_dataloader=None):
     """
     Finds the latest checkpoint file based on epoch and batch index,
     ensuring that the batch index does not exceed the total number of batches.
@@ -203,7 +211,9 @@ def save_decoded_inputs(dataloader, tokenizer, num_samples=3, rank=0):
     if rank != 0:
         return  # Only process 0 performs debugging
 
-    with open("decoded_input.txt", "w") as f:
+    output_dir = "./trained_mistral"
+    decoded_path = os.path.join(output_dir, "decoded_input.txt")
+    with open(decoded_path, "w") as f:
         f.write("--- Decoded Inputs ---\n\n")
         for i, batch in enumerate(dataloader):
             if i >= num_samples:
@@ -220,6 +230,7 @@ def save_decoded_inputs(dataloader, tokenizer, num_samples=3, rank=0):
             f.write("\n" + "-"*50 + "\n\n")
 
 def main():
+    output_dir = "./trained_mistral"
     parser = argparse.ArgumentParser()
     parser.add_argument('--local_rank', type=int, default=int(os.environ.get('LOCAL_RANK', 0)))
     args = parser.parse_args()
@@ -246,9 +257,9 @@ def main():
             logger.info(f"Process {local_rank}: Initialized on device {device}")
 
         # Load the model and tokenizer
-        model_name = "mistralai/Mistral-Nemo-Base-2407"
+        model_name = "mistralai/Ministral-8B-Instruct-2410"
 
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        tokenizer = AutoTokenizer.from_pretrained(model_name, token = HUGGING_FACE_TOKEN)
         tokenizer.pad_token = tokenizer.eos_token  # Set pad_token to eos_token
 
         if enable_logging:
@@ -267,11 +278,34 @@ def main():
             )
             log_cuda_memory(logger, "After model loading and moving to device", enable_logging)
 
-        # Configure LoRA
+        # **Save Model Modules for Inspection**
+        output_dir = "./trained_mistral"
+        modules_path = os.path.join(output_dir, "modules.txt")
+        if local_rank == 0:
+            with open(modules_path, "w") as f:
+                f.write("# Saved Model Modules\n\n")
+                f.write("MODULES = {\n")
+                for name, module in model.named_modules():
+                    f.write(f"    '{name}': '{type(module).__name__}',\n")
+                f.write("}\n")
+            print("Model modules saved to modules.txt")
+
+        # **Synchronize All Processes**
+        dist.barrier()  # All processes wait here until rank 0 has written modules.txt
+
+        # Configure LoRA with updated target modules based on Llama's architecture
         lora_config = LoraConfig(
             r=16,
             lora_alpha=32,
-            target_modules=["query_key_value", "dense"],  # Adjust based on the model's architecture
+            target_modules=[
+                "self_attn.q_proj",
+                "self_attn.k_proj",
+                "self_attn.v_proj",
+                "self_attn.o_proj",
+                "mlp.gate_proj",
+                "mlp.up_proj",
+                "mlp.down_proj"
+            ],  # Correct module names based on modules.txt
             lora_dropout=0.1,
             bias="none",
             task_type=TaskType.CAUSAL_LM
@@ -286,7 +320,7 @@ def main():
             logger.info(f"Process {local_rank}: Wrapped model with DistributedDataParallel")
 
         # Read the data from the CSV file
-        data_path = '../data_generation/combined_results.csv'
+        data_path = '../data_generation/combined_results_cleaned.csv'
         if not os.path.exists(data_path):
             raise FileNotFoundError(f"Data file not found at {data_path}")
         data = pd.read_csv(data_path)
@@ -359,7 +393,7 @@ def main():
 
         # Find the latest checkpoint if available
         len_dataloader = len(dataloader)
-        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints_falcon7binstruct', len_dataloader=len_dataloader)
+        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints_mistral', len_dataloader=len_dataloader)
 
         # Initialize optimizer and scaler before loading checkpoint
         optimizer = bnb.optim.AdamW8bit(filter(lambda p: p.requires_grad, model.parameters()), lr=5e-5)  # 8-bit AdamW with only trainable params
@@ -553,7 +587,7 @@ def main():
                 logger=logger
             )
             # Save the trained model and tokenizer
-            output_dir = "./trained_falcon7binstruct"
+            output_dir = "./trained_mistral"
             model.module.save_pretrained(output_dir)  # Use model.module when saving
             tokenizer.save_pretrained(output_dir)
             if enable_logging:

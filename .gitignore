@@ -32,6 +32,7 @@ fine_tuning/trained_llama/
 fine_tuning/trained_falcon7binstruct_2/
 fine_tuning/trained_falcon7b_2/
 fine_tuning/trained_llamainstruct/
+fine_tuning/trained_mistral/
 
 #Personal myenv:
 myenv/

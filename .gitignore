@@ -7,6 +7,11 @@ fine_tuning/checkpoints_mistral
 fine_tuning/checkpoints_falcon7b_2
 fine_tuning/checkpoints_falcon7binstruct_2
 fine_tuning/checkpoints_llamainstruct
+fine_tuning/checkpoints_llama_2
+fine_tuning/checkpoints_mistral_2
+fine_tuning/checkpoints_falcon7b_3
+fine_tuning/checkpoints_falcon7binstruct_3
+fine_tuning/checkpoints_llamainstruct_2
 
 #Autotrain:
 autotrain-test/
@@ -33,6 +38,13 @@ fine_tuning/trained_falcon7binstruct_2/
 fine_tuning/trained_falcon7b_2/
 fine_tuning/trained_llamainstruct/
 fine_tuning/trained_mistral/
+fine_tuning/trained_llama_2/
+fine_tuning/trained_falcon7binstruct_3/
+fine_tuning/trained_falcon7b_3/
+fine_tuning/trained_llamainstruct_2/
+fine_tuning/trained_mistral_2/
+fine_tuning/trained_falcon40binstruct/
+fine_tuning/trained_falcon40b/
 
 #Personal myenv:
 myenv/

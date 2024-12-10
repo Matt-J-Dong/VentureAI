@@ -41,7 +41,7 @@ def log_cuda_memory(logger, message, enable_logging):
         max_reserved = torch.cuda.max_memory_reserved()
         logger.info(f"{message} | Allocated: {allocated / (1024**2):.2f} MB | Reserved: {reserved / (1024**2):.2f} MB | Max Allocated: {max_allocated / (1024**2):.2f} MB | Max Reserved: {max_reserved / (1024**2):.2f} MB")
 
-def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoint_dir='checkpoints_falcon7binstruct_2', local_rank=0, enable_logging=False, logger=None, max_checkpoints=5):
+def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoint_dir='checkpoints_falcon7binstruct_3', local_rank=0, enable_logging=False, logger=None, max_checkpoints=5):
     """
     Saves a training checkpoint.
 
@@ -99,7 +99,7 @@ def save_checkpoint(epoch, batch_idx, model, optimizer, scaler, losses, checkpoi
             if enable_logging and logger is not None:
                 logger.info(f"Removed old checkpoint: {old_ckpt_path}")
 
-def find_latest_checkpoint(checkpoint_dir='checkpoints_falcon7binstruct_2', len_dataloader=None):
+def find_latest_checkpoint(checkpoint_dir='checkpoints_falcon7binstruct_3', len_dataloader=None):
     """
     Finds the latest checkpoint file based on epoch and batch index,
     ensuring that the batch index does not exceed the total number of batches.
@@ -203,7 +203,7 @@ def save_decoded_inputs(dataloader, tokenizer, num_samples=3, rank=0):
     if rank != 0:
         return  # Only process 0 performs debugging
 
-    output_dir = "./trained_falcon7binstruct_2"
+    output_dir = "./trained_falcon7binstruct_3"
     decoded_path = os.path.join(output_dir, "decoded_input.txt")
     with open(decoded_path, "w") as f:
         f.write("--- Decoded Inputs ---\n\n")
@@ -222,7 +222,7 @@ def save_decoded_inputs(dataloader, tokenizer, num_samples=3, rank=0):
             f.write("\n" + "-"*50 + "\n\n")
 
 def main():
-    output_dir = "./trained_falcon7binstruct_2"
+    output_dir = "./trained_falcon7binstruct_3"
     parser = argparse.ArgumentParser()
     parser.add_argument('--local_rank', type=int, default=int(os.environ.get('LOCAL_RANK', 0)))
     args = parser.parse_args()
@@ -289,7 +289,7 @@ def main():
             logger.info(f"Process {local_rank}: Wrapped model with DistributedDataParallel")
 
         # Read the data from the CSV file
-        data_path = '../data_generation/combined_results_cleaned.csv'
+        data_path = '../data_generation/output_with_restaurants_cleaned.csv'
         if not os.path.exists(data_path):
             raise FileNotFoundError(f"Data file not found at {data_path}")
         data = pd.read_csv(data_path)
@@ -362,7 +362,7 @@ def main():
 
         # Find the latest checkpoint if available
         len_dataloader = len(dataloader)
-        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints_falcon7binstruct_2', len_dataloader=len_dataloader)
+        latest_checkpoint_path = find_latest_checkpoint(checkpoint_dir='checkpoints_falcon7binstruct_3', len_dataloader=len_dataloader)
 
         # Initialize optimizer and scaler before loading checkpoint
         optimizer = bnb.optim.AdamW8bit(filter(lambda p: p.requires_grad, model.parameters()), lr=5e-5)  # 8-bit AdamW with only trainable params
@@ -410,7 +410,7 @@ def main():
         accumulated_loss = 0.0  # To track accumulated loss for logging
 
         # Create checkpoint directory
-        checkpoint_dir = 'checkpoints_falcon7binstruct_2'
+        checkpoint_dir = 'checkpoints_falcon7binstruct_3'
         os.makedirs(checkpoint_dir, exist_ok=True)
 
         # Initialize profiler if profiling is enabled
@@ -556,7 +556,7 @@ def main():
                 logger=logger
             )
             # Save the trained model and tokenizer
-            output_dir = "./trained_falcon7binstruct_2"
+            output_dir = "./trained_falcon7binstruct_3"
             model.module.save_pretrained(output_dir)  # Use model.module when saving
             tokenizer.save_pretrained(output_dir)
             if enable_logging:

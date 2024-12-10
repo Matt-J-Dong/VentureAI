@@ -288,7 +288,7 @@ def main():
             logger.info(f"Process {local_rank}: Wrapped model with DistributedDataParallel")
 
         # Read the data from the CSV file
-        data_path = '../data_generation/combined_results_cleaned.csv'
+        data_path = '../data_generation/output_with_restaurants_cleaned.csv'
         if not os.path.exists(data_path):
             raise FileNotFoundError(f"Data file not found at {data_path}")
         data = pd.read_csv(data_path)
@@ -555,7 +555,7 @@ def main():
                 logger=logger
             )
             # Save the trained model and tokenizer
-            output_dir = "./trained_falcon7binstruct"
+            output_dir = "./trained_falcon40binstruct"
             model.module.save_pretrained(output_dir)  # Use model.module when saving
             tokenizer.save_pretrained(output_dir)
             if enable_logging:

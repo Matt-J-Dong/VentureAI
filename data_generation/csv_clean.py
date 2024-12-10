@@ -23,7 +23,7 @@ def remove_asterisks_from_csv(input_file, output_file):
         print(f"Error processing the file: {e}")
 
 # Usage example
-input_file = "combined_results.csv"  # Replace with the path to your input file
-output_file = "combined_results_cleaned.csv"  # Replace with the desired output file path
+input_file = "output_with_restaurants.csv"  # Replace with the path to your input file
+output_file = "output_with_restaurants_cleaned.csv"  # Replace with the desired output file path
 
 remove_asterisks_from_csv(input_file, output_file)

@@ -1,102 +1,265 @@
 
 [notice] A new release of pip is available: 24.0 -> 24.3.1
 [notice] To update, run: pip install --upgrade pip
-W1207 02:43:12.265000 1492834 torch/distributed/run.py:793] 
-W1207 02:43:12.265000 1492834 torch/distributed/run.py:793] *****************************************
-W1207 02:43:12.265000 1492834 torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W1207 02:43:12.265000 1492834 torch/distributed/run.py:793] *****************************************
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:21<01:26, 21.60s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:21<01:26, 21.55s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:21<01:26, 21.54s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:21<01:26, 21.54s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:43<01:05, 21.84s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:43<01:05, 21.82s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:43<01:05, 21.81s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:43<01:05, 21.82s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:05<00:43, 21.73s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:05<00:43, 21.75s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:05<00:43, 21.73s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:05<00:43, 21.73s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:27<00:21, 21.84s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:27<00:21, 21.85s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:27<00:21, 21.84s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:27<00:21, 21.85s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:47<00:00, 21.25s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:47<00:00, 21.48s/it]
-Loading checkpoint shards: 100%|██████████| 5/5 [01:47<00:00, 21.29s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:47<00:00, 21.50s/it]
-Loading checkpoint shards: 100%|██████████| 5/5 [01:47<00:00, 21.31s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:47<00:00, 21.52s/it]
-Loading checkpoint shards: 100%|██████████| 5/5 [01:47<00:00, 21.31s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:47<00:00, 21.51s/it]
-[rank2]: Traceback (most recent call last):
-[rank2]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 593, in <module>
-[rank2]:     main()
-[rank2]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 279, in main
-[rank2]:     model = get_peft_model(model, lora_config)
-[rank2]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/mapping.py", line 193, in get_peft_model
-[rank2]:     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
-[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 1609, in __init__
-[rank2]:     super().__init__(model, peft_config, adapter_name, **kwargs)
-[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 171, in __init__
-[rank2]:     self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
-[rank2]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/lora/model.py", line 141, in __init__
-[rank2]:     super().__init__(model, config, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
-[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 184, in __init__
-[rank2]:     self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
-[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 509, in inject_adapter
-[rank2]:     raise ValueError(
-[rank2]: ValueError: Target modules {'query_key_value', 'dense'} not found in the base model. Please check the target modules and try again.
+.env: line 1: HUGGING_FACE_HUB_TOKEN: command not found
+.env: line 2: OPENAI_API_KEY: command not found
+W1210 03:02:02.534000 2303512 torch/distributed/run.py:793] 
+W1210 03:02:02.534000 2303512 torch/distributed/run.py:793] *****************************************
+W1210 03:02:02.534000 2303512 torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1210 03:02:02.534000 2303512 torch/distributed/run.py:793] *****************************************
 [rank0]: Traceback (most recent call last):
-[rank0]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 593, in <module>
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 406, in hf_raise_for_status
+[rank0]:     response.raise_for_status()
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/requests/models.py", line 1024, in raise_for_status
+[rank0]:     raise HTTPError(http_error_msg, response=self)
+[rank0]: requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://huggingface.co/mistral_2ai/Ministral-8B-Instruct-2410/resolve/main/tokenizer_config.json
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 403, in cached_file
+[rank0]:     resolved_file = hf_hub_download(
+[rank0]:                     ^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+[rank0]:     return _hf_hub_download_to_cache_dir(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 969, in _hf_hub_download_to_cache_dir
+[rank0]:     _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1484, in _raise_on_head_call_error
+[rank0]:     raise head_call_error
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1376, in _get_metadata_or_catch_error
+[rank0]:     metadata = get_hf_file_metadata(
+[rank0]:                ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1296, in get_hf_file_metadata
+[rank0]:     r = _request_wrapper(
+[rank0]:         ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 277, in _request_wrapper
+[rank0]:     response = _request_wrapper(
+[rank0]:                ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 301, in _request_wrapper
+[rank0]:     hf_raise_for_status(response)
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 454, in hf_raise_for_status
+[rank0]:     raise _format(RepositoryNotFoundError, message, response) from e
+[rank0]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-6757f5a7-2031085f6814bc1c2b2c63f1;0c8863f3-dc13-4d40-b19f-05ca84a33e15)
+
+[rank0]: Repository Not Found for url: https://huggingface.co/mistral_2ai/Ministral-8B-Instruct-2410/resolve/main/tokenizer_config.json.
+[rank0]: Please make sure you specified the correct `repo_id` and `repo_type`.
+[rank0]: If you are trying to access a private or gated repo, make sure you are authenticated.
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 627, in <module>
 [rank0]:     main()
-[rank0]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 279, in main
-[rank0]:     model = get_peft_model(model, lora_config)
-[rank0]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/mapping.py", line 193, in get_peft_model
-[rank0]:     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
-[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 1609, in __init__
-[rank0]:     super().__init__(model, peft_config, adapter_name, **kwargs)
-[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 171, in __init__
-[rank0]:     self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
-[rank0]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/lora/model.py", line 141, in __init__
-[rank0]:     super().__init__(model, config, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
-[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 184, in __init__
-[rank0]:     self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
-[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 509, in inject_adapter
-[rank0]:     raise ValueError(
-[rank0]: ValueError: Target modules {'query_key_value', 'dense'} not found in the base model. Please check the target modules and try again.
+[rank0]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 262, in main
+[rank0]:     tokenizer = AutoTokenizer.from_pretrained(model_name, token = HUGGING_FACE_TOKEN)
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 857, in from_pretrained
+[rank0]:     tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in get_tokenizer_config
+[rank0]:     resolved_config_file = cached_file(
+[rank0]:                            ^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 426, in cached_file
+[rank0]:     raise EnvironmentError(
+[rank0]: OSError: mistral_2ai/Ministral-8B-Instruct-2410 is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+[rank0]: If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
 [rank3]: Traceback (most recent call last):
-[rank3]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 593, in <module>
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 406, in hf_raise_for_status
+[rank3]:     response.raise_for_status()
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/requests/models.py", line 1024, in raise_for_status
+[rank3]:     raise HTTPError(http_error_msg, response=self)
+[rank3]: requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://huggingface.co/mistral_2ai/Ministral-8B-Instruct-2410/resolve/main/tokenizer_config.json
+
+[rank3]: The above exception was the direct cause of the following exception:
+
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 403, in cached_file
+[rank3]:     resolved_file = hf_hub_download(
+[rank3]:                     ^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank3]:     return fn(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+[rank3]:     return _hf_hub_download_to_cache_dir(
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 969, in _hf_hub_download_to_cache_dir
+[rank3]:     _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1484, in _raise_on_head_call_error
+[rank3]:     raise head_call_error
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1376, in _get_metadata_or_catch_error
+[rank3]:     metadata = get_hf_file_metadata(
+[rank3]:                ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank3]:     return fn(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1296, in get_hf_file_metadata
+[rank3]:     r = _request_wrapper(
+[rank3]:         ^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 277, in _request_wrapper
+[rank3]:     response = _request_wrapper(
+[rank3]:                ^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 301, in _request_wrapper
+[rank3]:     hf_raise_for_status(response)
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 454, in hf_raise_for_status
+[rank3]:     raise _format(RepositoryNotFoundError, message, response) from e
+[rank3]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-6757f5a7-746cfb9f05a03e9c1dcae5c7;8d0001dd-3a46-440a-b832-6c5e4d56d8cf)
+
+[rank3]: Repository Not Found for url: https://huggingface.co/mistral_2ai/Ministral-8B-Instruct-2410/resolve/main/tokenizer_config.json.
+[rank3]: Please make sure you specified the correct `repo_id` and `repo_type`.
+[rank3]: If you are trying to access a private or gated repo, make sure you are authenticated.
+
+[rank3]: The above exception was the direct cause of the following exception:
+
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 627, in <module>
 [rank3]:     main()
-[rank3]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 279, in main
-[rank3]:     model = get_peft_model(model, lora_config)
-[rank3]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/mapping.py", line 193, in get_peft_model
-[rank3]:     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
-[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 1609, in __init__
-[rank3]:     super().__init__(model, peft_config, adapter_name, **kwargs)
-[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 171, in __init__
-[rank3]:     self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
-[rank3]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/lora/model.py", line 141, in __init__
-[rank3]:     super().__init__(model, config, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
-[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 184, in __init__
-[rank3]:     self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
-[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 509, in inject_adapter
-[rank3]:     raise ValueError(
-[rank3]: ValueError: Target modules {'dense', 'query_key_value'} not found in the base model. Please check the target modules and try again.
+[rank3]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 262, in main
+[rank3]:     tokenizer = AutoTokenizer.from_pretrained(model_name, token = HUGGING_FACE_TOKEN)
+[rank3]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 857, in from_pretrained
+[rank3]:     tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+[rank3]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in get_tokenizer_config
+[rank3]:     resolved_config_file = cached_file(
+[rank3]:                            ^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 426, in cached_file
+[rank3]:     raise EnvironmentError(
+[rank3]: OSError: mistral_2ai/Ministral-8B-Instruct-2410 is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+[rank3]: If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 406, in hf_raise_for_status
+[rank2]:     response.raise_for_status()
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/requests/models.py", line 1024, in raise_for_status
+[rank2]:     raise HTTPError(http_error_msg, response=self)
+[rank2]: requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://huggingface.co/mistral_2ai/Ministral-8B-Instruct-2410/resolve/main/tokenizer_config.json
+
+[rank2]: The above exception was the direct cause of the following exception:
+
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 403, in cached_file
+[rank2]:     resolved_file = hf_hub_download(
+[rank2]:                     ^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank2]:     return fn(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+[rank2]:     return _hf_hub_download_to_cache_dir(
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 969, in _hf_hub_download_to_cache_dir
+[rank2]:     _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1484, in _raise_on_head_call_error
+[rank2]:     raise head_call_error
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1376, in _get_metadata_or_catch_error
+[rank2]:     metadata = get_hf_file_metadata(
+[rank2]:                ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank2]:     return fn(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1296, in get_hf_file_metadata
+[rank2]:     r = _request_wrapper(
+[rank2]:         ^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 277, in _request_wrapper
+[rank2]:     response = _request_wrapper(
+[rank2]:                ^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 301, in _request_wrapper
+[rank2]:     hf_raise_for_status(response)
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 454, in hf_raise_for_status
+[rank2]:     raise _format(RepositoryNotFoundError, message, response) from e
+[rank2]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-6757f5a7-4c3587d948213c195952704c;13750540-8ffa-496f-b716-969387821abe)
+
+[rank2]: Repository Not Found for url: https://huggingface.co/mistral_2ai/Ministral-8B-Instruct-2410/resolve/main/tokenizer_config.json.
+[rank2]: Please make sure you specified the correct `repo_id` and `repo_type`.
+[rank2]: If you are trying to access a private or gated repo, make sure you are authenticated.
+
+[rank2]: The above exception was the direct cause of the following exception:
+
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 627, in <module>
+[rank2]:     main()
+[rank2]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 262, in main
+[rank2]:     tokenizer = AutoTokenizer.from_pretrained(model_name, token = HUGGING_FACE_TOKEN)
+[rank2]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 857, in from_pretrained
+[rank2]:     tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+[rank2]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in get_tokenizer_config
+[rank2]:     resolved_config_file = cached_file(
+[rank2]:                            ^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 426, in cached_file
+[rank2]:     raise EnvironmentError(
+[rank2]: OSError: mistral_2ai/Ministral-8B-Instruct-2410 is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+[rank2]: If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
 [rank1]: Traceback (most recent call last):
-[rank1]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 593, in <module>
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 406, in hf_raise_for_status
+[rank1]:     response.raise_for_status()
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/requests/models.py", line 1024, in raise_for_status
+[rank1]:     raise HTTPError(http_error_msg, response=self)
+[rank1]: requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://huggingface.co/mistral_2ai/Ministral-8B-Instruct-2410/resolve/main/tokenizer_config.json
+
+[rank1]: The above exception was the direct cause of the following exception:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 403, in cached_file
+[rank1]:     resolved_file = hf_hub_download(
+[rank1]:                     ^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank1]:     return fn(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+[rank1]:     return _hf_hub_download_to_cache_dir(
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 969, in _hf_hub_download_to_cache_dir
+[rank1]:     _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1484, in _raise_on_head_call_error
+[rank1]:     raise head_call_error
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1376, in _get_metadata_or_catch_error
+[rank1]:     metadata = get_hf_file_metadata(
+[rank1]:                ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank1]:     return fn(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1296, in get_hf_file_metadata
+[rank1]:     r = _request_wrapper(
+[rank1]:         ^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 277, in _request_wrapper
+[rank1]:     response = _request_wrapper(
+[rank1]:                ^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 301, in _request_wrapper
+[rank1]:     hf_raise_for_status(response)
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 454, in hf_raise_for_status
+[rank1]:     raise _format(RepositoryNotFoundError, message, response) from e
+[rank1]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-6757f5a7-649023ce0da3bb7331181d89;abf27638-204b-4054-98f1-60b02ced4fba)
+
+[rank1]: Repository Not Found for url: https://huggingface.co/mistral_2ai/Ministral-8B-Instruct-2410/resolve/main/tokenizer_config.json.
+[rank1]: Please make sure you specified the correct `repo_id` and `repo_type`.
+[rank1]: If you are trying to access a private or gated repo, make sure you are authenticated.
+
+[rank1]: The above exception was the direct cause of the following exception:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 627, in <module>
 [rank1]:     main()
-[rank1]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 279, in main
-[rank1]:     model = get_peft_model(model, lora_config)
-[rank1]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/mapping.py", line 193, in get_peft_model
-[rank1]:     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 1609, in __init__
-[rank1]:     super().__init__(model, peft_config, adapter_name, **kwargs)
-[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 171, in __init__
-[rank1]:     self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
-[rank1]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/lora/model.py", line 141, in __init__
-[rank1]:     super().__init__(model, config, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
-[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 184, in __init__
-[rank1]:     self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
-[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 509, in inject_adapter
-[rank1]:     raise ValueError(
-[rank1]: ValueError: Target modules {'dense', 'query_key_value'} not found in the base model. Please check the target modules and try again.
-W1207 02:45:06.287000 1492834 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 1492840 closing signal SIGTERM
-W1207 02:45:06.288000 1492834 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 1492841 closing signal SIGTERM
-W1207 02:45:06.288000 1492834 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 1492843 closing signal SIGTERM
-E1207 02:45:06.530000 1492834 torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 2 (pid: 1492842) of binary: /scratch/mjd9571/VentureAI/myenv/bin/python
+[rank1]:   File "/scratch/mjd9571/VentureAI/fine_tuning/mistral.py", line 262, in main
+[rank1]:     tokenizer = AutoTokenizer.from_pretrained(model_name, token = HUGGING_FACE_TOKEN)
+[rank1]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 857, in from_pretrained
+[rank1]:     tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+[rank1]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in get_tokenizer_config
+[rank1]:     resolved_config_file = cached_file(
+[rank1]:                            ^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 426, in cached_file
+[rank1]:     raise EnvironmentError(
+[rank1]: OSError: mistral_2ai/Ministral-8B-Instruct-2410 is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+[rank1]: If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+E1210 03:02:48.587000 2303512 torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 0 (pid: 2303558) of binary: /scratch/mjd9571/VentureAI/myenv/bin/python
 Traceback (most recent call last):
   File "/scratch/mjd9571/VentureAI/myenv/bin/torchrun", line 8, in <module>
     sys.exit(main())
@@ -118,14 +281,34 @@ torch.distributed.elastic.multiprocessing.errors.ChildFailedError:
 mistral.py FAILED
 ------------------------------------------------------------
 Failures:
-  <NO_OTHER_FAILURES>
+[1]:
+  time      : 2024-12-10_03:02:48
+  host      : gr041.hpc.nyu.edu
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 2303559)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2024-12-10_03:02:48
+  host      : gr041.hpc.nyu.edu
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 2303560)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2024-12-10_03:02:48
+  host      : gr041.hpc.nyu.edu
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 2303561)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2024-12-07_02:45:06
-  host      : gr012.hpc.nyu.edu
-  rank      : 2 (local_rank: 2)
-  exitcode  : 1 (pid: 1492842)
+  time      : 2024-12-10_03:02:48
+  host      : gr041.hpc.nyu.edu
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 2303558)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================

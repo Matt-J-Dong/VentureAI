@@ -10,6 +10,7 @@
 #SBATCH --error=falcon40b-error.txt
 #SBATCH --mail-user=matthew.dong@nyu.edu
 #SBATCH --mail-type=ALL
+#SBATCH --account=class
 
 singularity exec --nv --overlay $SCRATCH/new_env/overlay-50G-10M.ext3:ro /scratch/work/public/singularity/cuda11.8.86-cudnn8.7-devel-ubuntu22.04.2.sif /bin/bash -c "
 cd $SCRATCH/VentureAI

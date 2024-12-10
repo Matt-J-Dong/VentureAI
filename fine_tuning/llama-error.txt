@@ -3,88 +3,266 @@
 [notice] To update, run: pip install --upgrade pip
 .env: line 1: HUGGING_FACE_HUB_TOKEN: command not found
 .env: line 2: OPENAI_API_KEY: command not found
-W1207 04:01:51.943000 3183032 torch/distributed/run.py:793] 
-W1207 04:01:51.943000 3183032 torch/distributed/run.py:793] *****************************************
-W1207 04:01:51.943000 3183032 torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W1207 04:01:51.943000 3183032 torch/distributed/run.py:793] *****************************************
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:22<01:08, 22.79s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:22<01:08, 22.80s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:22<01:08, 22.83s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:22<01:08, 22.79s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:46<00:46, 23.23s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:46<00:46, 23.22s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:46<00:46, 23.23s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:46<00:46, 23.24s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [01:09<00:23, 23.05s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [01:09<00:23, 23.05s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [01:09<00:23, 23.05s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [01:09<00:23, 23.05s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 16.00s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 18.60s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 16.01s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 18.59s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 16.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 18.60s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 16.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:14<00:00, 18.60s/it]
-[rank2]: Traceback (most recent call last):
-[rank2]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 610, in <module>
-[rank2]:     main()
-[rank2]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 296, in main
-[rank2]:     model = get_peft_model(model, lora_config)
-[rank2]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/mapping.py", line 193, in get_peft_model
-[rank2]:     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
-[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 1609, in __init__
-[rank2]:     super().__init__(model, peft_config, adapter_name, **kwargs)
-[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 171, in __init__
-[rank2]:     self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
-[rank2]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/lora/model.py", line 141, in __init__
-[rank2]:     super().__init__(model, config, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
-[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 184, in __init__
-[rank2]:     self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
-[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 509, in inject_adapter
-[rank2]:     raise ValueError(
-[rank2]: ValueError: Target modules {'query_key_value', 'dense'} not found in the base model. Please check the target modules and try again.
-[rank3]: Traceback (most recent call last):
-[rank3]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 610, in <module>
-[rank3]:     main()
-[rank3]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 296, in main
-[rank3]:     model = get_peft_model(model, lora_config)
-[rank3]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/mapping.py", line 193, in get_peft_model
-[rank3]:     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
-[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 1609, in __init__
-[rank3]:     super().__init__(model, peft_config, adapter_name, **kwargs)
-[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 171, in __init__
-[rank3]:     self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
-[rank3]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/lora/model.py", line 141, in __init__
-[rank3]:     super().__init__(model, config, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
-[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 184, in __init__
-[rank3]:     self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
-[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 509, in inject_adapter
-[rank3]:     raise ValueError(
-[rank3]: ValueError: Target modules {'dense', 'query_key_value'} not found in the base model. Please check the target modules and try again.
-[rank1]: Traceback (most recent call last):
-[rank1]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 610, in <module>
-[rank1]:     main()
-[rank1]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 296, in main
-[rank1]:     model = get_peft_model(model, lora_config)
-[rank1]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/mapping.py", line 193, in get_peft_model
-[rank1]:     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
-[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 1609, in __init__
-[rank1]:     super().__init__(model, peft_config, adapter_name, **kwargs)
-[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/peft_model.py", line 171, in __init__
-[rank1]:     self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
-[rank1]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/lora/model.py", line 141, in __init__
-[rank1]:     super().__init__(model, config, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
-[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 184, in __init__
-[rank1]:     self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage)
-[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/peft/tuners/tuners_utils.py", line 509, in inject_adapter
-[rank1]:     raise ValueError(
-[rank1]: ValueError: Target modules {'query_key_value', 'dense'} not found in the base model. Please check the target modules and try again.
+W1210 02:59:02.554000 2853129 torch/distributed/run.py:793] 
+W1210 02:59:02.554000 2853129 torch/distributed/run.py:793] *****************************************
+W1210 02:59:02.554000 2853129 torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1210 02:59:02.554000 2853129 torch/distributed/run.py:793] *****************************************
 [rank0]: Traceback (most recent call last):
-[rank0]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 610, in <module>
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 406, in hf_raise_for_status
+[rank0]:     response.raise_for_status()
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/requests/models.py", line 1024, in raise_for_status
+[rank0]:     raise HTTPError(http_error_msg, response=self)
+[rank0]: requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://huggingface.co/meta-llama_2/llama_2-3.1-8B/resolve/main/tokenizer_config.json
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 403, in cached_file
+[rank0]:     resolved_file = hf_hub_download(
+[rank0]:                     ^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+[rank0]:     return _hf_hub_download_to_cache_dir(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 969, in _hf_hub_download_to_cache_dir
+[rank0]:     _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1484, in _raise_on_head_call_error
+[rank0]:     raise head_call_error
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1376, in _get_metadata_or_catch_error
+[rank0]:     metadata = get_hf_file_metadata(
+[rank0]:                ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1296, in get_hf_file_metadata
+[rank0]:     r = _request_wrapper(
+[rank0]:         ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 277, in _request_wrapper
+[rank0]:     response = _request_wrapper(
+[rank0]:                ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 301, in _request_wrapper
+[rank0]:     hf_raise_for_status(response)
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 454, in hf_raise_for_status
+[rank0]:     raise _format(RepositoryNotFoundError, message, response) from e
+[rank0]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-6757f4f3-112a82664af8e0224da85551;4c44743b-669a-422c-bbb8-9212e70bff7d)
+
+[rank0]: Repository Not Found for url: https://huggingface.co/meta-llama_2/llama_2-3.1-8B/resolve/main/tokenizer_config.json.
+[rank0]: Please make sure you specified the correct `repo_id` and `repo_type`.
+[rank0]: If you are trying to access a private or gated repo, make sure you are authenticated.
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 627, in <module>
 [rank0]:     main()
-[rank0]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 279, in main
-[rank0]:     with open(modules.txt, "w") as f:
-[rank0]:               ^^^^^^^
-[rank0]: NameError: name 'modules' is not defined. Did you mean: 'module'?
-W1207 04:04:03.689000 3183032 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 3183053 closing signal SIGTERM
-W1207 04:04:03.690000 3183032 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 3183054 closing signal SIGTERM
-W1207 04:04:03.690000 3183032 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 3183055 closing signal SIGTERM
-E1207 04:04:04.181000 3183032 torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 3 (pid: 3183056) of binary: /scratch/mjd9571/VentureAI/myenv/bin/python
+[rank0]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 262, in main
+[rank0]:     tokenizer = AutoTokenizer.from_pretrained(model_name, token = HUGGING_FACE_TOKEN)
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 857, in from_pretrained
+[rank0]:     tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in get_tokenizer_config
+[rank0]:     resolved_config_file = cached_file(
+[rank0]:                            ^^^^^^^^^^^^
+[rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 426, in cached_file
+[rank0]:     raise EnvironmentError(
+[rank0]: OSError: meta-llama_2/llama_2-3.1-8B is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+[rank0]: If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 406, in hf_raise_for_status
+[rank1]:     response.raise_for_status()
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/requests/models.py", line 1024, in raise_for_status
+[rank1]:     raise HTTPError(http_error_msg, response=self)
+[rank1]: requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://huggingface.co/meta-llama_2/llama_2-3.1-8B/resolve/main/tokenizer_config.json
+
+[rank1]: The above exception was the direct cause of the following exception:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 403, in cached_file
+[rank1]:     resolved_file = hf_hub_download(
+[rank1]:                     ^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank1]:     return fn(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+[rank1]:     return _hf_hub_download_to_cache_dir(
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 969, in _hf_hub_download_to_cache_dir
+[rank1]:     _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1484, in _raise_on_head_call_error
+[rank1]:     raise head_call_error
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1376, in _get_metadata_or_catch_error
+[rank1]:     metadata = get_hf_file_metadata(
+[rank1]:                ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank1]:     return fn(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1296, in get_hf_file_metadata
+[rank1]:     r = _request_wrapper(
+[rank1]:         ^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 277, in _request_wrapper
+[rank1]:     response = _request_wrapper(
+[rank1]:                ^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 301, in _request_wrapper
+[rank1]:     hf_raise_for_status(response)
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 454, in hf_raise_for_status
+[rank1]:     raise _format(RepositoryNotFoundError, message, response) from e
+[rank1]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-6757f4f3-754853932d195b3000dbcc86;a12f036b-8eda-4243-aee1-37114af3d214)
+
+[rank1]: Repository Not Found for url: https://huggingface.co/meta-llama_2/llama_2-3.1-8B/resolve/main/tokenizer_config.json.
+[rank1]: Please make sure you specified the correct `repo_id` and `repo_type`.
+[rank1]: If you are trying to access a private or gated repo, make sure you are authenticated.
+
+[rank1]: The above exception was the direct cause of the following exception:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 627, in <module>
+[rank1]:     main()
+[rank1]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 262, in main
+[rank1]:     tokenizer = AutoTokenizer.from_pretrained(model_name, token = HUGGING_FACE_TOKEN)
+[rank1]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 857, in from_pretrained
+[rank1]:     tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+[rank1]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in get_tokenizer_config
+[rank1]:     resolved_config_file = cached_file(
+[rank1]:                            ^^^^^^^^^^^^
+[rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 426, in cached_file
+[rank1]:     raise EnvironmentError(
+[rank1]: OSError: meta-llama_2/llama_2-3.1-8B is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+[rank1]: If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 406, in hf_raise_for_status
+[rank3]:     response.raise_for_status()
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/requests/models.py", line 1024, in raise_for_status
+[rank3]:     raise HTTPError(http_error_msg, response=self)
+[rank3]: requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://huggingface.co/meta-llama_2/llama_2-3.1-8B/resolve/main/tokenizer_config.json
+
+[rank3]: The above exception was the direct cause of the following exception:
+
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 403, in cached_file
+[rank3]:     resolved_file = hf_hub_download(
+[rank3]:                     ^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank3]:     return fn(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+[rank3]:     return _hf_hub_download_to_cache_dir(
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 969, in _hf_hub_download_to_cache_dir
+[rank3]:     _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1484, in _raise_on_head_call_error
+[rank3]:     raise head_call_error
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1376, in _get_metadata_or_catch_error
+[rank3]:     metadata = get_hf_file_metadata(
+[rank3]:                ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank3]:     return fn(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1296, in get_hf_file_metadata
+[rank3]:     r = _request_wrapper(
+[rank3]:         ^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 277, in _request_wrapper
+[rank3]:     response = _request_wrapper(
+[rank3]:                ^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 301, in _request_wrapper
+[rank3]:     hf_raise_for_status(response)
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 454, in hf_raise_for_status
+[rank3]:     raise _format(RepositoryNotFoundError, message, response) from e
+[rank3]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-6757f4f4-67d8f1bf0af3639063ec27d8;0416c5de-8144-40c9-8629-bd7a84fdd952)
+
+[rank3]: Repository Not Found for url: https://huggingface.co/meta-llama_2/llama_2-3.1-8B/resolve/main/tokenizer_config.json.
+[rank3]: Please make sure you specified the correct `repo_id` and `repo_type`.
+[rank3]: If you are trying to access a private or gated repo, make sure you are authenticated.
+
+[rank3]: The above exception was the direct cause of the following exception:
+
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 627, in <module>
+[rank3]:     main()
+[rank3]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 262, in main
+[rank3]:     tokenizer = AutoTokenizer.from_pretrained(model_name, token = HUGGING_FACE_TOKEN)
+[rank3]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 857, in from_pretrained
+[rank3]:     tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+[rank3]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in get_tokenizer_config
+[rank3]:     resolved_config_file = cached_file(
+[rank3]:                            ^^^^^^^^^^^^
+[rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 426, in cached_file
+[rank3]:     raise EnvironmentError(
+[rank3]: OSError: meta-llama_2/llama_2-3.1-8B is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+[rank3]: If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 406, in hf_raise_for_status
+[rank2]:     response.raise_for_status()
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/requests/models.py", line 1024, in raise_for_status
+[rank2]:     raise HTTPError(http_error_msg, response=self)
+[rank2]: requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://huggingface.co/meta-llama_2/llama_2-3.1-8B/resolve/main/tokenizer_config.json
+
+[rank2]: The above exception was the direct cause of the following exception:
+
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 403, in cached_file
+[rank2]:     resolved_file = hf_hub_download(
+[rank2]:                     ^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank2]:     return fn(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 862, in hf_hub_download
+[rank2]:     return _hf_hub_download_to_cache_dir(
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 969, in _hf_hub_download_to_cache_dir
+[rank2]:     _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1484, in _raise_on_head_call_error
+[rank2]:     raise head_call_error
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1376, in _get_metadata_or_catch_error
+[rank2]:     metadata = get_hf_file_metadata(
+[rank2]:                ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[rank2]:     return fn(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1296, in get_hf_file_metadata
+[rank2]:     r = _request_wrapper(
+[rank2]:         ^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 277, in _request_wrapper
+[rank2]:     response = _request_wrapper(
+[rank2]:                ^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 301, in _request_wrapper
+[rank2]:     hf_raise_for_status(response)
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 454, in hf_raise_for_status
+[rank2]:     raise _format(RepositoryNotFoundError, message, response) from e
+[rank2]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-6757f4f4-6aa30c322d733efa1f634bbd;28376099-a1ef-4ec2-9726-78a2d0e0a8d6)
+
+[rank2]: Repository Not Found for url: https://huggingface.co/meta-llama_2/llama_2-3.1-8B/resolve/main/tokenizer_config.json.
+[rank2]: Please make sure you specified the correct `repo_id` and `repo_type`.
+[rank2]: If you are trying to access a private or gated repo, make sure you are authenticated.
+
+[rank2]: The above exception was the direct cause of the following exception:
+
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 627, in <module>
+[rank2]:     main()
+[rank2]:   File "/scratch/mjd9571/VentureAI/fine_tuning/llama.py", line 262, in main
+[rank2]:     tokenizer = AutoTokenizer.from_pretrained(model_name, token = HUGGING_FACE_TOKEN)
+[rank2]:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 857, in from_pretrained
+[rank2]:     tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+[rank2]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 689, in get_tokenizer_config
+[rank2]:     resolved_config_file = cached_file(
+[rank2]:                            ^^^^^^^^^^^^
+[rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/transformers/utils/hub.py", line 426, in cached_file
+[rank2]:     raise EnvironmentError(
+[rank2]: OSError: meta-llama_2/llama_2-3.1-8B is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+[rank2]: If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+W1210 02:59:48.998000 2853129 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 2853146 closing signal SIGTERM
+W1210 02:59:48.999000 2853129 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 2853147 closing signal SIGTERM
+W1210 02:59:48.999000 2853129 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 2853148 closing signal SIGTERM
+E1210 02:59:49.163000 2853129 torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 0 (pid: 2853145) of binary: /scratch/mjd9571/VentureAI/myenv/bin/python
 Traceback (most recent call last):
   File "/scratch/mjd9571/VentureAI/myenv/bin/torchrun", line 8, in <module>
     sys.exit(main())
@@ -110,10 +288,10 @@ Failures:
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2024-12-07_04:04:03
-  host      : ga007.hpc.nyu.edu
-  rank      : 3 (local_rank: 3)
-  exitcode  : 1 (pid: 3183056)
+  time      : 2024-12-10_02:59:48
+  host      : gr053.hpc.nyu.edu
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 2853145)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================

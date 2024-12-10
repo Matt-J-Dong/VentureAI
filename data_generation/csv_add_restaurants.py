@@ -3,7 +3,8 @@ import pandas as pd
 def update_prompt_with_restaurants(file_path, output_file):
     """
     Reads a CSV file with 'prompt', 'response', and 'restaurants' columns.
-    Appends a specific string containing city_name and restaurants to the 'prompt' column.
+    Removes the newline at the end of the current 'prompt', appends the additional string, 
+    and adds a newline at the end of the additional string.
     
     Args:
         file_path (str): Path to the input CSV file.
@@ -21,17 +22,17 @@ def update_prompt_with_restaurants(file_path, output_file):
         def update_prompt(row):
             try:
                 # Extract city_name from the prompt
-                prompt_text = row['prompt']
+                prompt_text = row['prompt'].rstrip("\n")  # Remove trailing newline
                 city_name_start = prompt_text.find("to ") + 3
                 city_name_end = prompt_text.find(" for 7 days")
                 city_name = prompt_text[city_name_start:city_name_end]
                 
-                # Append the string with city_name and restaurants
-                additional_info = f"{row['restaurants']}"
+                # Create the additional string with city_name and restaurants
+                additional_info = f"Here are the restaurants: {row['restaurants']}\n"
                 return f"{prompt_text} {additional_info}"
             except Exception as e:
                 print(f"Error processing row: {row}. Error: {e}")
-                return prompt_text
+                return row['prompt']  # Return the original prompt if an error occurs
         
         # Apply the function to update the 'prompt' column
         data['prompt'] = data.apply(update_prompt, axis=1)

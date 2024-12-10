@@ -59,3 +59,5 @@ Saved checkpoint: checkpoints_falcon40b/checkpoint_epoch_1_batch_1100.pt
 Saved checkpoint: checkpoints_falcon40b/checkpoint_epoch_1_batch_1200.pt
 Saved checkpoint: checkpoints_falcon40b/checkpoint_epoch_1_batch_1300.pt
 Saved checkpoint: checkpoints_falcon40b/checkpoint_epoch_1_batch_1400.pt
+Saved checkpoint: checkpoints_falcon40b/checkpoint_epoch_1_batch_1500.pt
+Saved checkpoint: checkpoints_falcon40b/checkpoint_epoch_1_batch_1600.pt

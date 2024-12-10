@@ -437,7 +437,7 @@ def main():
         # Initialize 'epoch' before the loop
         epoch = loaded_epoch
         # Set total epochs to 1 as per user request
-        total_epochs = 1  # Adjust total epochs as needed
+        total_epochs = 10  # Adjust total epochs as needed
         model.train()
         for epoch in range(loaded_epoch, total_epochs):
             sampler.set_epoch(epoch)  # Shuffle data differently at each epoch

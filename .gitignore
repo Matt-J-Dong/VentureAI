@@ -12,6 +12,7 @@ fine_tuning/checkpoints_mistral_2
 fine_tuning/checkpoints_falcon7b_3
 fine_tuning/checkpoints_falcon7binstruct_3
 fine_tuning/checkpoints_llamainstruct_2
+fine_tuning/checkpoints_falcon40b
 
 #Autotrain:
 autotrain-test/

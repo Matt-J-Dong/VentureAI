@@ -557,6 +557,7 @@ def main():
             )
             # Save the trained model and tokenizer
             output_dir = "./trained_falcon7binstruct_3"
+            os.makedirs(output_dir, exist_ok=True)
             model.module.save_pretrained(output_dir)  # Use model.module when saving
             tokenizer.save_pretrained(output_dir)
             if enable_logging:

@@ -389,6 +389,8 @@ def extract_restaurants(text):
         and not match.lower().startswith("reservation")
         and not match.lower().startswith("leisure")
         and not match.lower().startswith("all-day")
+        and not match.lower().startswith("downtime")
+        and not match.lower().startswith("seek")
         
         
 

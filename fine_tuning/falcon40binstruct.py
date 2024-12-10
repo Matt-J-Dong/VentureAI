@@ -204,7 +204,7 @@ def save_decoded_inputs(dataloader, tokenizer, num_samples=3, rank=0):
         return  # Only process 0 performs debugging
 
     output_dir = "./trained_falcon40binstruct_2"
-    os.makedirs(output_dir, exist_ok=True)s
+    os.makedirs(output_dir, exist_ok=True)
     decoded_path = os.path.join(output_dir, "decoded_input.txt")
     with open(decoded_path, "w") as f:
         f.write("--- Decoded Inputs ---\n\n")

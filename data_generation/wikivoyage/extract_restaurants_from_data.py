@@ -3,6 +3,7 @@ import re
 import random
 # Input and output file paths
 input_file = "../combined_results.csv"
+#input_file = "temp.csv"
 output_file = "output_with_restaurants.csv"
 
 ignore_terms = {'Accommodation', 'Accommodation Options:', 'Accommodation:', 'Activities', 'Activities:', 'Activity', 
@@ -25,7 +26,8 @@ ignore_terms = {'Accommodation', 'Accommodation Options:', 'Accommodation:', 'Ac
 '09:30', 'Total for Accommodation and Meals', '$11', '02:00', 'Meal Costs Overview', 'LE:EN', 
 'detoxification meals', 'silent retreat', 'naturopathic lifestyle', '7-Day Restaurant-Focused Trip Itinerary', 'market',
 'Exploration', 'Eat', 'Cultural Considerations', 'Transfer', 'Drink & Snack Options', 'boat trip', 'Relaxation', 'Eat Me',
-'Drink Me', 'Café', 'Market'
+'Drink Me', 'Café', 'Market', 'restaurant', 'Restaurant', 'Restaurant Suggestions', 'Beach Time', 'Pricing', 'Freshness',
+'Sunset Viewing', 'Variety', 'How are you?'
 
 
 
@@ -61,6 +63,7 @@ def extract_restaurants(text):
     """Extract restaurant names enclosed in asterisks from the text."""
 
     matches = re.findall(r"\*\*(.*?)\*\*", text)
+    
     # Initialize a list to store removed strings
     for match in matches:
         if match.endswith(":"):  
@@ -304,11 +307,93 @@ def extract_restaurants(text):
         and not match.lower().startswith("specific")
         and not match.lower().startswith("diving")
         and not match.lower().startswith("have")
-        
-
+        and not match.lower().startswith("enjoy")
+        and not match.lower().startswith("trekking")
+        and not match.lower().startswith("picnic")
+        and not match.lower().startswith("get")
+        and not match.lower().startswith("make")
+        and not match.lower().startswith("caution")
+        and not match.lower().startswith("lodging")
+        and not match.lower().startswith("fly")
+        and not match.lower().startswith("check")
+        and not match.lower().startswith("be mindful")
+        and not match.lower().startswith("relaxation")
+        and not match.lower().startswith("logistics")
+        and not match.lower().startswith("walking")
+        and not match.lower().startswith("health")
+        and not match.lower().startswith("try")
+        and not match.lower().startswith("be open")
+        and not match.lower().startswith("be careful")
+        and not match.lower().startswith("ferry")
+        and not match.lower().startswith("budget")
+        and not match.lower().startswith("boat")
+        and not match.lower().startswith("respect")
+        and not match.lower().startswith("continue")
+        and not match.lower().startswith("avoid")
+        and not match.lower().startswith("chill")
+        and not match.lower().startswith("weather")
+        and not match.lower().startswith("airport")
+        and not match.lower().startswith("fees")
+        and not match.lower().startswith("bonus")
+        and not match.lower().startswith("splurge")
+        and not match.lower().startswith("contact")
+        and not match.lower().startswith("arriving")
+        and not match.lower().startswith("trek")
         
 
     ]
+    filtered_matches = [
+        match for match in filtered_matches
+        if not match.isupper()
+        if not match.lower().startswith("trek")
+        and not match.lower().startswith("after")
+        and not match.lower().startswith("late")
+        and not match.lower().startswith("early")
+        and not match.lower().startswith("dine")
+        and not match.lower().startswith("description")
+        and not match.lower().startswith("tip")
+        and not match.lower().startswith("ask")
+        and not match.lower().startswith("+")
+        and not match.lower().startswith("dive")
+        and not match.lower().startswith("hiking")
+        and not match.lower().startswith("hike")
+        and not match.lower().startswith("casual")
+        and not match.lower().startswith("venture")
+        and not match.lower().startswith("journey")
+        and not match.lower().startswith("in-flight")
+        and not match.lower().startswith("in flight")
+        and not match.lower().startswith("kayaking")
+        and not match.lower().startswith("area")
+        and not match.lower().startswith("refreshments")
+        and not match.lower().startswith("reccomended")
+        and not match.lower().startswith("outdoor")
+        and not match.lower().startswith("guided")
+        and not match.lower().startswith("tour")
+        and not match.lower().startswith("consume")
+        and not match.lower().startswith("sourcing")
+        and not match.lower().startswith("post")
+        and not match.lower().startswith("ski")
+        and not match.lower().startswith("sampling")
+        and not match.lower().startswith("beverages")
+        and not match.lower().startswith("noon")
+        and not match.lower().startswith("marathon")
+        and not match.lower().startswith("cuisine")
+        and not match.lower().startswith("permits")
+        and not match.lower().startswith("eat in")
+        and not match.lower().startswith("food safety")
+        and not match.lower().startswith("photo")
+        and not "afternoon" in match.lower()
+        and not "activity" in match.lower()
+        and not "leisure" in match.lower()
+        and not match.lower().startswith("session")
+        and not match.lower().startswith("reservation")
+        and not match.lower().startswith("leisure")
+        and not match.lower().startswith("all-day")
+        
+        
+
+    ]
+    #print(filtered_matches)
 
     
     prefixes = ["Dinner at ", "Breakfast at ", "Lunch at ", "Dine at", "Restaurant:", "Restaurant Suggestion:", 
@@ -323,8 +408,12 @@ def extract_restaurants(text):
     filtered_matches = set(filtered_matches)
     filtered_matches = list(filtered_matches)
 
-    filtered_matches = [item for item in filtered_matches if is_not_restaurant(item)]
+    #print(filtered_matches)
+
+    #filtered_matches = [item for item in filtered_matches if is_not_restaurant(item)]
     #print(non_restaurant_items)
+
+    #print(filtered_matches)
 
     
     return filtered_matches
@@ -356,16 +445,21 @@ for row in rows:
     if "restaurants" in row and row["restaurants"]:  # Check if the restaurants column exists and is not empty
         # Split restaurants into a list, assign a random price tag to each, and join them back into a single string
         restaurants = row["restaurants"].split(", ")
-        tagged_restaurants = [f"{restaurant} {random.choice(price_tags)}" for restaurant in restaurants]
+        random_choice = random.choice(price_tags)
+        responses = row["response"]
+        for restaurant in restaurants:
+            responses = responses.replace(f"{restaurant}", f"{restaurant} {random_choice}") 
+        tagged_restaurants = [f"{restaurant} {random_choice}" for restaurant in restaurants]
         row["restaurants"] = ", ".join(tagged_restaurants)
+        row["response"] = responses
 
 with open("restaurants.txt", "w", encoding="utf-8") as file:
     # Write all extracted restaurants to the file
     for row in rows:
         restaurant_text = row["restaurants"]
-        if len(restaurant_text.split()) >= 7:
-            
-                file.write(restaurant_text.strip() + "\n")
+        if restaurant_text:
+            #if len(restaurant_text.split()) < 7:  # Check if less than 7 words
+                file.write(restaurant_text + "\n")
 
 # Write the updated rows to a new CSV file
 with open(output_file, "w", encoding="utf-8", newline="") as outfile:

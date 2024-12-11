@@ -1,0 +1,97 @@
+--- Decoded Inputs ---
+
+Sample 1:
+Decoded Input:
+I would like to travel from New York City to São Vicente for 7 days. Give me a trip plan that focuses on restaurants. The information below is about São Vicente; use it for your response. Here are the restaurants: nan
+Here’s a 7-day trip plan focused on enjoying local restaurants in São Vicente, Cape Verde:
+
+Day 1: Arrival in São Vicente
+- Morning: Depart from New York City and arrive in São Vicente (via flights to Sal or Praia, then connecting).
+- Afternoon: Settle into your accommodation.
+- Evening: Enjoy your first dinner at a local restaurant. (Note: You may want to check specific dining options that serve local cuisine.)
+
+Day 2: Explore Mindelo
+- Morning: Relax and explore the city of Mindelo, the cultural capital of Cape Verde.
+- Lunch: Visit a traditional Cape Verdean restaurant for local dishes.
+- Evening: Try a seafood restaurant for fresh catch of the day, as São Vicente is known for its delicious seafood.
+
+Day 3: Beach Day with Culinary Delights
+- Morning: Spend the morning at the beach.
+- Lunch: Enjoy a beachside café or restaurant with views of the ocean.
+- Evening: Dine at a highly-rated local restaurant known for its Cape Verdean specialties.
+
+Day 4: Cultural Day & Dining
+- Morning: Visit cultural sites or local markets in Mindelo.
+- Lunch: Experience a market café that serves traditional snacks and street food.
+- Evening: Search for a restaurant that offers live music or traditional performances alongside dinner.
+
+Day 5: Culinary Tour
+- Morning: Participate in a culinary tour that introduces you to local dishes and cooking methods.
+- Lunch: Enjoy what you've learned and prepared during the tour.
+- Evening: Visit a fusion restaurant that incorporates various influences in Cape Verdean cuisine.
+
+Day 6: Day Trip & Dining
+- Morning: Take a day trip to explore the surrounding areas.
+- Lunch: Pack a picnic from a local bakery or enjoy a meal at a rural eatery.
+- Evening: Return to Mindelo and savor a leisurely dinner at a local fine dining restaurant.
+
+Day 7: Last Day Relaxation and Departure
+- Morning: Spend your last morning relaxing at a café, sipping on local drinks.
+- Lunch: Enjoy a farewell meal at
+Decoded Labels:
+Here’s a 7-day trip plan focused on enjoying local restaurants in São Vicente, Cape Verde:
+
+Day 1: Arrival in São Vicente
+- Morning: Depart from New York City and arrive in São Vicente (via flights to Sal or Praia, then connecting).
+- Afternoon: Settle into your accommodation.
+- Evening: Enjoy your first dinner at a local restaurant. (Note: You may want to check specific dining options that serve local cuisine.)
+
+Day 2: Explore Mindelo
+- Morning: Relax and explore the city of Mindelo, the cultural capital of Cape Verde.
+- Lunch: Visit a traditional Cape Verdean restaurant for local dishes.
+- Evening: Try a seafood restaurant for fresh catch of the day, as São Vicente is known for its delicious seafood.
+
+Day 3: Beach Day with Culinary Delights
+- Morning: Spend the morning at the beach.
+- Lunch: Enjoy a beachside café or restaurant with views of the ocean.
+- Evening: Dine at a highly-rated local restaurant known for its Cape Verdean specialties.
+
+Day 4: Cultural Day & Dining
+- Morning: Visit cultural sites or local markets in Mindelo.
+- Lunch: Experience a market café that serves traditional snacks and street food.
+- Evening: Search for a restaurant that offers live music or traditional performances alongside dinner.
+
+Day 5: Culinary Tour
+- Morning: Participate in a culinary tour that introduces you to local dishes and cooking methods.
+- Lunch: Enjoy what you've learned and prepared during the tour.
+- Evening: Visit a fusion restaurant that incorporates various influences in Cape Verdean cuisine.
+
+Day 6: Day Trip & Dining
+- Morning: Take a day trip to explore the surrounding areas.
+- Lunch: Pack a picnic from a local bakery or enjoy a meal at a rural eatery.
+- Evening: Return to Mindelo and savor a leisurely dinner at a local fine dining restaurant.
+
+Day 7: Last Day Relaxation and Departure
+- Morning: Spend your last morning relaxing at a café, sipping on local drinks.
+- Lunch: Enjoy a farewell meal at
+
+--------------------------------------------------
+
+Sample 2:
+Decoded Input:
+I would like to travel from New York City to Rock Hall for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Rock Hall; use it for your response. Here are the restaurants: nan
+nan
+Decoded Labels:
+nan
+
+--------------------------------------------------
+
+Sample 3:
+Decoded Input:
+I would like to travel from New York City to Ilaro for 7 days. Give me a trip plan that focuses on restaurants. The information below is about Ilaro; use it for your response. Here are the restaurants: nan
+nan
+Decoded Labels:
+nan
+
+--------------------------------------------------
+

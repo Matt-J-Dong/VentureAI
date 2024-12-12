@@ -18,7 +18,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 
 # Define the directory where the trained model and tokenizer are saved
-model_dir = "./trained_falcon7binstruct_4"  # Updated to match the training script's output directory
+model_dir = "./trained_falcon40binstruct_2"  # Updated to match the training script's output directory
 
 # Check if the model directory exists
 if not os.path.exists(model_dir):

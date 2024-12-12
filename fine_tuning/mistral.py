@@ -259,7 +259,7 @@ def main():
             logger.info(f"Process {local_rank}: Initialized on device {device}")
 
         # Load the model and tokenizer
-        model_name = "mistral_2ai/Ministral-8B-Instruct-2410"
+        model_name = "mistral_2ai/Mistral-8B-Instruct-2410"
 
         tokenizer = AutoTokenizer.from_pretrained(model_name, token = HUGGING_FACE_TOKEN)
         tokenizer.pad_token = tokenizer.eos_token  # Set pad_token to eos_token

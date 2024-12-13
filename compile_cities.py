@@ -1,3 +1,9 @@
+'''
+This file read from the worldcities.csv and compiles a txt of all the cities names
+
+'''
+
+
 import csv
 
 # Initialize an empty list to store the cities

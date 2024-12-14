@@ -3,10 +3,10 @@
 [notice] To update, run: pip install --upgrade pip
 .env: line 1: HUGGING_FACE_HUB_TOKEN: command not found
 .env: line 2: OPENAI_API_KEY: command not found
-W1210 23:01:03.185000 4158155 torch/distributed/run.py:793] 
-W1210 23:01:03.185000 4158155 torch/distributed/run.py:793] *****************************************
-W1210 23:01:03.185000 4158155 torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
-W1210 23:01:03.185000 4158155 torch/distributed/run.py:793] *****************************************
+W1214 00:56:43.094000 2570064 torch/distributed/run.py:793] 
+W1214 00:56:43.094000 2570064 torch/distributed/run.py:793] *****************************************
+W1214 00:56:43.094000 2570064 torch/distributed/run.py:793] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1214 00:56:43.094000 2570064 torch/distributed/run.py:793] *****************************************
 [rank0]: Traceback (most recent call last):
 [rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 406, in hf_raise_for_status
 [rank0]:     response.raise_for_status()
@@ -46,7 +46,7 @@ W1210 23:01:03.185000 4158155 torch/distributed/run.py:793] ********************
 [rank0]:     hf_raise_for_status(response)
 [rank0]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 454, in hf_raise_for_status
 [rank0]:     raise _format(RepositoryNotFoundError, message, response) from e
-[rank0]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-67590ea7-52877c366400fdda71a9838f;6a568fdf-b6f6-43ed-b0fe-b656d5135e13)
+[rank0]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-675d1e1f-3fbd4f92492bce8a0235d4ef;a7c20989-253d-42b4-8fa3-1aee0c676a1c)
 
 [rank0]: Repository Not Found for url: https://huggingface.co/meta-llama_2/llama_2-3.1-8B/resolve/main/tokenizer_config.json.
 [rank0]: Please make sure you specified the correct `repo_id` and `repo_type`.
@@ -109,7 +109,7 @@ W1210 23:01:03.185000 4158155 torch/distributed/run.py:793] ********************
 [rank2]:     hf_raise_for_status(response)
 [rank2]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 454, in hf_raise_for_status
 [rank2]:     raise _format(RepositoryNotFoundError, message, response) from e
-[rank2]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-67590ea8-5f0180b16a90cea67d77818a;e4f64f2d-0eef-4c80-8e3c-4a539bbfc26f)
+[rank2]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-675d1e1f-0550169a73f307e22fd758cb;3efecbbe-0195-48f2-8cf7-89fad8e1f0a9)
 
 [rank2]: Repository Not Found for url: https://huggingface.co/meta-llama_2/llama_2-3.1-8B/resolve/main/tokenizer_config.json.
 [rank2]: Please make sure you specified the correct `repo_id` and `repo_type`.
@@ -172,7 +172,7 @@ W1210 23:01:03.185000 4158155 torch/distributed/run.py:793] ********************
 [rank3]:     hf_raise_for_status(response)
 [rank3]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 454, in hf_raise_for_status
 [rank3]:     raise _format(RepositoryNotFoundError, message, response) from e
-[rank3]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-67590ea8-209b6ef732ec310e15979b55;9d8578a0-c2b6-4cc2-b0a5-31f88ecf2405)
+[rank3]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-675d1e1f-5c34d2d94fb5e2ea27c80161;e05a435b-bba8-4e63-bf52-d311c8661b85)
 
 [rank3]: Repository Not Found for url: https://huggingface.co/meta-llama_2/llama_2-3.1-8B/resolve/main/tokenizer_config.json.
 [rank3]: Please make sure you specified the correct `repo_id` and `repo_type`.
@@ -235,7 +235,7 @@ W1210 23:01:03.185000 4158155 torch/distributed/run.py:793] ********************
 [rank1]:     hf_raise_for_status(response)
 [rank1]:   File "/scratch/mjd9571/VentureAI/myenv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 454, in hf_raise_for_status
 [rank1]:     raise _format(RepositoryNotFoundError, message, response) from e
-[rank1]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-67590ea8-4d3db2f843f6b9d849109604;c0524954-9143-4ec1-9995-f3274208ddf5)
+[rank1]: huggingface_hub.errors.RepositoryNotFoundError: 404 Client Error. (Request ID: Root=1-675d1e1f-052df6493781eb924514363d;52b73081-1ebb-4ac5-92a9-539fbe0ec59a)
 
 [rank1]: Repository Not Found for url: https://huggingface.co/meta-llama_2/llama_2-3.1-8B/resolve/main/tokenizer_config.json.
 [rank1]: Please make sure you specified the correct `repo_id` and `repo_type`.
@@ -259,10 +259,10 @@ W1210 23:01:03.185000 4158155 torch/distributed/run.py:793] ********************
 [rank1]:     raise EnvironmentError(
 [rank1]: OSError: meta-llama_2/llama_2-3.1-8B is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
 [rank1]: If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
-W1210 23:01:44.820000 4158155 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 4158185 closing signal SIGTERM
-W1210 23:01:44.821000 4158155 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 4158186 closing signal SIGTERM
-W1210 23:01:44.821000 4158155 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 4158187 closing signal SIGTERM
-E1210 23:01:45.510000 4158155 torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 0 (pid: 4158184) of binary: /scratch/mjd9571/VentureAI/myenv/bin/python
+W1214 00:56:48.212000 2570064 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 2570070 closing signal SIGTERM
+W1214 00:56:48.212000 2570064 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 2570071 closing signal SIGTERM
+W1214 00:56:48.212000 2570064 torch/distributed/elastic/multiprocessing/api.py:897] Sending process 2570072 closing signal SIGTERM
+E1214 00:56:48.372000 2570064 torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 0 (pid: 2570069) of binary: /scratch/mjd9571/VentureAI/myenv/bin/python
 Traceback (most recent call last):
   File "/scratch/mjd9571/VentureAI/myenv/bin/torchrun", line 8, in <module>
     sys.exit(main())
@@ -288,10 +288,10 @@ Failures:
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2024-12-10_23:01:44
-  host      : ga033.hpc.nyu.edu
+  time      : 2024-12-14_00:56:48
+  host      : gr004.hpc.nyu.edu
   rank      : 0 (local_rank: 0)
-  exitcode  : 1 (pid: 4158184)
+  exitcode  : 1 (pid: 2570069)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================

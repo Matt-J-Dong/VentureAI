@@ -1,11 +1,1 @@
-Here are the restaurants: \
-Istanbul Kebab Cafe & Restaurant $$ - $$$ \
-Gulhane Sark SofrasI $$ - $$$ \
-1924 Istanbul $$$$ \
-Last Ottoman Cafe & Restaurant $$ - $$$ \
-Mivan Restaurant & Cafe $$ - $$$ \
-Garden 1897 Restaurant $$ - $$$ \
-Durumzade $ \
-Resto Han $$ - $$$ \
-Karakoy Gulluoglu $$ - $$$ \
-Las Tapas Restaurant $$ - $$$ \
+The information below is about Istanbul; use it for your response. Here are the restaurants: 360 Istanbul $$$$ 6:00-20:00, 1924 Istanbul $$$$ 14:00-24:00, Zuma - Istanbul $$$$ 14:00-24:00, Istanbul Kebab Cafe & Restaurant $$ - $$$ 10:30 - 15:30, Istanbul Anatolian Cuisine $$ - $$$ 9:30-16:30, Giritli Istanbul $$ - $$$ 14:00-24:00, Topaz Istanbul $$$$ 9:30-16:30, Istanbul Turkish Restaurant $$ - $$$ 10:30 - 15:30, Cecconi's Istanbul $$$$ 9:30-16:30, Istanbul Grill $$ - $$$ 14:00-24:00

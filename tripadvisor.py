@@ -2,6 +2,11 @@ import requests
 import json
 import os
 
+# def use_city_name():
+#     from testrag import CITY_NAME  # Import inside the function to avoid circular import
+#     return CITY_NAME
+
+
 api_key = '8B04F7B58B534C8284B9F96767D3A913'
 
 def get_location_reviews(locationId, api_key, locations_info, search_query, category, location):
@@ -76,7 +81,7 @@ def location_details_restaurants(locationId, api_key, locations_info, search_que
                 #'rating': rating,
                 'hours': weekday_text,
                 'cuisine': cuisine_names,
-                'pice_level': price_level
+                'price_level': price_level
             })
         
         #locations_info = get_location_reviews(locationId, api_key, locations_info, search_query, category, location)
@@ -223,12 +228,15 @@ def load_existing_data(file_path):
     return {}
 
 
-def main():
+def main(city_to):
 
-    cities = ['Paris, France', 'Tokyo, Japan', 'London, United Kingdom', 'Madrid, Spain', 'Florence, Spain', 'Kyoto, Japan', 'Istanbul, Turkey']
+    #cities = ['Paris, France', 'Tokyo, Japan', 'London, United Kingdom', 'Madrid, Spain', 'Florence, Spain', 'Kyoto, Japan', 'Istanbul, Turkey']
     # with open('cities.txt', mode='r', encoding='utf-8') as file:
     #     for line in file:
     #         cities.append(line.strip())  
+
+    cities = [city_to]
+    #cities = ["Istanbul"]
 
     # # print(cities)
     existing_data = {}
@@ -247,11 +255,6 @@ def main():
     with open('locations_info.json', 'w', encoding='utf-8') as f:
         json.dump(existing_data, f, indent=4, ensure_ascii=False)
     print(f"All data written to locations_info.json")
-
-    
-    
-    
-
 
     
 

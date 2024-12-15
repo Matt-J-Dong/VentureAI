@@ -28,7 +28,7 @@ def update_prompt_with_restaurants(file_path, output_file):
                 city_name = prompt_text[city_name_start:city_name_end]
                 
                 # Create the additional string with city_name and restaurants
-                additional_info = f"Provide the price for each restaurant. Here are the restaurants: {row['restaurants']}\n"
+                additional_info = f"Provide the price and hours for each restaurant. Here are the restaurants: {row['restaurants']}\n"
                 return f"{prompt_text} {additional_info}"
             except Exception as e:
                 print(f"Error processing row: {row}. Error: {e}")

@@ -41,7 +41,7 @@ print("Loading LoRA adapters...")
 # Load LoRA adapters
 model = PeftModel.from_pretrained(base_model, model_dir)
 
-with open("perplexity_data_output.json", "r") as file:
+with open("perplexity_data_all.json", "r") as file:
     data = json.load(file)
 
 total_loss = 0

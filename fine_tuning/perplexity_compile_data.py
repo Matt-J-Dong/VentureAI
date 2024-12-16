@@ -18,13 +18,10 @@ for _, row in data.iterrows():
         "prompt": row["prompt"],
         "reference": row["response"]
     })
-    c += 1
-    if c == 50:
-        break
     
 
 # Save the extracted data to a JSON file
-json_file = "perplexity_data_input.json"  # Replace with your desired output file name
+json_file = "perplexity_data_all.json"  # Replace with your desired output file name
 with open(json_file, "w") as file:
     json.dump(output_data, file, indent=4)
 

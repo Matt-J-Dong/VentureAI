@@ -302,7 +302,7 @@ def main():
 
         # Define a custom Dataset class
         class PromptResponseDataset(Dataset):
-            def __init__(self, dataframe, tokenizer, max_length=512):  # Adjust max_length as needed
+            def __init__(self, dataframe, tokenizer, max_length=700):  # Adjust max_length as needed
                 self.dataframe = dataframe.reset_index(drop=True)
                 self.tokenizer = tokenizer
                 self.max_length = max_length
@@ -346,7 +346,7 @@ def main():
                 }
 
         # Create the dataset and DistributedSampler
-        batch_size = 4  # Adjust batch size as needed
+        batch_size = 2  # Adjust batch size as needed
         num_workers = 4  # Adjust num_workers as needed
         dataset = PromptResponseDataset(data, tokenizer)
         sampler = DistributedSampler(dataset, shuffle=True, num_replicas=dist.get_world_size(), rank=dist.get_rank())

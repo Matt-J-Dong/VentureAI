@@ -44,7 +44,7 @@ model = PeftModel.from_pretrained(base_model, model_dir)
 model.eval()
 
 # Define a function for generating responses with enhanced parameters
-def generate_response(prompt, max_length=2000, temperature=0.4, top_p=0.9, repetition_penalty=1.2, no_repeat_ngram_size=5):
+def generate_response(prompt, max_length=2000, temperature=0.2, top_p=0.9, repetition_penalty=1.2, no_repeat_ngram_size=5):
     """
     Generates a response from the model based on the input prompt.
 
@@ -65,7 +65,7 @@ def generate_response(prompt, max_length=2000, temperature=0.4, top_p=0.9, repet
         return_tensors="pt",
         padding=True,
         truncation=True,
-        max_length=1024  # Ensure that input does not exceed model's max context length
+        max_length=2048  # Ensure that input does not exceed model's max context length
     )
     input_ids = encoding['input_ids'].to(model.device)
     attention_mask = encoding['attention_mask'].to(model.device)

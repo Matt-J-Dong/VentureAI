@@ -19,7 +19,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 
 # Define the directory where the trained model and tokenizer are saved
-model_dir = "./trained_falcon7b_5"  # Updated to match the training script's output directory
+model_dir = "./trained_falcon7b_7"  # Updated to match the training script's output directory
 
 # Check if the model directory exists
 if not os.path.exists(model_dir):
@@ -91,15 +91,15 @@ def generate_response(prompt, max_length=2000, temperature=0.2, top_p=0.9, repet
     response = tokenizer.decode(output_ids[0], skip_special_tokens=True)
     return response
 
-def dummy_generate_response(prompt, max_length=2000):
-    # Dummy response generator for testing; replace with actual model inference
-    return f"Generated response for: {prompt[:50]}..."
+# def dummy_generate_response(prompt, max_length=2000):
+#     # Dummy response generator for testing; replace with actual model inference
+#     return f"Generated response for: {prompt[:50]}..."
 
 # Example usage of the inference script
 if __name__ == "__main__":
     print("\nModel loaded. Ready for inference.\n")
 
-    with open("perplexity_data.json", "r") as file:
+    with open("perplexity_data_input.json", "r") as file:
         input_data = json.load(file)
 
     output_data = []

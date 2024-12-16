@@ -30,4 +30,9 @@ All of the dependencies are located in `./environment.yml`. Once you have conda 
 2. `conda env create -f environment.yml`
 3. `conda activate juypter`
 You can check to make sure all the dependencies match with `conda env list`.
-###
+### Fine-tuning
+To start fine-tuning the model:
+1. `cd ./fine_tuning`
+2. `torchrun --nproc_per_node={# GPUS} {filename.py}` 
+ * `filename.py` is the file/model that you want to fine-tune. For example, you could run `torchrun --nproc_per_node=4 falcon7b.py` to fine-tune the Falcon7b model with 4 GPUs.
+ * \# GPUS is the number of GPUs that you currently have on your system that you are going to use in parallel for training.

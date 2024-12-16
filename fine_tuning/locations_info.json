@@ -1,175 +1,238 @@
 {
-    "Instanbul": {
+    "Istanbul": {
         "restaurants": {
-            "Instanbul Cafe": {
-                "address": "109 Royal St, New Orleans, LA 70130-2325",
-                "location_id": "14785322",
-                "description": "Gyro town in French Quarter. Serving famous Gyros with special home-made sauces. Freshly made yummy food: We also have Cheeseburger, Philly, Fried Chicken, Falafel. Hummus...etc. Serving Lunch, Dinner and Late Night Dinner. Open late till 3:00AM and Free Delivery in French Quarter & CBD",
+            "360 Istanbul": {
+                "address": "Istiklal Caddesi Misir Apt. No: 163 / 8, Istanbul 34433 Turkiye",
+                "location_id": "778719",
+                "description": "The multi award winning 360istanbul is set in a penthouse perched on a 19th century apartment building overlooking the old embassy row in Beyoglu. It commands a 360 breathe taking landscape view of Istanbul all the way from the up close steeple of St Antoine’s Church and across the Bosphorus strait to the Hagia Sophia Mosque and out to the Sea of Marmara. 360 is open for lunch and dinner, offering a twist on the modern Turkish meze fused with international cuisine and an exclusive wine selection to compliment it. 360 turns into Club360 on the weekends so come enjoy your fresh elixir while listening to our talented Djs and vocalists with live dancers and performances. 360istanbul also endocrine’s the 360 concept of dining experience. This concept consists of four crucial elements; Cuisine - Design - Entertainment and Atmosphere. No element in 360istanbul is more or less important than the other. Instead they coexist in harmony.",
                 "hours": [
-                    "Monday: 10:00 - 03:00",
-                    "Tuesday: 10:00 - 03:00",
-                    "Wednesday: 10:00 - 03:00",
-                    "Thursday: 10:00 - 04:00",
-                    "Friday: 10:00 - 04:00",
-                    "Saturday: 10:00 - 03:00",
-                    "Sunday: 10:00 - 03:00"
+                    "Monday: 12:00 - 00:00",
+                    "Tuesday: 12:00 - 00:00",
+                    "Wednesday: 12:00 - 00:00",
+                    "Thursday: 12:00 - 00:00",
+                    "Friday: 12:00 - 00:00",
+                    "Saturday: 12:00 - 00:00",
+                    "Sunday: 12:00 - 00:00"
                 ],
                 "cuisine": [
-                    "middle_eastern",
-                    "american",
-                    "cafe",
-                    "fast_food",
-                    "turkish"
-                ],
-                "price_level": "$"
-            },
-            "Bar Kebap Instanbul Imperatore": {
-                "address": "Corso Duca Degli Abruzzi 18, 10129 Turin Italy",
-                "location_id": "10845996",
-                "description": null,
-                "hours": [
-                    "Monday: 07:00 - 23:00",
-                    "Tuesday: 07:00 - 23:00",
-                    "Wednesday: 07:00 - 23:00",
-                    "Thursday: 07:00 - 23:00",
-                    "Friday: 07:00 - 23:00",
-                    "Saturday: 07:00 - 23:00",
-                    "Sunday: 07:00 - 23:00"
-                ],
-                "cuisine": [],
-                "price_level": null
-            },
-            "Instanbul Egsane Sultan": {
-                "address": "Corso XXV Aprile, 3/c, 10098 Rivoli Italy",
-                "location_id": "13219277",
-                "description": null,
-                "hours": [],
-                "cuisine": [
-                    "pizza",
+                    "international",
+                    "mediterranean",
+                    "european",
                     "turkish",
-                    "italian",
+                    "fusion"
+                ],
+                "price_level": "$$$$"
+            },
+            "1924 Istanbul": {
+                "address": "Olivya Gecidi No 7 Istiklal Caddesi, Istanbul 34435 Turkiye",
+                "location_id": "10245353",
+                "description": "A TASTE OF HISTORY Contemporary guidebooks described dinner at “1924istanbul” as much a part of experiencing Istanbul as a visit to the bazaar or Blue Mosque. No visitor to Istanbul be it Greta Garbo, Agatha Christie or the King of Spain would leave the city without paying a call. Mustafa Kemal Atatürk, the Turkish president was a loyal client. Emigrés and civil servants, bohemians and politicians all rubbed shoulders in its wood-paneled dining-room. The common denominator was a sophisticated ambiance, Central & Eastern European delicacies and lashings of ice-cold lemon vodka and some spectacular cocktails. This Istanbul institution with its 98 years tradition is in every detail a legend of a restaurant and bar in istanbul.",
+                "hours": [
+                    "Monday: 16:00 - 00:00",
+                    "Tuesday: 16:00 - 00:00",
+                    "Wednesday: 16:00 - 00:00",
+                    "Thursday: 16:00 - 00:00",
+                    "Friday: 16:00 - 00:00",
+                    "Saturday: 16:00 - 00:00",
+                    "Sunday: Closed"
+                ],
+                "cuisine": [
+                    "european",
+                    "russian",
+                    "eastern_european"
+                ],
+                "price_level": "$$$$"
+            },
+            "Zuma - Istanbul": {
+                "address": "I_stinye Mahallesi BayIr CIkmazI I_stinye Park No:461 Sariyer, Istanbul 34460 Turkiye",
+                "location_id": "9853204",
+                "description": "Zuma offers a contemporary representation of the informal Japanese dining style, izakaya. respecting the traditions of Japanese food culture dishes are prepared in three separate areas. The open kitchen, the sushi bar and the robata grill. Rather than offering individual starters and main courses, Zuma serves dishes that are designed for sharing and are brought to the table continuously throughout the meal.",
+                "hours": [
+                    "Monday: 12:00 - 01:00",
+                    "Tuesday: 12:00 - 01:00",
+                    "Wednesday: 12:00 - 01:00",
+                    "Thursday: 12:00 - 01:00",
+                    "Friday: 12:00 - 02:00",
+                    "Saturday: 12:00 - 02:00",
+                    "Sunday: 12:00 - 01:00"
+                ],
+                "cuisine": [
+                    "japanese",
+                    "asian",
+                    "seafood",
+                    "sushi"
+                ],
+                "price_level": "$$$$"
+            },
+            "Istanbul Kebab Cafe & Restaurant": {
+                "address": "Alemdar, Bicki Yurdu Sk. No 5, Istanbul 34122 Turkiye",
+                "location_id": "15137494",
+                "description": "İstanbul kebab cafe restaurant Located in Sultanahmet, the heart of Istanbul, istanbul kebab cafe restaurant invites you to the unique tastes of Ottoman cuisine Turkish barbecue in the middle of history.",
+                "hours": [
+                    "Monday: 10:30 - 23:45",
+                    "Tuesday: 10:30 - 23:45",
+                    "Wednesday: 10:30 - 23:45",
+                    "Thursday: 10:30 - 23:45",
+                    "Friday: 10:30 - 23:45",
+                    "Saturday: 10:30 - 23:45",
+                    "Sunday: 10:30 - 23:45"
+                ],
+                "cuisine": [
+                    "seafood",
+                    "barbecue",
+                    "turkish",
+                    "grill",
+                    "mediterranean",
                     "middle_eastern"
                 ],
-                "price_level": "$"
+                "price_level": "$$ - $$$"
             },
-            "The Palace Instanbul Bistro": {
-                "address": "20, Newdegate Street, Nuneaton CV11 4EU England",
-                "location_id": "26176244",
-                "description": null,
+            "Istanbul Anatolian Cuisine": {
+                "address": "Cami Sokak No:7, Istanbul 34122 Turkiye",
+                "location_id": "7304515",
+                "description": "Dear guest our restaurant close to small hagia sofia our restaurant space 40 person we do server sea food barbecue ottoman cuisine salads beer wine soft drinks most welcome dear guests",
                 "hours": [
-                    "Monday: 09:00 - 22:00",
-                    "Tuesday: 09:00 - 22:00",
-                    "Wednesday: 09:00 - 22:00",
-                    "Thursday: 09:00 - 22:00",
-                    "Friday: 09:00 - 22:00",
-                    "Saturday: 09:00 - 22:00",
-                    "Sunday: 11:00 - 22:00"
+                    "Monday: 12:00 - 23:00",
+                    "Tuesday: 12:00 - 23:00",
+                    "Wednesday: 12:00 - 23:00",
+                    "Thursday: 12:00 - 23:00",
+                    "Friday: 12:00 - 23:00",
+                    "Saturday: 12:00 - 23:00",
+                    "Sunday: 12:00 - 23:00"
                 ],
                 "cuisine": [
-                    "british",
-                    "turkish"
-                ],
-                "price_level": null
-            },
-            "A.B Instanbul": {
-                "address": "156 avenue du President Wilson, 93210 La Plaine-Saint-Denis France",
-                "location_id": "8065362",
-                "description": null,
-                "hours": [],
-                "cuisine": [
+                    "seafood",
+                    "mediterranean",
+                    "barbecue",
                     "turkish",
-                    "greek"
+                    "middle_eastern"
                 ],
-                "price_level": null
+                "price_level": "$$ - $$$"
             },
-            "Instanbul Kitchen": {
-                "address": "133 Broadway, Bexleyheath DA6 7EZ England",
-                "location_id": "15562186",
+            "Giritli Istanbul": {
+                "address": "Keresteci HakkI Sokak Armada Otel YanI Cankurtaran, Istanbul Turkiye",
+                "location_id": "919972",
                 "description": null,
                 "hours": [
-                    "Monday: 11:00 - 22:30",
-                    "Tuesday: 11:00 - 22:30",
-                    "Wednesday: 11:00 - 22:30",
-                    "Thursday: 11:00 - 22:30",
-                    "Friday: 10:00 - 23:00",
-                    "Saturday: 10:00 - 23:00",
-                    "Sunday: 10:00 - 23:00"
+                    "Monday: 12:00 - 00:00",
+                    "Tuesday: 12:00 - 00:00",
+                    "Wednesday: 12:00 - 00:00",
+                    "Thursday: 12:00 - 00:00",
+                    "Friday: 12:00 - 00:00",
+                    "Saturday: 12:00 - 00:00",
+                    "Sunday: 12:00 - 00:00"
                 ],
                 "cuisine": [
+                    "seafood",
+                    "mediterranean",
                     "turkish"
                 ],
                 "price_level": "$$ - $$$"
             },
-            "Instanbul 34 Pizza Kebap": {
-                "address": "Via Nizza 365, 10127 Turin Italy",
-                "location_id": "21293917",
-                "description": null,
-                "hours": [],
-                "cuisine": [
-                    "pizza",
-                    "turkish",
-                    "street_food"
-                ],
-                "price_level": null
-            },
-            "Instanbul Kebap": {
-                "address": "Viale Beato Quagliotti 72, 28066 Galliate Italy",
-                "location_id": "13388594",
-                "description": null,
-                "hours": [],
-                "cuisine": [
-                    "turkish",
-                    "street_food"
-                ],
-                "price_level": null
-            },
-            "Instanbul Taxim": {
-                "address": "Via Giuseppe Meda 57, 20141 Milan Italy",
-                "location_id": "20938567",
-                "description": null,
-                "hours": [],
-                "cuisine": [
-                    "street_food"
-                ],
-                "price_level": null
-            },
-            "Istanbul Turkish Kebap": {
-                "address": "Via Provinciale, 16, 24044 Dalmine Italy",
-                "location_id": "10385328",
+            "Topaz Istanbul": {
+                "address": "Inonu Caddesi No: 50, Istanbul Turkiye",
+                "location_id": "1010031",
                 "description": null,
                 "hours": [
-                    "Monday: 11:00 - 23:59",
-                    "Tuesday: 11:00 - 23:59",
-                    "Wednesday: 11:00 - 23:59",
-                    "Thursday: 11:00 - 23:59",
-                    "Friday: 11:00 - 23:59",
-                    "Saturday: 11:00 - 23:59",
-                    "Sunday: 11:00 - 23:59"
+                    "Monday: 18:00 - 03:00",
+                    "Tuesday: 12:00 - 03:00",
+                    "Wednesday: 12:00 - 03:00",
+                    "Thursday: 18:00 - 03:00",
+                    "Friday: 12:00 - 03:00",
+                    "Saturday: 18:00 - 03:00",
+                    "Sunday: Closed"
                 ],
                 "cuisine": [
-                    "pizza",
-                    "turkish"
+                    "turkish",
+                    "contemporary",
+                    "mediterranean",
+                    "european"
                 ],
-                "price_level": "$"
+                "price_level": "$$$$"
+            },
+            "Istanbul Turkish Restaurant": {
+                "address": "Cankurtaran Mahallesi Akbiyik Caddesi No 81 Sultanahmet Fatih, Istanbul 34122 Turkiye",
+                "location_id": "20060738",
+                "description": "We are the best turkish and otoman and great bar pup we will like see our guestamers give them feel like they home the best",
+                "hours": [
+                    "Monday: 12:30 - 23:30",
+                    "Tuesday: 12:30 - 23:30",
+                    "Wednesday: 12:30 - 23:30",
+                    "Thursday: 12:30 - 23:30",
+                    "Friday: 12:30 - 23:30",
+                    "Saturday: 12:30 - 23:30",
+                    "Sunday: 12:30 - 23:30"
+                ],
+                "cuisine": [
+                    "mediterranean",
+                    "turkish",
+                    "wine_bar",
+                    "middle_eastern",
+                    "dining_bars",
+                    "seafood",
+                    "barbecue"
+                ],
+                "price_level": "$$ - $$$"
+            },
+            "Cecconi's Istanbul": {
+                "address": "Mesrutiyet Cad. No 56 Soho House Istanbul, Istanbul 34430 Turkiye",
+                "location_id": "8543009",
+                "description": "In the courtyard of the 19th century Palazzo Corpi Building, Cecconi's is a modern day classic Italian restaurant open for dinner, six days a week and brunch on Saturdays. Tables are available indoors or outdoors, set among the garden's olive trees.",
+                "hours": [
+                    "Monday: 12:00 - 23:30",
+                    "Tuesday: 12:00 - 23:30",
+                    "Wednesday: 12:00 - 23:30",
+                    "Thursday: 12:00 - 23:30",
+                    "Friday: 12:00 - 23:30",
+                    "Saturday: 12:00 - 23:30",
+                    "Sunday: 12:00 - 23:30"
+                ],
+                "cuisine": [
+                    "italian",
+                    "pizza",
+                    "mediterranean",
+                    "european"
+                ],
+                "price_level": "$$$$"
+            },
+            "Istanbul Grill": {
+                "address": "6204 S Cooper St, Arlington, TX 76001-5632",
+                "location_id": "2394362",
+                "description": null,
+                "hours": [
+                    "Monday: 11:00 - 22:00",
+                    "Tuesday: 11:00 - 22:00",
+                    "Wednesday: 11:00 - 22:00",
+                    "Thursday: 11:00 - 22:00",
+                    "Friday: 11:00 - 23:00",
+                    "Saturday: 11:00 - 23:00",
+                    "Sunday: 11:00 - 22:00"
+                ],
+                "cuisine": [
+                    "mediterranean",
+                    "turkish",
+                    "middle_eastern"
+                ],
+                "price_level": "$$ - $$$"
             }
         },
         "hotels": {
-            "Naz City Hotel Taksim": {
-                "address": "Irmak Cd. 44-46 Kocatepe, Istanbul 34437 Turkiye",
-                "location_id": "8383436",
-                "description": "To know a city, one must first understand its heart. Naz City Hotel Taksim provides an innovative alternative to business and tourism lodging with its unique location right at the heart of Istanbul and with its adherence to the highest standards of comfort. Naz City Hotel Taksim is located at a very unique location at the heart of all of Istanbul's lively touristic attractions. It is almost of walking distance to Istanbul's most famous tourism and shopping centers, such as Taksim Square, İstiklal Avenue, the unique Bosphorus Strait, Lütfi Kırdar Congress Center, Topkapı Palace, Hagia Sophia, Sultanahmet, Grand Bazaar, Eminönü, Karaköy, Nisantasi, Teşvikiye, Şişli, Levent, and so on. It is only 30 min away from Atatürk International Airport and 50 minutes from Sabiha Gökçen Airport by car. Additionally, it provides 24/7 shuttle service to its guests from the hotel to Taksim Metro Station, which is Istanbul's most efficient public transportation system.",
+            "Romance Istanbul Hotel": {
+                "address": "Hudavendigar Cd. No:5, Istanbul 34110 Turkiye",
+                "location_id": "8364987",
+                "description": "Romance Istanbul Hotel has 39 rooms.Every room is elegantly furnished and harmonizes the modern life style with the traditional Ottoman touch. Romance Istanbul sits at the intersection of the old city’s most important part. With its luxuriously inspiring design and landmark old city location, steeped in the history of its surroundings, Romance Istanbul Hotel welcomes you with exceptional designed rooms and world-renowned Turkish hospitality. Our colleagues deliver the most personal service. It is perfectly placed and perfectly designed to enhance all that Istanbul has to offer. Each room offers a private bathroom and shower. Each is equipped with a satellite TV and free wifi connection. The rooms size change between 20 m2 and 45 m2. It includes 7 suite rooms: 1 Royal Suite, 4 Grand Suite, 1 Romance Suite and 1 Premium Suite, 2 Luxury Room With Terrace, 22 Deluxe Room, 8 City Room.",
                 "price_level": "$$"
             },
-            "Miss Istanbul Hotel & Spa": {
-                "address": "Hocapasa Mahallesi Darussaade Sokak No:3, Istanbul 34110 Turkiye",
-                "location_id": "14904358",
-                "description": "If you’re looking for a hotel in Istanbul, look no further than Miss Istanbul Hotel & Spa.\nClose to some of Istanbul's most popular landmarks, such as Suleymaniye Mosque (0.7 mi) and Taksim Square (1.7 mi), Miss Istanbul Hotel & Spa is a great destination for tourists.\nGuests have access to room service while staying at Miss Istanbul Hotel & Spa. In addition, Miss Istanbul Hotel & Spa offers a pool and a lounge, which will help make your Istanbul trip additionally gratifying. And, as an added convenience, there is free parking available to guests.\nIf you like seafood restaurants, Miss Istanbul Hotel & Spa is conveniently located near Buhara Ocakbasi Restaurant, Old Ottoman Cafe & Restaurant, and Marbella Terrace Cafe Restaurant.\nIstanbul is also known for some great ancient ruins, including Basilica Cistern, Mosaic Museum, and Walls of Constantinople (Istanbul City Walls), which are not too far from Miss Istanbul Hotel & Spa.\nThe staff at Miss Istanbul Hotel & Spa looks forward to serving you during your upcoming visit.\n",
-                "price_level": "$"
+            "Conrad Istanbul Bosphorus": {
+                "address": "Saray Cd No: 5, Istanbul 34353 Turkiye",
+                "location_id": "294658",
+                "description": "Boasting a perfect location between 2 continents, indulge in a stay at Conrad Istanbul Bosphorus and discover yourself at one of the world's most alluring destinations. At the very centre of the city, yet far away from the hustle and bustle, Conrad Istanbul Bosphorus's rooms and suites allow for the highest standard of relaxation, complete with personalised comfort and services. Savor Mediterranean cuisine at Manzara, take in the view of the Bosphorus while lounging at the Summit Bar. Relax with Spa treatments, enjoy a revitalizing workout in the brand-new health club and clay tennis courts. The newly opened Monteverdi Ristorante, nestled in the heart of the city, offers an exquisite Italian fine-dining experience, featuring authentic flavors and a curated selection of Italian wines.",
+                "price_level": "$$"
             },
-            "Barcelo Istanbul": {
-                "address": "Abdulhak Hamit Cad No 25 Kocatepe Mah, Istanbul 34435 Turkiye",
-                "location_id": "3384227",
-                "description": "Set 7 minutes by foot from the nearest metro station, this upmarket hotel among bars and eateries is 6 km from both the landmark Hagia Sophia Museum and the iconic Blue Mosque. Accommodations range from relaxed rooms to polished 2-bedroom suites with kitchenettes, living areas and sofabeds. All feature flat-screen TVs and free Wi-Fi, as well as minibars, tea and coffeemakers, and safes; some have hammams. Room service is offered 24/7.",
+            "Hilton Istanbul Bosphorus": {
+                "address": "Cumhuriyet Cad. No 50, Istanbul 34367 Turkiye",
+                "location_id": "294614",
+                "description": "The iconic Hilton Istanbul Bosphorus, with its landmark location, newly renovated guest rooms and outdoor pool, stunning views, and lush gardens, is an oasis of serenity in one of the world’s most vibrant cities. As the ambassador of Turkish hospitality, this legendary hotel serves its great heritage and service quality since 1955. Located in the heart of Istanbul next to the Congress Valley, walking distance to famous Taksim Square and responds every travelling purpose. Hilton Istanbul Bosphorus offers 475 newly renovated guest rooms, all with a balcony and with breathtaking Bosphorus or beautiful garden view. Hotel has various restaurants which offer different sceneries and exclusive dining opportunities. Interior upgrades are in progress between 10am-5pm. Garden view rooms are not affected. The outdoor pool is open during the summer with its entirely refreshed looks, the fitness center and massage services are relocated, and wet areas, including the indoor pool are closed.",
                 "price_level": "$$"
             },
             "White House Hotel Istanbul": {
@@ -178,66 +241,62 @@
                 "description": "White House Hotel Istanbul is located in the heart of the historical peninsula and it is within walking distance to Hagia Sophia, Blue Mosque, Topkapi Palace, Archeology Museum, the Basilica Cistern, Grand Bazaar, Spice Bazaar, the Millennium Stone and Byzantine Hippodrome, which are the most important landmarks of the city. White House Hotel Istanbul is the ideal starting place for exploring this Ottoman capital city's endless historical sites, museums, restaurants, clubs and shops.",
                 "price_level": "$$"
             },
-            "Meroddi Galata Mansion": {
-                "address": "Serdar-i Ekrem Cad. No:29 Galata, Istanbul 34420 Turkiye",
-                "location_id": "3488580",
-                "description": "Set on a narrow, cobbled street leading to the Galata Tower, the hotel is in a traditional wooden building. With free-Wi-Fi and a 24-hour front desk, it offers simple, air-conditioned rooms. Decorated mainly in white, each room includes a TV, minibar and private bathroom. A buffet breakfast is served daily and there are lots of bars, shops and restaurants on Istiklal Caddesi, a 5-minute walk away. There are also cafes on the street that the hotel is located on.The property is 5 minutes’ walk from a tram stop to Taksim Square, 1.5 km away. Trams also go to Sultanahmet and Dolmabahce Palace, both reached in a journey of less than 10 minutes. The Bosphorus River is a 10-minute walk away.A shuttle is available to Ataturk International Airport, 19 km away. Sabiha Gokcen Airport is 42 km away.",
-                "price_level": "$"
+            "Barcelo Istanbul": {
+                "address": "Abdulhak Hamit Cad No 25 Kocatepe Mah, Istanbul 34435 Turkiye",
+                "location_id": "3384227",
+                "description": "Set 7 minutes by foot from the nearest metro station, this upmarket hotel among bars and eateries is 6 km from both the landmark Hagia Sophia Museum and the iconic Blue Mosque. Accommodations range from relaxed rooms to polished 2-bedroom suites with kitchenettes, living areas and sofabeds. All feature flat-screen TVs and free Wi-Fi, as well as minibars, tea and coffeemakers, and safes; some have hammams. Room service is offered 24/7.",
+                "price_level": "$$"
             },
-            "Burgu Arjaan by Rotana": {
-                "address": "Samanyolu Sk. No:23 Altaycesme Mah., Istanbul 34843 Turkiye",
-                "location_id": "8138706",
-                "description": "Burgu Arjaan by Rotana Istanbul Asia is conveniently located on the Asian side of Istanbul in Maltepe district, on Istanbul's longest coastal lane starting from Fenerbahce and ending at Tuzla. Situated right beside the subway station, Burgu Arjaan by Rotana offers an easy access to anywhere in town , as well as Sabiha Gökçen International Airport and is in close proximity to Bağdat Street, the renowned shopping and dining area of the Asian side. Burgu Arjaan by Rotana is a first class property offering spectacular 115 fully-furnished hotel apartments divided into two towers modernly designed with up-to-date technology and facilities catering to both leisure and business visits, for long-term guests and families alike. Enjoy a choice of 4 exquisite food and beverage outlets as well as a 24-hour in-room dining service in the comfort of your room. Whether you want to enjoy a drink outside by the pool, have a tea in B&T Café-Deli or looking for an informal all day dining experience at Elements, your taste will be satisfied with the delicious menus and choices. 4 multifunctional and flexible meeting rooms are fully equipped with the latest audio-visual equipment and the best modern facilities are designed to suit all your business needs. Offering a stunning design and a magnificent daylight, the Elmas Ballroom is an ideal place for any corporate or social event. Bodylines Fitness & Wellness Club offers a tranquil refuge from the bustling city. You can keep fit and relax with our state-of-the-art facilities like outdoor or indoor pool, steam room, and sauna facilities.",
-                "price_level": "$"
+            "Sofitel Istanbul Taksim": {
+                "address": "Gumussuyu Mah, Siraselviler Cad No 13, Istanbul 34437 Turkiye",
+                "location_id": "19724781",
+                "description": "Texture of the city meets spirit of the Bosphorus at Sofitel Istanbul Taksim. This fascinating location hosts hundreds of different cultures and Sofitel Istanbul Taksim, situated only a few steps away from Taksim square is now ready to welcome its guests.",
+                "price_level": "$$$"
             },
-            "Istanbul Place Apartments": {
-                "address": "Kucuk Hendek Cd. No:16 Sahkulu Mahallesi, Istanbul 34421 Turkiye",
-                "location_id": "7113368",
-                "description": "Are you dreaming of an authentic experience of Istanbul? Perhaps you're hoping for some genuine insight into this fascinating city? We offer short-stay apartment rentals that place you at its very heart, living like a local in your own historic home. Much love was put into our beautiful apartments when they were built and also when we renovated them. The result is a refreshing, stylish balance of period charm and contemporary comfort. Stay with us for a real life experience of the Galata neighbourhood. You'll soon feel at home, connecting with the vibrant local community as you start to uncover the surprises of the city. We're a Turkish-British family that you can trust. We specialise in spacious 2 and 3 bedroom apartments within historic buildings, most suitable for families and groups of friends. Each apartment is selected for its unique qualities, with an eye for architectural interest. We're careful not to over-renovate and we employ local crafts-people who show sensitivity to the restoration skills needed. Our service to you will be timely and professional. While you stay with us our dedicated team, natural with their traditional Turkish hospitality, will look after you as much as you need. We strive in everything we do, love doing and have won awards for it.",
+            "Swissotel The Bosphorus, Istanbul": {
+                "address": "AcIsu Sok. No 19, Istanbul 34357 Turkiye",
+                "location_id": "294609",
+                "description": "Swissotel The Bosphorus, Istanbul, having Safe Hotels Executive Level Certificate for 2016 - 2020, is a five-star luxury hotel right in the centre of Istanbul on the European banks of the Bosphorus. Nestled within 65 acres of historical gardens with world-class shopping and vibrant nightlife nearby, it offers 566 guest rooms, suites and lofts featuring state-of-the-art technology and exclusive amenities. In addition to various meeting space with the capacity of 5 to 1200 people, including function rooms and a ballroom, a team of event planners is on hand to help you hold the perfect wedding at Swissotel The Bosphorus, Istanbul. The award-winning Purovel Spa & Sport offers luxurious holistic spa treatments from all over the world. Secure hotel parking is also available for your vehicle during your stay. Swissotel The Bosphorus, Istanbul provides you with an exclusive new lifestyle experience thanks to Swissotel Living: 63 elegant suites in a variety of sizes, from studio to one to three-bedroom, offer the ultimate in style and luxury, and allow guests to enjoy the full range of hotel services - which includes an exclusive rooftop pool - within the comfort of their own four walls.",
+                "price_level": "$$$"
+            },
+            "Grand Hyatt Istanbul": {
+                "address": "Taskisla Caddesi No.1 Harbiye Mah., Istanbul 34367 Turkiye",
+                "location_id": "294608",
+                "description": "Grand Hyatt Istanbul is a luxurious hotel situated in the heart of the city, adorned with lush greenery. This hotel is a true gem of Istanbul, boasting an outdoor pool and rooms and suites that offer stunning views of the Bosphorus. Its prime location near the city's attractions, shopping centers, and historical sites, as well as its proximity to the arts scene, make Grand Hyatt Istanbul a top choice for travelers. Visitors can also frequently enjoy exhibitions at the hotel. Guests can indulge in Turkish cuisine with modern twists at the 34 Restaurant, which offers a variety of delectable dishes. Two standout options are Grasidi, which serves popular Greek and Turkish appetizers in a beautiful garden setting, and Gazebo, which offers Mediterranean cuisine by the pool for a delightful dining experience. With a capacity of 360 rooms, the hotel features a sunlit fitness center, therapy rooms, Turkish bath, sauna, steam room, and a skincare product boutique.",
+                "price_level": "$$"
+            },
+            "W Istanbul": {
+                "address": "Suleyman Seba Cad. No: 22 Akaretler, Besiktas, Istanbul 34357 Turkiye",
+                "location_id": "814852",
+                "description": "W Istanbul sits in the centre of the historic Akaretler Row Houses in Instanbul, Turkey in an upscale neighbourhood filled with restaurants, cafes, and design & art galleries. W Istanbul guests can explore the authentic and local area of Besiktas and the upscale shopping district of Nisantasi. 140 guestrooms and suites in W Istanbul carry the soul of both history and contemporary luxury. Marmara marble, Ottoman patterns, and lighting to experiment along with your mood. Rooms and suites with gardens, terraces or cabanas adorned with flat-screen TVs, the signature W bed and stylish luxuries.",
                 "price_level": null
             },
-            "Holiday Inn Istanbul - Old City, an IHG hotel": {
-                "address": "Gencturk Cad. Sirvanizade Sok. No 5. Vezneciler Fatih, Istanbul 34134 Turkiye",
-                "location_id": "294910",
-                "description": "Located in Old City in Istanbul, Holiday Inn Istanbul Old City is a 12 minutes' walk from the Grand Bazaar and historical Istanbul University while Sultanahmet Mosque, Topkapi Palace, Galata Tower and Basilica Cistern and many other spots are just a few stop away via tram and metro which would take you roughly 20 minutes to reach major spots. Once sightseeing is done, you can mingle and work in the newly refurbished Open Lobby with a All-in-one PC or with your laptops in our e-bar while enjoying Sagafredo Coffee. Our lounges in the corner of the Open Lobby offers special experience with media streamers and board games. All Day Dining Menu is also available while you are enjoying local and international beers and cocktails. Our Open Lobby is designed to eat, drink, work, socialize or have fun in one area.",
-                "price_level": "$"
-            },
-            "Acacia Mansion Hotel": {
-                "address": "Kaleci Sk. No:24 Küçük Ayasofya, Istanbul 34122 Turkiye",
-                "location_id": "21296723",
-                "description": null,
-                "price_level": "$"
-            },
-            "The Byzantium Hotel & Suites": {
-                "address": "Akbiyik Cad. No: 29 Cankurataran Mah., Istanbul 34122 Turkiye",
-                "location_id": "1061209",
-                "description": "The Byzantium Hotel is within walking distance to Topkapi Palace, St.Sophia, Blue Mosque, Hippodromme, Underground Cistern, Grand Covered Bazaar and many more historical sights. The terrace restaurant offers a breathtaking panoramic view of Istanbul. You will find a second home in Istanbul with The Byzantium Hotel.",
-                "price_level": "$"
+            "Rixos Pera Istanbul": {
+                "address": "Kamerhatun Mesrutiyet Cad. No 44, Istanbul 34440 Turkiye",
+                "location_id": "2554998",
+                "description": "Rixos Pera Istanbul, offers the comfort of easy transportation to every point of Istanbul on both cultural and business occasions with the proximity to each and every transport network in the city center. Additionally the hotel's location is unique to enjoy the beautiful view of \"golden horn\" at sunsets.",
+                "price_level": "$$"
             }
         },
         "attractions": {
-            "VoiceMap Instanbul": {
-                "address": "3 Coleman St, Istanbul 179804 Turkiye",
-                "location_id": "21152958",
-                "description": "Explore Istanbul at your own pace with VoiceMap — an audio tour app. It works offline, without data, and it has automatic GPS playback, which lets you focus on your surrounding, not the screen.",
-                "hours": []
+            "Guided Istanbul Tours": {
+                "address": "Istanbul Turkiye",
+                "location_id": "4053683",
+                "description": "'Guided Istanbul Tours' is a privately-owned business run by the professional tour guides which caters to the independent travellers who want to see Istanbul on a one-to-one basis. Top quality private day tours and shore excursions are available to all the main sites in Istanbul with personal pick-up and drop-off included",
+                "hours": [
+                    "Monday: 09:00 - 19:00",
+                    "Tuesday: 09:00 - 19:00",
+                    "Wednesday: 09:00 - 19:00",
+                    "Thursday: 09:00 - 19:00",
+                    "Friday: 09:00 - 19:00",
+                    "Saturday: 09:00 - 19:00",
+                    "Sunday: 09:00 - 19:00"
+                ]
             },
-            "Headout Ag.sofia Tickets Instanbul": {
-                "address": "Instanbul, Istanbul Turkiye",
-                "location_id": "27444734",
-                "description": null,
-                "hours": []
-            },
-            "Istanbul Layover Tours": {
-                "address": "Istanbul 34000 Turkiye",
-                "location_id": "7709645",
-                "description": "The more you travel, the more you will experience. For sure it is true if you ever leave the airport; Istanbul Layover Tours offer private guiding service by licensed professional tour guides from Istanbul Airport to for transit travelers, who have a couple of hours layover between their flights, with multiple comfort options of transportation and flexible tour schedules.",
-                "hours": []
-            },
-            "My Local Guide Istanbul": {
-                "address": "Istanbul 34400 Turkiye",
-                "location_id": "2722484",
-                "description": "See the local places and local faces of Turkey with My Local Guide Istanbul. Istanbul is a melting pot of European and Asian influences, a mix of the traditional and modern worlds and the best way to explore the city is with My Local Guide Istanbul. Immerse yourself in the heart and soul of the only city in the world that crosses two continents. Walk in the mazes of local streets, visit hidden historic destinations, drink tea with the locals and taste the rich and flavoursome cuisine of the region. My Local Guide Istanbul, with five years experience in leading tours for english-speaking International travellers, offers tours designed and delivered by local people with a passion for Turkey and travel. We specialise in tours for the independent traveller who likes to walk side by side with the locals and explore places that are not easy to discover on your own.",
+            "Istanbul Duty Free": {
+                "address": "Terminal Caddesi No:1 Floor F, Istanbul International Airport, Istanbul 34283 Turkiye",
+                "location_id": "2254521",
+                "description": "Located within Istanbul’s Ataturk Airport, this shopping wonderland welcomes departing travelers to peruse its range of top-tier luxury brands and ornamental wares unique to Turkey. Explore the nine different sections, with themes including Fashion Garden, Style Beach, and Family Palace. Whether you’re purchasing a designer handbag, a new watch, or the latest smartphone, inquire regarding the currency your credit card will be charged in and familiarise yourself with the process for getting your tax refund. Istanbul Duty Free offers a convenient opportunity to secure a last-minute souvenir or gift before you board your flight—coffee, chocolate, and Turkish Delight are all very popular. – Tripadvisor",
                 "hours": [
                     "Monday: 00:00 - 23:59",
                     "Tuesday: 00:00 - 23:59",
@@ -248,18 +307,64 @@
                     "Sunday: 00:00 - 23:59"
                 ]
             },
-            "Brunnenmarkt": {
-                "address": "16 Brunnengasse, Vienna 1160 Austria",
-                "location_id": "6880801",
-                "description": null,
+            "Istanbul Akvaryum": {
+                "address": "Senlikkoy Mahallesi, Yesilkoy Halkali Cad. No: 93 Florya, Istanbul Turkiye",
+                "location_id": "2198171",
+                "description": "This aquarium is home to 18 different themed zones covering various ocean and rainforest habitats over 2 floors, and home to over 1,500 species of aquatic creatures from around the world. Besides viewing and learning about marine life, catch live feeding sessions during certain hours of the day. You can also sign up for diving courses and dive with sharks in the main tank. Istanbul Akvaryum is located just southwest of Ataturk airport—inside the massive Aqua Florya Shopping Complex alongside a hotel and retail outlets. Tickets can be bought online, and it is also available on some Istanbul City passes – Tripadvisor",
+                "hours": []
+            },
+            "Istanbul Cevahir Mall": {
+                "address": "Buyukdere Cad. No:22, Istanbul 34360 Turkiye",
+                "location_id": "729879",
+                "description": "This sprawling modern complex is one of Istanbul’s largest and most popular shopping and entertainment hubs, with over 200 shops and restaurants. You’ll find both international and Turkish brands here across the mall’s six floors. There’s also a multi-hall cinema and a well-stocked supermarket, making Istanbul Cevahir Mall a great place to spend the day. Located in the Sisli district, the shopping hub is easily reached by bus or subway, and there’s ample parking free for up to three hours. Crowds flock to the mall on weekends, so start your shopping day early or visit on a weekday. – Tripadvisor",
                 "hours": [
-                    "Monday: 06:00 - 21:00",
-                    "Tuesday: 06:00 - 21:00",
-                    "Wednesday: 06:00 - 21:00",
-                    "Thursday: 06:00 - 21:00",
-                    "Friday: 06:00 - 21:00,  06:00 - 13:00",
-                    "Saturday: 06:00 - 18:00,  06:00 - 13:00",
-                    "Sunday: Closed"
+                    "Monday: 10:00 - 22:00",
+                    "Tuesday: 10:00 - 22:00",
+                    "Wednesday: 10:00 - 22:00",
+                    "Thursday: 10:00 - 22:00",
+                    "Friday: 10:00 - 22:00",
+                    "Saturday: 10:00 - 22:00",
+                    "Sunday: 10:00 - 22:00"
+                ]
+            },
+            "Mall of Istanbul": {
+                "address": "Suleyman Demirel Blv No: 7, Istanbul 34490 Turkiye",
+                "location_id": "6697587",
+                "description": "This giant shopping haven is one of the biggest retail complexes in Turkiye, boasting luxury apartments, hotels, offices, and over 350 stores. Here, you can watch a movie, play at one of the largest indoor amusement parks, and shop at international and local boutiques for luxury Arabic fashion, perfumes, textiles, handicrafts, and souvenirs. It gets extra crowded on weekends and evenings, so visit on other days if you want more wiggle room. Drop by the mall on a shopping tour of Istanbul or before visiting other nearby attractions like the Ataturk Olympic Stadium.",
+                "hours": [
+                    "Monday: 10:00 - 22:00",
+                    "Tuesday: 10:00 - 22:00",
+                    "Wednesday: 10:00 - 22:00",
+                    "Thursday: 10:00 - 22:00",
+                    "Friday: 10:00 - 22:30",
+                    "Saturday: 10:00 - 22:30",
+                    "Sunday: 10:00 - 22:00"
+                ]
+            },
+            "Istanbul Sapphire": {
+                "address": "Emniyet Evleri Mah. Eski Buyukdere Cad. Levent, Besiktas, Istanbul Turkiye",
+                "location_id": "2061869",
+                "description": null,
+                "hours": []
+            },
+            "Historic Areas of Istanbul": {
+                "address": "Istanbul 34093 Turkiye",
+                "location_id": "1652097",
+                "description": null,
+                "hours": []
+            },
+            "Istanbul Airports Transfer - Adore Tourism Travel": {
+                "address": "Istanbul 34283 Turkiye",
+                "location_id": "13230598",
+                "description": "We make Istanbul airport transfer service from airports to the hotels, apartments or wherever you would like to go. Door to door airport transfer service including free Meeting & Greeting service in Istanbul airports. New age Minivans, Minibuses and Buses. Vip Airport Transfer Service in Istanbul is also available with vip cars like Mercedes E Class, S class. Car Hire with Driver Service is the best option for historical visits, shopping and business meetings for our guests.",
+                "hours": [
+                    "Monday: 00:00 - 23:59",
+                    "Tuesday: 00:00 - 23:59",
+                    "Wednesday: 00:00 - 23:59",
+                    "Thursday: 00:00 - 23:59",
+                    "Friday: 00:00 - 23:59",
+                    "Saturday: 00:00 - 23:59",
+                    "Sunday: 00:00 - 23:59"
                 ]
             },
             "Istanbul Shuttle Port": {
@@ -276,36 +381,10 @@
                     "Sunday: 00:00 - 23:30"
                 ]
             },
-            "Curio Travel": {
+            "Istanbul Cable Car": {
                 "address": "Istanbul Turkiye",
-                "location_id": "2413165",
-                "description": "We are specialized in fully guided Private & Small Group & Group Land Tours all over in Turkey. Curio Travel (Member of Turkish Travel Association – TURSAB license Nr. 6420) is a unique tour operator founded by Turkey Travel Professionals to provide the ultimate service for travelers.If you are looking for excellent person to person and professional service, then we are the company that will make a world of difference in the way you travel. . Our professional team is in travel business since 1988 but still bear the spirit of wonder which keeps them excited, creative and dynamic. We are also well trained and experienced in designing luxury customized itineraries and have in-depth knowledge about all areas of travel in Turkey. . We provide our clientele seamless service from arrival to departure, with a lifetime of memorable experiences in Turkey and Greece. . Our firm has always kept our customer-focused philosophy ahead of commercial interests,",
-                "hours": [
-                    "Monday: 08:30 - 19:00",
-                    "Tuesday: 08:30 - 19:00",
-                    "Wednesday: 08:30 - 19:00",
-                    "Thursday: 08:30 - 19:00",
-                    "Friday: 08:30 - 19:00",
-                    "Saturday: 08:30 - 18:00",
-                    "Sunday: 08:30 - 18:00"
-                ]
-            },
-            "Turkey Tours By Locals": {
-                "address": "Cumhuriyet Cad No:179/12Sisli, Istanbul Turkiye",
-                "location_id": "2296645",
-                "description": "We are a group of official tour guides working at different regions of Turkey. We have at least 15 years of experience at guiding but we still have the excitement of the first day of our jobs. Since we are all locals where we run our tours, we do have the latest updates about the sites, our cities, villages or the regions. You will have the best information about the sites as well as the best places to eat, drink and more. During the tour or after the tour we will also take you to our favorite places where we can eat or have tea, coffee while we talk about the things that you like to know about Turkey beside the historical sites. Eventually we are sure of that you will have the best time here in Turkey if you let us assist you here in Turkey. We are all looking forward meeting you…",
-                "hours": []
-            },
-            "Buyukada Tabiat Parki": {
-                "address": "Adalar Rd, 06510 Turkiye",
-                "location_id": "12687550",
-                "description": null,
-                "hours": []
-            },
-            "Istanbul On Bike - Tours": {
-                "address": "KalpakcI Cesmesi Sokak No 13/A Balat, Istanbul 34087 Turkiye",
-                "location_id": "3655213",
-                "description": "Istanbul On Bike is the first and only professional guided bike tour of Istanbul. The tour is designed to show you the best of Istanbul - great monuments as well as hidden nooks and crannies – and to give you a taste of its daily life. Several itineraries of different lengths and difficulty are available. Istanbul On Bike is the perfect mix of sightseeing and sport: simply the best way of visiting this amazing city!",
+                "location_id": "3170020",
+                "description": "The Istanbul Cable Car is a mode of everyday commuter transport that takes you to a hilltop overlooking splendid views of the Golden Horn and the Bosporus River. You can purchase tokens with coins or small notes for either a one- or two-way ride, or use your Istanbulkart to get a discount on the fare. Lines for the cable car are known to be rather long—visit in the early morning for fewer crowds. The cable car is also one of the stops of the hop-on-hop-off bus, and can be combined with a jaunt around Eyup’s main shopping district. – Tripadvisor",
                 "hours": []
             }
         }

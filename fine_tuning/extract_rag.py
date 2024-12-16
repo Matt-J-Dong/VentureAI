@@ -29,7 +29,7 @@ def main(city_to):
             output_lines.append(f"No {category} data available.")
 
     # Write to a new file
-    output_file = "formatted_rag_data.txt"
+    output_file = "rag_data.txt"
     with open(output_file, "w", encoding="utf-8") as file:
         file.write("".join(output_lines))  # Write all data as a single line
 

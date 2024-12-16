@@ -41,6 +41,8 @@ print("Loading LoRA adapters...")
 # Load LoRA adapters
 model = PeftModel.from_pretrained(base_model, model_dir)
 
+print("Model is loaded ")
+
 with open("perplexity_data_all.json", "r") as file:
     data = json.load(file)
 
@@ -53,6 +55,7 @@ for item in data:
     total_loss += outputs.loss.item()
 
 average_loss = total_loss / len(data)
+print("average loss calculated")
 fine_tuned_perplexity = torch.exp(torch.tensor(average_loss)).item()
 print(f"Fine-Tuned Model Perplexity: {fine_tuned_perplexity:.2f}")
 

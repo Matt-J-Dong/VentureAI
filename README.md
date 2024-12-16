@@ -15,13 +15,19 @@ Through these capabilities, Venture AI aims to transform how travelers organize 
 
 * Working on how to format this information: `*  name=The North Brabant Museum | alt=NoordBrabants Museum | url=http://www.hetnoordbrabantsmuseum.nl/english | email=\n| wikidata= Q12013217\n| address= | lat=51.68658 | long=5.30469 | directions=\n| phone= | tollfree= | fax=\n| hours= | price=\n| lastedit=2016-01-25\n| content=It houses a collection of art and historical artifacts, from pre-roman times to the 20th century. Special exibitions are a must to see, the 'Hyeronimus Bosch Exhibition' with his original work from museums all over the world.\n\n\n\n`. Is the star part of this section or the next section? What do all the new lines do? How can we take this information so the model can potentially use it?
 
-## Download
+Note: all path commands assume that you are in the root folder of this repository, to standardize the provided path commands.
+## Data
+* All of the data that use/generate/clean is located in the `./data_generation` folder.
+* `./data_generation/data_compilation` contains our most recent csv files that are directly used in training, and the cleaning files used to create them.
+* `./data_generation/wikivoyage` contains all of our Wikivoyage data. This is the data that we used to generate the fine tuning datasets.
+
 
 ## Training
 If you want to run the code yourself to test it or fine tune the model in your own way:
 ### Environment
 All of the dependencies are located in `./environment.yml`. Once you have conda activated and ready to use, follow these steps:
-1. `cd {your_current_file_path}/VentureAI` (go to the root folder of the repository) 
+1. `cd ./` (go to the root folder of the repository) 
 2. `conda env create -f environment.yml`
 3. `conda activate juypter`
 You can check to make sure all the dependencies match with `conda env list`.
+###

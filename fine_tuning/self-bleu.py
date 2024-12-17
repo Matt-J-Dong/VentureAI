@@ -5,16 +5,9 @@ import json
 import shutil
 import os
 
-# Fix: Cleanly download punkt resource
-nltk_data_dir = os.path.expanduser("~/nltk_data")
-punkt_dir = os.path.join(nltk_data_dir, "tokenizers", "punkt")
 
-if os.path.exists(punkt_dir):
-    print("Removing corrupted punkt resource...")
-    shutil.rmtree(punkt_dir)
-
-print("Downloading punkt resource...")
 nltk.download('punkt')
+nltk.download('punkt_tab')
 
 
 # Suppress BLEU score warnings

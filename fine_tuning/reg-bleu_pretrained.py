@@ -24,8 +24,8 @@ for example in data:
     generated = example["generated"]
     bleu_score = calculate_bleu(reference, generated)
     bleu_scores.append(bleu_score)
-    print(f"Reference: {reference}")
-    print(f"Generated: {generated}")
+    #print(f"Reference: {reference}")
+    #print(f"Generated: {generated}")
     print(f"BLEU Score: {bleu_score:.4f}")
     print("-" * 50)
 

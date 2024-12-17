@@ -114,16 +114,17 @@ if __name__ == "__main__":
 
         # Generate the response based on the input prompt
         responses = []
-        for _ in range(10):
+        for j in range(10):
             response = generate_response(prompt, max_length=2000)
             responses.append(response)
+            print(f"Generated response for prompt {i + 1}'s {j + 1} output")
 
         output_data.append({
             "prompt": prompt,
             "generated": responses
         })
         #print(f"\nResponse:\n{response}\n")
-        print(f"Generated output for prompt {i}")
+        print(f"Generated final output for prompt {i + 1}")
         if i == 3:
             break
         i += 3

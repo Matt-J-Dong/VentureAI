@@ -1,6 +1,7 @@
 # deprecated
 This folder contains old code that is no longer used. It is kept in the repository purely for documentation purposes.
 
+`./autotrain` contains autotrain commands that are no longer in use. We stopped using Autotrain because we wanted the flexibility to change the underlying code as well.
 `./first_tests` and `./second_tests` are old fine tuning code that we used for our initial tests.
 
 ## Extra Note:

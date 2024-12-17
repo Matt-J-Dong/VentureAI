@@ -20,6 +20,9 @@ print("Loading tokenizer...")
 # Load the tokenizer from Hugging Face
 tokenizer = AutoTokenizer.from_pretrained("tiiuae/falcon-7b", use_auth_token=HUGGING_FACE_TOKEN)
 
+if tokenizer.pad_token is None:
+    tokenizer.pad_token = tokenizer.eos_token
+
 print("Loading pretrained model...")
 # Load the pretrained Falcon7b model from Hugging Face
 model = AutoModelForCausalLM.from_pretrained(

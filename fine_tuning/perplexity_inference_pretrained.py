@@ -27,23 +27,24 @@ if not os.path.exists(model_dir):
 
 print("Loading tokenizer...")
 # Load the tokenizer from the trained model directory
-tokenizer = AutoTokenizer.from_pretrained(model_dir)
+tokenizer = AutoTokenizer.from_pretrained("tiiuae/falcon-7b", use_auth_token=HUGGING_FACE_TOKEN)
 
-print("Loading base model...")
-# Load the base model without 8-bit quantization
-base_model = AutoModelForCausalLM.from_pretrained(
-    model_dir,
-    torch_dtype=torch.float16,  # Changed from bfloat16 to float16 for broader GPU compatibility
-    device_map="auto"           # Automatically maps the model to available devices
+print("Loading pretrained model...")
+# Load the pretrained Falcon7b model from Hugging Face
+model = AutoModelForCausalLM.from_pretrained(
+    "tiiuae/falcon-7b",
+    torch_dtype=torch.float16,  # Use half precision for faster inference
+    device_map="auto",         # Automatically map the model to available devices
+    use_auth_token=HUGGING_FACE_TOKEN
 )
 
 print("Loading LoRA adapters...")
 # Load LoRA adapters
-model = PeftModel.from_pretrained(base_model, model_dir)
+#model = PeftModel.from_pretrained(base_model, model_dir)
 
 print("Model is loaded ")
 
-with open("perplexity_data_all.json", "r") as file:
+with open("perplexity_data_output_pretrained.json", "r") as file:
     data = json.load(file)
 
 total_loss = 0

@@ -34,6 +34,7 @@ with open('self-bleu_data_output.json', 'r') as file:
 
 # Extract the `generated` field for all entries
 generated_outputs = [entry["generated"] for entry in output_data]
+print(generated_outputs)
 
 for i, output in enumerate(generated_outputs):
     # Calculate BLEU for 4-grams (default BLEU-4)

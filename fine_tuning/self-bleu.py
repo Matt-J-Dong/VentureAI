@@ -34,13 +34,13 @@ with open('self-bleu_data_output.json', 'r') as file:
 
 # Extract the `generated` field for all entries
 generated_outputs = [entry["generated"] for entry in output_data]
-print(generated_outputs)
+#print(generated_outputs)
 
 for i, output in enumerate(generated_outputs):
     # Calculate BLEU for 4-grams (default BLEU-4)
-    self_bleu_score_bleu4 = calculate_self_bleu(generated_outputs)
+    self_bleu_score_bleu4 = calculate_self_bleu(output)
     print(f"Self-BLEU Score (BLEU-4) for prompt {i}: {self_bleu_score_bleu4:.4f}")
 
     # Calculate BLEU for 2-grams (BLEU-2)
-    self_bleu_score_bleu2 = calculate_self_bleu(generated_outputs, weights=(0.5, 0.5, 0.0, 0.0))
+    self_bleu_score_bleu2 = calculate_self_bleu(output, weights=(0.5, 0.5, 0.0, 0.0))
     print(f"Self-BLEU Score (BLEU-2) for prompt {i}: {self_bleu_score_bleu2:.4f}")

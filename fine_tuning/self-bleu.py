@@ -3,6 +3,9 @@ import nltk
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 import json
 
+nltk.download('punkt')
+
+
 # Suppress BLEU score warnings
 warnings.filterwarnings("ignore", category=UserWarning, module="nltk")
 
@@ -21,15 +24,6 @@ def calculate_self_bleu(generated_outputs, weights=(0.25, 0.25, 0.25, 0.25)):
     # Return the average Self-BLEU score
     return sum(scores) / len(scores)
 
-# # Example outputs from the model for the same prompt
-# generated_outputs = [
-#     "Day 1: Visit 360 Istanbul for lunch and explore the Bosphorus area.",
-#     "Day 1: Enjoy lunch at Zuma Istanbul and walk along the Bosphorus.",
-#     "Day 1: Visit 360 Istanbul for lunch and explore the Bosphorus area.",
-#     "Day 1: Visit 360 Istanbul for lunch and explore the Bosphorus area.",
-#     "Day 1: Have a meal at Istanbul Anatolian Cuisine and relax by the Bosphorus.",
-#     "Day 1: Try Istanbul Kebab Cafe and take a stroll along the Bosphorus shore."
-# ]
 
 with open('self-bleu_data_output.json', 'r') as file:
     output_data = json.load(file)

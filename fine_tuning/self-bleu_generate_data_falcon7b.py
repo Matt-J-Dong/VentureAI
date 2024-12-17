@@ -114,7 +114,7 @@ if __name__ == "__main__":
 
         # Generate the response based on the input prompt
         responses = []
-        for i in range(10):
+        for _ in range(10):
             response = generate_response(prompt, max_length=2000)
             responses.append(response)
 

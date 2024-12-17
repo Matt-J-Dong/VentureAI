@@ -72,7 +72,7 @@ def generate_response(prompt, max_length=2000, temperature=0.2, top_p=0.9, repet
             top_p=top_p,
             repetition_penalty=repetition_penalty,
             no_repeat_ngram_size=no_repeat_ngram_size,
-            # pad_token_id=tokenizer.pad_token_id,
+            pad_token_id=tokenizer.pad_token_id,
             eos_token_id=tokenizer.eos_token_id,
             do_sample=True,
             early_stopping=True

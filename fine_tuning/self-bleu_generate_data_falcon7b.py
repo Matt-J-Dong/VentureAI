@@ -126,6 +126,7 @@ if __name__ == "__main__":
         print(f"Generated output for prompt {i}")
         if i == 3:
             break
+        i += 3
     
     output_json_file = "self-bleu_data_output.json"  # Replace with the desired output file name
     with open(output_json_file, "w") as file:

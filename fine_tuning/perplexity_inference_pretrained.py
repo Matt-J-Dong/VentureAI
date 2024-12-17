@@ -61,7 +61,7 @@ for item in data:
 average_loss = total_loss / len(data)
 print("average loss calculated")
 fine_tuned_perplexity = torch.exp(torch.tensor(average_loss)).item()
-print(f"Fine-Tuned Model Perplexity: {fine_tuned_perplexity:.2f}")
+print(f"Pretrained Model Perplexity: {fine_tuned_perplexity:.2f}")
 
 
 # # Example usage of the inference script

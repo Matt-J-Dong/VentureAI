@@ -104,7 +104,7 @@ if __name__ == "__main__":
         print(f"Generated output for prompt {i}")
     
     # Save the output data to a JSON file
-    output_json_file = "perplexity_data_output.json"
+    output_json_file = "perplexity_data_output_pretrained.json"
     with open(output_json_file, "w") as file:
         json.dump(output_data, file, indent=4)
 

@@ -13,8 +13,6 @@ Through these capabilities, Venture AI aims to transform how travelers organize 
 * All information specific to images inside double brackets `{{}}` has been removed, but the captions for the images currently are kept because they still contain useful information.
 * There are two different variations of `[[]]`. The ones that contain the substring `File:` within them are file links, and those have been removed. Otherwise, they are links to other pages in WikiVoyage. For those, we just removed the brackets and kept the text.
 
-* Working on how to format this information: `*  name=The North Brabant Museum | alt=NoordBrabants Museum | url=http://www.hetnoordbrabantsmuseum.nl/english | email=\n| wikidata= Q12013217\n| address= | lat=51.68658 | long=5.30469 | directions=\n| phone= | tollfree= | fax=\n| hours= | price=\n| lastedit=2016-01-25\n| content=It houses a collection of art and historical artifacts, from pre-roman times to the 20th century. Special exibitions are a must to see, the 'Hyeronimus Bosch Exhibition' with his original work from museums all over the world.\n\n\n\n`. Is the star part of this section or the next section? What do all the new lines do? How can we take this information so the model can potentially use it?
-
 **Note: all path commands assume that you are in the root folder of this repository, to standardize the provided path commands.**
 ## Data
 * All of the data that use/generate/clean is located in the `./data_generation` folder.
@@ -24,6 +22,7 @@ Through these capabilities, Venture AI aims to transform how travelers organize 
 
 ## Training
 If you want to run the code yourself to test it or fine tune the model in your own way:
+The code for all of the models themselves is located in the `./fine_tuning` folder.
 ### Environment
 All of the dependencies are located in `./environment.yml`. Once you have conda activated and ready to use, follow these steps:
 1. `cd ./` (go to the root folder of the repository) 

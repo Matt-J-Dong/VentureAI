@@ -24,7 +24,7 @@ for _, row in data.iterrows():
     
 
 # Save the extracted data to a JSON file
-json_file = "perplexity_data_all.json"  # Replace with your desired output file name
+json_file = "perplexity_data_input.json"  # Replace with your desired output file name
 with open(json_file, "w") as file:
     json.dump(output_data, file, indent=4)
 

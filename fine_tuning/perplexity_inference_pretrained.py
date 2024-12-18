@@ -18,19 +18,10 @@ if not HUGGING_FACE_TOKEN:
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 
-# Define the directory where the trained model and tokenizer are saved
-model_dir = "./trained_falcon7b_7"  # Updated to match the training script's output directory
-
-# Check if the model directory exists
-if not os.path.exists(model_dir):
-    raise FileNotFoundError(f"Trained model directory not found at {model_dir}")
-
 print("Loading tokenizer...")
 # Load the tokenizer from the trained model directory
 tokenizer = AutoTokenizer.from_pretrained("tiiuae/falcon-7b", use_auth_token=HUGGING_FACE_TOKEN)
 
-# if tokenizer.pad_token is None:
-#     tokenizer.pad_token = tokenizer.eos_token
 
 print("Loading pretrained model...")
 # Load the pretrained Falcon7b model from Hugging Face
@@ -41,9 +32,6 @@ model = AutoModelForCausalLM.from_pretrained(
     use_auth_token=HUGGING_FACE_TOKEN
 )
 
-print("Loading LoRA adapters...")
-# Load LoRA adapters
-#model = PeftModel.from_pretrained(base_model, model_dir)
 
 print("Model is loaded ")
 

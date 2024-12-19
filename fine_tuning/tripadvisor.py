@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+from dotenv import load_dotenv
 
 # def use_city_name():
 #     from testrag import CITY_NAME  # Import inside the function to avoid circular import

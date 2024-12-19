@@ -249,7 +249,7 @@ def main():
             logger.info(f"Process {local_rank}: Initialized on device {device}")
 
         # Load the model and tokenizer
-        model_name = "tiiuae/falcon-7b-instruct"
+        model_name = "tiiuae/falcon-7b"
 
         tokenizer = AutoTokenizer.from_pretrained(model_name)
         tokenizer.pad_token = tokenizer.eos_token  # Set pad_token to eos_token

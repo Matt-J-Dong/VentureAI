@@ -6,8 +6,9 @@ import os
 #     from testrag import CITY_NAME  # Import inside the function to avoid circular import
 #     return CITY_NAME
 
-
-api_key = '8B04F7B58B534C8284B9F96767D3A913'
+load_dotenv()
+TRIPADVISOR_API_KEY = os.getenv("TRIPADVISOR_API_KEY")
+api_key = TRIPADVISOR_API_KEY
 
 def get_location_reviews(locationId, api_key, locations_info, search_query, category, location):
     headers = {"accept": "application/json"}
